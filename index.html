@@ -107,6 +107,545 @@
 				</div>
 			</a>
 		</center>
+
+		<script>
+
+			var output = [];
+			var style = [];
+			output.push("%cClick in a blank space inside the webpage and press ");
+			style.push("color : black");
+			output.push("%cEnter");
+			style.push("color : #a10000; font-weight : bold");
+			output.push("%c to start defending the galaxy, use ");
+			style.push("color : black");
+			output.push("%cArrow Keys");
+			style.push("color : #a10000; font-weight : bold");
+			output.push("%c or ");
+			style.push("color : black");
+			output.push("%cWASD");
+			style.push("color : #a10000; font-weight : bold");
+			output.push("%c to navigate, ");
+			style.push("color : black");
+			output.push("%cSPACE");
+			style.push("color : #a10000; font-weight : bold");
+			output.push("%c to shoot.");
+			style.push("color : black");
+			console.log.apply(console, [output.join("")].concat(style));
+			
+			window.onkeydown = function(e)
+			{
+				key = e.keyCode;
+				console.log(key);
+				switch(key)
+				{
+					case 13:
+					{
+						enterPressed();
+						break;
+					}
+					case 32:
+						spacePressed();
+						break;
+					case 37:
+						leftKeyPressed();
+						break;
+					case 38:
+						upKeyPressed();
+						break;
+					case 39:
+						rightKeyPressed();
+						break;
+					case 40:
+						downKeyPressed();
+						break;
+					case 65:
+						leftKeyPressed();
+						break;
+					case 87:
+						upKeyPressed();
+						break;
+					case 68:
+						rightKeyPressed();
+						break;
+					case 83:
+						downKeyPressed();
+						break;
+				}
+			};
+
+			function enterPressed()
+			{
+				createGame();
+			}
+			function spacePressed()
+			{
+				if(player != undefined)
+					player.shoot = true;
+			}
+
+			function leftKeyPressed()
+			{
+				if(player != undefined)
+					player.intention = "left";
+			}
+
+			function upKeyPressed()
+			{
+				if(player != undefined)
+					player.intention = "up";
+			}
+
+			function rightKeyPressed()
+			{
+				if(player != undefined)
+					player.intention = "right";
+			}
+
+			function downKeyPressed()
+			{
+				if(player != undefined)
+					player.intention = "down";
+			}
+
+			var space;
+			var height = 11;
+			var width = 11;
+			var player;
+			var enemies;
+			var flip = false;
+
+			function createGame()
+			{
+				createSpace();
+				updateBoard();
+				var update = setInterval(updateGame, 1000);
+			}
+
+			function updateGame()
+			{
+				flip = !flip;
+				updatePlayer();
+				updateBoard();
+				updateBullets();
+				updateEnemies();
+			}
+
+			function createSpace()
+			{
+				player = [];
+				enemies = [];
+				enemies.max = 5;
+				enemies.spawnChance = 0.5;
+				enemies.moveChance = 0.5;
+				enemies.shootChance = 0.1;
+				enemies.spawnMercy = 5;
+				player.life = 3;
+				player.score = 0;
+				player.intention = "stop";
+				player.shoot = false;
+				space = [];
+				for(i = 0; i < height; i++)
+				{
+					space[i] = [];
+					for(j = 0; j < width; j++)
+					{
+						space[i][j] = "space";
+					}
+				}
+				player.position = [];
+				player.position.x = 5;
+				player.position.y = 10;
+				space[player.position.y][player.position.x] = "ship";
+				//space[9][5] = "bullet";
+				//space[0][5] = "enemy";
+				//space[1][5] = "enemybullet";
+			}
+
+			function updateBoard()
+			{
+				console.clear();
+				output = [];
+				style = [];
+				var message
+				if(player.life >= 0)
+				{
+					message = " LIFE: " + player.life + "              SCORE: " + player.score;
+				}
+				else
+				{
+					message = "            GAME OVER            ";
+				}
+				output.push("%c" + message);
+				var remain = width * 3 - message.length;
+				for(i = 0; i < remain; i++)
+				{
+					output.push(" ");
+				}
+				if(player.life < 0)
+				{
+					if(flip)
+					{
+						style.push("background : black; color : #00a153; font-size : 25px");
+					}
+					else
+					{
+						style.push("background : black; color : #004c2b; font-size : 25px");
+					}
+				}
+				else
+				{
+					style.push("background : black; color : #00974d; font-size : 25px");
+				}
+				output.push('%c' + Math.random());
+				style.push('dispaly : none; font-size : 0px;');
+				console.log.apply(console, [output.join("")].concat(style));
+				for(i = 0; i < height; i++)
+				{
+					output = [];
+					style = [];
+					for(j = 0; j < width; j++)
+					{
+						if(space[i][j] == "space")
+						{
+							output.push("%c" + "   ");
+							style.push("background : black; color : #004c2b; font-size : 25px");
+						}
+						else if(space[i][j] == "bullet")
+						{
+							output.push("%c" + ": :");
+							style.push("background : black; color : #00a153; font-size : 25px");
+						}
+						else if(space[i][j] == "enemybullet")
+						{
+							output.push("%c" + " : ");
+							style.push("background : black; color : #a8af03; font-size : 25px");
+						}
+						else if(space[i][j] == "ship")
+						{
+							if(player.life >= 0)
+							{
+								output.push("%c" + ".A.");
+								style.push("background : black; color : #00a153; font-size : 25px");
+							}
+							else
+							{
+								output.push("%c" + " * ");
+								style.push("background : black; color : #a10000; font-size : 25px");
+							}
+						}
+						else if(space[i][j] == "enemy")
+						{
+							output.push("%c" + " V ");
+							style.push("background : black; color : #a8af03; font-size : 25px");
+						}
+
+					}
+					output.push('%c' + Math.random());
+					style.push('dispaly : none; font-size : 0px;');
+					console.log.apply(console, [output.join("")].concat(style));
+				}
+			}
+
+			function updatePlayer()
+			{
+				if(player.life >= 0)
+				{
+					if(player.shoot)
+					{
+						space[player.position.y - 1][player.position.x] = "bullet";
+					}
+					else
+					if(player.intention == "left")
+					{
+						if(player.position.x > 0)
+						{
+							if(destroyOnCollide(space[player.position.y][player.position.x], space[player.position.y][player.position.x - 1]) == "enemy")
+							{
+								destroyEnemyOn(player.position.y, player.position.x - 1);
+							}
+							space[player.position.y][player.position.x] = "space";
+							player.position.x--;
+							space[player.position.y][player.position.x] = "ship";
+						}
+						else
+						{
+							if(destroyOnCollide(space[player.position.y][player.position.x], space[player.position.y][width - 1]) == "enemy")
+							{
+								destroyEnemyOn(player.position.y, width - 1);
+							}
+							space[player.position.y][player.position.x] = "space";
+							player.position.x = width - 1;
+							space[player.position.y][player.position.x] = "ship";
+
+						}
+					}
+					else if(player.intention == "right")
+					{
+						if(player.position.x < width - 1)
+						{
+							if(destroyOnCollide(space[player.position.y][player.position.x], space[player.position.y][player.position.x + 1]) == "enemy")
+							{
+								destroyEnemyOn(player.position.y, player.position.x + 1);
+							}
+							space[player.position.y][player.position.x] = "space";
+							player.position.x++;
+							space[player.position.y][player.position.x] = "ship";
+						}
+						else
+						{
+							if(destroyOnCollide(space[player.position.y][player.position.x], space[player.position.y][0]) == "enemy")
+							{
+								destroyEnemyOn(player.position.y, 0);
+							}
+							space[player.position.y][player.position.x] = "space";
+							player.position.x = 0;
+							space[player.position.y][player.position.x] = "ship";
+						}
+					}
+					else if(player.intention == "up")
+					{
+						if(player.position.y > 1)
+						{
+							if(destroyOnCollide(space[player.position.y][player.position.x], space[player.position.y - 1][player.position.x]) == "enemy")
+							{
+								destroyEnemyOn(player.position.y - 1, player.position.x);
+							}
+							space[player.position.y][player.position.x] = "space";
+							player.position.y--;
+							space[player.position.y][player.position.x] = "ship";
+						}					
+					}
+					else if(player.intention == "down")
+					{
+						if(player.position.y < height - 1)
+						{
+							if(destroyOnCollide(space[player.position.y][player.position.x], space[player.position.y + 1][player.position.x]) == "enemy")
+							{
+								destroyEnemyOn(player.position.y + 1, player.position.x);
+							}
+							space[player.position.y][player.position.x] = "space";
+							player.position.y++;
+							space[player.position.y][player.position.x] = "ship";
+						}					
+					}
+				}
+				player.shoot = false;
+				player.intention = "stop";
+			}
+
+			function updateEnemies()
+			{
+				if(enemies.length < enemies.max)
+				{
+					if(Math.random() < (enemies.max - enemies.length) / enemies.max * enemies.spawnChance)
+						spawnEnemy();
+				}
+				for(i = 0; i < enemies.length; i++)
+				{
+					var enemy = enemies[i];
+					if(Math.random() < enemies.shootChance)
+					{
+						if(enemy.position.y < height - 2)
+						{
+							if(space[enemy.position.y + 1][enemy.position.x] == "space")
+							{
+								space[enemy.position.y + 1][enemy.position.x] = "enemybullet";
+							}
+						}
+					}
+					if(Math.random() < enemies.moveChance)
+					{
+						var direction = Math.random();
+						if(direction < 0.2)
+						{
+							if(enemy.position.y < height - 1)
+							{
+								if(space[enemy.position.y + 1][enemy.position.x] == "space")
+								{
+									space[enemy.position.y][enemy.position.x] = "space";
+									enemy.position.y++;
+									space[enemy.position.y][enemy.position.x] = "enemy";
+								}
+								else if(destroyOnCollide(space[enemy.position.y][enemy.position.x], space[enemy.position.y + 1][enemy.position.x]) == "enemy")
+									destroyEnemy(enemy);
+							}
+							else
+							{
+								if(space[0][enemy.position.x] == "space")
+								{
+									space[enemy.position.y][enemy.position.x] = "space";
+									enemy.position.y = 0;
+									space[enemy.position.y][enemy.position.x] = "enemy";
+								}
+								else if(destroyOnCollide(space[enemy.position.y][enemy.position.x], space[0][enemy.position.x]) == "enemy")
+									destroyEnemy(enemy);
+							}
+						}
+						else if(direction < 0.6)
+						{
+							if(enemy.position.x < width - 1)
+							{
+								if(space[enemy.position.y][enemy.position.x + 1] == "space")
+								{
+									space[enemy.position.y][enemy.position.x] = "space";
+									enemy.position.x++;
+									space[enemy.position.y][enemy.position.x] = "enemy";
+								}
+								else if(destroyOnCollide(space[enemy.position.y][enemy.position.x], space[enemy.position.y][enemy.position.x + 1]) == "enemy")
+									destroyEnemy(enemy);
+							}
+							else
+							{
+								if(space[enemy.position.y][0] == "space")
+								{
+									space[enemy.position.y][enemy.position.x] = "space";
+									enemy.position.x = 0;
+									space[enemy.position.y][enemy.position.x] = "enemy";
+								}
+								else if(destroyOnCollide(space[enemy.position.y][enemy.position.x], space[enemy.position.y][0]) == "enemy")
+									destroyEnemy(enemy);
+							}
+						}
+						else if(direction < 1.00)
+						{
+							if(enemy.position.x > 0)
+							{
+								if(space[enemy.position.y][enemy.position.x - 1] == "space")
+								{
+									space[enemy.position.y][enemy.position.x] = "space";
+									enemy.position.x--;
+									space[enemy.position.y][enemy.position.x] = "enemy";
+								}
+								else if(destroyOnCollide(space[enemy.position.y][enemy.position.x], space[enemy.position.y][enemy.position.x - 1]) == "enemy")
+									destroyEnemy(enemy);
+							}
+							else
+							{
+								if(space[enemy.position.y][width - 1] == "space")
+								{
+									space[enemy.position.y][enemy.position.x] = "space";
+									enemy.position.x = width - 1;
+									space[enemy.position.y][enemy.position.x] = "enemy";
+								}
+								else if(destroyOnCollide(space[enemy.position.y][enemy.position.x], space[enemy.position.y][width - 1]) == "enemy")
+									destroyEnemy(enemy);
+							}
+						}
+						
+					}
+				}
+			}
+
+			function spawnEnemy()
+			{
+				var successful = false;
+				var enemy = [];
+				while(!successful)
+				{
+					enemy.position = [];
+					enemy.position.x = Math.round(Math.random() * (width - 1));
+					enemy.position.y = Math.round(Math.random() * (height - enemies.spawnMercy));
+					if(space[enemy.position.y][enemy.position.x] == "space")
+					{
+						space[enemy.position.y][enemy.position.x] = "enemy";
+						enemies.push(enemy);
+						successful = true;
+					}
+				}
+			}
+
+			function destroyEnemy(enemy)
+			{
+				space[enemy.position.y][enemy.position.x] = "space";
+				var i = enemies.indexOf(enemy);
+				enemies.splice(i, 1);
+			}
+
+			function destroyEnemyOn(y, x)
+			{
+				for(i = 0; i < enemies.length; i++)
+				{
+					if(enemies[i].position.x == x && enemies[i].position.y == y)
+						destroyEnemy(enemies[i]);
+				}
+			}
+
+			function destroyOnCollide(colliderA, colliderB)
+			{
+				var collision = [colliderA, colliderB]
+				if(collision.includes("ship") && collision.includes("enemy"))
+				{
+					player.life--;
+					return "enemy";
+				}
+				else if(collision.includes("ship") && collision.includes("enemybullet"))
+				{
+					player.life--;
+					return "enemybullet";
+				}
+				else if(collision.includes("enemy") && collision.includes("bullet"))
+				{
+					player.score += 10;
+					if(player.score > 999)
+					{
+						player.score = 999;
+					}
+					return "enemy + bullet";
+				}
+				return false;
+			}
+
+			function updateBullets()
+			{
+				for(i = 0; i < height; i++)
+				{
+					for(j = 0; j < width; j++)
+					{
+						if(space[i][j] == "bullet")
+						{
+							if(i - 1 > 0)
+							{
+								if(!(destroyOnCollide(space[i][j], space[i - 1][j]) == "enemy + bullet"))
+								{
+									space[i - 1][j] = "bullet";
+								}
+								else
+								{
+									destroyEnemyOn(i - 1, j);
+								}
+							}
+							space[i][j] = "space";
+						}
+					}
+				}
+				for(i = height - 1; i >= 0; i--)
+				{
+					for(j = 0; j < width; j++)
+					{
+						if(space[i][j] == "enemybullet")
+						{
+							if(i + 1 < height - 1)
+							{
+								if(!(destroyOnCollide(space[i][j], space[i + 1][j]) == "enemybullet"))
+								{
+									if(space[i + 1][j] == "bullet")
+									{
+										space[i + 1][j] = "space";
+									}
+									else
+									{
+										space[i + 1][j] = "enemybullet";
+									}
+								}
+							}
+							space[i][j] = "space";
+						}
+					}
+				}
+			}
+
+		</script> 
+
 	</body>
 
 </html>
