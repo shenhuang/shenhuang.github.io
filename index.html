@@ -270,7 +270,7 @@
 				}
 				else
 				{
-					message = "            GAME OVER            ";
+					message = " GAME OVER            SCORE: " + player.score;;
 				}
 				output.push("%c" + message);
 				var remain = width * 3 - message.length;
@@ -600,7 +600,7 @@
 					{
 						if(space[i][j] == "bullet")
 						{
-							if(i - 1 > 0)
+							if(i > 0)
 							{
 								if(!(destroyOnCollide(space[i][j], space[i - 1][j]) == "enemy + bullet"))
 								{
