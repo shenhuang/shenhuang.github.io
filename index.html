@@ -253,9 +253,6 @@
 				player.position.x = 5;
 				player.position.y = 10;
 				space[player.position.y][player.position.x] = "ship";
-				//space[9][5] = "bullet";
-				//space[0][5] = "enemy";
-				//space[1][5] = "enemybullet";
 			}
 
 			function updateBoard()
@@ -531,6 +528,8 @@
 						
 					}
 				}
+				ememies.shootChance += 0.005;
+				enemies.max += 0.05;
 			}
 
 			function spawnEnemy()
