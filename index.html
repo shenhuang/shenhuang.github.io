@@ -135,14 +135,11 @@
 			window.onkeydown = function(e)
 			{
 				key = e.keyCode;
-				console.log(key);
 				switch(key)
 				{
 					case 13:
-					{
 						enterPressed();
 						break;
-					}
 					case 32:
 						spacePressed();
 						break;
@@ -608,6 +605,10 @@
 								if(!(destroyOnCollide(space[i][j], space[i - 1][j]) == "enemy + bullet"))
 								{
 									space[i - 1][j] = "bullet";
+								}
+								else if(space[i - 1][j] == "bullet")
+								{
+									space[i - 1][j] = "space";
 								}
 								else
 								{
