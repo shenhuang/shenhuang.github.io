@@ -1,6 +1,9 @@
 <!--Copyright to Shen Huang, you can reach me out at shenhuang@live.ca-->
 
 <!DOCTYPE html>
+
+<meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+
 <html>
 
 	<head>
@@ -8,23 +11,72 @@
 		<title>0x2A</title>
 
 		<style>
+
 			body	{
 						background-color	:	#000f04;
-					}
+			}
+
+			top	{
+						background-color	:	#000f04;
+						margin				:	0;
+						position			:	absolute;
+						width				:	90%;
+						top					:	30%;
+						left				:	50%;
+						-ms-transform		:	translate(-50%, -50%);
+						transform			:	translate(-50%, -50%);
+			}
+
 			center	{
 						background-color	:	#000f04;
 						margin				:	0;
 						position			:	absolute;
-						top					:	50%;
+						width				:	90%;
+						top					:	70%;
 						left				:	50%;
 						-ms-transform		:	translate(-50%, -50%);
 						transform			:	translate(-50%, -50%);
-					}
-			.button						{
+			}
+
+			bottom	{
+						background-color	:	#000f04;
+						margin				:	0;
+						position			:	absolute;
+						width				:	90%;
+						top					:	90%;
+						left				:	50%;
+						-ms-transform		:	translate(-50%, -50%);
+						transform			:	translate(-50%, -50%);
+			}
+
+			left	{
+						background-color	:	#000f04;
+						margin				:	0;
+						position			:	absolute;
+						width				:	90%;
+						top					:	90%;
+						left				:	50%;
+						-ms-transform		:	translate(-50%, -50%);
+						transform			:	translate(-50%, -50%);
+			}
+
+			right	{
+						background-color	:	#000f04;
+						margin				:	0;
+						position			:	absolute;
+						width				:	90%;
+						top					:	90%;
+						left				:	110%;
+						-ms-transform		:	translate(-50%, -50%);
+						transform			:	translate(-50%, -50%);
+			}
+
+			.button	{
 						position			:	relative;
 						display				:	inline-block;
 						margin				:	50;
 			}
+
 			.button			.img-top	{
 						display				:	none;
 						position			:	absolute;
@@ -32,6 +84,7 @@
 						left				:	0;
 						z-index				:	99;
 			}
+
 			.button:hover	.img-top	{
 						display				:	inline;
 			}
@@ -42,22 +95,31 @@
 
 	<body>
 
-		<center>
+		<top>
 			
 			<a href = "https://shenhuang.github.io/">
 				<div class = "button">
 					<img 	src		=	"title.png"
 							alt		=	"Title"
 							style	=	"
-											width	:	960px;
-											height	:	400px;
+											width	:	100%;
 										"
 					>
 				</div>
 			</a>
 
-			<p align = "left">
-				<font color = #004325 style = "font-family:verdana;">
+		</top>
+
+		<center>
+
+			<p 	align = "left"
+				style 	=	"
+								width	:	90%;
+							"
+			>
+				<font 	color = #004325
+						style = "font-family	:	verdana;"
+				>
 					Welcome to my little space. You will find my past work under "Projects" and articles under "Inspirations". You can find more about me in my 
 					<a href= "Resume_Shen Huang_2019-01-18.pdf" download>Resume</a>
 					 and my 
@@ -68,54 +130,55 @@
 				</font>
 			</p>
 
-			<a href = "https://0x2a.pb.online/">			
-				<div class = "button">
-					<img 	src		=	"projects.png"
-							alt		=	"Projects"
-							style 	=	"
-											width	:	200px;
-											height	:	100px;
-										"
-					>
-					<img 	src		=	"projects_hover.png"
-							class	=	"img-top"
-							alt		=	"Projects Hover"
-							style	=	"
-											width	:	200px;
-											height	:	100px;
-										"
-					>
-				</div>
-			</a>
-
-			<img 	src		=	"placeholder.png"
-					alt		=	"Placeholder"
-					style	=	"
-									width	:	300px;
-									height	:	125px;
-								"
-			>
-			
-			<a href = "https://medium.com/@shenhuang_21425">
-				<div class = "button">			
-					<img 	src		=	"inspirations.png"
-							alt		=	"Inspirations"
-							style	=	"
-											width	:	200px;
-											height	:	100px;
-										"
-					>
-					<img 	src		=	"inspirations_hover.png"
-							class	=	"img-top"
-							alt		=	"Inspirations Hover"
-							style	=	"
-											width	:	200px;
-											height	:	100px;
-										"
-					>
-				</div>
-			</a>
 		</center>
+
+		<bottom>
+
+			<left>
+
+				<a href = "https://0x2a.pb.online/">			
+					<div class = "button">
+						<img 	src		=	"projects.png"
+								alt		=	"Projects"
+								style 	=	"
+												width	:	40%;
+											"
+						>
+						<img 	src		=	"projects_hover.png"
+								class	=	"img-top"
+								alt		=	"Projects Hover"
+								style	=	"
+												width	:	40%;
+											"
+						>
+					</div>
+				</a>
+
+			</left>
+
+			<right>
+				
+				<a href = "https://medium.com/@shenhuang_21425">
+					<div class = "button">			
+						<img 	src		=	"inspirations.png"
+								alt		=	"Inspirations"
+								style	=	"
+												width	:	40%;
+											"
+						>
+						<img 	src		=	"inspirations_hover.png"
+								class	=	"img-top"
+								alt		=	"Inspirations Hover"
+								style	=	"
+												width	:	40%;
+											"
+						>
+					</div>
+				</a>
+
+			</right>
+		
+		</bottom>
 
 		<script>
 
