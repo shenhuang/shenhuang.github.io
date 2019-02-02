@@ -61,6 +61,13 @@
 				animation-timing-function : ease-in;
 				animation-duration : 0s;
 			}
+			.panel:active {
+				background : #7893ba;
+				opacity : 1.0;
+				animation-name : panel-hover-animation;
+				animation-timing-function : ease-in;
+				animation-duration : 0s;
+			}
 			.contents {
 				position : relative;
 				width : 95%;
@@ -82,6 +89,10 @@
 				width : 100%;
 			}
 			th, td:hover {
+				border : 0px;
+				border-bottom : 1px solid #ddd;
+			}
+			th, td:active {
 				border : 0px;
 				border-bottom : 1px solid #ddd;
 			}
