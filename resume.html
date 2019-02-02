@@ -34,10 +34,16 @@
 				100% {background-color : #3d495b; opacity : 0.7;}
 			}
 			div {
-				margin: 0px 0px 15px 0px;
+				margin: 15px 15px 15px 15px;
 			}
 			p {
 				width : 100%;
+			}
+			h3 {
+				font-family : Courier New;
+			}
+			h4 {
+				font-family : Courier New;
 			}
 			.board {
 				position : relative;
@@ -70,6 +76,18 @@
 				display: inline-block;
 			}
 			.miniContents {
+				background : #5a88c9;
+				opacity : 0.5;
+				border-radius : 3px;
+				position : relative;
+				margin : 5px 5px 5px 5px;
+				word-break: break-word;
+				display: inline-block;
+			}
+			.miniContents:hover {
+				background : #70d4ff;
+				opacity : 1.0;
+				border-radius : 3px;
 				position : relative;
 				margin : 5px 5px 5px 5px;
 				word-break: break-word;
@@ -89,7 +107,7 @@
 			}
 			th, td:hover {
 				border : 0px;
-				border-bottom : 1px solid #ddd;
+				border-bottom : 1px solid #dddddd;
 			}
 			.skillTable {
 				width : 100%;
@@ -106,6 +124,14 @@
 				float: right;
 				margin-right: 100px;
 			}
+			skill {
+				color : #2b2b2b;
+				font-family : Arial;
+			}
+			skill:hover {
+				color : white;
+				font-family : Arial;
+			}
 		</style>
 	</head>
 	<body>
@@ -116,20 +142,34 @@
 			<div class = "panel">
 				<div class = "contents">
 					<div class = "miniContents">
-						<p><b>Cell Phone:</b></p>
-						<a href= "tel:7472064072">(747)206-4072</a>
+						<div class = "contents">
+							<h4>Cell Phone:</h4>
+							<a href= "tel:7472064072">(747)206-4072</a>
+						</div>
 					</div>
 					<div class = "miniContents">
-						<p><b>Email:</b></p>
-						<a href= "mailto:shenhuang@live.ca" download>shenhuang@live.ca</a>
-					</div> d
-					<div class = "miniContents">
-						<p><b>Personal Website:</b></p>
-						<a href= "https://shenhuang.github.io/">https://shenhuang.github.io/</a>
+						<div class = "contents">
+							<h4>Email:</h4>
+							<a href= "mailto:shenhuang@live.ca" download>shenhuang@live.ca</a>
+						</div>
 					</div>
 					<div class = "miniContents">
-						<p><b>LinkedIn:</b></p>
-						<a href= "https://www.linkedin.com/in/shen-h-03593618/" download>https://www.linkedin.com/in/shen-h-03593618/</a>
+						<div class = "contents">
+							<h4>Personal Website:</h4>
+							<a href= "https://shenhuang.github.io/">https://shenhuang.github.io/</a>
+						</div>
+					</div>
+					<div class = "miniContents">
+						<div class = "contents">
+							<h4>Printable Resume:</h4>
+							<a href= "Resume_Shen Huang_2019-02-02.pdf" download>CILCK TO DOWNLOAD</a>
+						</div>
+					</div>
+					<div class = "miniContents">
+						<div class = "contents">
+							<h4>LinkedIn:</h4>
+							<a href= "https://www.linkedin.com/in/shen-h-03593618/" download>https://www.linkedin.com/in/shen-h-03593618/</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -316,7 +356,7 @@
 							<td>
 								<span class = "leftSpan">C#</span>
 								<span class = "rightSpan">4+ Years</span>
-								<span class = "midSpan">Unity, Mapbox</span>
+								<span class = "midSpan">Unity, Mapbox, .NET Framework</span>
 							</td>
 						</tr>
 						<tr>
@@ -352,11 +392,16 @@
 			<div class = "panel">
 				<div class = "contents">
 					<table class = "skillTable">
-						<h3>Computer Science & Electrical Engineering</h3>
+						<h3>Computer Science, Electrical Engineering & Others</h3>
 						<tr>
 							<th>
 								<span class = "leftSpan">Skills</span>
 							</th>
+						</tr>
+						<tr>
+							<td>
+								<span class = "leftSpan">Microsoft Word, Microsoft Excel, Microsoft Power Point</span>
+							</td>
 						</tr>
 						<tr>
 							<td>
@@ -416,7 +461,76 @@
 					<p><h3>Improved Classification Algorithms</h3></p>
 					<p>• Invented a math theorem which is later applied to improve conventional classification models. The accuracy was improved from 72% to 100% for the target data set. The average case theoretical error reduction should be 300 times better.</p>
 					<p>• Participants were found by communicating with random people on Campus.</p>
-					<p>Involved Skills</p>
+					<h4>Involved Skills</h4>
+					<p><skill>HTML5 Canvas</skill>, <skill>Node.js</skill>, <skill>Microsoft Excel, Python</skill>, <skill>WEKA</skill>, <skill>Selenium</skill></p>
+				</div>
+			</div>
+		</div>
+		<div class = "board">
+			<div class = "panel">
+				<div class = "contents">
+					<p><h3>Back Propagation Artificial Neural Network In Unity</h3></p>
+					<a href = "https://github.com/shenhuang/Connect4/blob/master/Connect%204%20ANN/Assets/Engine.cs">Source Code of Back Propagation Artificial Neural Network In Unity</a>
+					<p>• Wrote a customizable multi-layered perceptron when Unity Machine Learning framework is still under development, the existing Artificial Neural Network is trained using Genetic Algorithm.</p>
+					<h4>Involved Skills</h4>
+					<p><skill>Unity</skill>, <skill>C#</skill></p>
+					<h4>Involved Knowlodge</h4>
+					<p><skill>Artificial Neural Network</skill>, <skill>Back Propagation</skill>, <skill>Neural Network Training</skill>, <skill>Box-Muller Transform</skill></p>
+				</div>
+			</div>
+		</div>
+		<div class = "board">
+			<div class = "panel">
+				<div class = "contents">
+					<p><h3>Queens ECE Annual Robot Competition, 1st Place</h3></p>
+					<p>• Designed a slam-dunk robot, code based on Arduino. Robot moves and grabs with servo motors utilizing Pulse Width Modulation. Robot senses the environment through touch sensor and distance sensors, and therefore was designed to have a close loop control system to adjust the speed for optimal performance.</p>
+					<h4>Involved Skills</h4>
+					<p>Arduino Programming, Wireless Programming</p>
+					<h4>Involved Knowlodge</h4>
+					<p><skill>Pulse Width Modulation</skill>, <skill>Close Loop Control System</skill>, <skill>Inferred Sensors</skill>, <skill>Pressure Sensors</skill>, <skill>Wireless Sensors</skill></p>
+				</div>
+			</div>
+		</div>
+		<div class = "board">
+			<div class = "panel">
+				<div class = "contents">
+					<p><h3>RUN!!! a Multi-player Game</h3></p>
+					<img src="run_around.gif" alt="Run Demo">
+					<p>• Wrote a customizable multi-layered perceptron when Unity Machine Learning framework is still under development, the existing Artificial Neural Network is trained using Genetic Algorithm.</p>
+					<h4>Involved Skills</h4>
+					<p><skill>HTML Canvas</skill>, <skill>Java Script</skill>, <skill>Node.js</skill>, <skill>Server Hosting</skill></p>
+					<h4>Involved Knowlodge</h4>
+					<p><skill>Login Management</skill>, <skill>Secure Data Transmission</skill>, <skill>Concurrency Management</skill>, <skill>Collision Detection</skill>, <skill>Fog of War Generation</skill>, <skill>Node.js Child Process</skill></p>
+				</div>
+			</div>
+		</div>
+		<div class = "board">
+			<div class = "panel">
+				<div class = "contents">
+					<p><h3>DIG!!! a Lava Run Game</h3></p>
+					<img src="food.gif" alt="Eat Food">
+					<img src="bomb.gif" alt="Place Bomb">
+					<img src="icewall.gif" alt="Place Ice Wall">
+					<p>• Wrote a procedurally generated lava run game where the player digs for gold, food and life.</p>
+					<p>• The player can dig and run faster by consuming the hunger meter faster, sometimes the player can find food or food packages which replenishes the hunger meter.</p>
+					<p>• The player can find random amounts of gold in some of the blocks, which can be used to purchase power-ups in the future.</p>
+					<p>• The player can place ice walls at choke points to temporarily block the flowing lava.</p>
+					<h4>Involved Skills</h4>
+					<p><skill>Unity</skill>, <skill>C#</skill>, <skill>Unity Animator</skill>, <skill>Unity Mobile Sensors</skill></p>
+					<h4>Involved Knowlodge</h4>
+					<p><skill>Unit Testing</skill>, <skill>Procedural Generation</skill>, <skill>Stickiness</skill>, <skill>Computer Graphics</skill>, <skill>Computer Animations</skill></p>
+				</div>
+			</div>
+		</div>
+		<div class = "board">
+			<div class = "panel">
+				<div class = "contents">
+					<p><h3>CLUE!!! a Real World Treasure Finding Game</h3></p>
+					<p>• Built a virtual reality treasure finding game with location based services, the player can reach to locations in real life, take some pictures, creating a puzzle, uploading and share it with friends.</p>
+					<h4>Involved Skills</h4>
+					<p><skill>Unity</skill>, <skill>C#</skill>, <skill>.NET Framework</skill>, <skill>Node.js</skill>, <skill>Amazon Web Services</skill></p>
+					<h4>Involved Knowlodge</h4>
+					<p><skill>Network Protocol</skill>, <skill>Image File Processing</skill>, <skill>UI Design</skill>, <skill>Location Based Services</skill>, <skill>SQL</skill>, <skill>noSQL</skill>, <skill>Object Storage</skill>, <skill>Concurrency Management</skill>, <skill>Node.js Child Process</skill>, <skill>Unity Multi-threading</skill></p>
 				</div>
 			</div>
 		</div>
