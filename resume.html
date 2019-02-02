@@ -18,7 +18,7 @@
 				100% {top : 0vh; opacity : 1.0;}
 			}
 			@keyframes 			panel-hover-animation	{
-				0% {background-color : #3d495b; opacity : 0.9;}
+				0% {background-color : #3d495b; opacity : 0.7;}
 				100% {background-color : #7893ba; opacity : 1.0;}
 			}
 			@-webkit-keyframes	panel-hover-animation	{
@@ -61,18 +61,17 @@
 				animation-timing-function : ease-in;
 				animation-duration : 0s;
 			}
-			.panel:active {
-				background : #7893ba;
-				opacity : 1.0;
-				animation-name : panel-hover-animation;
-				animation-timing-function : ease-in;
-				animation-duration : 0s;
-			}
 			.contents {
 				position : relative;
 				width : 95%;
 				margin-right : 20px;
 				margin-left : 20px;
+				word-break: break-word;
+				display: inline-block;
+			}
+			.miniContents {
+				position : relative;
+				margin : 5px 5px 5px 5px;
 				word-break: break-word;
 				display: inline-block;
 			}
@@ -92,10 +91,6 @@
 				border : 0px;
 				border-bottom : 1px solid #ddd;
 			}
-			th, td:active {
-				border : 0px;
-				border-bottom : 1px solid #ddd;
-			}
 			.skillTable {
 				width : 100%;
 				padding : 15px;
@@ -107,6 +102,10 @@
 			.rightSpan {
 				float : right;
 			}
+			.midSpan {
+				float: right;
+				margin-right: 100px;
+			}
 		</style>
 	</head>
 	<body>
@@ -116,20 +115,22 @@
 		<div class = "board">
 			<div class = "panel">
 				<div class = "contents">
-					<p><b>Cell Phone:</b></p>
-					<a href= "tel:7472064072">(747)206-4072</a>
-				</div>
-				<div class = "contents">
-					<p><b>Email:</b></p>
-					<a href= "mailto:shenhuang@live.ca" download>shenhuang@live.ca</a>
-				</div>
-				<div class = "contents">
-					<p><b>Personal Website:</b></p>
-					<a href= "https://shenhuang.github.io/">https://shenhuang.github.io/</a>
-				</div>
-				<div class = "contents">
-					<p><b>LinkedIn:</b></p>
-					<a href= "https://www.linkedin.com/in/shen-h-03593618/" download>https://www.linkedin.com/in/shen-h-03593618/</a>
+					<div class = "miniContents">
+						<p><b>Cell Phone:</b></p>
+						<a href= "tel:7472064072">(747)206-4072</a>
+					</div>
+					<div class = "miniContents">
+						<p><b>Email:</b></p>
+						<a href= "mailto:shenhuang@live.ca" download>shenhuang@live.ca</a>
+					</div> d
+					<div class = "miniContents">
+						<p><b>Personal Website:</b></p>
+						<a href= "https://shenhuang.github.io/">https://shenhuang.github.io/</a>
+					</div>
+					<div class = "miniContents">
+						<p><b>LinkedIn:</b></p>
+						<a href= "https://www.linkedin.com/in/shen-h-03593618/" download>https://www.linkedin.com/in/shen-h-03593618/</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -172,12 +173,14 @@
 							<th>
 								<span class = "leftSpan">Skill</span>
 								<span class = "rightSpan">Experience</span>
+								<span class = "midSpan">Tools, Frameworks</span>
 							</th>
 						</tr>
 						<tr>
 							<td>
 								<span class = "leftSpan">HTML</span>
 								<span class = "rightSpan">10+ Years</span>
+								<span class = "midSpan">Front Page, Dreamweaver, Ionic</span>
 							</td>
 						</tr>
 						<tr>
@@ -192,7 +195,13 @@
 								<span class = "rightSpan">4+ Years</span>
 							</td>
 						</tr>
-					</table>		
+						<tr>
+							<td>
+								<span class = "leftSpan">Selenium</span>
+								<span class = "rightSpan">1+ Years</span>
+							</td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -205,6 +214,7 @@
 							<th>
 								<span class = "leftSpan">Skill</span>
 								<span class = "rightSpan">Experience</span>
+								<span class = "midSpan">Tools, Frameworks</span>
 							</th>
 						</tr>
 						<tr>
@@ -217,12 +227,20 @@
 							<td>
 								<span class = "leftSpan">Java</span>
 								<span class = "rightSpan">2+ Years</span>
+								<span class = "midSpan">Tomcat</span>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<span class = "leftSpan">Go</span>
 								<span class = "rightSpan">1+ Years</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class = "leftSpan">AWS</span>
+								<span class = "rightSpan">1+ Years</span>
+								<span class = "midSpan">DynamoDB, S3</span>
 							</td>
 						</tr>
 					</table>		
@@ -233,17 +251,59 @@
 			<div class = "panel">
 				<div class = "contents">
 					<table class = "skillTable">
+						<h3>Data Analysis</h3>
+						<tr>
+							<th>
+								<span class = "leftSpan">Skills</span>
+								<span class = "rightSpan">Experience</span>
+								<span class = "midSpan">Tools, Frameworks</span>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<span class = "leftSpan">MATLAB</span>
+								<span class = "rightSpan">6+ Years</span>
+								<span class = "midSpan">Simulink</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class = "leftSpan">Octave</span>
+								<span class = "rightSpan">2+ Years</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class = "leftSpan">Python</span>
+								<span class = "rightSpan">2+ Years</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class = "leftSpan">WEKA</span>
+								<span class = "rightSpan">2+ Years</span>
+							</td>
+						</tr>
+					</table>		
+				</div>
+			</div>
+		</div>		
+		<div class = "board">
+			<div class = "panel">
+				<div class = "contents">
+					<table class = "skillTable">
 						<h3>General Programming</h3>
 						<tr>
 							<th>
 								<span class = "leftSpan">Skill</span>
 								<span class = "rightSpan">Experience</span>
+								<span class = "midSpan">Tools, Frameworks</span>
 							</th>
 						</tr>
 						<tr>
 							<td>
 								<span class = "leftSpan">Java</span>
-								<span class = "rightSpan">6+ Years</span>
+								<span class = "rightSpan">7+ Years</span>
 							</td>
 						</tr>
 						<tr>
@@ -256,11 +316,19 @@
 							<td>
 								<span class = "leftSpan">C#</span>
 								<span class = "rightSpan">4+ Years</span>
+								<span class = "midSpan">Unity, Mapbox</span>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<span class = "leftSpan">C</span>
+								<span class = "rightSpan">3+ Years</span>
+								<span class = "midSpan">RISC Instructions for Microprocessors</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class = "leftSpan">Arduino</span>
 								<span class = "rightSpan">3+ Years</span>
 							</td>
 						</tr>
@@ -280,6 +348,30 @@
 				</div>
 			</div>
 		</div>
+		<div class = "board">
+			<div class = "panel">
+				<div class = "contents">
+					<table class = "skillTable">
+						<h3>Computer Science & Electrical Engineering</h3>
+						<tr>
+							<th>
+								<span class = "leftSpan">Skills</span>
+							</th>
+						</tr>
+						<tr>
+							<td>
+								<span class = "leftSpan">Artificial Intelligence, Algorithms, Data Science</span>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span class = "leftSpan">Renewable Energy, Battery Management, PCB Design, Microprocessor Design, Soldering</span>
+							</td>
+						</tr>
+					</table>		
+				</div>
+			</div>
+		</div>
 		<h1 class = "mainTitle" id = "Education">
 			WORK EXPERIENCE
 		</h1>
@@ -289,8 +381,42 @@
 					<p><h3>Graduate Assistant</h3></p>
 					<p>California State University, Northridge</p>
 					<p><b>Time: </b>September 2018 - December 2018</p>
-					<p>Assisted the professor with research tasks including code production. Projects and research are NDA protected.</p>
-					
+					<p>• Assisted the professor with research tasks including code production. Projects and research are NDA protected.</p>
+				</div>
+			</div>
+		</div>
+		<div class = "board">
+			<div class = "panel">
+				<div class = "contents">
+					<p><h3>Software Engineer Internship</h3></p>
+					<p>CETC Motor, Shanghai</p>
+					<p><b>Time: </b>July 2013 - September 2015</p>
+					<p>• Worked on a compiler to support floating point calculation by modifying the lexical and syntax analyzer.</p>
+					<p>• Added English and Chinese support for help documents.</p>
+				</div>
+			</div>
+		</div>
+		<div class = "board">
+			<div class = "panel">
+				<div class = "contents">
+					<p><h3>Electrical Engineer Internship</h3></p>
+					<p>State Grid Corporation of China</p>
+					<p><b>Time: </b>July 2012 - September 2012</p>
+					<p>• Worked on a compiler to support floating point calculation by modifying the lexical and syntax analyzer.</p>
+					<p>• Added English and Chinese support for help documents.</p>
+				</div>
+			</div>
+		</div>
+		<h1 class = "mainTitle" id = "Education">
+				PAST RESEARCH & PROJECTS
+		</h1>
+		<div class = "board">
+			<div class = "panel">
+				<div class = "contents">
+					<p><h3>Improved Classification Algorithms</h3></p>
+					<p>• Invented a math theorem which is later applied to improve conventional classification models. The accuracy was improved from 72% to 100% for the target data set. The average case theoretical error reduction should be 300 times better.</p>
+					<p>• Participants were found by communicating with random people on Campus.</p>
+					<p>Involved Skills</p>
 				</div>
 			</div>
 		</div>
