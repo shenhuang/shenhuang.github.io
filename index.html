@@ -355,16 +355,16 @@
 				{
 					if(flip)
 					{
-						style.push("background : black; color : #00a153; font-size : 25px");
+						style.push("background : black; color : #00a153; font-size : 15px");
 					}
 					else
 					{
-						style.push("background : black; color : #004c2b; font-size : 25px");
+						style.push("background : black; color : #004c2b; font-size : 15px");
 					}
 				}
 				else
 				{
-					style.push("background : black; color : #00974d; font-size : 25px");
+					style.push("background : black; color : #00974d; font-size : 15px");
 				}
 				output.push('%c' + Math.random());
 				style.push('dispaly : none; font-size : 0px;');
@@ -378,35 +378,35 @@
 						if(space[i][j] == "space")
 						{
 							output.push("%c" + "   ");
-							style.push("background : black; color : #004c2b; font-size : 25px");
+							style.push("background : black; color : #004c2b; font-size : 15px");
 						}
 						else if(space[i][j] == "bullet")
 						{
 							output.push("%c" + ": :");
-							style.push("background : black; color : #00a153; font-size : 25px");
+							style.push("background : black; color : #00a153; font-size : 15px");
 						}
 						else if(space[i][j] == "enemybullet")
 						{
 							output.push("%c" + " : ");
-							style.push("background : black; color : #a8af03; font-size : 25px");
+							style.push("background : black; color : #a8af03; font-size : 15px");
 						}
 						else if(space[i][j] == "ship")
 						{
 							if(player.life >= 0)
 							{
 								output.push("%c" + ".A.");
-								style.push("background : black; color : #00a153; font-size : 25px");
+								style.push("background : black; color : #00a153; font-size : 15px");
 							}
 							else
 							{
 								output.push("%c" + " * ");
-								style.push("background : black; color : #a10000; font-size : 25px");
+								style.push("background : black; color : #a10000; font-size : 15px");
 							}
 						}
 						else if(space[i][j] == "enemy")
 						{
 							output.push("%c" + " V ");
-							style.push("background : black; color : #a8af03; font-size : 25px");
+							style.push("background : black; color : #a8af03; font-size : 15px");
 						}
 
 					}
