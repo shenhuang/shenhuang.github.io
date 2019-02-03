@@ -33,6 +33,14 @@
 				0% {background-color : #7893ba; opacity : 1.0;}
 				100% {background-color : #3d495b; opacity : 0.7;}
 			}
+			@keyframes 			navbtn-flyin-animation	{
+				0% {left : -200%; opacity : 1.0;}
+				100% {left : 0%; opacity : 0.1;}
+			}
+			@-webkit-keyframes	navbtn-flyin-animation	{
+				0% {left : -200%; opacity : 1.0;}
+				100% {left : 0%; opacity : 0.1;}
+			}
 			div {
 				margin: 15px 15px 15px 15px;
 			}
@@ -40,13 +48,14 @@
 				width : 100%;
 			}
 			h3 {
-				font-family : Courier New;
+				font-family : Arial;
 			}
 			h4 {
-				font-family : Courier New;
+				font-family : Arial;
 			}
 			.board {
 				position : relative;
+				left : -30px;
 				width : 100%;
 				animation-name : board-setup-animation;
 				animation-timing-function : ease-out;
@@ -78,7 +87,7 @@
 			.miniContents {
 				background : #5a88c9;
 				opacity : 0.5;
-				border-radius : 3px;
+				border-radius : 5px;
 				position : relative;
 				margin : 5px 5px 5px 5px;
 				word-break: break-word;
@@ -87,27 +96,43 @@
 			.miniContents:hover {
 				background : #70d4ff;
 				opacity : 1.0;
-				border-radius : 3px;
-				position : relative;
-				margin : 5px 5px 5px 5px;
-				word-break: break-word;
-				display: inline-block;
 			}
-			.mainTitle {
+			.headline {
+				z-index : 1;
 				background : #171b21;
 				text-align : center;
 				color : #efefef;
 				font-family : Lucida Grande;
 				font-weight : bold;
 				border-radius : 3px;
+				height : 50px;
+				line-height : 50px;
+				position : -webkit-sticky;
+				position : sticky;
+				top : 0px;
+			}
+			.mainTitle {
+				z-index : 1;
+				background : #171b21;
+				text-align : center;
+				color : #efefef;
+				font-family : Lucida Grande;
+				font-weight : bold;
+				border-radius : 3px;
+				height : 40px;
+				line-height : 40px;
+				position : -webkit-sticky;
+				position : sticky;
+				top : 0px;
 			}
 			table, th, td {
+				font-family : Arial;
 				border : 0px;
 				width : 100%;
 			}
 			th, td:hover {
 				border : 0px;
-				border-bottom : 1px solid #dddddd;
+				background : #dddddd;
 			}
 			.skillTable {
 				width : 100%;
@@ -132,12 +157,54 @@
 				color : white;
 				font-family : Arial;
 			}
+			.navigatorBoard {
+				z-index : 10;
+				position : -webkit-sticky;
+				position : sticky;
+				height : 35px;
+				width : 200px;
+				top : 25px;
+				left : 100%;
+			}
+			.navigatorPanel {
+				animation-name : navbtn-flyin-animation;
+				animation-timing-function : ease-out;
+				animation-duration : 1.5s;
+				position : relative;
+				left : 0%;
+				opacity : 0.1;
+			}
+			.navigatorPanel:hover {
+				animation-name : navbtn-flyin-animation;
+				animation-timing-function : ease-out;
+				animation-duration : 1.5s;
+				opacity : 1.0;
+			}
+			.navigatorButton {
+				height : 35px;
+				width : 200px;
+				font-family : Lucida Grande;
+				font-weight : bold;
+				font-size : 10px;
+				text-align : center;
+				line-height : 25px;
+				background : #c6edf4;
+				border : none;
+				border-radius : 3px;
+			}
+			.navigator:hover {
+				
+			}
 		</style>
 	</head>
 	<body>
-		<h1 class = "mainTitle" id = "Contact Information">
-			CONTACT INFORMATION
+		<h1 class = "headline" id = "HEADLINE">
+			SHEN HUANG'S RESUME
 		</h1>
+		<div id = "Contact Information"></div>
+		<h2 class = "mainTitle">
+			CONTACT INFORMATION
+		</h2>
 		<div class = "board">
 			<div class = "panel">
 				<div class = "contents">
@@ -161,8 +228,9 @@
 					</div>
 					<div class = "miniContents">
 						<div class = "contents">
-							<h4>Printable Resume:</h4>
-							<a href= "Resume_Shen Huang_2019-02-02.pdf" download>CILCK TO DOWNLOAD</a>
+							<h4>Resume Documents:</h4>
+							<a href= "Resume_Shen Huang_2019-02-02.pdf" download>PDF</a>
+							<a href= "Resume_Shen Huang_2019-02-02.docx" download>DOCX</a>
 						</div>
 					</div>
 					<div class = "miniContents">
@@ -174,9 +242,10 @@
 				</div>
 			</div>
 		</div>
-		<h1 class = "mainTitle" id = "Education">
+		<div id = "Education"></div>
+		<h2 class = "mainTitle">
 			EDUCATION
-		</h1>
+		</h2>
 		<div class = "board">
 			<div class = "panel">
 				<div class = "contents">
@@ -201,9 +270,10 @@
 				</div>
 			</div>
 		</div>
-		<h1 class = "mainTitle" id = "Education">
+		<div id = "Skills"></div>
+		<h2 class = "mainTitle">
 			SKILLS
-		</h1>
+		</h2>
 		<div class = "board">
 			<div class = "panel">
 				<div class = "contents">
@@ -417,9 +487,10 @@
 				</div>
 			</div>
 		</div>
-		<h1 class = "mainTitle" id = "Education">
+		<div id = "Work Experience"></div>
+		<h2 class = "mainTitle">
 			WORK EXPERIENCE
-		</h1>
+		</h2>
 		<div class = "board">
 			<div class = "panel">
 				<div class = "contents">
@@ -452,9 +523,10 @@
 				</div>
 			</div>
 		</div>
-		<h1 class = "mainTitle" id = "Education">
-				PAST RESEARCH & PROJECTS
-		</h1>
+		<div id = "Past Research & Projects"></div>
+		<h2 class = "mainTitle">
+			PAST RESEARCH & PROJECTS
+		</h2>
 		<div class = "board">
 			<div class = "panel">
 				<div class = "contents">
@@ -535,4 +607,52 @@
 			</div>
 		</div>
 	</body>
+	<script>
+
+		var headline = document.getElementById("HEADLINE");
+		var brd = document.createElement("DIV");
+		brd.setAttribute('class', 'navigatorBoard');
+		headline.parentNode.insertBefore(brd, headline);
+
+		function newNavigationButton(name, id)
+		{
+			var pnl = document.createElement("DIV");
+			pnl.setAttribute('class', 'navigatorPanel');
+			var btn = document.createElement("BUTTON");
+			btn.setAttribute('class', 'navigatorButton');
+			var text = document.createTextNode(name);
+			btn.onclick = function() {
+			var element = document.getElementById(id);
+				element.scrollIntoView({ block: 'start',  behavior: 'smooth' });
+			}
+			btn.appendChild(text);
+			pnl.appendChild(btn);
+			brd.appendChild(pnl);
+		}
+
+		var counter = 0;
+		var timestep = 500;
+
+		setTimeout(function(){
+			newNavigationButton("CONTACT INFORMATION", "Contact Information");
+		}, counter);
+		counter += timestep;
+		setTimeout(function(){
+			newNavigationButton("EDUCATION", "Education");
+		}, counter);
+		counter += timestep;
+		setTimeout(function(){
+			newNavigationButton("SKILLS", "Skills");
+		}, counter);
+		counter += timestep;
+		setTimeout(function(){
+			newNavigationButton("WORK EXPERIENCE", "Work Experience");
+		}, counter);
+		counter += timestep;
+		setTimeout(function(){
+			newNavigationButton("PAST RESEARCH & PROJECT", "Past Research & Project");
+		}, counter);
+		counter += timestep;	
+
+	</script>
 </html>
