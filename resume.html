@@ -18,12 +18,14 @@
 				100% {top : 0vh; opacity : 1.0;}
 			}
 			@keyframes 			panel-hover-animation	{
-				0% {background-color : #3d495b; opacity : 0.7;}
-				100% {background-color : #7893ba; opacity : 1.0;}
+				0% {border-color : #abbdd6;}
+				50% {border-color : white;}
+				100% {border-color : #abbdd6;}
 			}
 			@-webkit-keyframes	panel-hover-animation	{
-				0% {background-color : #3d495b; opacity : 0.7;}
-				100% {background-color : #7893ba; opacity : 1.0;}
+				0% {border-color : #abbdd6;}
+				50% {border-color : white;}
+				100% {border-color : #abbdd6;}
 			}
 			@keyframes 			panel-unhover-animation	{
 				0% {background-color : #7893ba; opacity : 1.0;}
@@ -65,6 +67,9 @@
 				background : #3d495b;
 				opacity : 0.7;
 				border-radius : 10px;
+				border : 3px;
+				border-style : solid;
+				border-color : #3d495b;
 				animation-name : panel-unhover-animation;
 				animation-timing-function : ease-out;
 				animation-duration : 1s;
@@ -72,9 +77,11 @@
 			.panel:hover {
 				background : #7893ba;
 				opacity : 1.0;
+				border-color : white;
 				animation-name : panel-hover-animation;
-				animation-timing-function : ease-out;
-				animation-duration : 0s;
+				animation-timing-function : ease;
+				animation-duration : 3s;
+				animation-iteration-count : infinite;
 			}
 			.contents {
 				position : relative;
