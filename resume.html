@@ -66,14 +66,14 @@
 				opacity : 0.7;
 				border-radius : 10px;
 				animation-name : panel-unhover-animation;
-				animation-timing-function : ease-in;
+				animation-timing-function : ease-out;
 				animation-duration : 1s;
 			}
 			.panel:hover {
 				background : #7893ba;
 				opacity : 1.0;
 				animation-name : panel-hover-animation;
-				animation-timing-function : ease-in;
+				animation-timing-function : ease-out;
 				animation-duration : 0s;
 			}
 			.contents {
@@ -165,16 +165,13 @@
 			}
 			.navigatorPanel {
 				animation-name : navbtn-flyin-animation;
-				animation-timing-function : ease-out;
-				animation-duration : 1.5s;
+				animation-timing-function : ease-in-out;
+				animation-duration : 2.5s;
 				position : relative;
 				left : 0%;
 				opacity : 0.1;
 			}
 			.navigatorPanel:hover {
-				animation-name : navbtn-flyin-animation;
-				animation-timing-function : ease-out;
-				animation-duration : 1.5s;
 				opacity : 1.0;
 			}
 			.navigatorButton {
@@ -188,9 +185,6 @@
 				background : #c6edf4;
 				border : none;
 				border-radius : 3px;
-			}
-			.navigator:hover {
-				
 			}
 			.plainLine{
 				border: 0;
