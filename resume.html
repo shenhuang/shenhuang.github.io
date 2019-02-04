@@ -108,9 +108,14 @@
 				position : relative;
 				left : -30px;
 				width : 100%;
-				animation-name : board-setup-animation;
-				animation-timing-function : ease-out;
-				animation-duration : 1.5s;
+
+			}
+			@media screen and (min-width: 480px) {
+				.board {
+					animation-name : board-setup-animation;
+					animation-timing-function : ease-out;
+					animation-duration : 1.5s;
+				}
 			}
 			.panel {
 				background : #3d495b;
