@@ -127,9 +127,15 @@
 				background : #7893ba;
 				opacity : 1.0;
 				border-color : white;
-				animation-name : panel-hover-animation;
-				animation-timing-function : ease;
-				animation-duration : 3s;
+
+				
+			}
+			@media screen and (min-width: 480px) {
+				.panel:hover {
+					animation-name : panel-hover-animation;
+					animation-timing-function : ease;
+					animation-duration : 3s;
+				}
 			}
 			.contents {
 				position : relative;
@@ -782,8 +788,8 @@
 			fwkPtc.position = [];
 			fwkPtc.position.x = x;
 			fwkPtc.position.y = y;
-			if(seeds == null)
-				seeds = [];
+			if(particles == null)
+				particles = [];
 			particles.push(fwkPtc);
 			return fwkPtc;
 		}
