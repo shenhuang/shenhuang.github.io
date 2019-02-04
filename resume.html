@@ -119,14 +119,19 @@
 				border : 3px;
 				border-style : solid;
 				border-color : #3d495b;
-				animation-name : panel-unhover-animation;
-				animation-timing-function : ease-out;
-				animation-duration : 1s;
+				
 			}
 			@media screen and (max-width: 480px) {
 				.panel {
 					background : #7893ba;
 					opacity : 1.0;
+				}
+			}
+			@media screen and (min-width: 480px) {
+				.panel {
+					animation-name : panel-unhover-animation;
+					animation-timing-function : ease-out;
+					animation-duration : 1s;
 				}
 			}
 			.panel:hover {
