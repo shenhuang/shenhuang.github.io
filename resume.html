@@ -108,14 +108,9 @@
 				position : relative;
 				left : -30px;
 				width : 100%;
-
-			}
-			@media screen and (min-width: 480px) {
-				.board {
-					animation-name : board-setup-animation;
-					animation-timing-function : ease-out;
-					animation-duration : 1.5s;
-				}
+				animation-name : board-setup-animation;
+				animation-timing-function : ease-out;
+				animation-duration : 1.5s;
 			}
 			.panel {
 				background : #3d495b;
@@ -124,28 +119,23 @@
 				border : 3px;
 				border-style : solid;
 				border-color : #3d495b;
-				
+				animation-name : panel-unhover-animation;
+				animation-timing-function : ease-out;
+				animation-duration : 1s;
 			}
-			@media screen and (min-width: 480px) {
+			@media screen and (max-width: 480px) {
 				.panel {
-					animation-name : panel-unhover-animation;
-					animation-timing-function : ease-out;
-					animation-duration : 1s;
+					background : #7893ba;
+					opacity : 1.0;
 				}
 			}
 			.panel:hover {
 				background : #7893ba;
 				opacity : 1.0;
 				border-color : white;
-
-				
-			}
-			@media screen and (min-width: 480px) {
-				.panel:hover {
-					animation-name : panel-hover-animation;
-					animation-timing-function : ease;
-					animation-duration : 3s;
-				}
+				animation-name : panel-hover-animation;
+				animation-timing-function : ease;
+				animation-duration : 3s;
 			}
 			.contents {
 				position : relative;
