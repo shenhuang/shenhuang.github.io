@@ -4,7 +4,124 @@
 <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
 <html>
 	<head>
+		<style>
+			.loadingTitle {
+				z-index : 99;
+				background : #171b21;
+				text-align : center;
+				color : #efefef;
+				font-family : Lucida Grande;
+				font-weight : bold;
+				border-radius : 3px;
+				height : 40px;
+				line-height : 40px;
+				position : -webkit-sticky;
+				position : sticky;
+				top : 0px;
+			}
+			.loadingBoard {
+				z-index : 99;
+				position : absolute;
+				top : 50px;
+				left : -20px;
+				width : 100%;
+			}
+			.loadingPanel {
+				z-index : 99;
+				background : #3d495b;
+				opacity : 1.0;
+				position : relative;
+				width : 90%;
+				height : 400px;
+				border-radius : 25px 25px 25px 25px;
+				border : 3px;
+				border-style : solid;
+				border-color : #3d495b;
+			}
+			.loadingHeadLines {
+				z-index : 99;
+				opacity : 0.3;
+				background : #171b21;
+				text-align : center;
+				color : #efefef;
+				font-family : Lucida Grande;
+				font-weight : bold;
+				border-radius : 3px;
+				height : 30px;
+				line-height : 30px;
+				position : -webkit-sticky;
+				position : relative;
+				width : 30%;
+				top : 0px;
+			}
+			.loadingContents {
+				z-index : 99;
+				opacity : 0.3;
+				background : #171b21;
+				text-align : center;
+				color : #efefef;
+				font-family : Lucida Grande;
+				font-weight : bold;
+				border-radius : 3px;
+				height : 20px;
+				line-height : 20px;
+				position : -webkit-sticky;
+				position : relative;
+				width : 80%;
+				top : 0px;
+			}
+		</style>
 		<title>SHEN HUANG'S RESUME</title>
+		<div id = "overlay">
+			<h2 class = "loadingTitle">
+				LOADING...
+			</h2>
+			<div class = "loadingBoard">
+				<div class = "loadingPanel">
+					<div class = "loadingHeadLines"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingHeadLines"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+				</div>
+				<div class = "loadingPanel">
+					<div class = "loadingHeadLines"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingHeadLines"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+				</div>
+				<div class = "loadingPanel">
+					<div class = "loadingHeadLines"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingHeadLines"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+					<div class = "loadingContents"></div>
+				</div>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#overlay').fadeOut();
+			});
+		</script>
+	</head>
 		<style>
 			body	{
 				background-color : #000f04;
@@ -87,14 +204,14 @@
 			h4 {
 				font-family : Arial;
 			}
-			img {
+			img.outLined {
 				opacity : 0.5;
 				border-radius : 5px;
 				border : 2px;
 				border-style : solid;
 				border-color : gray;
 			}
-			img:hover {
+			img.outLined:hover {
 				opacity : 1.0;
 				border : 2px;
 				border-style : solid;
@@ -221,7 +338,7 @@
 				font-family : Arial;
 			}
 			.navigatorBoard {
-				z-index : 10;
+				z-index : 50;
 				position : -webkit-sticky;
 				position : sticky;
 				height : 35px;
@@ -261,7 +378,7 @@
 				background-color : #070707;
 			}
 			.fireWorkParticle {
-				z-index : 999;
+				z-index : 99;
 				position: absolute;
 				height : 5px;
 				width : 5px;
@@ -272,7 +389,7 @@
 				animation-iteration-count : infinite;
 			}
 			.fireWorkSeed {
-				z-index : 999;
+				z-index : 99;
 				position: absolute;
 				height : 5px;
 				width : 5px;
@@ -659,7 +776,7 @@
 			<div class = "panel">
 				<div class = "contents">
 					<p><h3>RUN!!! a Multi-player Game</h3></p>
-					<img src="run_around.gif" alt="Run Demo" width = "40%">
+					<img class = "outLined" src="run_around.gif" alt="Run Demo" width = "40%">
 					<p>• Wrote a customizable multi-layered perceptron when Unity Machine Learning framework is still under development, the existing Artificial Neural Network is trained using Genetic Algorithm.</p>
 					<h4>Involved Skills</h4>
 					<p><skill>HTML Canvas</skill>, <skill>Java Script</skill>, <skill>Node.js</skill>, <skill>Server Hosting</skill></p>
@@ -672,9 +789,9 @@
 			<div class = "panel">
 				<div class = "contents">
 					<p><h3>DIG!!! a Lava Run Game</h3></p>
-					<img src="food.gif" alt="Eat Food" width = "30%">
-					<img src="bomb.gif" alt="Place Bomb" width = "30%">
-					<img src="icewall.gif" alt="Place Ice Wall" width = "30%">
+					<img class = "outLined" src="food.gif" alt="Eat Food" width = "30%">
+					<img class = "outLined" src="bomb.gif" alt="Place Bomb" width = "30%">
+					<img class = "outLined" src="icewall.gif" alt="Place Ice Wall" width = "30%">
 					<p>• Wrote a procedurally generated lava run game where the player digs for gold, food and life.</p>
 					<p>• The player can dig and run faster by consuming the hunger meter faster, sometimes the player can find food or food packages which replenishes the hunger meter.</p>
 					<p>• The player can find random amounts of gold in some of the blocks, which can be used to purchase power-ups in the future.</p>
