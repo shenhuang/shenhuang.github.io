@@ -11,10 +11,11 @@
 				text-align : center;
 				color : #efefef;
 				font-family : Lucida Grande;
+				font-size : 50px;
 				font-weight : bold;
 				border-radius : 3px;
-				height : 40px;
-				line-height : 40px;
+				height : 80px;
+				line-height : 80px;
 				position : -webkit-sticky;
 				position : sticky;
 				top : 0px;
@@ -22,8 +23,8 @@
 			.loadingBoard {
 				z-index : 99;
 				position : absolute;
-				top : 50px;
-				left : -20px;
+				top : 110px;
+				left : 0px;
 				width : 100%;
 			}
 			.loadingPanel {
@@ -69,6 +70,9 @@
 				position : relative;
 				width : 80%;
 				top : 0px;
+			}
+			.hideUntilLoad {
+				display : none;
 			}
 		</style>
 		<title>SHEN HUANG'S RESUME</title>
@@ -118,7 +122,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script>
 			$(document).ready(function(){
-				$('#overlay').fadeOut();
+				//$('#overlay').fadeOut();
+				$("div#contents").removeClass("hideUntilLoad");
 			});
 		</script>
 	</head>
@@ -402,416 +407,418 @@
 		</style>
 	</head>
 	<body>
-		<h1 class = "headline" id = "HEADLINE">
-			SHEN HUANG'S RESUME
-		</h1>
-		<div id = "Contact Information"></div>
-		<h2 class = "mainTitle">
-			CONTACT INFORMATION
-		</h2>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<div class = "miniContents">
-						<div class = "contents">
-							<h4>Cell Phone:</h4>
-							<a href= "tel:7472064072">(747) 206-4072</a>
+		<div id = "contents" class = "hideUntilLoad">
+			<h1 class = "headline" id = "HEADLINE">
+				SHEN HUANG'S RESUME
+			</h1>
+			<div id = "Contact Information"></div>
+			<h2 class = "mainTitle">
+				CONTACT INFORMATION
+			</h2>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<div class = "miniContents">
+							<div class = "contents">
+								<h4>Cell Phone:</h4>
+								<a href= "tel:7472064072">(747) 206-4072</a>
+							</div>
+						</div>
+						<div class = "miniContents">
+							<div class = "contents">
+								<h4>Email:</h4>
+								<a href= "mailto:shenhuang@live.ca" download>shenhuang@live.ca</a>
+							</div>
+						</div>
+						<div class = "miniContents">
+							<div class = "contents">
+								<h4>Personal Website:</h4>
+								<a href= "https://shenhuang.github.io/">https://shenhuang.github.io/</a>
+							</div>
+						</div>
+						<div class = "miniContents">
+							<div class = "contents">
+								<h4>Resume Documents:</h4>
+								<a href= "Resume_Shen Huang_2019-02-02.pdf" download>PDF</a>
+								|
+								<a href= "Resume_Shen Huang_2019-02-02.docx" download>DOCX</a>
+							</div>
+						</div>
+						<div class = "miniContents">
+							<div class = "contents">
+								<h4>LinkedIn:</h4>
+								<a href= "https://www.linkedin.com/in/shen-h-03593618/" download>https://www.linkedin.com/in/shen-h-03593618/</a>
+							</div>
 						</div>
 					</div>
-					<div class = "miniContents">
-						<div class = "contents">
-							<h4>Email:</h4>
-							<a href= "mailto:shenhuang@live.ca" download>shenhuang@live.ca</a>
-						</div>
-					</div>
-					<div class = "miniContents">
-						<div class = "contents">
-							<h4>Personal Website:</h4>
-							<a href= "https://shenhuang.github.io/">https://shenhuang.github.io/</a>
-						</div>
-					</div>
-					<div class = "miniContents">
-						<div class = "contents">
-							<h4>Resume Documents:</h4>
-							<a href= "Resume_Shen Huang_2019-02-02.pdf" download>PDF</a>
-							|
-							<a href= "Resume_Shen Huang_2019-02-02.docx" download>DOCX</a>
-						</div>
-					</div>
-					<div class = "miniContents">
-						<div class = "contents">
-							<h4>LinkedIn:</h4>
-							<a href= "https://www.linkedin.com/in/shen-h-03593618/" download>https://www.linkedin.com/in/shen-h-03593618/</a>
-						</div>
+				</div>
+			</div>
+			<div id = "Education"></div>
+			<h2 class = "mainTitle">
+				EDUCATION
+			</h2>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<p><h3>California State University, Northridge</h3></p>
+						<p>Northridge, California, USA</p>
+						<p><b>Time: </b>September 2017 - May 2019</p>
+						<p><b>Degree: </b>Master of Computer Science</p>
+						<hr class = "plainLine">
+						<p><h4 align = "center">Courseworks</h4></p>
+						<hr class = "plainLine">
+						<p><u>Introduction to Operating System</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Software Engineering Labortory</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Algorithm Design</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to Software Engineering Project</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Concepts of Programming Language</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Data Structure and Algorithm</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Machine Learning</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Automata Languages and Computation</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Software Verification and Validation</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Advanced Topics in Computation Theory</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Computer System Architecture</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Software Architecture and Design</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Computer System Security</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Artificial Intelligence</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Expert Systems</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Advanced Topics in Software Engineering</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Directed Graduate Research</u></p>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div id = "Education"></div>
-		<h2 class = "mainTitle">
-			EDUCATION
-		</h2>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<p><h3>California State University, Northridge</h3></p>
-					<p>Northridge, California, USA</p>
-					<p><b>Time: </b>September 2017 - May 2019</p>
-					<p><b>Degree: </b>Master of Computer Science</p>
-					<hr class = "plainLine">
-					<p><h4 align = "center">Courseworks</h4></p>
-					<hr class = "plainLine">
-					<p><u>Introduction to Operating System</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Software Engineering Labortory</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Algorithm Design</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to Software Engineering Project</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Concepts of Programming Language</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Data Structure and Algorithm</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Machine Learning</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Automata Languages and Computation</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Software Verification and Validation</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Advanced Topics in Computation Theory</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Computer System Architecture</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Software Architecture and Design</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Computer System Security</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Artificial Intelligence</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Expert Systems</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Advanced Topics in Software Engineering</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Directed Graduate Research</u></p>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<p><h3>Queens University</h3></p>
+						<p>Kingston, Ontario, Canada</p>
+						<p><b>Time: </b>September 2010 - May 2015</p>
+						<p><b>Degree: </b>Bachelor of Electrical Engineering</p>
+						<hr class = "plainLine">
+						<p><h4 align = "center">Courseworks</h4></p>
+						<hr class = "plainLine">
+						<p><u>Linear Algebra</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Calculus</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to English Literature</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to Physics</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to Computer Science I</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to Computer Science II</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Differential Equations</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Earth and Engineering</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to Physics</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Complex Analysis</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electromagnetics</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Quantum Mechanics</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electronics I</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electronics II</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electric Circuits</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Numerical Methods and Optimization</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Object Oriented Programming</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Microprocessor Interfacing and Embedded Systems</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Digital Systems</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Computer Architecture</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Fundamentals of Information Structures</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u></u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electric Machines</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Energy Power Electronics</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Sensors and Actuators</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Control System</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Power Systems</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Digital Signal Processing I</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Digital Signal Processing II</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Probability and Random Processes</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Mechatronics Project</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Engineering Design I</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Engineering Design II</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electrical and Computer Engineering Design</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electrical Engineering Senior Design Project</u></p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<p><h3>Queens University</h3></p>
-					<p>Kingston, Ontario, Canada</p>
-					<p><b>Time: </b>September 2010 - May 2015</p>
-					<p><b>Degree: </b>Bachelor of Electrical Engineering</p>
-					<hr class = "plainLine">
-					<p><h4 align = "center">Courseworks</h4></p>
-					<hr class = "plainLine">
-					<p><u>Linear Algebra</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Calculus</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to English Literature</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to Physics</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to Computer Science I</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to Computer Science II</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Differential Equations</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Earth and Engineering</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Introduction to Physics</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Complex Analysis</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electromagnetics</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Quantum Mechanics</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electronics I</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electronics II</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electric Circuits</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Numerical Methods and Optimization</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Object Oriented Programming</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Microprocessor Interfacing and Embedded Systems</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Digital Systems</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Computer Architecture</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Fundamentals of Information Structures</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u></u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electric Machines</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Energy Power Electronics</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Sensors and Actuators</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Control System</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Power Systems</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Digital Signal Processing I</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Digital Signal Processing II</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Probability and Random Processes</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Mechatronics Project</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Engineering Design I</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Engineering Design II</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electrical and Computer Engineering Design</u>&nbsp&nbsp&nbsp&nbsp&nbsp <u>Electrical Engineering Senior Design Project</u></p>
+			<div id = "Skills"></div>
+			<h2 class = "mainTitle">
+				SKILLS
+			</h2>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<table class = "skillTable">
+							<h3>Front End Web Development</h3>
+							<tr>
+								<th>
+									<span class = "leftSpan">Skill</span>
+									<span class = "rightSpan">Experience</span>
+									<span class = "midSpan">Tools, Frameworks</span>
+								</th>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">HTML</span>
+									<span class = "rightSpan">10+ Years</span>
+									<span class = "midSpan">Front Page, Dreamweaver, Ionic</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">CSS</span>
+									<span class = "rightSpan">3+ Years</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Java Script</span>
+									<span class = "rightSpan">4+ Years</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Selenium</span>
+									<span class = "rightSpan">1+ Years</span>
+								</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div id = "Skills"></div>
-		<h2 class = "mainTitle">
-			SKILLS
-		</h2>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<table class = "skillTable">
-						<h3>Front End Web Development</h3>
-						<tr>
-							<th>
-								<span class = "leftSpan">Skill</span>
-								<span class = "rightSpan">Experience</span>
-								<span class = "midSpan">Tools, Frameworks</span>
-							</th>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">HTML</span>
-								<span class = "rightSpan">10+ Years</span>
-								<span class = "midSpan">Front Page, Dreamweaver, Ionic</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">CSS</span>
-								<span class = "rightSpan">3+ Years</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Java Script</span>
-								<span class = "rightSpan">4+ Years</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Selenium</span>
-								<span class = "rightSpan">1+ Years</span>
-							</td>
-						</tr>
-					</table>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<table class = "skillTable">
+							<h3>Back End Web Development</h3>
+							<tr>
+								<th>
+									<span class = "leftSpan">Skill</span>
+									<span class = "rightSpan">Experience</span>
+									<span class = "midSpan">Tools, Frameworks</span>
+								</th>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Node.js</span>
+									<span class = "rightSpan">2+ Years</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Java</span>
+									<span class = "rightSpan">2+ Years</span>
+									<span class = "midSpan">Tomcat</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Go</span>
+									<span class = "rightSpan">1+ Years</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">AWS</span>
+									<span class = "rightSpan">1+ Years</span>
+									<span class = "midSpan">DynamoDB, S3</span>
+								</td>
+							</tr>
+						</table>		
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<table class = "skillTable">
-						<h3>Back End Web Development</h3>
-						<tr>
-							<th>
-								<span class = "leftSpan">Skill</span>
-								<span class = "rightSpan">Experience</span>
-								<span class = "midSpan">Tools, Frameworks</span>
-							</th>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Node.js</span>
-								<span class = "rightSpan">2+ Years</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Java</span>
-								<span class = "rightSpan">2+ Years</span>
-								<span class = "midSpan">Tomcat</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Go</span>
-								<span class = "rightSpan">1+ Years</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">AWS</span>
-								<span class = "rightSpan">1+ Years</span>
-								<span class = "midSpan">DynamoDB, S3</span>
-							</td>
-						</tr>
-					</table>		
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<table class = "skillTable">
+							<h3>Data Analysis</h3>
+							<tr>
+								<th>
+									<span class = "leftSpan">Skills</span>
+									<span class = "rightSpan">Experience</span>
+									<span class = "midSpan">Tools, Frameworks</span>
+								</th>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">MATLAB</span>
+									<span class = "rightSpan">6+ Years</span>
+									<span class = "midSpan">Simulink</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Octave</span>
+									<span class = "rightSpan">2+ Years</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Python</span>
+									<span class = "rightSpan">2+ Years</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">WEKA</span>
+									<span class = "rightSpan">2+ Years</span>
+								</td>
+							</tr>
+						</table>		
+					</div>
+				</div>
+			</div>		
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<table class = "skillTable">
+							<h3>General Programming</h3>
+							<tr>
+								<th>
+									<span class = "leftSpan">Skill</span>
+									<span class = "rightSpan">Experience</span>
+									<span class = "midSpan">Tools, Frameworks</span>
+								</th>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Java</span>
+									<span class = "rightSpan">7+ Years</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Python</span>
+									<span class = "rightSpan">3+ Years</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">C#</span>
+									<span class = "rightSpan">4+ Years</span>
+									<span class = "midSpan">Unity, Mapbox, .NET Framework</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">C</span>
+									<span class = "rightSpan">3+ Years</span>
+									<span class = "midSpan">RISC Instructions for Microprocessors</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Arduino</span>
+									<span class = "rightSpan">3+ Years</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Prolog</span>
+									<span class = "rightSpan">1+ Years</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Scheme</span>
+									<span class = "rightSpan">1+ Years</span>
+								</td>
+							</tr>
+						</table>		
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<table class = "skillTable">
-						<h3>Data Analysis</h3>
-						<tr>
-							<th>
-								<span class = "leftSpan">Skills</span>
-								<span class = "rightSpan">Experience</span>
-								<span class = "midSpan">Tools, Frameworks</span>
-							</th>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">MATLAB</span>
-								<span class = "rightSpan">6+ Years</span>
-								<span class = "midSpan">Simulink</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Octave</span>
-								<span class = "rightSpan">2+ Years</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Python</span>
-								<span class = "rightSpan">2+ Years</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">WEKA</span>
-								<span class = "rightSpan">2+ Years</span>
-							</td>
-						</tr>
-					</table>		
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<table class = "skillTable">
+							<h3>Computer Science, Electrical Engineering & Others</h3>
+							<tr>
+								<th>
+									<span class = "leftSpan">Skills</span>
+								</th>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Microsoft Word, Microsoft Excel, Microsoft Power Point</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Artificial Intelligence, Algorithms, Data Science</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span class = "leftSpan">Renewable Energy, Battery Management, PCB Design, Microprocessor Design, Soldering</span>
+								</td>
+							</tr>
+						</table>		
+					</div>
 				</div>
 			</div>
-		</div>		
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<table class = "skillTable">
-						<h3>General Programming</h3>
-						<tr>
-							<th>
-								<span class = "leftSpan">Skill</span>
-								<span class = "rightSpan">Experience</span>
-								<span class = "midSpan">Tools, Frameworks</span>
-							</th>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Java</span>
-								<span class = "rightSpan">7+ Years</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Python</span>
-								<span class = "rightSpan">3+ Years</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">C#</span>
-								<span class = "rightSpan">4+ Years</span>
-								<span class = "midSpan">Unity, Mapbox, .NET Framework</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">C</span>
-								<span class = "rightSpan">3+ Years</span>
-								<span class = "midSpan">RISC Instructions for Microprocessors</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Arduino</span>
-								<span class = "rightSpan">3+ Years</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Prolog</span>
-								<span class = "rightSpan">1+ Years</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Scheme</span>
-								<span class = "rightSpan">1+ Years</span>
-							</td>
-						</tr>
-					</table>		
+			<div id = "Work Experience"></div>
+			<h2 class = "mainTitle">
+				WORK EXPERIENCE
+			</h2>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<p><h3>Graduate Assistant</h3></p>
+						<p>California State University, Northridge</p>
+						<p><b>Time: </b>September 2018 - December 2018</p>
+						<p>• Assisted the professor with research tasks including code production. Projects and research are NDA protected.</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<table class = "skillTable">
-						<h3>Computer Science, Electrical Engineering & Others</h3>
-						<tr>
-							<th>
-								<span class = "leftSpan">Skills</span>
-							</th>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Microsoft Word, Microsoft Excel, Microsoft Power Point</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Artificial Intelligence, Algorithms, Data Science</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<span class = "leftSpan">Renewable Energy, Battery Management, PCB Design, Microprocessor Design, Soldering</span>
-							</td>
-						</tr>
-					</table>		
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<p><h3>Software Engineer Internship</h3></p>
+						<p>CETC Motor, Shanghai</p>
+						<p><b>Time: </b>July 2013 - September 2015</p>
+						<p>• Worked on a compiler to support floating point calculation by modifying the lexical and syntax analyzer.</p>
+						<p>• Added English and Chinese support for help documents.</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div id = "Work Experience"></div>
-		<h2 class = "mainTitle">
-			WORK EXPERIENCE
-		</h2>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<p><h3>Graduate Assistant</h3></p>
-					<p>California State University, Northridge</p>
-					<p><b>Time: </b>September 2018 - December 2018</p>
-					<p>• Assisted the professor with research tasks including code production. Projects and research are NDA protected.</p>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<p><h3>Electrical Engineer Internship</h3></p>
+						<p>State Grid Corporation of China</p>
+						<p><b>Time: </b>July 2012 - September 2012</p>
+						<p>• Worked on a compiler to support floating point calculation by modifying the lexical and syntax analyzer.</p>
+						<p>• Added English and Chinese support for help documents.</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<p><h3>Software Engineer Internship</h3></p>
-					<p>CETC Motor, Shanghai</p>
-					<p><b>Time: </b>July 2013 - September 2015</p>
-					<p>• Worked on a compiler to support floating point calculation by modifying the lexical and syntax analyzer.</p>
-					<p>• Added English and Chinese support for help documents.</p>
+			<div id = "Past Research & Projects"></div>
+			<h2 class = "mainTitle">
+				PAST RESEARCH & PROJECTS
+			</h2>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<p><h3>Improved Classification Algorithms</h3></p>
+						<p>• Invented a math theorem which is later applied to improve conventional classification models. The accuracy was improved from 72% to 100% for the target data set. The average case theoretical error reduction should be 300 times better.</p>
+						<p>• Participants were found by communicating with random people on Campus.</p>
+						<h4>Involved Skills</h4>
+						<p><skill>HTML5 Canvas</skill>, <skill>Node.js</skill>, <skill>Microsoft Excel</skill>, <skill>Python</skill>, <skill>WEKA</skill>, <skill>Selenium</skill></p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<p><h3>Electrical Engineer Internship</h3></p>
-					<p>State Grid Corporation of China</p>
-					<p><b>Time: </b>July 2012 - September 2012</p>
-					<p>• Worked on a compiler to support floating point calculation by modifying the lexical and syntax analyzer.</p>
-					<p>• Added English and Chinese support for help documents.</p>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<p><h3>Back Propagation Artificial Neural Network In Unity</h3></p>
+						<a href = "https://github.com/shenhuang/Connect4/blob/master/Connect%204%20ANN/Assets/Engine.cs">Source Code of Back Propagation Artificial Neural Network In Unity</a>
+						<p>• Wrote a customizable multi-layered perceptron when Unity Machine Learning framework is still under development, the existing Artificial Neural Network is trained using Genetic Algorithm.</p>
+						<h4>Involved Skills</h4>
+						<p><skill>Unity</skill>, <skill>C#</skill></p>
+						<h4>Involved Knowlodge</h4>
+						<p><skill>Artificial Neural Network</skill>, <skill>Back Propagation</skill>, <skill>Neural Network Training</skill>, <skill>Box-Muller Transform</skill></p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div id = "Past Research & Projects"></div>
-		<h2 class = "mainTitle">
-			PAST RESEARCH & PROJECTS
-		</h2>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<p><h3>Improved Classification Algorithms</h3></p>
-					<p>• Invented a math theorem which is later applied to improve conventional classification models. The accuracy was improved from 72% to 100% for the target data set. The average case theoretical error reduction should be 300 times better.</p>
-					<p>• Participants were found by communicating with random people on Campus.</p>
-					<h4>Involved Skills</h4>
-					<p><skill>HTML5 Canvas</skill>, <skill>Node.js</skill>, <skill>Microsoft Excel</skill>, <skill>Python</skill>, <skill>WEKA</skill>, <skill>Selenium</skill></p>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<p><h3>Queens ECE Annual Robot Competition, 1st Place</h3></p>
+						<p>• Designed a slam-dunk robot, code based on Arduino. Robot moves and grabs with servo motors utilizing Pulse Width Modulation. Robot senses the environment through touch sensor and distance sensors, and therefore was designed to have a close loop control system to adjust the speed for optimal performance.</p>
+						<h4>Involved Skills</h4>
+						<p><skill>Arduino Programming</skill>, <skill>Wireless Programming</skill></p>
+						<h4>Involved Knowlodge</h4>
+						<p><skill>Pulse Width Modulation</skill>, <skill>Close Loop Control System</skill>, <skill>Inferred Sensors</skill>, <skill>Pressure Sensors</skill>, <skill>Wireless Communication Modules</skill></p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<p><h3>Back Propagation Artificial Neural Network In Unity</h3></p>
-					<a href = "https://github.com/shenhuang/Connect4/blob/master/Connect%204%20ANN/Assets/Engine.cs">Source Code of Back Propagation Artificial Neural Network In Unity</a>
-					<p>• Wrote a customizable multi-layered perceptron when Unity Machine Learning framework is still under development, the existing Artificial Neural Network is trained using Genetic Algorithm.</p>
-					<h4>Involved Skills</h4>
-					<p><skill>Unity</skill>, <skill>C#</skill></p>
-					<h4>Involved Knowlodge</h4>
-					<p><skill>Artificial Neural Network</skill>, <skill>Back Propagation</skill>, <skill>Neural Network Training</skill>, <skill>Box-Muller Transform</skill></p>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<p><h3>RUN!!! a Multi-player Game</h3></p>
+						<img class = "outLined" src="run_around.gif" alt="Run Demo" width = "40%">
+						<p>• Wrote a customizable multi-layered perceptron when Unity Machine Learning framework is still under development, the existing Artificial Neural Network is trained using Genetic Algorithm.</p>
+						<h4>Involved Skills</h4>
+						<p><skill>HTML Canvas</skill>, <skill>Java Script</skill>, <skill>Node.js</skill>, <skill>Server Hosting</skill></p>
+						<h4>Involved Knowlodge</h4>
+						<p><skill>Login Management</skill>, <skill>Secure Data Transmission</skill>, <skill>Concurrency Management</skill>, <skill>Collision Detection</skill>, <skill>Fog of War Generation</skill>, <skill>Node.js Child Process</skill></p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<p><h3>Queens ECE Annual Robot Competition, 1st Place</h3></p>
-					<p>• Designed a slam-dunk robot, code based on Arduino. Robot moves and grabs with servo motors utilizing Pulse Width Modulation. Robot senses the environment through touch sensor and distance sensors, and therefore was designed to have a close loop control system to adjust the speed for optimal performance.</p>
-					<h4>Involved Skills</h4>
-					<p><skill>Arduino Programming</skill>, <skill>Wireless Programming</skill></p>
-					<h4>Involved Knowlodge</h4>
-					<p><skill>Pulse Width Modulation</skill>, <skill>Close Loop Control System</skill>, <skill>Inferred Sensors</skill>, <skill>Pressure Sensors</skill>, <skill>Wireless Communication Modules</skill></p>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<p><h3>DIG!!! a Lava Run Game</h3></p>
+						<img class = "outLined" src="food.gif" alt="Eat Food" width = "30%">
+						<img class = "outLined" src="bomb.gif" alt="Place Bomb" width = "30%">
+						<img class = "outLined" src="icewall.gif" alt="Place Ice Wall" width = "30%">
+						<p>• Wrote a procedurally generated lava run game where the player digs for gold, food and life.</p>
+						<p>• The player can dig and run faster by consuming the hunger meter faster, sometimes the player can find food or food packages which replenishes the hunger meter.</p>
+						<p>• The player can find random amounts of gold in some of the blocks, which can be used to purchase power-ups in the future.</p>
+						<p>• The player can place ice walls at choke points to temporarily block the flowing lava.</p>
+						<h4>Involved Skills</h4>
+						<p><skill>Unity</skill>, <skill>C#</skill>, <skill>Unity Animator</skill>, <skill>Unity Mobile Sensors</skill></p>
+						<h4>Involved Knowlodge</h4>
+						<p><skill>Unit Testing</skill>, <skill>Procedural Generation</skill>, <skill>Stickiness</skill>, <skill>Computer Graphics</skill>, <skill>Computer Animations</skill></p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<p><h3>RUN!!! a Multi-player Game</h3></p>
-					<img class = "outLined" src="run_around.gif" alt="Run Demo" width = "40%">
-					<p>• Wrote a customizable multi-layered perceptron when Unity Machine Learning framework is still under development, the existing Artificial Neural Network is trained using Genetic Algorithm.</p>
-					<h4>Involved Skills</h4>
-					<p><skill>HTML Canvas</skill>, <skill>Java Script</skill>, <skill>Node.js</skill>, <skill>Server Hosting</skill></p>
-					<h4>Involved Knowlodge</h4>
-					<p><skill>Login Management</skill>, <skill>Secure Data Transmission</skill>, <skill>Concurrency Management</skill>, <skill>Collision Detection</skill>, <skill>Fog of War Generation</skill>, <skill>Node.js Child Process</skill></p>
-				</div>
-			</div>
-		</div>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<p><h3>DIG!!! a Lava Run Game</h3></p>
-					<img class = "outLined" src="food.gif" alt="Eat Food" width = "30%">
-					<img class = "outLined" src="bomb.gif" alt="Place Bomb" width = "30%">
-					<img class = "outLined" src="icewall.gif" alt="Place Ice Wall" width = "30%">
-					<p>• Wrote a procedurally generated lava run game where the player digs for gold, food and life.</p>
-					<p>• The player can dig and run faster by consuming the hunger meter faster, sometimes the player can find food or food packages which replenishes the hunger meter.</p>
-					<p>• The player can find random amounts of gold in some of the blocks, which can be used to purchase power-ups in the future.</p>
-					<p>• The player can place ice walls at choke points to temporarily block the flowing lava.</p>
-					<h4>Involved Skills</h4>
-					<p><skill>Unity</skill>, <skill>C#</skill>, <skill>Unity Animator</skill>, <skill>Unity Mobile Sensors</skill></p>
-					<h4>Involved Knowlodge</h4>
-					<p><skill>Unit Testing</skill>, <skill>Procedural Generation</skill>, <skill>Stickiness</skill>, <skill>Computer Graphics</skill>, <skill>Computer Animations</skill></p>
-				</div>
-			</div>
-		</div>
-		<div class = "board">
-			<div class = "panel">
-				<div class = "contents">
-					<p><h3>CLUE!!! a Real World Treasure Finding Game</h3></p>
-					<p>• Built a virtual reality treasure finding game with location based services, the player can reach to locations in real life, take some pictures, creating a puzzle, uploading and share it with friends.</p>
-					<h4>Involved Skills</h4>
-					<p><skill>Unity</skill>, <skill>C#</skill>, <skill>.NET Framework</skill>, <skill>Node.js</skill>, <skill>Amazon Web Services</skill>, <skill>Google Cloud Platform</skill></p>
-					<h4>Involved Knowlodge</h4>
-					<p><skill>Network Protocol</skill>, <skill>Image File Processing</skill>, <skill>UI Design</skill>, <skill>Location Based Services</skill>, <skill>SQL</skill>, <skill>noSQL</skill>, <skill>Object Storage</skill>, <skill>Concurrency Management</skill>, <skill>Node.js Child Process</skill>, <skill>Unity Multi-threading</skill></p>
+			<div class = "board">
+				<div class = "panel">
+					<div class = "contents">
+						<p><h3>CLUE!!! a Real World Treasure Finding Game</h3></p>
+						<p>• Built a virtual reality treasure finding game with location based services, the player can reach to locations in real life, take some pictures, creating a puzzle, uploading and share it with friends.</p>
+						<h4>Involved Skills</h4>
+						<p><skill>Unity</skill>, <skill>C#</skill>, <skill>.NET Framework</skill>, <skill>Node.js</skill>, <skill>Amazon Web Services</skill>, <skill>Google Cloud Platform</skill></p>
+						<h4>Involved Knowlodge</h4>
+						<p><skill>Network Protocol</skill>, <skill>Image File Processing</skill>, <skill>UI Design</skill>, <skill>Location Based Services</skill>, <skill>SQL</skill>, <skill>noSQL</skill>, <skill>Object Storage</skill>, <skill>Concurrency Management</skill>, <skill>Node.js Child Process</skill>, <skill>Unity Multi-threading</skill></p>
+					</div>
 				</div>
 			</div>
 		</div>
