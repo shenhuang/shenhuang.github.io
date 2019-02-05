@@ -756,6 +756,7 @@
 		const fwkSedIniT = 1000;
 		const a = 0.0005;
 		const g = 0.0005;
+		const v = 0.3;
 		const cursorXOffset = -15;
 		const cursorYOffset = -20;
 
@@ -772,23 +773,23 @@
 			fwkPtc.velocity = [];
 			if(angle > 270)
 			{
-				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180);
-				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180);
+				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180) * (1 - Math.random() * v);
+				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180) * (1 - Math.random() * v);
 			}
 			else if(angle > 180)
 			{
-				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180);
-				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180);
+				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180) * (1 - Math.random() * v);
+				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180) * (1 - Math.random() * v);
 			}
 			else if(angle > 90)
 			{
-				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180);
-				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180);
+				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180) * (1 - Math.random() * v);
+				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180) * (1 - Math.random() * v);
 			}
 			else
 			{
-				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180);
-				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180);
+				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180) * (1 - Math.random() * v);
+				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180) * (1 - Math.random() * v);
 			}
 			fwkPtc.position = [];
 			fwkPtc.position.x = x;
@@ -823,7 +824,7 @@
 			while(a < 360)
 			{
 				newFireworkParticle(x, y, a);
-				a += 15;
+				a += 5;
 			}
 		}
 
