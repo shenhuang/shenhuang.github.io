@@ -75,6 +75,15 @@
 		};
 
 		document.onmousemove = function(e) {
+			generateBubblesOnEvent(e);
+		}
+
+		document.touchmove = function(e) {
+			generateBubblesOnEvent(e);
+		}
+
+		function generateBubblesOnEvent(e)
+		{
 			if(msedwn)
 			{
 				var size = minbub + (maxbub - minbub) * Math.random();
