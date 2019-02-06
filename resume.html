@@ -390,36 +390,10 @@
 				height: 1px;
 				background-color : #070707;
 			}
-			.fireWorkBatch {
+			.bubble {
 				z-index : 999;
 				position: absolute;
-				top : -15px;
-				left : -15px;
-				animation-name : firework-fade-animation;
-				animation-timing-function : cubic-bezier(0.5, 0, 1. 1);
-				animation-duration : 2.5s;
-			}
-			.fireWorkParticle {
-				z-index : 999;
-				position: absolute;
-				height : 5px;
-				width : 5px;
-				border-radius : 2.5px;
-				animation-name : firework-animation;
-				animation-timing-function : linear;
-				animation-duration : 1s;
-				animation-iteration-count : infinite;
-			}
-			.fireWorkSeed {
-				z-index : 999;
-				position: absolute;
-				height : 5px;
-				width : 5px;
-				border-radius : 5px;
-				animation-name : firework-seed-animation;
-				animation-timing-function : linear;
-				animation-duration : 0.5s;
-				animation-iteration-count : infinite;
+				border-radius : 500px;
 			}
 		</style>
 	</head>
@@ -890,98 +864,101 @@
 		setTimeout(function(){
 			newNavigationButton("PAST RESEARCH & PROJECTS", "Past Research & Projects");
 		}, counter);
-		counter += timestep;	
+		counter += timestep;
 
-		seeds = [];
-		particles = [];
+		bubbles = [];
 
-		const fwkPtcIniV = 0.5;
-		const fwkSedIniV = 0.5;
-		const fwkPtcIniT = 2500;
-		const fwkSedIniT = 1000;
-		const a = 0.0005;
-		const g = 0.0005;
-		const v = 0.3;
+		const d = 5000;
+		const o = 0.7;
+		const r = 0.001;
+		const f = 0.0025;
+		const p = 0.0000000005;
+		const minbub = 10;
+		const maxbub = 50;
 		const cursorXOffset = -15;
 		const cursorYOffset = -15;
 
 
-		function newFireworkParticle(x, y, angle)
+		function newBubble(x, y, size, color)
 		{
-			var fwkPtc = document.createElement("DIV");
-			fwkPtc.setAttribute('class', 'fireWorkParticle');
-			fwkPtc.time = fwkPtcIniT;
-			while(angle > 360)
-				angle -= 360;
-			while(angle < 0)
-				angle += 360;
-			fwkPtc.velocity = [];
-			if(angle > 270)
-			{
-				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180) * (1 - Math.random() * v);
-				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180) * (1 - Math.random() * v);
-			}
-			else if(angle > 180)
-			{
-				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180) * (1 - Math.random() * v);
-				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180) * (1 - Math.random() * v);
-			}
-			else if(angle > 90)
-			{
-				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180) * (1 - Math.random() * v);
-				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180) * (1 - Math.random() * v);
-			}
-			else
-			{
-				fwkPtc.velocity.x = fwkPtcIniV * Math.sin(angle * Math.PI / 180) * (1 - Math.random() * v);
-				fwkPtc.velocity.y = fwkPtcIniV * Math.cos(angle * Math.PI / 180) * (1 - Math.random() * v);
-			}
-			fwkPtc.position = [];
-			fwkPtc.position.x = x;
-			fwkPtc.position.y = y;
-			if(particles == null)
-				particles = [];
-			particles.push(fwkPtc);
-			return fwkPtc;
+			var bubble = document.createElement("DIV");
+			bubble.setAttribute('class', 'bubble');
+			bubble.style = "background-color : " + color + ";";
+			bubble.bubbleSize = size;
+			bubble.style.height = bubble.bubbleSize * 2 + "px";
+			bubble.style.width = bubble.bubbleSize * 2 + "px";
+			bubble.time = d;
+			bubble.velocity = [];
+			bubble.velocity.x = 0;
+			bubble.velocity.y = 0;
+			bubble.position = [];
+			bubble.position.x = x;
+			bubble.position.y = y;
+			bubble.style.left = bubble.position.x - bubble.bubbleSize / 2 + 'px';
+			bubble.style.top = bubble.position.y - bubble.bubbleSize / 2 + 'px';				
+			brd.appendChild(bubble);
+			if(bubbles == null)
+				bubbles = [];
+			bubbles.push(bubble);
+			return bubble;
 		}
 
-		document.addEventListener("click", newFireWorkOnClick);
+		var msedwn = false;
 
-		function newFireWorkOnClick(event)
-		{
-			newFireworkSeed(event.pageX - brd.offsetLeft + cursorXOffset, event.pageY - brd.offsetTop + cursorYOffset);
+		document.onmousedown = function(e) {
+			msedwn = true;
+		};
+
+		document.onmouseup = function(e) {
+			msedwn = false;
+		};
+
+		document.onmousemove = function(e) {
+			if(msedwn)
+				generateBubbles(e.pageX - brd.offsetLeft + cursorXOffset, e.pageY - brd.offsetTop + cursorYOffset);
 		}
 
-		function newFireworkSeed(x, y)
-		{
-			var fwkSed = document.createElement("DIV");
-			fwkSed.setAttribute('class', 'fireWorkSeed');
-			brd.appendChild(fwkSed);
-			fwkSed.time = fwkSedIniT;
-			fwkSed.velocity = [];
-			fwkSed.velocity.x = 0;
-			fwkSed.velocity.y = fwkSedIniV;
-			fwkSed.position = [];
-			fwkSed.position.x = x;
-			fwkSed.position.y = y;
-			if(seeds == null)
-				seeds = [];
-			seeds.push(fwkSed);
-			return fwkSed;
+		document.ontouchmove = function(e) {
+			generateBubbles(e.touches[0].clientX, e.touches[0].clientY);
 		}
-		
-		function newFireWorkStar(x, y)
+
+		function generateBubbles(x, y)
 		{
-			var fwkBch = document.createElement("DIV");
-			fwkBch.setAttribute('class', 'fireWorkBatch');
-			var a = 0;
-			while(a < 360)
-			{
-				var fwkPtc = newFireworkParticle(x, y, a);
-				fwkBch.appendChild(fwkPtc);
-				a += 5;
+			var size = minbub + (maxbub - minbub) * Math.random();
+			var digits = '0123456789ABCDEF';
+			var color = '#';
+			for (var i = 0; i < 6; i++) {
+				color += digits[Math.floor(Math.random() * 16)];
 			}
-			brd.appendChild(fwkBch);
+			newBubble(x, y, size, color);
+		}
+
+		function bubblePushAround(deltaTime)
+		{
+			for(i = 0; i < bubbles.length; i++)
+			{
+				for(j = i + 1; j < bubbles.length; j++)
+				{
+					var bubbleOne = bubbles[i];
+					var bubbleTwo = bubbles[j];
+
+					var Dx = bubbleOne.position.x - bubbleTwo.position.x;
+					var Dy = bubbleOne.position.y - bubbleTwo.position.y;
+					var D2 = Dx * Dx + Dy * Dy;
+					var R12 = bubbleOne.bubbleSize * bubbleOne.bubbleSize;
+					var R22 = bubbleTwo.bubbleSize * bubbleTwo.bubbleSize;
+					if(D2 < R12 + R22)
+					{
+						var D = Math.sqrt(D2);
+						var F1 = (D2 - (R12 + R22)) * R22;
+						var F2 = (D2 - (R12 + R22)) * R12;
+						bubbleOne.velocity.x -= F1 * p * Dx / D * deltaTime;
+						bubbleOne.velocity.y += F1 * p * Dy / D * deltaTime;
+						bubbleTwo.velocity.x += F2 * p * Dx / D * deltaTime;
+						bubbleTwo.velocity.y -= F2 * p * Dy / D * deltaTime;
+					}
+				}
+			}
 		}
 
 		var before = Date.now();
@@ -992,43 +969,28 @@
 			var current = Date.now();
 			var deltaTime = current - before;
 			before = current;
-			for(i in seeds)
+			for(i in bubbles)
 			{
-				var fwkSed = seeds[i];
-				fwkSed.time -= deltaTime;
-				if(fwkSed.time > 0)
+
+				var bubble = bubbles[i];
+
+				bubble.time -= deltaTime;
+				if(bubble.time > 0)
 				{
-					fwkSed.velocity.x -= fwkSed.velocity.x * a * deltaTime;
-					fwkSed.velocity.y -= g * deltaTime + fwkSed.velocity.y * a * deltaTime;
-					fwkSed.position.x += fwkSed.velocity.x * deltaTime;
-					fwkSed.position.y -= fwkSed.velocity.y * deltaTime;
-					fwkSed.style.left = fwkSed.position.x + 'px';
-					fwkSed.style.top = fwkSed.position.y + 'px';
+					bubblePushAround(deltaTime);
+					bubble.velocity.y += f * deltaTime;
+					bubble.velocity.x -= bubble.velocity.x * r * bubble.bubbleSize * deltaTime;
+					bubble.velocity.y -= bubble.velocity.y * r * bubble.bubbleSize * deltaTime;
+					bubble.position.x += bubble.velocity.x * deltaTime;
+					bubble.position.y -= bubble.velocity.y * deltaTime;
+					bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
+					bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';
+					bubble.style.opacity = o * (bubble.time / d);
 				}
 				else
 				{
-					newFireWorkStar(fwkSed.position.x, fwkSed.position.y);
-					fwkSed.parentNode.removeChild(fwkSed);
-					seeds.splice(i, 1);
-				}
-			}
-			for(i in particles)
-			{
-				var fwkPtc = particles[i];
-				fwkPtc.time -= deltaTime;
-				if(fwkPtc.time > 0)
-				{
-					fwkPtc.velocity.x -= fwkPtc.velocity.x * a * deltaTime;
-					fwkPtc.velocity.y -= g * deltaTime + fwkPtc.velocity.y * a * deltaTime;
-					fwkPtc.position.x += fwkPtc.velocity.x * deltaTime;
-					fwkPtc.position.y -= fwkPtc.velocity.y * deltaTime;
-					fwkPtc.style.left = fwkPtc.position.x + 'px';
-					fwkPtc.style.top = fwkPtc.position.y + 'px';
-				}
-				else
-				{
-					fwkPtc.parentNode.removeChild(fwkPtc);
-					particles.splice(i, 1);
+					bubble.parentNode.removeChild(bubble);
+					bubbles.splice(i, 1);
 				}
 			}
 		}
