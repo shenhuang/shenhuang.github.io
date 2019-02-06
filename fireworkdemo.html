@@ -6,9 +6,9 @@
 	<head>
 		<title>FIREWORK DEMO</title>
 		<style>
-			body	{
-				background-color : #001126;
-			}
+		body	{
+			background-color : #001126;
+		}
 		@keyframes 			firework-animation {
 			0% {background-color : #ff8426;}
 			25% {background-color : #fffc84;}
@@ -134,6 +134,8 @@
 			fwkPtc.position = [];
 			fwkPtc.position.x = x;
 			fwkPtc.position.y = y;
+			fwkPtc.style.left = fwkPtc.position.x + 'px';
+			fwkPtc.style.top = fwkPtc.position.y + 'px';
 			if(particles == null)
 				particles = [];
 			particles.push(fwkPtc);
@@ -159,6 +161,8 @@
 			fwkSed.position = [];
 			fwkSed.position.x = x;
 			fwkSed.position.y = y;
+			fwkSed.style.left = fwkSed.position.x + 'px';
+			fwkSed.style.top = fwkSed.position.y + 'px';
 			if(seeds == null)
 				seeds = [];
 			seeds.push(fwkSed);
