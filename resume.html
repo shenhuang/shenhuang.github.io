@@ -197,6 +197,16 @@
 				25% {background-color : #fffc84;}
 				100% {background-color : #ff8426;}
 			}
+			@keyframes 			firework-fade-animation {
+				0% {opacity : 1;}
+				50% {opacity : 1;}
+				100% {opacity : 0;}
+			}
+			@-webkit-keyframes 	firework-fade-animation {
+				0% {opacity : 1;}
+				50% {opacity : 1;}
+				100% {opacity : 0;}
+			}
 			div {
 				margin: 15px 15px 15px 15px;
 			}
@@ -380,19 +390,28 @@
 				height: 1px;
 				background-color : #070707;
 			}
+			.fireWorkBatch {
+				z-index : 999;
+				position: absolute;
+				top : -8px;
+				left : -8px;
+				animation-name : firework-fade-animation;
+				animation-timing-function : cubic-bezier(0.5, 0, 1. 1);
+				animation-duration : 2.5s;
+			}
 			.fireWorkParticle {
-				z-index : 99;
+				z-index : 999;
 				position: absolute;
 				height : 5px;
 				width : 5px;
-				border-radius : 5px;
+				border-radius : 2.5px;
 				animation-name : firework-animation;
 				animation-timing-function : linear;
 				animation-duration : 1s;
 				animation-iteration-count : infinite;
 			}
 			.fireWorkSeed {
-				z-index : 99;
+				z-index : 999;
 				position: absolute;
 				height : 5px;
 				width : 5px;
@@ -873,8 +892,8 @@
 		}, counter);
 		counter += timestep;	
 
-		var seeds = [];
-		var particles = [];
+		seeds = [];
+		particles = [];
 
 		const fwkPtcIniV = 0.5;
 		const fwkSedIniV = 0.5;
@@ -884,13 +903,13 @@
 		const g = 0.0005;
 		const v = 0.3;
 		const cursorXOffset = -15;
-		const cursorYOffset = -20;
+		const cursorYOffset = -15;
+
 
 		function newFireworkParticle(x, y, angle)
 		{
 			var fwkPtc = document.createElement("DIV");
 			fwkPtc.setAttribute('class', 'fireWorkParticle');
-			brd.appendChild(fwkPtc);
 			fwkPtc.time = fwkPtcIniT;
 			while(angle > 360)
 				angle -= 360;
@@ -926,6 +945,13 @@
 			return fwkPtc;
 		}
 
+		document.addEventListener("click", newFireWorkOnClick);
+
+		function newFireWorkOnClick(event)
+		{
+			newFireworkSeed(event.pageX - brd.offsetLeft + cursorXOffset, event.pageY - brd.offsetTop + cursorYOffset);
+		}
+
 		function newFireworkSeed(x, y)
 		{
 			var fwkSed = document.createElement("DIV");
@@ -943,27 +969,24 @@
 			seeds.push(fwkSed);
 			return fwkSed;
 		}
-
+		
 		function newFireWorkStar(x, y)
 		{
+			var fwkBch = document.createElement("DIV");
+			fwkBch.setAttribute('class', 'fireWorkBatch');
 			var a = 0;
 			while(a < 360)
 			{
-				newFireworkParticle(x, y, a);
+				var fwkPtc = newFireworkParticle(x, y, a);
+				fwkBch.appendChild(fwkPtc);
 				a += 5;
 			}
-		}
-
-		document.addEventListener("click", newFireWorkOnClick);
-
-		function newFireWorkOnClick(event)
-		{
-			newFireworkSeed(event.pageX - brd.offsetLeft + cursorXOffset, event.pageY - brd.offsetTop + cursorYOffset);
+			brd.appendChild(fwkBch);
 		}
 
 		var before = Date.now();
 		var id = setInterval(frame, 5);
-
+		
 		function frame()
 		{
 			var current = Date.now();
