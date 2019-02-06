@@ -43,14 +43,14 @@
 			50% {opacity : 1;}
 			100% {opacity : 0;}
 		}
-		.fireWorkParticle {
+		.fireWorkBatch {
 			z-index : 999;
 			position: absolute;
 			animation-name : firework-fade-animation;
 			animation-timing-function : cubic-bezier(0.5, 0, 1. 1);
 			animation-duration : 2.5s;
 		}
-		.fireWorkParticleColor {
+		.fireWorkParticle {
 			z-index : 999;
 			position: absolute;
 			height : 5px;
@@ -100,10 +100,6 @@
 		{
 			var fwkPtc = document.createElement("DIV");
 			fwkPtc.setAttribute('class', 'fireWorkParticle');
-			var fwkPtcClr = document.createElement("DIV");
-			fwkPtcClr.setAttribute('class', 'fireWorkParticleColor');
-			fwkPtc.appendChild(fwkPtcClr);
-			brd.appendChild(fwkPtc);
 			fwkPtc.time = fwkPtcIniT;
 			while(angle > 360)
 				angle -= 360;
@@ -166,12 +162,16 @@
 		
 		function newFireWorkStar(x, y)
 		{
+			var fwkBch = document.createElement("DIV");
+			fwkBch.setAttribute('class', 'fireWorkBatch');
 			var a = 0;
 			while(a < 360)
 			{
-				newFireworkParticle(x, y, a);
+				var fwkPtc = newFireworkParticle(x, y, a);
+				fwkBch.appendChild(fwkPtc);
 				a += 5;
 			}
+			brd.appendChild(fwkBch);
 		}
 
 		var before = Date.now();
