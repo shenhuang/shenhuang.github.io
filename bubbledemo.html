@@ -72,25 +72,23 @@
 		};
 
 		document.onmousemove = function(e) {
-			generateBubblesOnEvent(e);
+			if(msedwn)
+				generateBubbles(e.pageX - brd.offsetLeft + cursorXOffset, e.pageY - brd.offsetTop + cursorYOffset);
 		}
 
 		document.ontouchmove = function(e) {
-			generateBubblesOnEvent(e);
+			generateBubbles(e.touches[0].clientX, e.touches[0].clientY);
 		}
 
-		function generateBubblesOnEvent(e)
+		function generateBubbles(x, y)
 		{
-			if(msedwn)
-			{
-				var size = minbub + (maxbub - minbub) * Math.random();
-				var digits = '0123456789ABCDEF';
-				var color = '#';
-				for (var i = 0; i < 6; i++) {
-					color += digits[Math.floor(Math.random() * 16)];
-				}
-				newBubble(e.pageX - brd.offsetLeft + cursorXOffset, e.pageY - brd.offsetTop + cursorYOffset, size, color);
+			var size = minbub + (maxbub - minbub) * Math.random();
+			var digits = '0123456789ABCDEF';
+			var color = '#';
+			for (var i = 0; i < 6; i++) {
+				color += digits[Math.floor(Math.random() * 16)];
 			}
+			newBubble(x, y, size, color);
 		}
 
 		function bubblePushAround(deltaTime)
