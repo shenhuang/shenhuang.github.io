@@ -141,8 +141,8 @@
 					bubble.velocity.y -= bubble.velocity.y * r * bubble.bubbleSize * deltaTime;
 					bubble.position.x += bubble.velocity.x * deltaTime;
 					bubble.position.y -= bubble.velocity.y * deltaTime;
-					bubble.style.left = bubble.position.x - bubble.bubbleSize / 2 + 'px';
-					bubble.style.top = bubble.position.y - bubble.bubbleSize / 2 + 'px';
+					bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
+					bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';
 					bubble.style.opacity = 0.7 * (bubble.time / d);
 				}
 				else
