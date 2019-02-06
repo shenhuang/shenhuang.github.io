@@ -33,12 +33,27 @@
 			25% {background-color : #fffc84;}
 			100% {background-color : #ff8426;}
 		}
+		@keyframes 			firework-fade-animation {
+			0% {opacity : 1;}
+			100% {opacity : 0;}
+		}
+		@-webkit-keyframes 	firework-fade-animation {
+			0% {opacity : 1;}
+			100% {opacity : 0;}
+		}
 		.fireWorkParticle {
+			z-index : 999;
+			position: absolute;
+			animation-name : firework-fade-animation;
+			animation-timing-function : cubic-bezier(0.5, 0, 1. 1);
+			animation-duration : 2.5s;
+		}
+		.fireWorkParticleColor {
 			z-index : 999;
 			position: absolute;
 			height : 5px;
 			width : 5px;
-			border-radius : 5px;
+			border-radius : 2.5px;
 			animation-name : firework-animation;
 			animation-timing-function : linear;
 			animation-duration : 1s;
@@ -83,6 +98,9 @@
 		{
 			var fwkPtc = document.createElement("DIV");
 			fwkPtc.setAttribute('class', 'fireWorkParticle');
+			var fwkPtcClr = document.createElement("DIV");
+			fwkPtcClr.setAttribute('class', 'fireWorkParticleColor');
+			fwkPtc.appendChild(fwkPtcClr);
 			brd.appendChild(fwkPtc);
 			fwkPtc.time = fwkPtcIniT;
 			while(angle > 360)
