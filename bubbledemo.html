@@ -308,7 +308,7 @@
 		}
 
 		document.ontouchmove = function(e) {
-			generateBubbles(e.touches[0].clientX, e.touches[0].clientY);
+			generateBubbles(e.touches[0].pageX, e.touches[0].pageY);
 		}
 
 		function generateBubbles(x, y)
