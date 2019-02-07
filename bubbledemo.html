@@ -318,13 +318,16 @@
 
 		function generateBubbles(x, y)
 		{
-			var size = minbub + (maxbub - minbub) * Math.random();
-			var digits = '0123456789ABCDEF';
-			var color = '#';
-			for (var i = 0; i < 6; i++) {
-				color += digits[Math.floor(Math.random() * 16)];
+			if(bubbles.length < 100)
+			{
+				var size = minbub + (maxbub - minbub) * Math.random();
+				var digits = '0123456789ABCDEF';
+				var color = '#';
+				for (var i = 0; i < 6; i++) {
+					color += digits[Math.floor(Math.random() * 16)];
+				}
+				newBubble(x, y, size, color);
 			}
-			newBubble(x, y, size, color);
 		}
 
 		function bubblePushAround(deltaTime)
