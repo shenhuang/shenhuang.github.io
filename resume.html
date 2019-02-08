@@ -131,9 +131,6 @@
 			body	{
 				background-color : #000f04;
 			}
-			html, body {
-				overflow-x: hidden;
-			}
 			@keyframes 			board-setup-animation	{
 				0% {top : 10vh; opacity : 0;}
 				100% {top : 0vh; opacity : 1.0;}
@@ -199,16 +196,6 @@
 				0% {background-color : #ff8426;}
 				25% {background-color : #fffc84;}
 				100% {background-color : #ff8426;}
-			}
-			@keyframes 			firework-fade-animation {
-				0% {opacity : 1;}
-				50% {opacity : 1;}
-				100% {opacity : 0;}
-			}
-			@-webkit-keyframes 	firework-fade-animation {
-				0% {opacity : 1;}
-				50% {opacity : 1;}
-				100% {opacity : 0;}
 			}
 			div {
 				margin: 15px 15px 15px 15px;
@@ -861,12 +848,10 @@
 		</div>
 	</body>
 	<script>
-
 		var headline = document.getElementById("HEADLINE");
 		var brd = document.createElement("DIV");
 		brd.setAttribute('class', 'navigatorBoard');
 		headline.parentNode.insertBefore(brd, headline);
-
 		function newNavigationButton(name, id)
 		{
 			var pnl = document.createElement("DIV");
@@ -883,10 +868,8 @@
 			brd.appendChild(pnl);
 			return pnl;
 		}
-
 		var counter = 0;
 		var timestep = 300;
-
 		setTimeout(function(){
 			newNavigationButton("CONTACT INFORMATION", "Contact Information");
 		}, counter);
@@ -907,10 +890,8 @@
 			newNavigationButton("PAST RESEARCH & PROJECTS", "Past Research & Projects");
 		}, counter);
 		counter += timestep;
-
 		document.ontouchmove = function(e) {
 			
 		}
-
 	</script>
 </html>
