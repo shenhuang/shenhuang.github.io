@@ -266,7 +266,7 @@
 		const o = 0.7;
 		const r = 0.001;
 		const f = 0.0025;
-		const p = 0.0000000005;
+		const p = 0.000000025;
 		const minbub = 10;
 		const maxbub = 50;
 		const cursorXOffset = 5;
@@ -317,16 +317,13 @@
 
 		function generateBubbles(x, y)
 		{
-			if(bubbles.length < 100)
-			{
-				var size = minbub + (maxbub - minbub) * Math.random();
-				var digits = '0123456789ABCDEF';
-				var color = '#';
-				for (var i = 0; i < 6; i++) {
-					color += digits[Math.floor(Math.random() * 16)];
-				}
-				newBubble(x, y, size, color);
+			var size = minbub + (maxbub - minbub) * Math.random();
+			var digits = '0123456789ABCDEF';
+			var color = '#';
+			for (var i = 0; i < 6; i++) {
+				color += digits[Math.floor(Math.random() * 16)];
 			}
+			newBubble(x, y, size, color);
 		}
 
 		function bubblePushAround(deltaTime)
@@ -364,13 +361,13 @@
 			var current = Date.now();
 			var deltaTime = current - before;
 			before = current;
+			bubblePushAround(deltaTime);
 			for(i in bubbles)
 			{
 				var bubble = bubbles[i];
 				bubble.time -= deltaTime;
 				if(bubble.time > 0)
 				{
-					bubblePushAround(deltaTime);
 					bubble.velocity.y += f * deltaTime;
 					bubble.velocity.x -= bubble.velocity.x * r * bubble.bubbleSize * deltaTime;
 					bubble.velocity.y -= bubble.velocity.y * r * bubble.bubbleSize * deltaTime;
