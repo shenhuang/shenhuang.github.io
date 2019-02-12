@@ -272,7 +272,6 @@
 		const cursorXOffset = 5;
 		const cursorYOffset = 0;
 
-
 		function newBubble(x, y, size, color)
 		{
 			var bubble = document.createElement("DIV");
@@ -288,8 +287,8 @@
 			bubble.position = [];
 			bubble.position.x = x;
 			bubble.position.y = y;
-			bubble.style.left = bubble.position.x - bubble.bubbleSize / 2 + 'px';
-			bubble.style.top = bubble.position.y - bubble.bubbleSize / 2 + 'px';				
+			bubble.style.left = bubble.position.x - bubble.bubbleSize + 'px';
+			bubble.style.top = bubble.position.y - bubble.bubbleSize + 'px';				
 			brd.appendChild(bubble);
 			if(bubbles == null)
 				bubbles = [];
@@ -367,9 +366,7 @@
 			before = current;
 			for(i in bubbles)
 			{
-
 				var bubble = bubbles[i];
-
 				bubble.time -= deltaTime;
 				if(bubble.time > 0)
 				{
