@@ -85,7 +85,7 @@
 		document.onmouseup = function(e) {
 			down = false;
 		}
-		
+
 		document.onmousemove = function(e) {
 			event = e;
 		}
@@ -136,7 +136,7 @@
 			if(down)
 			{
 				var start = 1 - Math.round(Math.random()) * 2;
-				var scale = Math.random() * Math.random();
+				var scale = Math.random() * Math.random() * 0.8 + 0.2;
 				var bound = 30 + Math.random() * 20;
 				generateHeart(event.pageX - brd.offsetLeft + cursorXOffset, event.pageY - brd.offsetTop + cursorYOffset, bound, start, scale);
 			}
