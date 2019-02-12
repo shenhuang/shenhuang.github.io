@@ -88,6 +88,19 @@
 			event = e;
 		}
 
+		document.ontouchstart = function(e) {
+			down = true;
+			event = e.touches[0];
+		}
+
+		document.ontouchend = function(e) {
+			down = false;
+		}
+
+		document.ontouchmove = function(e) {
+			event = e.touches[0];
+		}
+
 		var before = Date.now();
 		var id = setInterval(frame, 5);
 		var gr = setInterval(check, 100);
