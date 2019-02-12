@@ -18,6 +18,7 @@
 			}
 		}
 		.heart {
+			z-index : 999;
 			animation : heartfade 6s linear;
 			position : absolute; 
 		}
@@ -45,6 +46,7 @@
 		
 	</body>
 	<script>
+		
 		var brd = document.createElement("DIV");
 		document.body.insertBefore(brd, document.getElementById("board"));
 
@@ -53,7 +55,8 @@
 		const cursorXOffset = 0;
 		const cursorYOffset = -5;
 
-		hearts = [];
+		var hearts = [];
+		
 		function generateHeart(x, y, xBound, xStart, scale)
 		{
 			var heart = document.createElement("DIV");
