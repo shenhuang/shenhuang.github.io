@@ -496,6 +496,15 @@
 
 		wordBox.addEventListener("focusout", wordBoxFocusOut);
 
+		window.onkeydown = function(e)
+		{
+			key = e.keyCode;
+			if(key == 13)
+			{
+				wordBoxFocusOut();
+			}
+		};
+
 		function wordBoxFocusOut()
 		{
 			word = wordBox.value;
