@@ -1,0 +1,825 @@
+<!--Copyright to Shen Huang, you can reach me out at shenhuang@live.ca-->
+
+<!DOCTYPE html>
+<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+<html>
+	<head>
+		<title>LANTERN DEMO</title>
+		<style>
+
+			body	{
+				background-color : #190f00;
+			}
+			@keyframes shake {
+				0% {
+					transform : rotate(10deg) scale(0.5);
+				}
+				50% {
+					transform : rotate(-10deg) scale(0.5);
+				}
+				100% {
+					transform : rotate(10deg) scale(0.5);
+				}
+			}
+			@keyframes innerlightbreathe {
+				0% {
+					height : 30px;
+					width : 30px;
+					opacity : 0.1;
+					top : 35px;
+					left : 10px;
+				}
+				20% {
+					clip-path : inset(0px 0px 0px 0px);
+				}
+				50% {
+					height : 60px;
+					width : 60px;
+					opacity : 0.5;
+					top : 5px;
+					left : -5px;
+					clip-path : inset(0px 5px 0px 5px);
+				}
+				80% {
+					clip-path : inset(0px 0px 0px 0px);
+				}
+				100% {
+					height : 30px;
+					width : 30px;
+					opacity : 0.1;
+					top : 35px;
+					left : 10px;
+				}
+			}
+			@keyframes outterlightbreathe {
+				0% {
+					height : 100px;
+					width : 100px;
+					top : -10px;
+					left : -20px;
+				}
+				50% {
+					height : 200px;
+					width : 200px;
+					top : -60px;
+					left : -70px;
+				}
+				100% {
+					height : 100px;
+					width : 100px;
+					top : -10px;
+					left : -20px;
+				}
+			}
+			@keyframes fadein {
+				0% {
+					opacity : 0.0;
+				}
+				100% {
+					opacity : 1.0;
+				}
+			}
+			@keyframes fadeout {
+				0% {
+					opacity : 1.0;
+				}
+				50% {
+					opacity : 0.0;
+				}
+				100% {
+					opacity : 0.0;
+				}
+			}
+
+			.lantern {
+				z-index : 999;
+				position : absolute;
+				height : 70px;
+				width : 50px;
+				transform-origin : top center;
+				animation : shake 4s ease-in-out infinite;
+			}
+			.lanternBody {
+				position : absolute;
+				background-color : #756b3c;
+				height : 70px;
+				width : 50px;
+				border-radius : 15px 15px 25px 25px;
+			}
+			.outterLight {
+				z-index : -1;
+				position : absolute;
+				background-image:
+					radial-gradient(rgba(117, 107, 60, 1.0), rgba(117, 107, 60, 0.0), rgba(117, 107, 60, 0.0));
+				opacity : 0.5;
+				border-radius : 50%;
+				animation : outterlightbreathe 3s ease-in-out infinite;
+			}
+			.innerLight {
+				position : absolute;
+				background-image:
+					radial-gradient(rgba(255, 241, 181, 1.0), rgba(255, 241, 181, 1.0), rgba(255, 241, 181, 0.0));
+				border-radius : 50%;
+				animation : innerlightbreathe 3s ease-in-out infinite;
+			}
+			.wordInput, .fakeInput{
+				position : absolute;
+				bottom : 25px;
+				left : 25px;
+			}
+			.wordInput {
+				height : 30px;
+				width : 100px;
+				color : #a88600;
+				font-size : 25px;
+				font-family : Arial;
+				text-align : center;
+				border : 3px;
+				border-radius : 15px;
+				border-style : solid;
+				background-color : #fff9e5;
+				border-color : #fff9e5;
+				animation : fadein 1s ease-in;
+			}
+			.wordInput:hover,  .wordInput:focus{
+				border-color : #a88600;
+			}
+			.fakeInput {
+				height : 30px;
+				width : 100px;
+				color : #a88600;
+				font-size : 25px;
+				font-family : Arial;
+				text-align : center;
+				border : 3px;
+				border-radius : 15px;
+				border-style : solid;
+				background-color : #fff9e5;
+				border-color : #fff9e5;
+				animation : fadeout 2s ease-out;
+			}
+
+		</style>
+	</head>
+	<body>
+		<input 	id			= "wordBox"
+				class		= "wordInput"
+				type		= "text"
+				maxlength	= "5"
+				value		= "LOVE"
+				onkeypress	= "return (event.charCode > 64 && event.charCode < 91)"
+		>
+	</body>
+	<script src = "./kdTree.js" ></script>
+	<script>
+
+		// Lantern word map.
+
+		const ltrMap = [];
+		ltrMap[" "] = [
+					[0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0],
+					[0, 0, 0, 0, 0],
+					];
+		ltrMap["@"] = [
+					[1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1],
+					[1, 1, 1, 1, 1],
+					];
+		ltrMap["A"] = [
+					[0, 0, 1, 0, 0],
+					[0, 1, 0, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 1, 1, 1, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					];
+		ltrMap["B"] = [
+					[1, 1, 1, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 1, 1, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 1, 1, 1, 0],
+					];
+		ltrMap["C"] = [
+					[0, 1, 1, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 1],
+					[0, 1, 1, 1, 0],
+					];
+		ltrMap["D"] = [
+					[1, 1, 1, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 1, 1, 1, 0],
+					];
+		ltrMap["E"] = [
+					[1, 1, 1, 1, 1],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 1, 1, 1, 1],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 1, 1, 1, 1],
+					];
+		ltrMap["F"] = [
+					[1, 1, 1, 1, 1],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 1, 1, 1, 1],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					];
+		ltrMap["G"] = [
+					[0, 1, 1, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 0],
+					[1, 0, 1, 1, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[0, 1, 1, 1, 0],
+					];
+		ltrMap["H"] = [
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 1, 1, 1, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					];
+		ltrMap["I"] = [
+					[1, 1, 1, 1, 1],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[1, 1, 1, 1, 1],
+					];
+		ltrMap["J"] = [
+					[1, 1, 1, 1, 1],
+					[0, 0, 0, 1, 0],
+					[0, 0, 0, 1, 0],
+					[0, 0, 0, 1, 0],
+					[1, 0, 0, 1, 0],
+					[1, 0, 0, 1, 0],
+					[0, 1, 1, 0, 0],
+					];
+		ltrMap["K"] = [
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 1, 0],
+					[1, 0, 1, 0, 0],
+					[1, 1, 0, 0, 0],
+					[1, 0, 1, 0, 0],
+					[1, 0, 0, 1, 0],
+					[1, 0, 0, 0, 1],
+					];
+		ltrMap["L"] = [
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 1, 1, 1, 1],
+					];
+		ltrMap["M"] = [
+					[1, 0, 0, 0, 1],
+					[1, 1, 0, 1, 1],
+					[1, 0, 1, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					];
+		ltrMap["N"] = [
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 1, 0, 0, 1],
+					[1, 0, 1, 0, 1],
+					[1, 0, 0, 1, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					];
+		ltrMap["O"] = [
+					[0, 1, 1, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[0, 1, 1, 1, 0],
+					];
+		ltrMap["P"] = [
+					[1, 1, 1, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 1, 1, 1, 0],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					];
+		ltrMap["Q"] = [
+					[0, 1, 1, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[0, 1, 1, 1, 0],
+					[0, 0, 0, 1, 1],
+					];
+		ltrMap["R"] = [
+					[1, 1, 1, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 1, 1, 1, 0],
+					[1, 0, 0, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					];
+		ltrMap["S"] = [
+					[0, 1, 1, 1, 0],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 0],
+					[0, 1, 1, 1, 0],
+					[0, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[0, 1, 1, 1, 0],
+					];
+		ltrMap["T"] = [
+					[1, 1, 1, 1, 1],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					];
+		ltrMap["U"] = [
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[0, 1, 1, 1, 0],
+					];
+		ltrMap["V"] = [
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[0, 1, 0, 1, 0],
+					[0, 0, 1, 0, 0],
+					];
+		ltrMap["W"] = [
+					[1, 0, 1, 0, 1],
+					[1, 0, 1, 0, 1],
+					[1, 0, 1, 0, 1],
+					[1, 0, 1, 0, 1],
+					[1, 0, 1, 0, 1],
+					[0, 1, 0, 1, 0],
+					[0, 1, 0, 1, 0],
+					];
+		ltrMap["X"] = [
+					[1, 0, 0, 0, 1],
+					[0, 1, 0, 1, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[0, 1, 0, 1, 0],
+					[1, 0, 0, 0, 1],
+					];
+		ltrMap["Y"] = [
+					[1, 0, 0, 0, 1],
+					[1, 0, 0, 0, 1],
+					[0, 1, 0, 1, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					[0, 0, 1, 0, 0],
+					];
+		ltrMap["Z"] = [
+					[1, 1, 1, 1, 1],
+					[0, 0, 0, 0, 1],
+					[0, 0, 0, 1, 0],
+					[0, 0, 1, 0, 0],
+					[0, 1, 0, 0, 0],
+					[1, 0, 0, 0, 0],
+					[1, 1, 1, 1, 1],
+					];
+
+		for(var letter in ltrMap)
+		{
+			ltrMap[letter].lanternCount = 0;
+			for(i = 0; i < ltrMap[letter][0].length; i++)
+			{
+				for(j = 0; j < ltrMap[letter].length; j++)
+				{
+					if(ltrMap[letter][j][i] == 1)
+					{
+						ltrMap[letter].lanternCount++;
+					}
+				}
+			}
+		}
+
+		// Lantern generation.
+
+		var brd = document.createElement("DIV");
+		document.body.insertBefore(brd, document.getElementById("board"));
+
+		const speed = 0.5;
+		const fadeInTime = 3000;
+		const fadeOutTime = 3000;
+
+		var lanterns = [];
+		
+		function generateLantern(x, y)
+		{
+			var lantern = document.createElement("DIV");
+			var ltrBdy = document.createElement("DIV");
+			var otrLit = document.createElement("DIV");
+			var inrLit = document.createElement("DIV");
+			lantern.setAttribute('class', 'lantern');
+			ltrBdy.setAttribute('class', 'lanternBody');
+			otrLit.setAttribute('class', 'outterLight');
+			inrLit.setAttribute('class', 'innerLight');
+			ltrBdy.appendChild(inrLit);
+			lantern.appendChild(ltrBdy);
+			lantern.appendChild(otrLit);
+			brd.appendChild(lantern);
+			lantern.FIT = fadeInTime;
+			lantern.FOT = fadeOutTime;
+			lantern.style.opacity = 0.0;
+			// 0: ALIVE, 1: DEAD.
+			lantern.state = 0;
+			lantern.x = x;
+			lantern.y = y;
+			lantern.bounce = 0;
+			lantern.destination = [];
+			lantern.destination.x = x;
+			lantern.destination.y = y;
+			lantern.arrived = true;
+			lantern.style.left = lantern.x + "px";
+			lantern.style.top = lantern.y + "px";
+			if(lanterns == null)
+				lanterns = [];
+			lanterns.push(lantern);
+			return lantern;
+		}
+
+		// Input control.
+
+		var wordBox = document.getElementById("wordBox");
+		var word = "";
+
+		wordBox.addEventListener("focusout", wordBoxFocusOut);
+
+		function wordBoxFocusOut()
+		{
+			word = wordBox.value;
+			var fakeBox = document.createElement("DIV");
+			fakeBox.setAttribute('class', 'fakeInput');
+			fakeBox.textContent = word;
+			wordBox.style.display = "none";
+			brd.appendChild(fakeBox);
+			setTimeout(function(){
+				fakeBox.parentNode.removeChild(fakeBox);
+			}, 2000);
+			arrangeLanterns(word);
+		}
+
+		// Lantern arrangement.
+
+		const xstart = 50;
+		const ystart = 100;
+		const xspace = 40;
+		const yspace = 40;
+		const xsplit = 230;
+
+		var distance = function(a, b){
+			return Math.pow(a.x - b.x, 2) +  Math.pow(a.y - b.y, 2);
+		}
+
+		var lanternDesinationTree;
+		var arrivedCount = 0;
+		var requiredLanterns = 0;
+
+		function arrangeLanterns(word)
+		{
+			requiredLanterns = 0;
+			for(c = 0; c < word.length; c++)
+			{
+				requiredLanterns += ltrMap[word[c]].lanternCount;
+			}
+			while(lanterns.length < requiredLanterns)
+			{
+				generateLantern(window.innerWidth * Math.random(), window.innerHeight * Math.random());
+			}
+			lanternDestinationTree = new kdTree([], distance, ["x", "y"]);
+			for(c = 0; c < word.length; c++)
+			{
+				//arrangeLanternsChar(word[c], c);
+				appendLanternDestinations(word[c], c);
+			}
+
+			/*
+
+			// Test kdTree with Lantern Destinations.
+
+			var nearest = lanternDestinationTree.nearest({ x: 200, y: 200 }, 1);
+			console.log(nearest[0][0]);
+
+			*/
+
+			for(i = 0; i < lanterns.length; i++)
+			{
+				if(i < requiredLanterns)
+				{
+					var nearest = lanternDestinationTree.nearest(lanterns[i].destination, 1);
+					lanternDestinationTree.remove(nearest[0][0]);
+					lanterns[i].destination = nearest[0][0];
+					lanterns[i].arrived = false;
+				}
+				else
+				{
+					lanterns[i].state = 1;
+				}
+			}
+			optimizeTotalDistance();
+		}
+
+		function appendLanternDestinations(char, charCount)
+		{
+			for(i = 0; i < ltrMap[char][0].length; i++)
+			{
+				for(j = 0; j < ltrMap[char].length; j++)
+				{
+					if(ltrMap[char][j][i] == 1)
+					{
+						var destination = {};
+						destination.x = xstart + i * xspace + xsplit * charCount;
+						destination.y = ystart + j * yspace;
+						lanternDestinationTree.insert(destination);
+					}
+				}
+			}
+		}
+
+		function optimizeTotalDistance()
+		{
+			var undone = true;
+			while(undone)
+			{
+				undone = false;
+				for(i = 0; i < lanterns.length; i++)
+				{
+					var lanternA = lanterns[i];
+					for(j = 0; j < lanterns.length; j++)
+					{
+						var lanternB = lanterns[j];
+						if(lanternA.state == 0 && lanternB.state == 0)
+						{
+							var oldDistance = distance(lanternA, lanternA.destination) + distance(lanternB, lanternB.destination);
+							var newDistance = distance(lanternA, lanternB.destination) + distance(lanternB, lanternA.destination);
+							if(newDistance < oldDistance)
+							{
+								[lanternA.destination, lanternB.destination] = [lanternB.destination, lanternA.destination];
+								undone = true;
+							}
+						}
+						else if(lanternA.state == 0 && lanternB.state == 1)
+						{
+							var oldDistance = distance(lanternA, lanternA.destination);
+							var newDistance = distance(lanternB, lanternA.destination);
+							if(newDistance < oldDistance)
+							{
+								lanternB.destination = {x: lanternA.destination.x, y: lanternA.destination.y};
+								lanternA.destination = {x: lanternA.x, y: lanternA.y};
+								lanternA.state = 1;
+								lanternB.state = 0;
+								lanternA.arrived = true;
+								lanternB.arrived = false;
+								undone = true;
+							}
+						}
+						else if(lanternA.state == 1 && lanternB.state == 0)
+						{
+							var oldDistance = distance(lanternB, lanternB.destination);
+							var newDistance = distance(lanternA, lanternB.destination);
+							if(newDistance < oldDistance)
+							{
+								lanternA.destination = {x: lanternB.destination.x, y: lanternB.destination.y};
+								lanternB.destination = {x: lanternB.x, y: lanternB.y};
+								lanternA.state = 0;
+								lanternB.state = 1;
+								lanternA.arrived = false;
+								lanternB.arrived = true;
+								undone = true;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		function arrangeLanternsChar(char, charCount)
+		{
+
+			// Testing arrangeLanterns();
+
+			for(i = 0; i < ltrMap[char][0].length; i++)
+			{
+				for(j = 0; j < ltrMap[char].length; j++)
+				{
+					if(ltrMap[char][j][i] == 1)
+					{
+						generateLantern(xstart + i * xspace + xsplit * charCount, ystart + j * yspace);
+					}
+				}
+			}
+		}
+
+		// Animation control.
+
+		const spedFctr = 0.025;
+		const arivThsh = 5 * spedFctr;
+		const bonsFctr = 0.001;
+		const bonsMrgn = 5;
+
+		var before = Date.now();
+		var id = setInterval(frame, 10);
+
+		function frame()
+		{
+			var current = Date.now();
+			var deltaTime = current - before;
+			before = current;
+			for(i in lanterns)
+			{
+				var lantern = lanterns[i];
+				switch(lantern.state)
+				{
+					case 0:
+						if(lantern.FIT > 0)
+						{
+							lantern.FIT -= deltaTime;
+							lantern.style.opacity = 1 - lantern.FIT / fadeOutTime;
+						}
+						var xDiff = lantern.destination.x - lantern.x;
+						var yDiff = lantern.destination.y - lantern.y;
+						var dDiff = Math.sqrt(xDiff * xDiff + yDiff * yDiff);
+						if(!lantern.arrived)
+						{
+							if(Math.abs(dDiff) < arivThsh)
+							{
+								lantern.arrived = true;
+								arrivedCount++;
+							}
+							else
+							{
+								lantern.x += xDiff / dDiff * spedFctr * deltaTime;
+								lantern.y += yDiff / dDiff * spedFctr * deltaTime;
+							}
+							lantern.style.left = lantern.x + "px";
+						}
+						else
+						{
+							lantern.bounce += bonsFctr * deltaTime;
+						}
+						lantern.style.top = lantern.y + Math.sin(lantern.bounce) * bonsMrgn + "px";
+						break;
+					case 1:
+						if(lantern.FOT > 0)
+						{
+							lantern.FOT -= deltaTime;
+							lantern.style.opacity = lantern.FOT / fadeOutTime;
+						}
+						else
+						{
+							lantern.parentNode.removeChild(lantern);
+							lanterns.splice(i, 1);
+						}
+						break;
+				}
+			}
+		}
+
+		var gr = setInterval(check, 100);
+
+		function check()
+		{
+			if(arrivedCount == requiredLanterns)
+			{
+				wordBox.style.display = "inline";
+				arrivedCount = 0;
+			}
+		}
+
+		/*
+
+		// Testing Lanterns.
+
+		var xstart = 50;
+		var ystart = 100;
+		var xspace = 50;
+		var yspace = 50;
+		var letter = "L";
+
+		for(i = 0; i < ltrMap[letter][0].length; i++)
+		{
+			for(j = 0; j < ltrMap[letter].length; j++)
+			{
+				if(ltrMap[letter][j][i] == 1)
+				{
+					generateLantern(xstart + i * xspace, ystart + j * yspace);
+				}
+			}
+		}
+
+		var xstart = 350;
+		var letter = "O";
+
+		for(i = 0; i < ltrMap[letter][0].length; i++)
+		{
+			for(j = 0; j < ltrMap[letter].length; j++)
+			{
+				if(ltrMap[letter][j][i] == 1)
+				{
+					generateLantern(xstart + i * xspace, ystart + j * yspace);
+				}
+			}
+		}
+
+		var xstart = 650;
+		var letter = "V";
+
+		for(i = 0; i < ltrMap[letter][0].length; i++)
+		{
+			for(j = 0; j < ltrMap[letter].length; j++)
+			{
+				if(ltrMap[letter][j][i] == 1)
+				{
+					generateLantern(xstart + i * xspace, ystart + j * yspace);
+				}
+			}
+		}
+
+		var xstart = 950;
+		var letter = "E";
+
+		for(i = 0; i < ltrMap[letter][0].length; i++)
+		{
+			for(j = 0; j < ltrMap[letter].length; j++)
+			{
+				if(ltrMap[letter][j][i] == 1)
+				{
+					generateLantern(xstart + i * xspace, ystart + j * yspace);
+				}
+			}
+		}
+
+		*/
+
+		/*
+		
+		// Testing kdTree.
+
+		var points = [
+			{x: 1, y: 2},
+			{x: 3, y: 4},
+			{x: 5, y: 6},
+			{x: 7, y: 8}
+		];
+		var distance = function(a, b){
+			return Math.pow(a.x - b.x, 2) +  Math.pow(a.y - b.y, 2);
+		}
+		var tree = new kdTree(points, distance, ["x", "y"]);
+		var nearest = tree.nearest({ x: 5, y: 5 }, 2);
+		console.log(nearest);	
+
+		*/
+
+	</script>
+</html>
