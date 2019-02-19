@@ -495,26 +495,22 @@
 
 		var wordBox = document.getElementById("wordBox");
 		var word = "";
-		var enterPressed = false;
 
 		wordBox.addEventListener("focusout", wordBoxFocusOut);
 
 		function wordBoxFocusOut()
 		{
-			if(!enterPressed)
-			{
-				word = wordBox.value;
-				var fakeBox = document.createElement("DIV");
-				fakeBox.setAttribute('class', 'fakeInput');
-				fakeBox.textContent = word;
-				wordBox.style.display = "none";
-				brd.appendChild(fakeBox);
-				setTimeout(function(){
-					fakeBox.parentNode.removeChild(fakeBox);
-				}, 2000);
-				arrangeLanterns(word);
-				enterPressed = false;
-			}
+			word = wordBox.value;
+			var fakeBox = document.createElement("DIV");
+			fakeBox.setAttribute('class', 'fakeInput');
+			fakeBox.textContent = word;
+			wordBox.style.display = "none";
+			brd.appendChild(fakeBox);
+			setTimeout(function(){
+				fakeBox.parentNode.removeChild(fakeBox);
+			}, 2000);
+			arrangeLanterns(word);
+			wordBox.addEventListener("focusout", wordBoxFocusOut);
 		}
 
 		window.onkeydown = function(e)
@@ -522,8 +518,7 @@
 			key = e.keyCode;
 			if(key == 13)
 			{
-				wordBoxFocusOut();
-				enterPressed = true;
+				wordBox.blur();
 			}
 		};
 
