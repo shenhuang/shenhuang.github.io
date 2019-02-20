@@ -1162,13 +1162,34 @@
 	</div>
 	</body>
 	</head>
+	<style>
+		@keyframes shake {
+			0%	{
+				transform : translateY(-30px);
+			}
+			40% {
+				transform : rotate(10deg);
+			}
+			60% {
+				transform : rotate(-10deg);
+			}
+			80% {
+				transform : rotate(10deg);
+			}
+			100% {
+				transform : rotate(0deg);
+			}
+		}
+		.leprechaunhat {
+			animation : shake 1s ease-in;
+		}
+	</style>
 	<body>
-		<img id = "hat" src = "./leprechaunhat_kisspng.png" style = "display : none" >
+		<img id = "hat" class = "leprechaunhat" src = "./leprechaunhat_kisspng.png" style = "display : none" >
 	</body>
 	<script src = "build/tracking-min.js" type = "text/javascript" ></script>
 	<script src = "build/data/face-min.js" type = "text/javascript" ></script>
 	<script>
-		const yOffsetRatio = 1;
 		const yOffsetValue = 10;
 		window.onload = function() {
 			var hat = document.getElementById("hat");
@@ -1179,13 +1200,12 @@
 			{
 				(function(img)
 				{
-					console.log(i);
 					trackers[i] = new tracking.ObjectTracker('face');
 					tracking.track(img, trackers[i]);
 					trackers[i].on('track', function(event) {
 						event.data.forEach(function(rect) {
 							var bcr = img.getBoundingClientRect();
-							placeHat(rect.x, rect.y * yOffsetRatio + yOffsetValue - rect.height, rect.width, rect.height, img, i);
+							placeHat(rect.x, rect.y + yOffsetValue - rect.height, rect.width, rect.height, img, i);
 						});
 					});
 				})(images[i]);
@@ -1198,8 +1218,7 @@
 				hats[count].style.top = y + "px";
 				hats[count].style.width = w + "px";
 				hats[count].style.height = h + "px";
-				image.parentNode.appendChild(hats[count]);
-				console.log(images);
+				image.parentNode.parentNode.appendChild(hats[count]);
 			}
 		};
     </script>
