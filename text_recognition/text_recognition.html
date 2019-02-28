@@ -1,0 +1,29 @@
+<!--Copyright to Shen Huang, you can reach me out at shenhuang@live.ca-->
+
+<!DOCTYPE html>
+<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+<html>
+	<head>
+		<title>TEXT RECOGNITION DEMO</title>
+		<style>
+		body	{
+			background-color : #ffceed;
+		}
+		</style>
+	</head>
+	<body>
+		<img id = "licenseplates" src = "./loveletter.jpg" style = "display : inline" >
+	</body>
+	<script src = 'https://cdn.jsdelivr.net/gh/naptha/tesseract.js@v1.0.14/dist/tesseract.min.js' type = "text/javascript" ></script>
+	<script>
+		window.onload = function() {
+			var imageItem = document.getElementById('licenseplates');
+			var myImage = imageItem.src;
+			Tesseract.recognize(myImage)
+				.progress(message => console.log(message));
+				.catch(err => console.error(err));
+				.then(result => console.log(result));
+				.finally(resultOrError => console.log(resultOrError));
+		}
+	</script>
+</html>
