@@ -115,68 +115,76 @@
 			body	{
 				background-color : #000f04;
 			}
-			@keyframes 			board-setup-animation	{
+			@keyframes 			board-setup-animation			{
 				0% {top : 10vh; opacity : 0;}
 				100% {top : 0vh; opacity : 1.0;}
 			}
-			@-webkit-keyframes	board-setup-animation	{
+			@-webkit-keyframes	board-setup-animation			{
 				0% {top : 10vh; opacity : 0;}
 				100% {top : 0vh; opacity : 1.0;}
 			}
-			@keyframes 			panel-hover-animation	{
+			@keyframes 			panel-hover-animation			{
 				0% {border-color : #7893ba;}
 				100% {border-color : white;}
 			}
-			@-webkit-keyframes	panel-hover-animation	{
+			@-webkit-keyframes	panel-hover-animation			{
 				0% {border-color : #7893ba;}
 				100% {border-color : white;}
 			}
-			@keyframes 			image-hover-animation	{
+			@keyframes 			image-hover-animation			{
 				0% {border-color : #fff19e;}
 				50% {border-color : #ee9eff;}
 				100% {border-color : #fff19e;}
 			}
-			@-webkit-keyframes	image-hover-animation	{
+			@-webkit-keyframes	image-hover-animation			{
 				0% {border-color : #fff19e;}
 				50% {border-color : #ee9eff;}
 				100% {border-color : #fff19e;}
 			}
-			@keyframes 			panel-unhover-animation	{
+			@keyframes 			panel-unhover-animation			{
 				0% {border-color : #89a2c6; background-color : #7893ba; opacity : 1.0;}
 				100% {border-color : #3d495b; background-color : #3d495b; opacity : 0.7;}
 			}
-			@-webkit-keyframes	panel-unhover-animation	{
+			@-webkit-keyframes	panel-unhover-animation			{
 				0% {border-color : #89a2c6; background-color : #7893ba; opacity : 1.0;}
 				100% {border-color : #3d495b; background-color : #3d495b; opacity : 0.7;}
 			}
-			@keyframes 			navbtn-flyin-animation	{
+			@keyframes 			navbtn-flyin-animation			{
 				0% {left : -200%; opacity : 1.0;}
 				100% {left : 0%; opacity : 0.1;}
 			}
-			@-webkit-keyframes	navbtn-flyin-animation	{
+			@-webkit-keyframes	navbtn-flyin-animation			{
 				0% {left : -200%; opacity : 1.0;}
 				100% {left : 0%; opacity : 0.1;}
 			}
-			@keyframes 			firework-animation	{
+			@keyframes 			navbtn-flyin-animation-nofade	{
+				0% {left : -200%;}
+				100% {left : 0%; }
+			}
+			@-webkit-keyframes	navbtn-flyin-animation-nofade	{
+				0% {left : -200%;}
+				100% {left : 0%;}
+			}
+			@keyframes 			firework-animation				{
 				0% {background-color : #ff8426;}
 				25% {background-color : #fffc84;}
 				50% {background-color : #ff83f4;}
 				75% {background-color : #83b6ff;}
 				100% {background-color : #ff8426;}
 			}
-			@-webkit-keyframes	firework-animation	{
+			@-webkit-keyframes	firework-animation				{
 				0% {background-color : #ff8426;}
 				25% {background-color : #fffc84;}
 				50% {background-color : #ff83f4;}
 				75% {background-color : #83b6ff;}
 				100% {background-color : #ff8426;}
 			}
-			@keyframes 			firework-seed-animation	{
+			@keyframes 			firework-seed-animation			{
 				0% {background-color : #ff8426;}
 				25% {background-color : #fffc84;}
 				100% {background-color : #ff8426;}
 			}
-			@-webkit-keyframes	firework-seed-animation	{
+			@-webkit-keyframes	firework-seed-animation			{
 				0% {background-color : #ff8426;}
 				25% {background-color : #fffc84;}
 				100% {background-color : #ff8426;}
@@ -333,13 +341,25 @@
 				top : 25px;
 				left : 100%;
 			}
-			.navigatorPanel {
-				animation-name : navbtn-flyin-animation;
-				animation-timing-function : ease-in-out;
-				animation-duration : 2.5s;
-				position : relative;
-				left : 0%;
-				opacity : 0.1;
+			@media screen and (max-width: 480px) {
+				.navigatorPanel {
+					animation-name : navbtn-flyin-animation;
+					animation-timing-function : ease-in-out;
+					animation-duration : 2.5s;
+					position : relative;
+					left : 0%;
+					opacity : 0.1;
+				}
+			}
+			@media screen and (min-width: 480px) {
+				.navigatorPanel {
+					animation-name : navbtn-flyin-animation-nofade;
+					animation-timing-function : ease-in-out;
+					animation-duration : 2.5s;
+					position : relative;
+					left : 0%;
+					opacity : 1.0;
+				}
 			}
 			.navigatorPanel:hover {
 				opacity : 1.0;
