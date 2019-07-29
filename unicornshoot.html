@@ -1,0 +1,764 @@
+<!--Copyright to Shen Huang, you can reach me out at shenhuang@live.ca-->
+
+<!DOCTYPE html>
+<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+<html>
+	<head>
+		<title>☆ ☆ ★ UNICORN ★ ☆ ☆</title>	
+		<style>
+		@keyframes bgcolor {
+			0% {
+				background-color : #000f04;
+			}
+			100% {
+				background-color : #010112;
+			}
+		}
+		@keyframes fadein {
+			0% {
+				opacity : 0.0;
+			}
+			100% {
+				opacity : 1.0;
+			}
+		}
+		@keyframes enlarge {
+			0% {
+				width : 16px;
+				height : 16px;
+				font-size : 16px;
+			}
+			80% {
+				width : 55px;
+				height : 55px;
+				font-size : 70px;
+			}
+			100% {
+				width : 50px;
+				height : 50px;
+				font-size : 50px;
+			}
+		}
+		@keyframes invulnerable {
+			0% {
+				opacity : 0.8;
+			}
+			50% {
+				opacity : 0.2;
+			}
+			100% {
+				opacity : 0.8;
+			}
+		}
+		@keyframes rotate {
+			0% {
+				transform : rotate(0deg);
+			}
+			100% {
+				transform : rotate(-360deg);
+			}
+		}
+		@keyframes expiring {
+			0% {
+				transform : rotate(0deg);
+				opacity : 0.6;
+			}
+			25% {
+				opacity : 0.2;
+			}
+			50% {
+				opacity : 0.6;
+			}
+			75% {
+				opacity : 0.2;
+			}
+			100% {
+				transform : rotate(-360deg);
+				opacity : 0.6;
+			}
+		}
+		body {
+			background-color: #010112;
+			-webkit-animation : bgcolor 5s ease-out;
+			animation : bgcolor 5s ease-out;
+		}
+		.hud {
+			z-index : 100;
+			position : relative;
+			width : 100%;
+			font-size : 30px;
+			color : white;
+			-webkit-transition : fadein 5s ease-in;
+			animation : fadein 5s ease-in;
+		}
+		.unicorn {
+			z-index : 999;
+			visibility : hidden;
+			position : absolute;
+			width : 50px;
+			height : 50px;
+			font-size : 50px;
+			text-indent: 50%;
+		}
+		.unicornStart {
+			z-index : 999;
+			visibility : hidden;
+			position : absolute;
+			width : 50px;
+			height : 50px;
+			font-size : 50px;
+			text-indent: 50%;
+			-webkit-transition : enlarge 1s ease-in-out;
+			animation : enlarge 1s ease-in-out;
+		}
+		.unicornInvulnerable {
+			z-index : 999;
+			visibility : hidden;
+			position : absolute;
+			width : 50px;
+			height : 50px;
+			font-size : 50px;
+			text-indent: 50%;
+			-webkit-transition : invulnerable 0.3s linear infinite;
+			animation : invulnerable 0.3s linear infinite;
+		}
+		.unicornoffset {
+			position : relative;
+			cursor : none;
+			top : -50%;
+			left : -50%;
+		}
+		.rainbow {
+			z-index : 10;
+			position : absolute;
+			font-size : 40px;
+		}
+		.star {
+			z-index : 20;
+			position : absolute;
+			width : 30px;
+			height : 30px;
+			font-size : 30px;
+			transform-origin: 50% 55%;
+			-webkit-transition : rotate 1s linear infinite;
+			animation : rotate 1s linear infinite;
+		}
+		.bonus {
+			z-index : 30;
+			position : absolute;
+			width : 30px;
+			height : 30px;
+			font-size : 30px;
+			transform-origin: 50% 55%;
+			-webkit-transition : rotate 2s linear infinite;
+			animation : rotate 2s linear infinite;
+		}
+		.bonusExpiring {
+			z-index : 30;
+			position : absolute;
+			width : 30px;
+			height : 30px;
+			font-size : 30px;
+			transform-origin: 50% 55%;
+			-webkit-transition : expiring 2s linear infinite;
+			animation : expiring 2s linear infinite;
+		}
+		.bug {
+			z-index : 20;
+			position : absolute;
+			width : 40px;
+			height : 40px;
+			font-size : 40px;
+			transform : perspective(0);
+		}
+		</style>
+	</head>
+	<body>
+		<div id = "SCORE" class = "hud"><p></p></div>
+		<div id = "LIVES" class = "hud"><p></p></div>
+		<div id = "UNICORN" class = "unicornStart"><div class = "unicornoffset">🦄</div></div>
+	</body>
+	<script>
+		
+		var returnURL = "file:///Users/FlyingPenguin/0x2A/0x2A.github.io/index.html";
+		var unicorn = document.getElementById("UNICORN");
+		unicorn.score = 0;
+		unicorn.waitTime = 1000;
+		unicorn.score = 0;
+		unicorn.lives = 3;
+		unicorn.invulnerabilityTimeDefault = 3000;
+		unicorn.invulnerabilityTime = 0;
+		unicorn.rainbowInterval = 30;
+		unicorn.nextRainbow = 0;
+		unicorn.starInterval = 150;
+		unicorn.nextStar = 0;
+		unicorn.position = [];
+		unicorn.speed = 2.0;
+		unicorn.speedMultiplier = 1;
+		unicorn.powerMultiplier = 1;
+		unicorn.speedBonusTime = 6000;
+		unicorn.powerBonusTime = 6000;
+
+		
+		var scoreHUD = document.getElementById("SCORE");
+		var livesHUD = document.getElementById("LIVES");
+		var scoreSymbol = ["0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"];
+		var livesSymbol = "🦄";
+		updateScore();
+		updateLives();
+
+		function moreScore(value)
+		{
+			unicorn.score += value;
+			updateScore();
+		}
+
+		function lessScore(value)
+		{
+			unicorn.score -= value;
+			updateScore();
+		}
+
+		function updateScore()
+		{
+			var content = "";
+			var scoreString = unicorn.score.toString();
+			for(i = 0; i < scoreString.length; i++)
+			{
+				content = content + scoreSymbol[parseInt(scoreString.charAt(i))];
+			}
+			scoreHUD.textContent = content;
+		}
+
+		function lessLives()
+		{
+			if(unicorn.invulnerabilityTime <= 0)
+			{
+				unicorn.lives--;
+				unicorn.invulnerabilityTime = unicorn.invulnerabilityTimeDefault;
+				unicorn.setAttribute('class', 'unicornInvulnerable');
+				if(unicorn.lives < 0)
+					window.location.replace(returnURL);
+			}
+			
+
+			updateLives();
+		}
+
+		function moreLives()
+		{
+			unicorn.lives++;
+			updateLives();
+		}
+
+		function updateLives()
+		{
+			livesHUD.textContent = livesSymbol.repeat(unicorn.lives);
+		}
+
+		var cursor_position = [];
+		window.onmouseup = function(event){
+			updateMousePosition(event);
+		};
+
+		window.onmousedown = function(event){
+			updateMousePosition(event);
+		};
+
+		window.onmousemove = function(event){
+			updateMousePosition(event);
+		};
+
+		function updateMousePosition(mouseEvent)
+		{
+			cursor_position.x = mouseEvent.x;
+			cursor_position.y = mouseEvent.y;
+			if(unicorn.position.x == null || unicorn.position.y == null)
+			{
+				unicorn.position.x = mouseEvent.x;
+				unicorn.position.y = mouseEvent.y;
+				unicorn.style.left = unicorn.position.x + "px";
+				unicorn.style.top = unicorn.position.y + "px";
+				unicorn.style.visibility = "visible";
+			}
+		}
+
+		const rainbowIniT = 3000;
+		const rainbowIniV = 0.1;
+		var rainbows = [];
+		function generateRainbow(x, y)
+		{
+			var rainbow = document.createElement("DIV");
+			rainbow.textContent = "🏳️‍🌈";
+			rainbow.setAttribute('class', 'rainbow');
+			document.body.appendChild(rainbow);
+			rainbow.time = rainbowIniT;
+			rainbow.position = [];
+			rainbow.position.x = x;
+			rainbow.position.y = y;
+			rainbow.style.left = rainbow.position.x + 'px';
+			rainbow.style.top = rainbow.position.y + 'px';
+			if(rainbow == null)
+				rainbow = [];
+			rainbows.push(rainbow);
+			return rainbow;
+		}
+
+		const starIniT = 10000;
+		const starIniV = 0.1;
+		var stars = [];
+
+		function generateStar(x, y, angle)
+		{
+			var star = document.createElement("DIV");
+			star.textContent = "⭐";
+			star.setAttribute('class', 'star');
+			document.body.appendChild(star);
+			star.time = starIniT;
+			while(angle > 360)
+				angle -= 360;
+			while(angle < 0)
+				angle += 360;
+			star.velocity = [];
+			if(angle > 270)
+			{
+				star.velocity.x = starIniV * Math.sin(angle * Math.PI / 180);
+				star.velocity.y = starIniV * Math.cos(angle * Math.PI / 180);
+			}
+			else if(angle > 180)
+			{
+				star.velocity.x = starIniV * Math.sin(angle * Math.PI / 180);
+				star.velocity.y = starIniV * Math.cos(angle * Math.PI / 180);
+			}
+			else if(angle > 90)
+			{
+				star.velocity.x = starIniV * Math.sin(angle * Math.PI / 180);
+				star.velocity.y = starIniV * Math.cos(angle * Math.PI / 180);
+			}
+			else
+			{
+				star.velocity.x = starIniV * Math.sin(angle * Math.PI / 180);
+				star.velocity.y = starIniV * Math.cos(angle * Math.PI / 180);
+			}
+			star.position = [];
+			star.position.x = x;
+			star.position.y = y;
+			star.style.left = star.position.x + 'px';
+			star.style.top = star.position.y + 'px';
+			if(stars == null)
+				stars = [];
+			stars.push(star);
+			return star;
+		}
+
+		function generateStars(x, y)
+		{
+			if(unicorn.powerMultiplier == 6)
+			{
+				for(i = 0; i < 6; i++)
+				{
+					generateStar(x, y, -15 - 30 * i)
+				}
+			}
+			else
+			{
+				generateStar(x, y, -90);
+			}
+		}
+
+		const bonusIniT = 12000;
+		const bonusExpT = 4000;
+		const bonusIniV = 0.025;
+		var bonuses = [];
+
+		function generateBonus(x, y, angle, type)
+		{
+			var bonus = document.createElement("DIV");
+			bonus.bonusType = type;
+			if(bonus.bonusType == "LIFE")
+			{
+				bonus.textContent = "🦄";
+			}
+			else if(bonus.bonusType == "SPEED")
+			{
+				bonus.textContent = "🍬";
+			}
+			else if(bonus.bonusType == "POWER")
+			{
+				bonus.textContent = "🍭";
+			}
+			else if(bonus.bonusType == "GEM")
+			{
+				bonus.textContent = "💎";
+			}
+			bonus.setAttribute('class', 'bonus');
+			document.body.appendChild(bonus);
+			bonus.time = starIniT;
+			bonus.expiring = false;
+			while(angle > 360)
+				angle -= 360;
+			while(angle < 0)
+				angle += 360;
+			bonus.velocity = [];
+			if(angle > 270)
+			{
+				bonus.velocity.x = bonusIniV * Math.sin(angle * Math.PI / 180);
+				bonus.velocity.y = bonusIniV * Math.cos(angle * Math.PI / 180);
+			}
+			else if(angle > 180)
+			{
+				bonus.velocity.x = bonusIniV * Math.sin(angle * Math.PI / 180);
+				bonus.velocity.y = bonusIniV * Math.cos(angle * Math.PI / 180);
+			}
+			else if(angle > 90)
+			{
+				bonus.velocity.x = bonusIniV * Math.sin(angle * Math.PI / 180);
+				bonus.velocity.y = bonusIniV * Math.cos(angle * Math.PI / 180);
+			}
+			else
+			{
+				bonus.velocity.x = bonusIniV * Math.sin(angle * Math.PI / 180);
+				bonus.velocity.y = bonusIniV * Math.cos(angle * Math.PI / 180);
+			}
+			bonus.position = [];
+			bonus.position.x = x;
+			bonus.position.y = y;
+			bonus.style.left = bonus.position.x + 'px';
+			bonus.style.top = bonus.position.y + 'px';
+			if(bonuses == null)
+				bonuses = [];
+			bonuses.push(bonus);
+			return bonus;
+		}
+
+		const bugIniT = 10000;
+		const bugIniV = 0.1;
+		var bugs = [];
+
+		function generateBug(x, y, angle, speed)
+		{
+			var bug = document.createElement("DIV");
+			bug.textContent = "🐞";
+			bug.setAttribute('class', 'bug');
+			document.body.appendChild(bug);
+			bug.time = bugIniT;
+			while(angle > 360)
+				angle -= 360;
+			while(angle < 0)
+				angle += 360;
+			bug.velocity = [];
+			if(angle > 270)
+			{
+				bug.velocity.x = speed * Math.sin(angle * Math.PI / 180);
+				bug.velocity.y = speed * Math.cos(angle * Math.PI / 180);
+			}
+			else if(angle > 180)
+			{
+				bug.velocity.x = speed * Math.sin(angle * Math.PI / 180);
+				bug.velocity.y = speed * Math.cos(angle * Math.PI / 180);
+			}
+			else if(angle > 90)
+			{
+				bug.velocity.x = speed * Math.sin(angle * Math.PI / 180);
+				bug.velocity.y = speed * Math.cos(angle * Math.PI / 180);
+			}
+			else
+			{
+				bug.velocity.x = speed * Math.sin(angle * Math.PI / 180);
+				bug.velocity.y = speed * Math.cos(angle * Math.PI / 180);
+			}
+			bug.position = [];
+			bug.position.x = x;
+			bug.position.y = y;
+			bug.style.left = bug.position.x + 'px';
+			bug.style.top = bug.position.y + 'px';
+			bug.style.transform = "rotate(" + angle + "deg)" + "perspective(0)";
+			if(bugs == null)
+				bugs = [];
+			bugs.push(bug);
+			return bug;
+		}
+
+		var before = Date.now();
+		var id = setInterval(frame, 25);
+		function frame()
+		{
+			var current = Date.now();
+			var deltaTime = current - before;
+			before = current;
+			if(unicorn.position.x != null && unicorn.position.y != null)
+			{
+				var xDiff = cursor_position.x - unicorn.position.x;
+				var yDiff = cursor_position.y - unicorn.position.y;
+				var angle = Math.atan2(yDiff, xDiff);
+				unicorn.position.x += Math.min(unicorn.speed * unicorn.speedMultiplier * Math.cos(angle));
+				unicorn.position.y += Math.min(unicorn.speed * unicorn.speedMultiplier * Math.sin(angle));
+				unicorn.style.left = unicorn.position.x + "px";
+				unicorn.style.top = unicorn.position.y + "px";
+			}
+			if(unicorn.waitTime > 0)
+			{
+				unicorn.waitTime -= deltaTime;
+			}
+			else
+			{
+				unicorn.nextRainbow -= rainbowIniV * deltaTime * unicorn.speedMultiplier;
+				if(unicorn.nextRainbow < 0)
+				{
+					unicorn.nextRainbow = unicorn.rainbowInterval;
+					generateRainbow(unicorn.position.x, unicorn.position.y - unicorn.offsetHeight * 0.25);
+				}
+				unicorn.nextStar -= starIniV * deltaTime * unicorn.speedMultiplier;
+				if(unicorn.nextStar < 0)
+				{
+					unicorn.nextStar = unicorn.starInterval;
+					generateStars(unicorn.position.x - unicorn.offsetWidth, unicorn.position.y - unicorn.offsetHeight * 0.25);
+				}
+			}
+			if(unicorn.invulnerabilityTime > 0)
+			{
+				unicorn.invulnerabilityTime -= deltaTime;
+				if(unicorn.invulnerabilityTime <= 0)
+					unicorn.setAttribute('class', 'unicorn');
+			}
+			for(i in rainbows)
+			{
+				var rainbow = rainbows[i];
+				rainbow.time -= deltaTime;
+				if(rainbow.time > 0)
+				{
+					rainbow.style.opacity = rainbow.time / rainbowIniT;
+					rainbow.position.x += rainbowIniV * deltaTime * unicorn.speedMultiplier;
+					rainbow.style.left = rainbow.position.x + 'px';
+					rainbow.style.top = rainbow.position.y + 'px';
+				}
+				else
+				{
+					rainbow.parentNode.removeChild(rainbow);
+					rainbows.splice(i, 1);
+				}
+			}
+			for(i in stars)
+			{
+				var star = stars[i];
+				star.time -= deltaTime;
+				if(star.time > 0)
+				{
+					star.position.x += star.velocity.x * deltaTime * unicorn.speedMultiplier;
+					star.position.y -= star.velocity.y * deltaTime * unicorn.speedMultiplier;
+					star.style.left = star.position.x + 'px';
+					star.style.top = star.position.y + 'px';
+				}
+				else
+				{
+					star.parentNode.removeChild(star);
+					stars.splice(i, 1);
+				}
+			}
+			for(i in bugs)
+			{
+				var bug = bugs[i];
+				bug.time -= deltaTime;
+				if(bug.time > 0)
+				{
+					bug.position.x += bug.velocity.x * deltaTime;
+					bug.position.y -= bug.velocity.y * deltaTime;
+					bug.style.left = bug.position.x + 'px';
+					bug.style.top = bug.position.y + 'px';
+				}
+				else
+				{
+					bug.parentNode.removeChild(bug);
+					bugs.splice(i, 1);
+				}
+			}
+			for(i in bonuses)
+			{
+				var bonus = bonuses[i];
+				bonus.time -= deltaTime;
+				if(bonus.time > 0)
+				{
+					if(bonus.time < bonusExpT && !bonus.expiring)
+					{
+						bonus.expiring = true;
+						bonus.setAttribute('class', 'bonusExpiring');
+					}
+					bonus.position.x += bonus.velocity.x * deltaTime;
+					bonus.position.y -= bonus.velocity.y * deltaTime;
+					bonus.style.left = bonus.position.x + 'px';
+					bonus.style.top = bonus.position.y + 'px';
+				}
+				else
+				{
+					bonus.parentNode.removeChild(bonus);
+					bonuses.splice(i, 1);
+				}
+			}
+			checkCollisions();
+		}
+
+		const bonusDist = 200;
+		const bonusCollisionOffsetX = 15;
+		const bonusCollisionOffsetY = 15;
+		const bugDist = 250;
+		const bugCollisionOffsetX = -15;
+		const bugCollisionOffsetY = 15;
+		const starDist = 250;
+		const starCollisionOffsetX = 0;
+		const starCollisionOffsetY = 0;
+
+		function checkCollisions()
+		{
+			for(i in bonuses)
+			{
+				bonus = bonuses[i];
+				if(bonus.position.x < 0 || bonus.position.x > window.innerWidth || bonus.position.y < 0 || bonus.position.y > window.innerHeight)
+				{
+					bonus.parentNode.removeChild(bonus);
+					bonuses.splice(i, 1);
+				}
+				else
+				{
+					var xDiff = bonus.position.x - unicorn.position.x + bonusCollisionOffsetX;
+					var yDiff = bonus.position.y - unicorn.position.y + bonusCollisionOffsetY;
+					if(xDiff * xDiff + yDiff * yDiff < bonusDist)
+					{
+						if(bonus.bonusType == "LIFE")
+						{
+							moreLives();
+						}
+						else if(bonus.bonusType == "SPEED")
+						{
+							unicorn.speedMultiplier = 6;
+							clearTimeout(unicorn.speedTimeout);
+							unicorn.speedTimeout = setTimeout(function(){
+								unicorn.speedMultiplier = 1
+							}, unicorn.speedBonusTime);
+						}
+						else if(bonus.bonusType == "POWER")
+						{
+							unicorn.powerMultiplier = 6;
+							clearTimeout(unicorn.powerTimeout);
+							unicorn.powerTimeout = setTimeout(function(){
+								unicorn.powerMultiplier = 1
+							}, unicorn.powerBonusTime);
+						}
+						else if(bonus.bonusType == "GEM")
+						{
+							moreScore(100);
+						}
+						var k = bonuses.indexOf(bonus);
+						bonus.parentNode.removeChild(bonus);
+						bonuses.splice(k, 1);
+					}
+				}
+			}
+			for(i in bugs)
+			{
+				bug = bugs[i];
+				if(bug.position.x < 0 || bug.position.x > window.innerWidth || bug.position.y < 0 || bug.position.y > window.innerHeight)
+				{
+					bug.parentNode.removeChild(bug);
+					bugs.splice(i, 1);
+				}
+				else
+				{
+					var xDiff = bug.position.x - unicorn.position.x + bugCollisionOffsetX;
+					var yDiff = bug.position.y - unicorn.position.y + bugCollisionOffsetY;
+					if(xDiff * xDiff + yDiff * yDiff < bugDist)
+					{
+						lessLives();
+						bug.parentNode.removeChild(bug);
+						bugs.splice(i, 1);
+					}
+				}
+			}
+			for(i in stars)
+			{
+				star = stars[i];
+				if(star.position.x < 0 || star.position.x > window.innerWidth || star.position.y < 0 || star.position.y > window.innerHeight)
+				{
+					star.parentNode.removeChild(star);
+					stars.splice(i, 1);
+				}
+				else
+				{
+					for(j in bugs)
+					{
+						bug = bugs[j];
+						var xDiff = star.position.x - bug.position.x + starCollisionOffsetX;
+						var yDiff = star.position.y - bug.position.y + starCollisionOffsetY;
+						if(xDiff * xDiff + yDiff * yDiff < starDist)
+						{
+							removeStar = true;
+							moreScore(1);
+							dropBonus(bug.position.x, bug.position.y);
+							bug.parentNode.removeChild(bug);
+							bugs.splice(j, 1);
+							var k = stars.indexOf(star);
+							star.parentNode.removeChild(star);
+							stars.splice(k, 1);
+						}
+					}
+					
+				}
+			}
+		}
+
+		var lifeBonusBias = 1;
+
+		function dropBonus(x, y)
+		{
+			if(Math.random() < 0.15)
+				generateBonus(x, y, Math.random() * 360, "SPEED");
+			if(Math.random() < 0.15)
+				generateBonus(x, y, Math.random() * 360, "POWER");
+			if(Math.random() < 0.25)
+				generateBonus(x, y, Math.random() * 360, "GEM");
+			if(Math.random() < 0.05 / lifeBonusBias)
+				generateBonus(x, y, Math.random() * 360, "LIFE");
+		}
+
+		var id = setInterval(generateBugs, 1000);
+		var difficulty = 0;
+
+		function generateBugs()
+		{
+			var bugCount = difficulty * Math.random() * Math.random() / 5;
+			var bugSpeed = difficulty / 1000;
+			for(i = 0; i < bugCount; i++)
+			{
+				let x;
+				let y;
+				let angle = 180 * Math.random() * Math.random();
+				if(Math.random() > 0.5)
+				{
+					x = 1;
+					y = 1 + Math.random() * (window.innerHeight - 2);
+				}
+				else
+				{
+					x = 1 + Math.random() * (window.innerWidth - 2);
+					if(Math.random() > 0.5)
+					{
+						y = 1;
+						angle += 90;
+					}
+					else
+					{
+						y = window.innerHeight;
+						angle -= 90;
+					}
+				}
+				let speed = bugIniV + bugSpeed * Math.random();
+				setTimeout(function(){
+					generateBug(x, y, angle, speed);
+				}, 1000 * Math.random());
+			}
+			lifeBonusBias = 1 + difficulty / 30;
+			difficulty++;
+		}
+
+
+	</script>
+</html>
