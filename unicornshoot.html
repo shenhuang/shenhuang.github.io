@@ -597,13 +597,13 @@
 			checkCollisions();
 		}
 
-		const bonusDist = 500;
+		const bonusDist = 1000;
 		const bonusCollisionOffsetX = 15;
 		const bonusCollisionOffsetY = 15;
 		const bugDist = 250;
 		const bugCollisionOffsetX = -15;
 		const bugCollisionOffsetY = 15;
-		const starDist = 500;
+		const starDist = 800;
 		const starCollisionOffsetX = 0;
 		const starCollisionOffsetY = 0;
 
@@ -705,17 +705,17 @@
 			}
 		}
 
-		var lifeBonusBias = 1;
+		var bonusBias = 1;
 
 		function dropBonus(x, y)
 		{
-			if(Math.random() < 0.15)
+			if(Math.random() < 0.25 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "SPEED");
-			if(Math.random() < 0.15)
+			if(Math.random() < 0.25 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "POWER");
 			if(Math.random() < 0.25)
 				generateBonus(x, y, Math.random() * 360, "GEM");
-			if(Math.random() < 0.05 / lifeBonusBias)
+			if(Math.random() < 0.05 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "LIFE");
 		}
 
@@ -755,7 +755,7 @@
 					generateBug(x, y, angle, speed);
 				}, 1000 * Math.random());
 			}
-			lifeBonusBias = 1 + difficulty / 30;
+			bonusBias = 1 + difficulty / 30;
 			difficulty++;
 		}
 
