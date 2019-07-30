@@ -200,8 +200,8 @@
 		unicorn.powerMultiplier = 1;
 		unicorn.speedTimeout = 0;
 		unicorn.powerTimeout = 0;
-		unicorn.speedBonusTime = 10000;
-		unicorn.powerBonusTime = 10000;
+		unicorn.speedBonusTime = 6000;
+		unicorn.powerBonusTime = 6000;
 
 		
 		var scoreHUD = document.getElementById("SCORE");
@@ -769,15 +769,15 @@
 
 		function dropBonus(x, y)
 		{
-			if(Math.random() < 0.5 / bonusBias)
+			if(Math.random() < 0.75 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "SPEED");
-			if(Math.random() < 0.5 / bonusBias)
+			if(Math.random() < 0.75 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "POWER");
-			if(Math.random() < 0.025 / bonusBias)
+			if(Math.random() < 0.01 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "SUPER");
 			if(Math.random() < 0.25)
 				generateBonus(x, y, Math.random() * 360, "GEM");
-			if(Math.random() < 0.01 / bonusBias)
+			if(Math.random() < 0.005 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "LIFE");
 		}
 
