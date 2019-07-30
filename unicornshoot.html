@@ -174,8 +174,10 @@
 		</style>
 	</head>
 	<body>
-		<div id = "SCORE" class = "hud"><p></p></div>
-		<div id = "LIVES" class = "hud"><p></p></div>
+		<div id = "SCORE" class = "hud" align = "right"><p></p></div>
+		<div id = "SPEED" class = "hud" align = "left"><p></p></div>
+		<div id = "POWER" class = "hud" align = "left"><p></p></div>
+		<div id = "LIVES" class = "hud" align = "left"><p></p></div>
 		<div id = "UNICORN" class = "unicornStart"><div class = "unicornoffset">🦄</div></div>
 	</body>
 	<script>
@@ -196,16 +198,25 @@
 		unicorn.speed = 2.0;
 		unicorn.speedMultiplier = 1;
 		unicorn.powerMultiplier = 1;
-		unicorn.speedBonusTime = 6000;
-		unicorn.powerBonusTime = 6000;
+		unicorn.speedTimeout = 0;
+		unicorn.powerTimeout = 0;
+		unicorn.speedBonusTime = 10000;
+		unicorn.powerBonusTime = 10000;
 
 		
 		var scoreHUD = document.getElementById("SCORE");
 		var livesHUD = document.getElementById("LIVES");
+		var speedHUD = document.getElementById("SPEED");
+		var powerHUD = document.getElementById("POWER");
+
 		var scoreSymbol = ["0️⃣", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"];
-		var livesSymbol = "🦄";
+		var livesSymbol = "💖";
+		var speedSymbol = "🌈";
+		var powerSymbol = "🌟";
 		updateScore();
 		updateLives();
+		updateSpeed();
+		updatePower();
 
 		function moreScore(value)
 		{
@@ -240,8 +251,6 @@
 				if(unicorn.lives < 0)
 					window.location.replace(returnURL);
 			}
-			
-
 			updateLives();
 		}
 
@@ -254,6 +263,16 @@
 		function updateLives()
 		{
 			livesHUD.textContent = livesSymbol.repeat(unicorn.lives);
+		}
+
+		function updateSpeed()
+		{
+			speedHUD.textContent = speedSymbol.repeat(unicorn.speedMultiplier);
+		}
+
+		function updatePower()
+		{
+			powerHUD.textContent = powerSymbol.repeat(unicorn.powerMultiplier);
 		}
 
 		const cursorOffsetX = -25;
@@ -357,16 +376,39 @@
 
 		function generateStars(x, y)
 		{
-			if(unicorn.powerMultiplier == 6)
-			{
-				for(i = 0; i < 6; i++)
-				{
-					generateStar(x, y, -15 - 30 * i)
-				}
-			}
-			else
-			{
-				generateStar(x, y, -90);
+			switch(unicorn.powerMultiplier) {
+				case 1:
+					generateStar(x, y, -90);
+				break;
+				case 2:
+					generateStar(x, y, -90);
+					setTimeout(function(){
+						generateStar(x, y, -90);
+					}, 50);
+				break;
+				case 3:
+					generateStar(x, y, -90);
+					generateStar(x, y, 45);
+					generateStar(x, y, 135);
+				break;
+				case 4:
+					generateStar(x, y, -135);
+					generateStar(x, y, -90);
+					generateStar(x, y, -45);
+					generateStar(x, y, 90);
+				break;
+				case 5:
+					for(i = 0; i < 6; i++)
+					{
+						generateStar(x, y, -90 - 72 * i)
+					}
+				break;
+				case 6:
+					for(i = 0; i < 6; i++)
+					{
+						generateStar(x, y, -15 - 30 * i)
+					}
+				break;
 			}
 		}
 
@@ -389,7 +431,11 @@
 			}
 			else if(bonus.bonusType == "POWER")
 			{
-				bonus.textContent = "🍭";
+				bonus.textContent = "🍪";
+			}
+			else if(bonus.bonusType == "SUPER")
+			{
+				bonus.textContent = "🎂";
 			}
 			else if(bonus.bonusType == "GEM")
 			{
@@ -496,8 +542,8 @@
 				var xDiff = cursor_position.x - unicorn.position.x;
 				var yDiff = cursor_position.y - unicorn.position.y;
 				var angle = Math.atan2(yDiff, xDiff);
-				unicorn.position.x += Math.min(unicorn.speed * unicorn.speedMultiplier * Math.cos(angle));
-				unicorn.position.y += Math.min(unicorn.speed * unicorn.speedMultiplier * Math.sin(angle));
+				unicorn.position.x += unicorn.speed * unicorn.speedMultiplier * Math.cos(angle);
+				unicorn.position.y += unicorn.speed * unicorn.speedMultiplier * Math.sin(angle);
 				unicorn.style.left = unicorn.position.x + "px";
 				unicorn.style.top = unicorn.position.y + "px";
 			}
@@ -519,6 +565,18 @@
 					unicorn.nextStar = unicorn.starInterval;
 					generateStars(unicorn.position.x - unicorn.offsetWidth, unicorn.position.y - unicorn.offsetHeight * 0.25);
 				}
+			}
+			if(unicorn.speedTimeout > 0)
+			{	
+				unicorn.speedMultiplier = Math.min(6, 1 + Math.ceil(unicorn.speedTimeout / unicorn.speedBonusTime));
+				unicorn.speedTimeout -= deltaTime;
+				updateSpeed();
+			}
+			if(unicorn.powerTimeout > 0)
+			{
+				unicorn.powerMultiplier = Math.min(6, 1 + Math.ceil(unicorn.powerTimeout / unicorn.powerBonusTime));
+				unicorn.powerTimeout -= deltaTime;
+				updatePower();
 			}
 			if(unicorn.invulnerabilityTime > 0)
 			{
@@ -634,23 +692,20 @@
 						}
 						else if(bonus.bonusType == "SPEED")
 						{
-							unicorn.speedMultiplier = 6;
-							clearTimeout(unicorn.speedTimeout);
-							unicorn.speedTimeout = setTimeout(function(){
-								unicorn.speedMultiplier = 1
-							}, unicorn.speedBonusTime);
+							unicorn.speedTimeout += unicorn.speedBonusTime;
 						}
 						else if(bonus.bonusType == "POWER")
 						{
-							unicorn.powerMultiplier = 6;
-							clearTimeout(unicorn.powerTimeout);
-							unicorn.powerTimeout = setTimeout(function(){
-								unicorn.powerMultiplier = 1
-							}, unicorn.powerBonusTime);
+							unicorn.powerTimeout += unicorn.powerBonusTime;
+						}
+						else if(bonus.bonusType == "SUPER")
+						{
+							unicorn.powerTimeout = Math.max(unicorn.powerTimeout, unicorn.powerBonusTime * 6);
+							unicorn.speedTimeout = Math.max(unicorn.speedTimeout, unicorn.speedBonusTime * 6);
 						}
 						else if(bonus.bonusType == "GEM")
 						{
-							moreScore(100);
+							moreScore(25);
 						}
 						var k = bonuses.indexOf(bonus);
 						bonus.parentNode.removeChild(bonus);
@@ -714,10 +769,12 @@
 
 		function dropBonus(x, y)
 		{
-			if(Math.random() < 0.25 / bonusBias)
+			if(Math.random() < 0.3 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "SPEED");
-			if(Math.random() < 0.25 / bonusBias)
+			if(Math.random() < 0.3 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "POWER");
+			if(Math.random() < 0.1 / bonusBias)
+				generateBonus(x, y, Math.random() * 360, "SUPER");
 			if(Math.random() < 0.25)
 				generateBonus(x, y, Math.random() * 360, "GEM");
 			if(Math.random() < 0.05 / bonusBias)
@@ -760,7 +817,7 @@
 					generateBug(x, y, angle, speed);
 				}, 1000 * Math.random());
 			}
-			bonusBias = 1 + difficulty / 30;
+			bonusBias = 1 + difficulty / 60;
 			difficulty++;
 		}
 
