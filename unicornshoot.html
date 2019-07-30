@@ -534,6 +534,7 @@
 
 		function frame()
 		{
+			console.log(unicorn.speedTimeout + ", " + unicorn.powerTimeout);
 			var current = Date.now();
 			var deltaTime = current - before;
 			before = current;
@@ -750,7 +751,6 @@
 						var yDiff = star.position.y - bug.position.y + starCollisionOffsetY;
 						if(xDiff * xDiff + yDiff * yDiff < starDist)
 						{
-							removeStar = true;
 							moreScore(1);
 							dropBonus(bug.position.x, bug.position.y);
 							bug.parentNode.removeChild(bug);
