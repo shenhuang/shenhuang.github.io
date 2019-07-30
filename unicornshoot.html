@@ -575,7 +575,7 @@
 			if(unicorn.powerTimeout > 0)
 			{
 				unicorn.powerMultiplier = Math.min(6, 1 + Math.ceil(unicorn.powerTimeout / unicorn.powerBonusTime));
-				unicorn.powerTimeout -= deltaTime * (unicorn.powerMultiplier / 2);;
+				unicorn.powerTimeout -= deltaTime * (unicorn.powerMultiplier / 2);
 				updatePower();
 			}
 			if(unicorn.invulnerabilityTime > 0)
