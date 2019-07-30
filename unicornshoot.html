@@ -256,7 +256,11 @@
 			livesHUD.textContent = livesSymbol.repeat(unicorn.lives);
 		}
 
+		const cursorOffsetX = -15;
+		const cursorOffsetY = 0;
 		var cursor_position = [];
+
+
 		window.onmouseup = function(event){
 			updateMousePosition(event);
 		};
@@ -271,8 +275,8 @@
 
 		function updateMousePosition(mouseEvent)
 		{
-			cursor_position.x = mouseEvent.x;
-			cursor_position.y = mouseEvent.y;
+			cursor_position.x = mouseEvent.x + cursorOffsetX;
+			cursor_position.y = mouseEvent.y + cursorOffsetY;
 			if(unicorn.position.x == null || unicorn.position.y == null)
 			{
 				unicorn.position.x = mouseEvent.x;
@@ -481,6 +485,7 @@
 
 		var before = Date.now();
 		var id = setInterval(frame, 25);
+
 		function frame()
 		{
 			var current = Date.now();
