@@ -700,8 +700,8 @@
 						}
 						else if(bonus.bonusType == "SUPER")
 						{
-							unicorn.powerTimeout = Math.max(unicorn.powerTimeout, unicorn.powerBonusTime * 6);
-							unicorn.speedTimeout = Math.max(unicorn.speedTimeout, unicorn.speedBonusTime * 6);
+							unicorn.powerTimeout = Math.max(unicorn.powerTimeout, unicorn.powerBonusTime * 7);
+							unicorn.speedTimeout = Math.max(unicorn.speedTimeout, unicorn.speedBonusTime * 7);
 						}
 						else if(bonus.bonusType == "GEM")
 						{
@@ -773,7 +773,7 @@
 				generateBonus(x, y, Math.random() * 360, "SPEED");
 			if(Math.random() < 0.75 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "POWER");
-			if(Math.random() < 0.01 / bonusBias)
+			if(Math.random() < 0.05 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "SUPER");
 			if(Math.random() < 0.25)
 				generateBonus(x, y, Math.random() * 360, "GEM");
@@ -817,7 +817,7 @@
 					generateBug(x, y, angle, speed);
 				}, 1000 * Math.random());
 			}
-			bonusBias = 1 + difficulty / 30;
+			bonusBias = 1 + Math.sqrt(difficulty / 5);
 			difficulty++;
 		}
 
