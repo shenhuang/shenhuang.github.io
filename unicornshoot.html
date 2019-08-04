@@ -22,6 +22,17 @@
 				opacity : 1.0;
 			}
 		}
+		@keyframes magic {
+			0% {
+				color : magenta;
+			}
+			50% {
+				color : gold;
+			}
+			100% {
+				color : magenta;
+			}
+		}
 		@keyframes enlarge {
 			0% {
 				width : 16px;
@@ -90,6 +101,18 @@
 			color : white;
 			-webkit-transition : fadein 5s ease-in;
 			animation : fadein 5s ease-in;
+		}
+		.credits {
+			z-index : 100;
+			position : absolute;
+			width : 100%;
+			font-size : 16px;
+			bottom : -10px;
+			right : 10px;
+			-webkit-transition : fadein 5s ease-in;
+			animation : fadein 5s ease-in;
+			-webkit-transition : magic 0.5s infinite ease;
+			animation : magic 0.5s infinite ease;
 		}
 		.unicorn {
 			z-index : 999;
@@ -178,13 +201,14 @@
 		<div id = "SPEED" class = "hud" align = "left"><p></p></div>
 		<div id = "POWER" class = "hud" align = "left"><p></p></div>
 		<div id = "LIVES" class = "hud" align = "left"><p></p></div>
+		<div id = "CREDITS" class = "credits" align = "right"><p>Music & Sound Effects by Peter Kirkpatrick</p></div>
 		<div id = "UNICORN" class = "unicornStart"><div class = "unicornoffset">🦄</div></div>
 	</body>
 	<script>
 
 		/* UNICORN INITIATION */
 		
-		var returnURL = "https://shenhuang.github.io/index.html";
+		var returnURL = "index.html";
 		var unicorn = document.getElementById("UNICORN");
 		unicorn.score = 0;
 		unicorn.waitTime = 1000;
@@ -292,12 +316,10 @@
 
 		window.onmousedown = function(event){
 			updateMousePosition(event);
-			updateBGM();
 		};
 
 		window.onmousemove = function(event){
 			updateMousePosition(event);
-			updateBGM();
 		};
 
 		function updateMousePosition(mouseEvent)
@@ -320,8 +342,9 @@
 			{
 				var bgm = new Audio("unicorn_bgm.mp3");
 				bgm.muted = false;
-				bmg.loop = true;
+				bgm.loop = true;
 				bgm.play();
+				unicorn.bgm = true;
 			}	
 		}
 
