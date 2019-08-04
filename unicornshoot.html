@@ -181,6 +181,8 @@
 		<div id = "UNICORN" class = "unicornStart"><div class = "unicornoffset">🦄</div></div>
 	</body>
 	<script>
+
+		/* UNICORN INITIATION */
 		
 		var returnURL = "https://shenhuang.github.io/index.html";
 		var unicorn = document.getElementById("UNICORN");
@@ -202,7 +204,9 @@
 		unicorn.powerTimeout = 0;
 		unicorn.speedBonusTime = 10000;
 		unicorn.powerBonusTime = 10000;
+		unicorn.bgm = false;
 
+		/* LIFE & SCORE */
 		
 		var scoreHUD = document.getElementById("SCORE");
 		var livesHUD = document.getElementById("LIVES");
@@ -275,21 +279,25 @@
 			powerHUD.textContent = powerSymbol.repeat(unicorn.powerMultiplier);
 		}
 
+		/* CURSOR MOVEMENTS */
+
 		const cursorOffsetX = -25;
 		const cursorOffsetY = -10;
 		var cursor_position = [];
 
-
 		window.onmouseup = function(event){
 			updateMousePosition(event);
+			updateBGM();
 		};
 
 		window.onmousedown = function(event){
 			updateMousePosition(event);
+			updateBGM();
 		};
 
 		window.onmousemove = function(event){
 			updateMousePosition(event);
+			updateBGM();
 		};
 
 		function updateMousePosition(mouseEvent)
@@ -305,6 +313,19 @@
 				unicorn.style.visibility = "visible";
 			}
 		}
+
+		function updateBGM()
+		{
+			if(unicorn.bgm == false)
+			{
+				var bgm = new Audio("unicorn_bgm.mp3");
+				bgm.muted = false;
+				bmg.loop = true;
+				bgm.play();
+			}	
+		}
+
+		/* RAINBOW */
 
 		const rainbowIniT = 3000;
 		const rainbowIniV = 0.1;
@@ -412,6 +433,8 @@
 			}
 		}
 
+		/* BONUSES */
+
 		const bonusIniT = 12000;
 		const bonusExpT = 4000;
 		const bonusIniV = 0.025;
@@ -481,6 +504,8 @@
 			return bonus;
 		}
 
+		/* BUGS */
+
 		const bugIniT = 10000;
 		const bugIniV = 0.1;
 		var bugs = [];
@@ -529,12 +554,13 @@
 			return bug;
 		}
 
+		/* PHYSICS & RENDERING */
+
 		var before = Date.now();
 		var id = setInterval(frame, 25);
 
 		function frame()
 		{
-			console.log(unicorn.speedTimeout + ", " + unicorn.powerTimeout);
 			var current = Date.now();
 			var deltaTime = current - before;
 			before = current;
@@ -660,6 +686,8 @@
 			}
 			checkCollisions();
 		}
+
+		/* COLLISION DETECTION */
 
 		const bonusDist = 1000;
 		const bonusCollisionOffsetX = 15;
@@ -820,7 +848,6 @@
 			bonusBias = 1 + Math.sqrt(difficulty / 5);
 			difficulty++;
 		}
-
-
+		
 	</script>
 </html>
