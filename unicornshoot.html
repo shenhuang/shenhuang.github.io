@@ -107,10 +107,22 @@
 			position : absolute;
 			width : 100%;
 			font-size : 16px;
+			font-family : Arial;
 			bottom : -10px;
 			right : 10px;
 			-webkit-transition : fadein 5s ease-in;
 			animation : fadein 5s ease-in;
+			-webkit-transition : magic 0.5s infinite ease;
+			animation : magic 0.5s infinite ease;
+		}
+		.alert {
+			z-index : 999;
+			position : absolute;
+			width : 100%;
+			font-size : 100px;
+			font-family : Impact;
+			text-align : center;
+			top : 50%;
 			-webkit-transition : magic 0.5s infinite ease;
 			animation : magic 0.5s infinite ease;
 		}
@@ -213,7 +225,7 @@
 		unicorn.score = 0;
 		unicorn.waitTime = 1000;
 		unicorn.score = 0;
-		unicorn.lives = 3;
+		unicorn.lives = 0;
 		unicorn.invulnerabilityTimeDefault = 3000;
 		unicorn.invulnerabilityTime = 0;
 		unicorn.rainbowInterval = 30;
@@ -271,15 +283,20 @@
 
 		function lessLives()
 		{
-			if(unicorn.invulnerabilityTime <= 0)
+			if(unicorn.lives > 0)
 			{
-				unicorn.lives--;
-				unicorn.invulnerabilityTime = unicorn.invulnerabilityTimeDefault;
-				unicorn.setAttribute('class', 'unicornInvulnerable');
-				if(unicorn.lives < 0)
-					window.location.replace(returnURL);
+				if(unicorn.invulnerabilityTime <= 0)
+				{
+					unicorn.lives--;
+					unicorn.invulnerabilityTime = unicorn.invulnerabilityTimeDefault;
+					unicorn.setAttribute('class', 'unicornInvulnerable');					
+				}
+				updateLives();
 			}
-			updateLives();
+			else
+			{
+				deathScreen();
+			}
 		}
 
 		function moreLives()
@@ -301,6 +318,28 @@
 		function updatePower()
 		{
 			powerHUD.textContent = powerSymbol.repeat(unicorn.powerMultiplier);
+		}
+
+		function deathScreen()
+		{
+			var alert = document.createElement("DIV");
+			alert.textContent = "GAME OVER"
+			alert.setAttribute('class', 'alert');
+			document.body.appendChild(alert);
+			unicorn.style.visibility = "hidden";
+			unicorn.starInterval = 99999;
+			unicorn.rainbowInterval = 99999;
+			for(i in stars)
+			{
+				stars[i].parentNode.removeChild(stars[i]);
+			}
+			stars = [];
+			rainbows = [];
+			clearInterval(fr);
+			clearInterval(bg);
+			setTimeout(function(){
+				window.location.replace(returnURL);
+			}, 30000);
 		}
 
 		/* CURSOR MOVEMENTS */
@@ -580,7 +619,7 @@
 		/* PHYSICS & RENDERING */
 
 		var before = Date.now();
-		var id = setInterval(frame, 25);
+		var fr = setInterval(frame, 25);
 
 		function frame()
 		{
@@ -832,7 +871,7 @@
 				generateBonus(x, y, Math.random() * 360, "LIFE");
 		}
 
-		var id = setInterval(generateBugs, 1000);
+		var bg = setInterval(generateBugs, 1000);
 		var difficulty = 0;
 
 		function generateBugs()
