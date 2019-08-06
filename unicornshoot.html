@@ -4,7 +4,7 @@
 <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
 <html>
 	<head>
-		<title>☆ ☆ ★ UNICORN ★ ☆ ☆</title>	
+		<title>☆ ★ UNICORN ★ ☆</title>	
 		<style>
 		@keyframes bgcolor {
 			0% {
@@ -350,7 +350,7 @@
 
 		window.onmouseup = function(event){
 			updateMousePosition(event);
-			updateBGM();
+			updateSound();
 		};
 
 		window.onmousedown = function(event){
@@ -375,16 +375,19 @@
 			}
 		}
 
-		function updateBGM()
+		var bgm = new Audio("unicorn_bgm.mp3");
+		var bonus_pickup = new Audio("bonus_pickup.mp3");
+
+		function updateSound()
 		{
 			if(unicorn.bgm == false)
 			{
-				var bgm = new Audio("unicorn_bgm.mp3");
 				bgm.muted = false;
 				bgm.loop = true;
 				bgm.play();
 				unicorn.bgm = true;
-			}	
+				bonus_pickup.muted = false;
+			}
 		}
 
 		/* RAINBOW */
@@ -798,6 +801,8 @@
 						{
 							moreScore(25);
 						}
+						bonus_pickup.currentTime = 0;
+						bonus_pickup.play();
 						var k = bonuses.indexOf(bonus);
 						bonus.parentNode.removeChild(bonus);
 						bonuses.splice(k, 1);
