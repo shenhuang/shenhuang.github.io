@@ -377,6 +377,8 @@
 
 		var bgm = new Audio("unicorn_bgm.mp3");
 		var bonus_pickup = new Audio("bonus_pickup.mp3");
+		var cookie_pickup = new Audio("cookie_pickup.mp3");
+		var gem_pickup = new Audio("gem_pickup.mp3");
 
 		function updateSound()
 		{
@@ -387,6 +389,8 @@
 				bgm.play();
 				unicorn.bgm = true;
 				bonus_pickup.muted = false;
+				cookie_pickup.muted = false;
+				gem_pickup.muted = false;
 			}
 		}
 
@@ -783,26 +787,34 @@
 						if(bonus.bonusType == "LIFE")
 						{
 							moreLives();
+							bonus_pickup.currentTime = 0;
+							bonus_pickup.play();
 						}
 						else if(bonus.bonusType == "SPEED")
 						{
 							unicorn.speedTimeout += unicorn.speedBonusTime;
+							bonus_pickup.currentTime = 0;
+							bonus_pickup.play();
 						}
 						else if(bonus.bonusType == "POWER")
 						{
 							unicorn.powerTimeout += unicorn.powerBonusTime;
+							cookie_pickup.currentTime = 0;
+							cookie_pickup.play();
 						}
 						else if(bonus.bonusType == "SUPER")
 						{
 							unicorn.powerTimeout = Math.max(unicorn.powerTimeout, unicorn.powerBonusTime * 7);
 							unicorn.speedTimeout = Math.max(unicorn.speedTimeout, unicorn.speedBonusTime * 7);
+							bonus_pickup.currentTime = 0;
+							bonus_pickup.play();
 						}
 						else if(bonus.bonusType == "GEM")
 						{
 							moreScore(25);
+							gem_pickup.currentTime = 0;
+							gem_pickup.play();
 						}
-						bonus_pickup.currentTime = 0;
-						bonus_pickup.play();
 						var k = bonuses.indexOf(bonus);
 						bonus.parentNode.removeChild(bonus);
 						bonuses.splice(k, 1);
