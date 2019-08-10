@@ -233,7 +233,7 @@
 		unicorn.starInterval = 150;
 		unicorn.nextStar = 0;
 		unicorn.position = [];
-		unicorn.speed = 2.0;
+		unicorn.speed = 0.1;
 		unicorn.speedMultiplier = 1;
 		unicorn.powerMultiplier = 1;
 		unicorn.speedTimeout = 0;
@@ -638,8 +638,8 @@
 				var xDiff = cursor_position.x - unicorn.position.x;
 				var yDiff = cursor_position.y - unicorn.position.y;
 				var angle = Math.atan2(yDiff, xDiff);
-				unicorn.position.x += unicorn.speed * unicorn.speedMultiplier * Math.cos(angle);
-				unicorn.position.y += unicorn.speed * unicorn.speedMultiplier * Math.sin(angle);
+				unicorn.position.x += unicorn.speed * unicorn.speedMultiplier * Math.cos(angle) * deltaTime;
+				unicorn.position.y += unicorn.speed * unicorn.speedMultiplier * Math.sin(angle) * deltaTime;
 				unicorn.style.left = unicorn.position.x + "px";
 				unicorn.style.top = unicorn.position.y + "px";
 			}
