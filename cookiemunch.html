@@ -1,0 +1,419 @@
+<!--Copyright to Shen Huang, you can reach me out at shenhuang@live.ca-->
+
+<!DOCTYPE html>
+<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+<html>
+	<head>
+		<title>😀 🤣 vs. 😜 🤪</title>	
+		<style>
+		@keyframes bgcolor {
+			0% {
+				background-color : #000f04;
+			}
+			100% {
+				background-color : #010112;
+			}
+		}
+		body {
+			background-color: #010112;
+			-webkit-animation : bgcolor 5s ease-out;
+			animation : bgcolor 5s ease-out;
+		}
+		.dummy {
+			z-index : 100;
+			position : absolute;
+			line-height : 100%;
+		}
+		.player {
+			z-index : 100;
+			visibility : hidden;
+			position : absolute;
+			line-height : 100%;
+		}
+		.cookie {
+			z-index : 100;
+			visibility : hidden;
+			position : absolute;
+			line-height : 100%;
+		}
+		.energy {
+			z-index : 999;
+			position : absolute;
+			height : 35px;
+			opacity : 0.5;
+			background : #abcdef;
+			top : 0%;
+			left : 0%;
+		}
+		</style>
+	</head>
+	<body>
+
+	</body>
+	<script>
+		const fieldSizeX = 8000;
+		const fieldSizeY = 5000;
+		const maxCookieCount = 400;
+		const minCookieWeight = 9000;
+		
+		const startSize = 16;
+		const startWeight = 10000;
+		const displaySize = Math.sqrt(startWeight);
+
+		var cursor_position = [];
+		var cursor_position_first;
+		var mouse_down = false;
+
+		window.onmouseup = function(event){
+			updateCursorPosition(event);
+			mouse_down = false;
+		};
+
+		window.onmousedown = function(event){
+			updateCursorPosition(event);
+			mouse_down = true;
+		};
+
+		window.onmousemove = function(event){
+			updateCursorPosition(event);
+		};
+
+		function updateCursorPosition(mouseEvent)
+		{
+			if(cursor_position_first == null)
+			{
+				cursor_position_first = [];
+				cursor_position_first.x = mouseEvent.x;
+				cursor_position_first.y = mouseEvent.y;
+				dummy = createDummy(mouseEvent.x, mouseEvent.y, startSize);
+			}
+			cursor_position.x = mouseEvent.x;
+			cursor_position.y = mouseEvent.y;
+		}
+
+		var dummy;
+		var camera = createCamera(fieldSizeX / 2, fieldSizeY / 2, 1);
+		var player = createPlayer(fieldSizeX / 2, fieldSizeY / 2, startWeight);
+
+		function createCamera(x, y, scale)
+		{
+			camera = [];
+			camera.position = [];
+			camera.position.x = x;
+			camera.position.y = y;
+			camera.scale = scale;
+			camera.scaleFinal = 1;
+			camera.scaleSpeed = 0.0001;
+			camera.scaleChunk = 1.5;
+			camera.scaleRatio = 20;
+			camera.moveSpeed = 0.5;
+			return camera;
+		}
+
+		function createDummy(x, y, size)
+		{
+			var dummy = document.createElement("DIV");
+			dummy.textContent = "😀"
+			dummy.setAttribute('class', 'dummy');
+			document.body.appendChild(dummy);
+			dummy.style.fontSize = size + "px";
+			dummy.style.left = (x - size / 2) + "px";
+			dummy.style.top = y + "px";
+			return dummy;
+		}
+
+		function createPlayer(x, y, weight)
+		{
+			var player = document.createElement("DIV");
+			player.textContent = "😀";
+			player.setAttribute('class', 'player');
+			document.body.appendChild(player);
+			player.weightBase = weight;
+			player.weight = player.weightBase;
+			player.growth = 1.0;
+			player.snapBoundary = 65;
+			var size = Math.sqrt(player.weight);
+			player.setAttribute('width', size);
+			player.setAttribute('height', size);
+			player.displaySize = size;
+			player.style.fontSize = player.displaySize + "px";
+			player.position = [];
+			player.position.x = x;
+			player.position.y = y;
+			player.sprintFactor = 2;
+			player.speedScale = 0.25;
+			player.speedBase = 0.85;
+			player.speed = player.speedBase;
+			player.energy = 0;
+			player.energyReg = 0.005;
+			player.energyCon = 0.3;
+			player.energyCov = 500;
+			player.energyBase = 1000;
+			player.energyBar = document.createElement("DIV");
+			player.energyBar.setAttribute('class', 'energy');
+			player.style.width = player.energy / player.energyBase + "%";
+			document.body.appendChild(player.energyBar);
+			return player;
+		}
+
+		var cookies = [];
+
+		function createCookie(x, y, weight)
+		{
+			var cookie = document.createElement("DIV");
+			cookie.textContent = "🍪";
+			cookie.setAttribute('class', 'cookie');
+			document.body.appendChild(cookie);
+			cookie.weight = weight;
+			var size = Math.sqrt(cookie.weight);
+			cookie.setAttribute('width', size);
+			cookie.setAttribute('height', size);
+			cookie.displaySize = size;
+			cookie.style.fontSize = cookie.displaySize + "px";
+			cookie.position = [];
+			cookie.position.x = x;
+			cookie.position.y = y;
+			cookies.push(cookie)
+			return cookie;
+		}
+
+		const loadTimeInitial = 1000;
+		var loadTime = loadTimeInitial;
+		var before = Date.now();
+		var ld = setInterval(startFrame, 25);
+		var fr, gc;
+
+		function startFrame()
+		{
+			var current = Date.now();
+			var deltaTime = current - before;
+			before = current;
+			loadTime -= deltaTime;
+			var xHalf = window.innerWidth / 2;
+			var yHalf = window.innerHeight / 2;
+			if(dummy != null && loadTime > 0)
+			{
+				var size = displaySize - (displaySize - startSize) * loadTime / loadTimeInitial;
+				dummy.style.fontSize = size + "px";
+				dummy.style.left = (xHalf - (xHalf - cursor_position_first.x) * loadTime / loadTimeInitial - size / 2) + "px";
+				dummy.style.top = (yHalf - (yHalf - cursor_position_first.y) * loadTime / loadTimeInitial) + "px";
+				dummy.style.marginLeft = (-1 * size) + "px";
+				dummy.style.marginTop = (-1 * size / 2) + "px";
+				dummy.style.textIndent = size + "px";
+				dummy.style.fontSize = size + "px";
+			}
+			else
+			{
+				if(dummy != null)
+				{
+					dummy.parentNode.removeChild(dummy);
+					player.style.left = (xHalf - player.displaySize / 2) + "px";
+					player.style.top = yHalf / 2 + "px";
+					fr = setInterval(updateFrame, 25);
+					gc = setInterval(generateCookies, 100);
+					clearInterval(ld);
+				}
+			}
+		}
+
+		function updateFrame()
+		{
+			var current = Date.now();
+			var deltaTime = current - before;
+			before = current;
+			updatePlayer(deltaTime);
+			for(i in cookies)
+			{
+				updateCookie(deltaTime, cookies[i]);
+			}
+			updateCamera(deltaTime);
+		}
+
+		function updateCamera(deltaTime)
+		{
+			camera.scaleFinal = Math.floor(Math.sqrt(player.displaySize / camera.scaleRatio) / camera.scaleChunk) * camera.scaleChunk;
+			var sDiff = camera.scaleFinal - camera.scale;
+			camera.scale += absoluteMin(Math.sign(sDiff) * camera.scaleSpeed * deltaTime, sDiff);
+			var xDiff = player.position.x - camera.position.x;
+			var yDiff = player.position.y - camera.position.y;
+			var xHalf = window.innerWidth / 2;
+			var yHalf = window.innerHeight / 2;
+			var angle = Math.atan2(yDiff, xDiff);
+			camera.position.x += camera.moveSpeed * Math.sign(xDiff) * Math.sqrt(Math.abs(xDiff));
+			camera.position.y += camera.moveSpeed * Math.sign(yDiff) * Math.sqrt(Math.abs(yDiff));
+			if(camera.position.x < xHalf * camera.scale)
+			{
+				if(camera.position.x > fieldSizeX - xHalf * camera.scale)
+				{
+					camera.position.x = fieldSizeX / 2;
+				}
+				else
+				{
+					camera.position.x = xHalf * camera.scale;
+				}
+			}
+			else if(camera.position.x > fieldSizeX - xHalf * camera.scale)
+			{
+				camera.position.x = fieldSizeX - xHalf * camera.scale;
+			}
+			if(camera.position.y < yHalf * camera.scale)
+			{
+				if(camera.position.y > fieldSizeY - yHalf * camera.scale)
+				{
+					camera.position.y = fieldSizeY / 2;
+				}
+				else
+				{
+					camera.position.y = yHalf * camera.scale;
+				}
+			}
+			else if(camera.position.y > fieldSizeY - yHalf * camera.scale)
+			{
+				camera.position.y = fieldSizeY - yHalf * camera.scale;
+			}
+		}
+
+		function showOnCamera(object)
+		{
+			var size = object.displaySize / camera.scale;
+			var xHalf = window.innerWidth / 2;
+			var yHalf = window.innerHeight / 2;
+			var xScreen = (object.position.x - camera.position.x) / camera.scale + xHalf;
+			var yScreen = (object.position.y - camera.position.y) / camera.scale + yHalf;
+			if(xScreen > -1 * size && xScreen < window.innerWidth + size && yScreen > -1 * size && yScreen < window.innerHeight + size)
+			{
+				object.style.left = (xScreen - size / 2) + "px";
+				object.style.top = yScreen + "px";
+				object.style.marginLeft = (-1 * size) + "px";
+				object.style.marginTop = (-1 * size / 2) + "px";
+				object.style.textIndent = size + "px";
+				object.style.fontSize = size + "px";
+				object.style.visibility = "visible";
+				return {
+					x : xScreen,
+					y : yScreen,
+				}
+			}
+			object.style.visibility = "hidden";
+		}
+
+		function updatePlayer(deltaTime)
+		{
+			var speedFactor = 1;
+			if(mouse_down)
+			{
+				if(player.energy > 0)
+				{
+					player.textContent = "🤣";
+					speedFactor = player.sprintFactor;
+					player.energy -= player.energyCon * deltaTime;
+				}
+				else
+				{
+					player.textContent = "😀";
+					player.energy = 0;
+				}
+			}
+			else
+			{
+				player.textContent = "😀";
+				if(player.energy < player.energyBase)
+				{
+					player.energy += player.energyReg * deltaTime;
+				}
+				else
+				{
+					player.energy = player.energyBase;
+				}
+			}
+			player.energyBar.style.width = player.energy / player.energyBase * 100 + "%";
+			var screen_position = showOnCamera(player);
+			player.speed = player.speedBase / (1 + player.speedScale * Math.log(player.weight / player.weightBase));
+			var xDiff = cursor_position.x - screen_position.x;
+			var yDiff = cursor_position.y - screen_position.y;
+			var angle = Math.atan2(yDiff, xDiff);
+			player.position.x += absoluteMin(player.speed * Math.cos(angle) * deltaTime * speedFactor, xDiff);
+			player.position.y += absoluteMin(player.speed * Math.sin(angle) * deltaTime * speedFactor, yDiff);
+			if(player.position.x < player.displaySize / 2)
+				player.position.x = player.displaySize / 2;
+			if(player.position.x > fieldSizeX - player.displaySize / 2)
+				player.position.x = fieldSizeX - player.displaySize / 2;
+			if(player.position.y < player.displaySize / 2)
+				player.position.y = player.displaySize / 2;
+			if(player.position.y > fieldSizeY - player.displaySize / 2)
+				player.position.y = fieldSizeY - player.displaySize / 2;
+		}
+
+		function updateCookie(deltaTime, cookie)
+		{
+			if(showOnCamera(cookie) != null)
+			{
+				if(cookie.displaySize > player.displaySize)
+				{
+					cookie.style.zIndex = "110";
+				}
+				else
+				{
+					cookie.style.zIndex = "90";
+				}
+				var xDiff = player.position.x - cookie.position.x;
+				var yDiff = player.position.y - cookie.position.y;
+				var sDiff = player.displaySize - cookie.displaySize;
+				if(xDiff * xDiff + yDiff * yDiff <= sDiff * sDiff / 4 + player.snapBoundary)
+				{
+					if(player.displaySize > cookie.displaySize)
+					{
+						player.weight += cookie.weight * player.growth;
+						player.energy += cookie.weight / player.energyCov;
+						player.displaySize = Math.sqrt(player.weight);
+						cookie.parentNode.removeChild(cookie);
+						cookies.splice(i, 1);
+					}
+					else
+					{
+						//Death Condition
+					}
+				}
+			}
+		}
+
+		function generateCookies()
+		{
+			if(cookies.length < maxCookieCount)
+			{
+				var weight = minCookieWeight - (player.weight - minCookieWeight) * Math.random();
+				var size = Math.sqrt(weight);
+				var validPosition = false;
+				while(!validPosition)
+				{
+					var x = size / 2 + (fieldSizeX - size) * Math.random();
+					var y = size / 2 + (fieldSizeY - size) * Math.random();
+					validPosition = true;
+					var xDiff = player.position.x - x;
+					var yDiff = player.position.y - y;
+					var sDiff = player.displaySize + player.snapBoundary + size;
+					if(xDiff * xDiff + yDiff * yDiff < sDiff * sDiff / 4)
+						validPosition = false;
+					for(i in cookies)
+					{
+						cookie = cookies[i];
+						xDiff = cookie.position.x - x;
+						yDiff = cookie.position.y - y;
+						sDiff = cookie.displaySize + size;
+						if(xDiff * xDiff + yDiff * yDiff < sDiff * sDiff / 4)
+							validPosition = false;
+					}
+				}
+				createCookie(x, y, weight);
+			}
+		}
+
+		function absoluteMin(a, b)
+		{
+			if(Math.abs(a) < Math.abs(b))
+				return a;
+			return b;
+		}
+
+	</script>
+</html>

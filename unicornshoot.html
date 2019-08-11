@@ -338,8 +338,20 @@
 			clearInterval(fr);
 			clearInterval(bg);
 			setTimeout(function(){
+				var before = Date.now();
+				var fadeOutTime = 10000;
+				var fadeOutTimeLeft = fadeOutTime;
+				while(fadeOutTimeLeft > 0)
+				{
+					var current = Date.now();
+					var deltaTime = current - before;
+					before = current;
+					fadeOutTimeLeft -= deltaTime;
+					bgm.volume = fadeOutTimeLeft / fadeOutTime;
+				}
 				window.location.replace(returnURL);
-			}, 30000);
+			}, 15000);
+
 		}
 
 		/* CURSOR MOVEMENTS */
