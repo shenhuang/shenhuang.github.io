@@ -53,7 +53,7 @@
 	<script>
 		const fieldSizeX = 8000;
 		const fieldSizeY = 5000;
-		const maxCookieCount = 400;
+		const maxCookieCount = 100;
 		const minCookieWeight = 9000;
 		
 		const startSize = 16;
@@ -125,7 +125,9 @@
 		function createPlayer(x, y, weight)
 		{
 			var player = document.createElement("DIV");
-			player.textContent = "😀";
+			player.regular = "😀";
+			player.excited = "🤩";
+			player.textContent = player.regular;
 			player.setAttribute('class', 'player');
 			document.body.appendChild(player);
 			player.weightBase = weight;
@@ -154,6 +156,45 @@
 			player.style.width = player.energy / player.energyBase + "%";
 			document.body.appendChild(player.energyBar);
 			return player;
+		}
+
+		var friends = [];
+
+		function createFriend(x, y, weight)
+		{
+			var friend = document.createElement("DIV");
+			friend.regular = "😋";
+			friend.excited = "😍";
+			friend.worried = "😰";
+			friend.textContent = friend.regular;
+			friend.setAttribute('class', 'player');
+			document.body.appendChild(player);
+			friend.weightBase = weight;
+			friend.weight = friend.weightBase;
+			friend.growth = 1.0;
+			friend.snapBoundary = 65;
+			var size = Math.sqrt(friend.weight);
+			friend.setAttribute('width', size);
+			friend.setAttribute('height', size);
+			friend.displaySize = size;
+			friend.style.fontSize = friend.displaySize + "px";
+			friend.position = [];
+			friend.position.x = x;
+			friend.position.y = y;
+			friend.sprintFactor = 2;
+			friend.speedScale = 0.25;
+			friend.speedBase = 0.85;
+			friend.speed = friend.speedBase;
+			friend.energy = 0;
+			friend.energyReg = 0.005;
+			friend.energyCon = 0.3;
+			friend.energyCov = 500;
+			friend.energyBase = 1000;
+			friend.energyBar = document.createElement("DIV");
+			friend.energyBar.setAttribute('class', 'energy');
+			friend.style.width = friend.energy / friend.energyBase + "%";
+			document.body.appendChild(friend.energyBar);
+			return friend;
 		}
 
 		var cookies = [];
@@ -304,19 +345,19 @@
 			{
 				if(player.energy > 0)
 				{
-					player.textContent = "🤣";
+					player.textContent = player.excited;
 					speedFactor = player.sprintFactor;
 					player.energy -= player.energyCon * deltaTime;
 				}
 				else
 				{
-					player.textContent = "😀";
+					player.textContent = player.regular;
 					player.energy = 0;
 				}
 			}
 			else
 			{
-				player.textContent = "😀";
+				player.textContent = player.regular;
 				if(player.energy < player.energyBase)
 				{
 					player.energy += player.energyReg * deltaTime;
@@ -381,7 +422,7 @@
 		{
 			if(cookies.length < maxCookieCount)
 			{
-				var weight = minCookieWeight - (player.weight - minCookieWeight) * Math.random();
+				var weight = minCookieWeight + (Math.sqrt(player.weight) - minCookieWeight) * Math.random();
 				var size = Math.sqrt(weight);
 				var validPosition = false;
 				while(!validPosition)
