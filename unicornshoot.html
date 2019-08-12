@@ -290,12 +290,16 @@
 				{
 					unicorn.lives--;
 					unicorn.invulnerabilityTime = unicorn.invulnerabilityTimeDefault;
-					unicorn.setAttribute('class', 'unicornInvulnerable');					
+					unicorn.setAttribute('class', 'unicornInvulnerable');
+					unicorn_injured.currentTime = 0;
+					unicorn_injured.play();				
 				}
 				updateLives();
 			}
 			else
 			{
+				game_over.currentTime = 0;
+				game_over.play();	
 				deathScreen();
 			}
 		}
@@ -389,9 +393,13 @@
 		}
 
 		var bgm = new Audio("unicorn_bgm.mp3");
-		var bonus_pickup = new Audio("bonus_pickup.mp3");
+		var candy_pickup = new Audio("candy_pickup.mp3");
 		var cookie_pickup = new Audio("cookie_pickup.mp3");
 		var gem_pickup = new Audio("gem_pickup.mp3");
+		var cake_pickup = new Audio("cake_pickup.mp3");
+		var life_pickup = new Audio("life_pickup.mp3");
+		var unicorn_injured = new Audio("unicorn_injured.mp3");
+		var game_over = new Audio("game_over.mp3");
 
 		function updateSound()
 		{
@@ -401,9 +409,13 @@
 				bgm.loop = true;
 				bgm.play();
 				unicorn.bgm = true;
-				bonus_pickup.muted = false;
+				candy_pickup.muted = false;
 				cookie_pickup.muted = false;
 				gem_pickup.muted = false;
+				cake_pickup.muted = false;
+				life_pickup.muted = false;
+				unicorn_injured.muted = false;
+				game_over.muted = false;
 			}
 		}
 
@@ -800,14 +812,14 @@
 						if(bonus.bonusType == "LIFE")
 						{
 							moreLives();
-							bonus_pickup.currentTime = 0;
-							bonus_pickup.play();
+							life_pickup.currentTime = 0;
+							life_pickup.play();
 						}
 						else if(bonus.bonusType == "SPEED")
 						{
 							unicorn.speedTimeout += unicorn.speedBonusTime;
-							bonus_pickup.currentTime = 0;
-							bonus_pickup.play();
+							candy_pickup.currentTime = 0;
+							candy_pickup.play();
 						}
 						else if(bonus.bonusType == "POWER")
 						{
@@ -819,8 +831,8 @@
 						{
 							unicorn.powerTimeout = Math.max(unicorn.powerTimeout, unicorn.powerBonusTime * 7);
 							unicorn.speedTimeout = Math.max(unicorn.speedTimeout, unicorn.speedBonusTime * 7);
-							bonus_pickup.currentTime = 0;
-							bonus_pickup.play();
+							cake_pickup.currentTime = 0;
+							cake_pickup.play();
 						}
 						else if(bonus.bonusType == "GEM")
 						{
