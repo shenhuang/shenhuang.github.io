@@ -30,8 +30,14 @@
 			position : absolute;
 			line-height : 100%;
 		}
-		.cookie {
+		.friend {
 			z-index : 100;
+			visibility : hidden;
+			position : absolute;
+			line-height : 100%;
+		}
+		.cookie {
+			z-index : 80;
 			visibility : hidden;
 			position : absolute;
 			line-height : 100%;
@@ -45,19 +51,33 @@
 			top : 0%;
 			left : 0%;
 		}
+		.alert {
+			z-index : 999;
+			position : absolute;
+			width : 100%;
+			font-size : 100px;
+			color : white;
+			font-family : Impact;
+			text-align : center;
+			top : 40%;
+		}
 		</style>
 	</head>
 	<body>
 
 	</body>
 	<script>
-		const fieldSizeX = 8000;
-		const fieldSizeY = 5000;
+
+		var returnURL = "index.html";
+
+		const fieldSizeX = 12000;
+		const fieldSizeY = 8000;
 		const maxCookieCount = 100;
 		const minCookieWeight = 9000;
 		
 		const startSize = 16;
 		const startWeight = 10000;
+		const limitWeight = 5000000;
 		const displaySize = Math.sqrt(startWeight);
 
 		var cursor_position = [];
@@ -103,7 +123,7 @@
 			camera.position.y = y;
 			camera.scale = scale;
 			camera.scaleFinal = 1;
-			camera.scaleSpeed = 0.0001;
+			camera.scaleSpeed = 0.00025;
 			camera.scaleChunk = 1.5;
 			camera.scaleRatio = 20;
 			camera.moveSpeed = 0.5;
@@ -125,15 +145,16 @@
 		function createPlayer(x, y, weight)
 		{
 			var player = document.createElement("DIV");
-			player.regular = "😀";
-			player.excited = "🤩";
-			player.textContent = player.regular;
+			player.emoji = []
+			player.emoji.regular = "😀";
+			player.emoji.excited = "🤩";
+			player.textContent = player.emoji.regular;
 			player.setAttribute('class', 'player');
 			document.body.appendChild(player);
 			player.weightBase = weight;
 			player.weight = player.weightBase;
 			player.growth = 1.0;
-			player.snapBoundary = 65;
+			player.snapBoundary = 100;
 			var size = Math.sqrt(player.weight);
 			player.setAttribute('width', size);
 			player.setAttribute('height', size);
@@ -142,15 +163,15 @@
 			player.position = [];
 			player.position.x = x;
 			player.position.y = y;
-			player.sprintFactor = 2;
+			player.sprintFactor = 2.5;
 			player.speedScale = 0.25;
-			player.speedBase = 0.85;
+			player.speedBase = 0.45;
 			player.speed = player.speedBase;
 			player.energy = 0;
 			player.energyReg = 0.005;
 			player.energyCon = 0.3;
 			player.energyCov = 500;
-			player.energyBase = 1000;
+			player.energyBase = 3000;
 			player.energyBar = document.createElement("DIV");
 			player.energyBar.setAttribute('class', 'energy');
 			player.style.width = player.energy / player.energyBase + "%";
@@ -160,19 +181,29 @@
 
 		var friends = [];
 
+		createFriend(500, 500, 10000);
+		createFriend(fieldSizeX - 500, 500, 10000);
+		createFriend(500, fieldSizeY - 500, 10000);
+		createFriend(fieldSizeX - 500, fieldSizeY - 500, 10000);
+
 		function createFriend(x, y, weight)
 		{
 			var friend = document.createElement("DIV");
-			friend.regular = "😋";
-			friend.excited = "😍";
-			friend.worried = "😰";
-			friend.textContent = friend.regular;
-			friend.setAttribute('class', 'player');
-			document.body.appendChild(player);
+			friend.emoji = [];
+			friend.emoji.regular = "😋";
+			friend.emoji.excited = "😍";
+			friend.emoji.worried = "😥";
+			friend.emoji.bullied = "😣";
+			friend.emoji.anxious = "😖";
+			friend.emoji.kissing = "😚";
+			friend.emoji.airkiss = "😘";
+			friend.textContent = friend.emoji.regular;
+			friend.setAttribute('class', 'friend');
+			document.body.appendChild(friend);
 			friend.weightBase = weight;
 			friend.weight = friend.weightBase;
-			friend.growth = 1.0;
-			friend.snapBoundary = 65;
+			friend.growth = 0.9;
+			friend.snapBoundary = 15;
 			var size = Math.sqrt(friend.weight);
 			friend.setAttribute('width', size);
 			friend.setAttribute('height', size);
@@ -181,19 +212,27 @@
 			friend.position = [];
 			friend.position.x = x;
 			friend.position.y = y;
-			friend.sprintFactor = 2;
+			friend.sprintFactor = 2.0;
 			friend.speedScale = 0.25;
-			friend.speedBase = 0.85;
+			friend.speedBase = 0.35;
 			friend.speed = friend.speedBase;
+			friend.onSprint = false;
 			friend.energy = 0;
-			friend.energyReg = 0.005;
+			friend.energyReg = 0.1;
 			friend.energyCon = 0.3;
-			friend.energyCov = 500;
-			friend.energyBase = 1000;
-			friend.energyBar = document.createElement("DIV");
-			friend.energyBar.setAttribute('class', 'energy');
-			friend.style.width = friend.energy / friend.energyBase + "%";
-			document.body.appendChild(friend.energyBar);
+			friend.energyBase = 3000;
+			friend.sight = [];
+			friend.sight.oRadius = 2000 * 2000;
+			friend.sight.wRadius = 1500 * 1500;
+			friend.sight.rRadius = 1000 * 1000;
+			friend.sight.iRadius = 500 * 500;
+			friend.sight.predators = [];
+			friend.sight.preys = [];
+			friend.weightRatio = 1.1;
+			friend.weightTreshold = startWeight;
+			friend.nextCookie;
+			friend.wanderAngle;
+			friends.push(friend);
 			return friend;
 		}
 
@@ -222,7 +261,8 @@
 		var loadTime = loadTimeInitial;
 		var before = Date.now();
 		var ld = setInterval(startFrame, 25);
-		var fr, gc;
+		var gc = setInterval(generateCookies, 100);
+		var fr;
 
 		function startFrame()
 		{
@@ -251,7 +291,6 @@
 					player.style.left = (xHalf - player.displaySize / 2) + "px";
 					player.style.top = yHalf / 2 + "px";
 					fr = setInterval(updateFrame, 25);
-					gc = setInterval(generateCookies, 100);
 					clearInterval(ld);
 				}
 			}
@@ -262,12 +301,16 @@
 			var current = Date.now();
 			var deltaTime = current - before;
 			before = current;
-			updatePlayer(deltaTime);
+			updateCamera(deltaTime);
 			for(i in cookies)
 			{
 				updateCookie(deltaTime, cookies[i]);
 			}
-			updateCamera(deltaTime);
+			for(i in friends)
+			{
+				updateFriend(deltaTime, friends[i]);
+			}
+			updatePlayer(deltaTime);
 		}
 
 		function updateCamera(deltaTime)
@@ -345,19 +388,19 @@
 			{
 				if(player.energy > 0)
 				{
-					player.textContent = player.excited;
+					player.textContent = player.emoji.excited;
 					speedFactor = player.sprintFactor;
 					player.energy -= player.energyCon * deltaTime;
 				}
 				else
 				{
-					player.textContent = player.regular;
+					player.textContent = player.emoji.regular;
 					player.energy = 0;
 				}
 			}
 			else
 			{
-				player.textContent = player.regular;
+				player.textContent = player.emoji.regular;
 				if(player.energy < player.energyBase)
 				{
 					player.energy += player.energyReg * deltaTime;
@@ -387,45 +430,65 @@
 
 		function updateCookie(deltaTime, cookie)
 		{
-			if(showOnCamera(cookie) != null)
+			if(showOnCamera(cookie))
 			{
-				if(cookie.displaySize > player.displaySize)
-				{
-					cookie.style.zIndex = "110";
-				}
-				else
-				{
-					cookie.style.zIndex = "90";
-				}
 				var xDiff = player.position.x - cookie.position.x;
 				var yDiff = player.position.y - cookie.position.y;
 				var sDiff = player.displaySize - cookie.displaySize;
-				if(xDiff * xDiff + yDiff * yDiff <= sDiff * sDiff / 4 + player.snapBoundary)
+				if(squaredEuclidean(xDiff, yDiff) <= sDiff * sDiff / 4 + player.snapBoundary)
 				{
-					if(player.displaySize > cookie.displaySize)
+					if(player.displaySize >= cookie.displaySize && cookie.weight > 0)
 					{
 						player.weight += cookie.weight * player.growth;
-						player.energy += cookie.weight / player.energyCov;
+						player.energy += Math.sqrt(cookie.weight / player.energyCov);
 						player.displaySize = Math.sqrt(player.weight);
-						cookie.parentNode.removeChild(cookie);
-						cookies.splice(i, 1);
+						cookie.weight = -1;
 					}
 					else
 					{
-						//Death Condition
+						//Player Cannot be Larger than Cookies
 					}
 				}
 			}
+			for(i in friends)
+			{
+				friend = friends[i];
+				xDiff = friend.position.x - cookie.position.x;
+				yDiff = friend.position.y - cookie.position.y;
+				sDiff = friend.displaySize - cookie.displaySize;
+				if(cookie.weight > 0 && squaredEuclidean(xDiff, yDiff) <= sDiff * sDiff / 4 + friend.snapBoundary)
+				{
+					if(friend.displaySize >= cookie.displaySize)
+					{
+						friend.weight += cookie.weight * friend.growth;
+						friend.displaySize = Math.sqrt(friend.weight);
+						cookie.weight = -1;
+					}
+				}
+				else
+				{
+					//Should Friends die to Cookies?
+				}
+			}
+			if(cookie.weight < 0 && cookie.parentNode != null)
+			{
+				var index = cookies.indexOf(cookie);
+				cookie.parentNode.removeChild(cookie);
+				cookies.splice(index, 1);
+			}
 		}
+
+		const fitTimeOut = 5;
 
 		function generateCookies()
 		{
-			if(cookies.length < maxCookieCount)
+			if(cookies.length < Math.floor(maxCookieCount * (limitWeight - player.weight) / limitWeight))
 			{
-				var weight = minCookieWeight + (Math.sqrt(player.weight) - minCookieWeight) * Math.random();
+				var weight = minCookieWeight + (Math.sqrt(player.weight / startWeight) * startWeight - minCookieWeight) * Math.pow(Math.random(), 3);
 				var size = Math.sqrt(weight);
 				var validPosition = false;
-				while(!validPosition)
+				var count = 0;
+				while(!validPosition && count < fitTimeOut)
 				{
 					var x = size / 2 + (fieldSizeX - size) * Math.random();
 					var y = size / 2 + (fieldSizeY - size) * Math.random();
@@ -433,7 +496,7 @@
 					var xDiff = player.position.x - x;
 					var yDiff = player.position.y - y;
 					var sDiff = player.displaySize + player.snapBoundary + size;
-					if(xDiff * xDiff + yDiff * yDiff < sDiff * sDiff / 4)
+					if(squaredEuclidean(xDiff, yDiff) < sDiff * sDiff / 4)
 						validPosition = false;
 					for(i in cookies)
 					{
@@ -441,12 +504,261 @@
 						xDiff = cookie.position.x - x;
 						yDiff = cookie.position.y - y;
 						sDiff = cookie.displaySize + size;
-						if(xDiff * xDiff + yDiff * yDiff < sDiff * sDiff / 4)
+						if(squaredEuclidean(xDiff, yDiff) < sDiff * sDiff / 4)
 							validPosition = false;
 					}
 				}
-				createCookie(x, y, weight);
+				if(count < fitTimeOut)
+					createCookie(x, y, weight);
 			}
+		}
+
+		function updateFriend(deltaTime, friend)
+		{
+			var speedFactor = 1;
+			var sprintRequired = false;
+			var xDiff, yDiff, sDiff;
+			friend.sight.predators = [];
+			friend.sight.preys = [];
+			for(i in friends)
+			{
+				var otherFriend = friends[i];
+				if(otherFriend != friend)
+				{
+					xDiff = friend.position.x - otherFriend.position.x;
+					yDiff = friend.position.y - otherFriend.position.y;
+					sDiff = friend.displaySize - otherFriend.displaySize;
+					if(squaredEuclidean(xDiff, yDiff) < friend.wRadius + sDiff * sDiff / 4)
+					{
+						if(otherFriend.weight > friend.weight)
+						{
+							friend.sight.predators.push(otherFriend);
+						}
+						else if(otherFriend.weight < friend.weight * friend.weightRatio + friend.weightTreshold && otherFriend.weight > 0)
+						{
+							friend.sight.preys.push(otherFriend);
+						}
+					}
+				}
+			}
+			xDiff = friend.position.x - player.position.x;
+			yDiff = friend.position.y - player.position.y;
+			sDiff = friend.displaySize - player.displaySize;
+			if(squaredEuclidean(xDiff, yDiff) < friend.sight.wRadius + sDiff * sDiff / 4)
+			{
+				if(player.weight > friend.weight)
+				{
+					friend.sight.predators.push(player);
+				}
+				else if(player.weight < friend.weight * friend.weightRatio + friend.weightTreshold)
+				{
+					friend.sight.preys.push(player);
+				}
+			}
+			if(friend.sight.predators.length > 0)
+			{
+				friend.nextCookie = null;
+				friend.textContent = friend.emoji.worried;
+				var xPanic = 0;
+				var yPanic = 0;
+				for(i in friend.sight.predators)
+				{
+					var predator = friend.sight.predators[i];
+					xDiff = friend.position.x - predator.position.x;
+					yDiff = friend.position.y - predator.position.y;
+					sDiff = predator.displaySize - friend.displaySize + predator.snapBoundary;
+					var distance = squaredEuclidean(xDiff, yDiff);
+					if(distance < friend.sight.rRadius + sDiff * sDiff / 4)
+					{
+						if(distance <= sDiff * sDiff / 4)
+						{
+							predator.weight += friend.weight;
+							predator.displaySize = Math.sqrt(predator.weight);
+							var index = friends.indexOf(friend);
+							friend.parentNode.removeChild(friend);
+							friends.splice(index, 1);
+						}
+						if(distance < friend.sight.iRadius)
+						{
+							sprintRequired = true;
+							friend.textContent = friend.emoji.anxious;
+						}
+						else
+						{
+							friend.textContent = friend.emoji.bullied;
+						}
+						var angle = Math.atan2(yDiff, xDiff);
+						xPanic += Math.cos(angle) / distance;
+						yPanic += Math.sin(angle) / distance;
+					}
+				}
+				friend.wanderAngle = Math.atan2(yPanic, xPanic);
+			}
+			else if(friend.sight.preys.length > 0)
+			{
+				friend.nextCookie = null;
+				var largestPrey = friend.sight.preys[0];
+				for(i = 1; i < friend.sight.preys.length; i++)
+				{
+					if(largestPrey.weight < friend.sight.preys[i].weight)
+						largestPrey = friend.sight.preys[i];
+				}
+				xDiff = largestPrey.position.x - friend.position.x;
+				yDiff = largestPrey.position.y - friend.position.y;
+				sDiff = friend.displaySize - largestPrey.displaySize + friend.snapBoundary;
+				var distance = squaredEuclidean(xDiff, yDiff);
+				if(distance < friend.sight.rRadius + sDiff * sDiff / 4)
+				{
+					if(distance <= sDiff * sDiff / 4)
+					{
+						playerDeath();
+					}
+					if(distance < friend.sight.iRadius)
+					{
+						sprintRequired = true;
+						friend.textContent = friend.emoji.airkiss;
+					}
+					else
+					{
+						friend.textContent = friend.emoji.kissing;
+					}
+					friend.wanderAngle = Math.atan2(yDiff, xDiff);
+				}
+			}
+			else
+			{
+				friend.textContent = friend.emoji.regular;
+				if(friend.nextCookie == null || friend.nextCookie.weight < 0)
+				{
+					var oCookie, iCookie;
+					for(i in cookies)
+					{
+						cookie = cookies[i];
+						if(cookie.weight > 0)
+						{
+							xDiff = cookie.position.x - friend.position.x;
+							yDiff = cookie.position.y - friend.position.y;
+							sDiff = friend.displaySize - cookie.displaySize;
+							if(squaredEuclidean(xDiff, yDiff) < friend.sight.oRadius + sDiff * sDiff / 4)
+							{
+								if(cookie.weight < friend.weight && (oCookie == null || cookie.displaySize > oCookie))
+								{
+									oCookie = cookie;
+								}
+							}
+							if(squaredEuclidean(xDiff, yDiff) < friend.sight.iRadius + sDiff * sDiff / 4)
+							{
+								if(cookie.weight < friend.weight && (iCookie == null || cookie.displaySize > iCookie))
+								{
+									iCookie = cookie;
+								}
+							}
+						}
+					}
+					if(iCookie != null)
+					{
+						friend.nextCookie = iCookie;
+					}
+					else if(oCookie != null)
+					{
+						friend.nextCookie = oCookie;
+					}
+					else if(friend.wanderAngle == null)
+					{
+						friend.wanderAngle = 2 * Math.PI * Math.random();
+					}
+				}
+				if(friend.nextCookie != null && friend.nextCookie.weight > 0)
+				{
+					if(friend.onSprint)
+					{
+						if(friend.energy <= friend.energyBase * 0.5)
+						{
+							player.energy += player.energyReg * deltaTime;
+							friend.onSprint = false;
+						}
+						else
+						{
+							friend.textContent = friend.emoji.regular;
+							speedFactor = friend.sprintFactor;
+							friend.energy -= friend.energyCon * deltaTime;
+							friend.textContent = friend.emoji.excited;
+						}
+					}
+					else
+					{
+						if(friend.energy >= friend.energyBase)
+						{
+							speedFactor = friend.sprintFactor;
+							friend.energy -= friend.energyCon * deltaTime;
+							friend.onSprint = true;
+							friend.textContent = friend.emoji.excited;
+						}
+						else
+						{
+							friend.energy += friend.energyReg * deltaTime;
+						}
+					}
+					var xDiff = friend.nextCookie.position.x - friend.position.x;
+					var yDiff = friend.nextCookie.position.y - friend.position.y;
+					friend.wanderAngle = Math.atan2(yDiff, xDiff);
+				}
+			}
+			if(sprintRequired)
+			{
+				if(friend.energy > 0)
+				{
+					speedFactor = friend.sprintFactor;
+					friend.energy -= friend.energyCon * deltaTime;
+					friend.onSprint = false;
+				}
+			}
+			friend.speed = friend.speedBase / (1 + friend.speedScale * Math.log(friend.weight / friend.weightBase));
+			friend.position.x += friend.speed * Math.cos(friend.wanderAngle) * deltaTime * speedFactor;
+			friend.position.y += friend.speed * Math.sin(friend.wanderAngle) * deltaTime * speedFactor;
+			if(friend.position.x < friend.displaySize / 2)
+			{
+				friend.wanderAngle = Math.PI - friend.wanderAngle;
+				friend.position.x = friend.displaySize / 2;
+			}
+			if(friend.position.x > fieldSizeX - friend.displaySize / 2)
+			{
+				friend.wanderAngle = Math.PI - friend.wanderAngle;
+				friend.position.x = fieldSizeX - friend.displaySize / 2;
+			}
+			if(friend.position.y < friend.displaySize / 2)
+			{
+				friend.wanderAngle = 0 - friend.wanderAngle;
+				friend.position.y = friend.displaySize / 2;
+			}
+			if(friend.position.y > fieldSizeY - friend.displaySize / 2)
+			{
+				friend.wanderAngle = 0 - friend.wanderAngle;
+				friend.position.y = fieldSizeY - friend.displaySize / 2;
+			}
+			if(friend.displaySize > player.displaySize)
+			{
+				friend.style.zIndex = "110";
+			}
+			else
+			{
+				friend.style.zIndex = "90";
+			}
+			showOnCamera(friend);
+		}
+
+		function playerDeath()
+		{
+			clearInterval(fr);
+			clearInterval(gc);
+			var alert = document.createElement("DIV");
+			alert.textContent = "YOUR FINAL WEIGHT: " + player.weight;
+			alert.setAttribute('class', 'alert');
+			document.body.appendChild(alert);
+			player = null;
+			setTimeout(function() {
+				window.location.replace(returnURL);
+			}, 15000);
 		}
 
 		function absoluteMin(a, b)
@@ -454,6 +766,11 @@
 			if(Math.abs(a) < Math.abs(b))
 				return a;
 			return b;
+		}
+
+		function squaredEuclidean(x, y)
+		{
+			return x * x + y * y;
 		}
 
 	</script>
