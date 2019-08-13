@@ -578,7 +578,7 @@
 							friend.parentNode.removeChild(friend);
 							friends.splice(index, 1);
 						}
-						if(distance < friend.sight.iRadius)
+						if(distance < friend.sight.iRadius + sDiff * sDiff / 4)
 						{
 							sprintRequired = true;
 							friend.textContent = friend.emoji.anxious;
@@ -613,7 +613,7 @@
 					{
 						playerDeath();
 					}
-					if(distance < friend.sight.iRadius)
+					if(distance < friend.sight.iRadius + sDiff * sDiff / 4)
 					{
 						sprintRequired = true;
 						friend.textContent = friend.emoji.airkiss;
