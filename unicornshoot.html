@@ -342,8 +342,6 @@
 			rainbows = [];
 			clearInterval(fr);
 			clearInterval(bg);
-			game_over.currentTime = 0;
-			game_over.play();
 			setTimeout(function(){
 				var before = Date.now();
 				var fadeOutTime = 10000;
@@ -401,7 +399,6 @@
 		var cake_pickup = new Audio("cake_pickup.mp3");
 		var life_pickup = new Audio("life_pickup.mp3");
 		var unicorn_injured = new Audio("unicorn_injured.mp3");
-		var game_over = new Audio("game_over.mp3");
 
 		function updateSound()
 		{
@@ -417,7 +414,6 @@
 				cake_pickup.muted = false;
 				life_pickup.muted = false;
 				unicorn_injured.muted = false;
-				game_over.muted = false;
 			}
 		}
 
