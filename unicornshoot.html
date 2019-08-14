@@ -342,6 +342,8 @@
 			rainbows = [];
 			clearInterval(fr);
 			clearInterval(bg);
+			game_over.currentTime = 0;
+			game_over.play();
 			setTimeout(function(){
 				var before = Date.now();
 				var fadeOutTime = 10000;
