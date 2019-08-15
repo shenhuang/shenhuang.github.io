@@ -19,6 +19,11 @@
 			-webkit-animation : bgcolor 5s ease-out;
 			animation : bgcolor 5s ease-out;
 		}
+		html, body {
+			max-width: 100%;
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
 		.dummy {
 			z-index : 100;
 			position : absolute;
@@ -68,7 +73,7 @@
 	</body>
 	<script>
 
-		var returnURL = "index.html";
+		const returnURL = "../index.html";
 
 		const fieldSizeX = 12000;
 		const fieldSizeY = 8000;

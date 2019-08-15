@@ -14,6 +14,11 @@
 				background-color : #010112;
 			}
 		}
+		html, body {
+			max-width: 100%;
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
 		@keyframes fadein {
 			0% {
 				opacity : 0.0;
@@ -218,7 +223,7 @@
 	</body>
 	<script>
 
-		var returnURL = "index.html";
+		const returnURL = "../index.html";
 
 		/* UNICORN INITIATION */
 		
@@ -298,8 +303,6 @@
 			}
 			else
 			{
-				game_over.currentTime = 0;
-				game_over.play();	
 				deathScreen();
 			}
 		}
