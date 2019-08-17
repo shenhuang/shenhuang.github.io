@@ -533,7 +533,6 @@
 					xDiff = friend.position.x - otherFriend.position.x;
 					yDiff = friend.position.y - otherFriend.position.y;
 					sDiff = friend.displaySize - otherFriend.displaySize;
-					console.log(squaredEuclidean(xDiff, yDiff));
 					if(squaredEuclidean(xDiff, yDiff) < friend.wRadius + sDiff * sDiff / 4)
 					{
 						if(otherFriend.weight > friend.weight)
