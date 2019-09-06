@@ -359,7 +359,71 @@
 				}
 				window.location.replace(returnURL);
 			}, 15000);
+		}
 
+		/* MOBILE SUPPORT */
+
+		var isMobile = checkMobile();
+		var gyroscope;
+		const mobileCursorDistance = 100;
+
+		function checkMobile() {
+			if(navigator.userAgent.match(/Android/i)
+			|| navigator.userAgent.match(/webOS/i)
+			|| navigator.userAgent.match(/iPhone/i)
+			|| navigator.userAgent.match(/iPad/i)
+			|| navigator.userAgent.match(/iPod/i)
+			|| navigator.userAgent.match(/BlackBerry/i)
+			|| navigator.userAgent.match(/Windows Phone/i)
+			)
+			{
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		if(isMobile)
+		{
+			gyroscope = new Gyroscope({frequency: 20});
+			setInterval(updateMobileCursorPosition, 50);
+		}
+
+		function updateMobileCursorPosition()
+		{
+			cursor_position.x = window.innerWidth / 2;
+			cursor_position.y = window.innerHeight / 2;
+			if(unicorn.position.x == null || unicorn.position.y == null)
+			{
+				unicorn.position.x = cursor_position.x;
+				unicorn.position.y = cursor_position.y;
+				unicorn.style.left = unicorn.position.x + "px";
+				unicorn.style.top = unicorn.position.y + "px";
+				unicorn.style.visibility = "visible";
+			}
+			else if((gyroscope.x != null && gyroscope.y != null) && (gyroscope.x != 0 || gyroscope.y != 0))
+			{
+				var angle;
+				if(unicorn.position.x > 0 && unicorn.position.x < window.innerWidth)
+				{
+					switch(window.screen.orientation.type)
+					{
+						case "portrait-primary":
+					 		angle = Math.atan2(-gyroscope.y, gyroscope.x);
+							break;
+						case "portrait-secondary":
+							angle = Math.atan2(gyroscope.y, gyroscope.x);
+							break;
+						case "landscape-primary":
+							angle = Math.atan2(-gyroscope.x, gyroscope.y);
+							break;
+							angle = Math.atan2(gyroscope.x, gyroscope.y);
+							break;
+					}
+				}
+				cursor_position.x += Math.cos(angle) * mobileCursorDistance;
+				cursor_position.y += Math.sin(angle) * mobileCursorDistance;
+			}
 		}
 
 		/* CURSOR MOVEMENTS */
@@ -369,29 +433,32 @@
 		var cursor_position = [];
 
 		window.onmouseup = function(event){
-			updateMousePosition(event);
+			updateCursorPosition(event);
 			updateSound();
 		};
 
 		window.onmousedown = function(event){
-			updateMousePosition(event);
+			updateCursorPosition(event);
 		};
 
 		window.onmousemove = function(event){
-			updateMousePosition(event);
+			updateCursorPosition(event);
 		};
 
-		function updateMousePosition(mouseEvent)
+		function updateCursorPosition(mouseEvent)
 		{
-			cursor_position.x = mouseEvent.x + cursorOffsetX;
-			cursor_position.y = mouseEvent.y + cursorOffsetY;
-			if(unicorn.position.x == null || unicorn.position.y == null)
+			if(!isMobile)
 			{
-				unicorn.position.x = mouseEvent.x;
-				unicorn.position.y = mouseEvent.y;
-				unicorn.style.left = unicorn.position.x + "px";
-				unicorn.style.top = unicorn.position.y + "px";
-				unicorn.style.visibility = "visible";
+				cursor_position.x = mouseEvent.x + cursorOffsetX;
+				cursor_position.y = mouseEvent.y + cursorOffsetY;
+				if(unicorn.position.x == null || unicorn.position.y == null)
+				{
+					unicorn.position.x = mouseEvent.x;
+					unicorn.position.y = mouseEvent.y;
+					unicorn.style.left = unicorn.position.x + "px";
+					unicorn.style.top = unicorn.position.y + "px";
+					unicorn.style.visibility = "visible";
+				}
 			}
 		}
 
