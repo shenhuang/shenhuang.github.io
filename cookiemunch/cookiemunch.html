@@ -92,6 +92,7 @@
 		window.onmouseup = function(event){
 			updateCursorPosition(event);
 			mouse_down = false;
+			updateSound();
 		};
 
 		window.onmousedown = function(event){
@@ -114,6 +115,16 @@
 			}
 			cursor_position.x = mouseEvent.x;
 			cursor_position.y = mouseEvent.y;
+		}
+
+		var cookie_pickup = new Audio("cookie_pickup.mp3");
+
+		function updateSound()
+		{
+			if(unicorn.bgm == false)
+			{
+				cookie_pickup.muted = false;
+			}
 		}
 
 		var dummy;
@@ -444,6 +455,8 @@
 				{
 					if(player.displaySize >= cookie.displaySize && cookie.weight > 0)
 					{
+						cookie_pickup.currentTime = 0;
+						cookie_pickup.play();
 						player.weight += cookie.weight * player.growth;
 						player.energy += Math.sqrt(cookie.weight / player.energyCov);
 						player.displaySize = Math.sqrt(player.weight);
@@ -525,6 +538,8 @@
 			var xDiff, yDiff, sDiff;
 			friend.sight.predators = [];
 			friend.sight.preys = [];
+			/** WORKING ON AI vs. AI IN THE FUTURE **/
+			/*
 			for(i in friends)
 			{
 				var otherFriend = friends[i];
@@ -546,6 +561,7 @@
 					}
 				}
 			}
+			*/
 			xDiff = friend.position.x - player.position.x;
 			yDiff = friend.position.y - player.position.y;
 			sDiff = friend.displaySize - player.displaySize;
