@@ -121,7 +121,7 @@
 
 		function updateSound()
 		{
-			if(unicorn.bgm == false)
+			if(cookie_pickup.muted == true)
 			{
 				cookie_pickup.muted = false;
 			}
@@ -242,6 +242,8 @@
 			friend.sight.wRadius = 1500 * 1500;
 			friend.sight.rRadius = 1000 * 1000;
 			friend.sight.iRadius = 500 * 500;
+			friend.panicBase = 1000;
+			friend.panicTime = 0;
 			friend.sight.predators = [];
 			friend.sight.preys = [];
 			friend.weightRatio = 1.1;
@@ -536,7 +538,14 @@
 			var speedFactor = 1;
 			var sprintRequired = false;
 			var xDiff, yDiff, sDiff;
-			friend.sight.predators = [];
+			if(friend.panicTime >= 0)
+			{
+				friend.panicTime -= deltaTime;
+			}
+			else
+			{
+				friend.sight.predators = [];
+			}
 			friend.sight.preys = [];
 			/** WORKING ON AI vs. AI IN THE FUTURE **/
 			/*
@@ -552,7 +561,9 @@
 					{
 						if(otherFriend.weight > friend.weight)
 						{
-							friend.sight.predators.push(otherFriend);
+							friend.panicTime = friend.panicBase;
+							if(!friend.sight.predators.includes(otherFriend))
+								friend.sight.predators.push(otherFriend);
 						}
 						else if(otherFriend.weight < friend.weight * friend.weightRatio + friend.weightTreshold && otherFriend.weight > 0)
 						{
@@ -569,7 +580,9 @@
 			{
 				if(player.weight > friend.weight)
 				{
-					friend.sight.predators.push(player);
+					friend.panicTime = friend.panicBase;
+					if(!friend.sight.predators.includes(player))
+						friend.sight.predators.push(player);
 				}
 				else if(player.weight < friend.weight * friend.weightRatio + friend.weightTreshold)
 				{
