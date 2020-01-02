@@ -578,10 +578,6 @@
 				var distance = squaredEuclidean(xDiff, yDiff);
 				if(distance < friend.sight.rRadius + sDiff * sDiff / 4)
 				{
-					if(distance <= sDiff * sDiff / 4)
-					{
-						playerDeath();
-					}
 					if(distance < friend.sight.iRadius + sDiff * sDiff / 4)
 					{
 						sprintRequired = true;

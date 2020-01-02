@@ -642,7 +642,8 @@
 				{
 					if(distance <= sDiff * sDiff / 4)
 					{
-						playerDeath();
+						if(largestPrey == player)
+							playerDeath();
 					}
 					if(distance < friend.sight.iRadius + sDiff * sDiff / 4)
 					{
