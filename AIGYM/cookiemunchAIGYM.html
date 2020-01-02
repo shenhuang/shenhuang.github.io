@@ -85,7 +85,7 @@
 		const limitWeight = 8000000;
 		const displaySize = Math.sqrt(startWeight);
 
-		var cursor_position = [];
+		var cursor_position = {x: 0, y: 0};
 		var cursor_position_first;
 		var mouse_down = false;
 
@@ -106,15 +106,24 @@
 
 		function updateCursorPosition(mouseEvent)
 		{
-			if(cursor_position_first == null)
-			{
-				cursor_position_first = [];
-				cursor_position_first.x = mouseEvent.x;
-				cursor_position_first.y = mouseEvent.y;
-				dummy = createDummy(mouseEvent.x, mouseEvent.y, startSize);
-			}
 			cursor_position.x = mouseEvent.x;
 			cursor_position.y = mouseEvent.y;
+		}
+
+		document.addEventListener('keypress', keypressHandler);
+
+		function keypressHandler(e)
+		{
+			switch(e.key)
+			{
+				case '+':
+					camera.scaleFinal += camera.scaleChunk;	
+					break;
+				case '-':
+					if(camera.scaleFinal > 1)
+						camera.scaleFinal -= camera.scaleChunk;	
+					break;
+			}
 		}
 
 		var cookie_pickup = new Audio("cookie_pickup.mp3");
@@ -139,30 +148,18 @@
 			camera.position.y = y;
 			camera.scale = scale;
 			camera.scaleFinal = 1;
-			camera.scaleSpeed = 0.00025;
+			camera.scaleSpeed = 0.025;
 			camera.scaleChunk = 1.5;
 			camera.scaleRatio = 20;
 			camera.moveSpeed = 0.5;
 			return camera;
 		}
 
-		function createDummy(x, y, size)
-		{
-			var dummy = document.createElement("DIV");
-			dummy.textContent = "😀"
-			dummy.setAttribute('class', 'dummy');
-			document.body.appendChild(dummy);
-			dummy.style.fontSize = size + "px";
-			dummy.style.left = (x - size / 2) + "px";
-			dummy.style.top = y + "px";
-			return dummy;
-		}
-
 		function createPlayer(x, y, weight)
 		{
 			var player = document.createElement("DIV");
 			player.emoji = []
-			player.emoji.regular = "😀";
+			player.emoji.regular = "👀";
 			player.emoji.excited = "🤩";
 			player.textContent = player.emoji.regular;
 			player.setAttribute('class', 'player');
@@ -278,41 +275,10 @@
 		const loadTimeInitial = 1000;
 		var loadTime = loadTimeInitial;
 		var before = Date.now();
-		var ld = setInterval(startFrame, 25);
 		var gc = setInterval(generateCookies, 100);
-		var fr;
-
-		function startFrame()
-		{
-			var current = Date.now();
-			var deltaTime = current - before;
-			before = current;
-			loadTime -= deltaTime;
-			var xHalf = window.innerWidth / 2;
-			var yHalf = window.innerHeight / 2;
-			if(dummy != null && loadTime > 0)
-			{
-				var size = displaySize - (displaySize - startSize) * loadTime / loadTimeInitial;
-				dummy.style.fontSize = size + "px";
-				dummy.style.left = (xHalf - (xHalf - cursor_position_first.x) * loadTime / loadTimeInitial - size / 2) + "px";
-				dummy.style.top = (yHalf - (yHalf - cursor_position_first.y) * loadTime / loadTimeInitial) + "px";
-				dummy.style.marginLeft = (-1 * size) + "px";
-				dummy.style.marginTop = (-1 * size / 2) + "px";
-				dummy.style.textIndent = size + "px";
-				dummy.style.fontSize = size + "px";
-			}
-			else
-			{
-				if(dummy != null)
-				{
-					dummy.parentNode.removeChild(dummy);
-					player.style.left = (xHalf - player.displaySize / 2) + "px";
-					player.style.top = yHalf / 2 + "px";
-					fr = setInterval(updateFrame, 25);
-					clearInterval(ld);
-				}
-			}
-		}
+		var xHalf = window.innerWidth / 2;
+		var yHalf = window.innerHeight / 2;
+		fr = setInterval(updateFrame, 25);
 
 		function updateFrame()
 		{
@@ -333,7 +299,6 @@
 
 		function updateCamera(deltaTime)
 		{
-			camera.scaleFinal = Math.floor(Math.sqrt(player.displaySize / camera.scaleRatio) / camera.scaleChunk) * camera.scaleChunk;
 			var sDiff = camera.scaleFinal - camera.scale;
 			camera.scale += absoluteMin(Math.sign(sDiff) * camera.scaleSpeed * deltaTime, sDiff);
 			var xDiff = player.position.x - camera.position.x;
@@ -384,6 +349,7 @@
 			var yScreen = (object.position.y - camera.position.y) / camera.scale + yHalf;
 			if(xScreen > -1 * size && xScreen < window.innerWidth + size && yScreen > -1 * size && yScreen < window.innerHeight + size)
 			{
+
 				object.style.left = (xScreen - size / 2) + "px";
 				object.style.top = yScreen + "px";
 				object.style.marginLeft = (-1 * size) + "px";
@@ -395,6 +361,7 @@
 					x : xScreen,
 					y : yScreen,
 				}
+
 			}
 			object.style.visibility = "hidden";
 		}
@@ -450,25 +417,7 @@
 		{
 			if(showOnCamera(cookie))
 			{
-				var xDiff = player.position.x - cookie.position.x;
-				var yDiff = player.position.y - cookie.position.y;
-				var sDiff = player.displaySize - cookie.displaySize;
-				if(squaredEuclidean(xDiff, yDiff) <= sDiff * sDiff / 4 + player.snapBoundary)
-				{
-					if(player.displaySize >= cookie.displaySize && cookie.weight > 0)
-					{
-						cookie_pickup.currentTime = 0;
-						cookie_pickup.play();
-						player.weight += cookie.weight * player.growth;
-						player.energy += Math.sqrt(cookie.weight / player.energyCov);
-						player.displaySize = Math.sqrt(player.weight);
-						cookie.weight = -1;
-					}
-					else
-					{
-						//Player Cannot be Larger than Cookies
-					}
-				}
+
 			}
 			for(i in friends)
 			{
@@ -502,6 +451,9 @@
 
 		function generateCookies()
 		{
+
+			/* Rework cookie generation, maybe related to max agent size. */
+
 			if(cookies.length < Math.floor(maxCookieCount * (limitWeight - player.weight) / limitWeight))
 			{
 				var weight = minCookieWeight + (Math.sqrt(player.weight / startWeight) * startWeight - minCookieWeight) * Math.pow(Math.random(), 3);
@@ -535,6 +487,7 @@
 
 		function updateFriend(deltaTime, friend)
 		{
+			//console.log([friends.indexOf(friend), friend.position.x, friend.position.y]);
 			var speedFactor = 1;
 			var sprintRequired = false;
 			var xDiff, yDiff, sDiff;
@@ -570,22 +523,6 @@
 					}
 				}
 			}
-			xDiff = friend.position.x - player.position.x;
-			yDiff = friend.position.y - player.position.y;
-			sDiff = friend.displaySize - player.displaySize;
-			if(squaredEuclidean(xDiff, yDiff) < friend.sight.wRadius + sDiff * sDiff / 4)
-			{
-				if(player.weight > friend.weight)
-				{
-					friend.panicTime = friend.panicBase;
-					if(!friend.sight.predators.includes(player))
-						friend.sight.predators.push(player);
-				}
-				else if(player.weight < friend.weight * friend.weightRatio + friend.weightTreshold)
-				{
-					friend.sight.preys.push(player);
-				}
-			}
 			if(friend.sight.predators.length > 0)
 			{
 				friend.nextCookie = null;
@@ -601,6 +538,7 @@
 					var distance = squaredEuclidean(xDiff, yDiff);
 					if(distance < friend.sight.rRadius + sDiff * sDiff / 4)
 					{
+						/* Need to make collision detection here more general. */
 						if(distance <= sDiff * sDiff / 4)
 						{
 							predator.weight += friend.weight;
@@ -625,7 +563,7 @@
 				}
 				friend.wanderAngle = Math.atan2(yPanic, xPanic);
 			}
-			else if(friend.sight.preys.length > 0)
+			if(friend.sight.preys.length > 0)
 			{
 				friend.nextCookie = null;
 				var largestPrey = friend.sight.preys[0];
@@ -656,7 +594,7 @@
 					friend.wanderAngle = Math.atan2(yDiff, xDiff);
 				}
 			}
-			else
+			if(friend.sight.predators == 0 && friend.sight.preys == 0)
 			{
 				friend.textContent = friend.emoji.regular;
 				if(friend.nextCookie == null || friend.nextCookie.weight < 0)
