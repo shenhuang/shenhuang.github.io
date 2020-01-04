@@ -219,7 +219,7 @@
 			friend.weightBase = weight;
 			friend.weight = friend.weightBase;
 			friend.growth = 0.9;
-			friend.snapBoundary = 15;
+			friend.snapBoundary = 75;
 			var size = Math.sqrt(friend.weight);
 			friend.setAttribute('width', size);
 			friend.setAttribute('height', size);
@@ -242,8 +242,6 @@
 			friend.sight.wRadius = 1500 * 1500;
 			friend.sight.rRadius = 1000 * 1000;
 			friend.sight.iRadius = 500 * 500;
-			friend.panicBase = 1000;
-			friend.panicTime = 0;
 			friend.sight.predators = [];
 			friend.sight.preys = [];
 			friend.weightRatio = 1.1;
@@ -538,10 +536,6 @@
 			var speedFactor = 1;
 			var sprintRequired = false;
 			var xDiff, yDiff, sDiff;
-			if(friend.panicTime >= 0)
-			{
-				friend.panicTime -= deltaTime;
-			}
 			else
 			{
 				friend.sight.predators = [];
@@ -559,7 +553,6 @@
 					{
 						if(otherFriend.weight > friend.weight)
 						{
-							friend.panicTime = friend.panicBase;
 							if(!friend.sight.predators.includes(otherFriend))
 								friend.sight.predators.push(otherFriend);
 						}
@@ -577,7 +570,6 @@
 			{
 				if(player.weight > friend.weight)
 				{
-					friend.panicTime = friend.panicBase;
 					if(!friend.sight.predators.includes(player))
 						friend.sight.predators.push(player);
 				}
@@ -608,6 +600,7 @@
 							var index = friends.indexOf(friend);
 							friend.parentNode.removeChild(friend);
 							friends.splice(index, 1);
+							return;
 						}
 						if(distance < friend.sight.iRadius + sDiff * sDiff / 4)
 						{
