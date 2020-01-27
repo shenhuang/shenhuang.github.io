@@ -1,0 +1,2010 @@
+CLUSTAL format alignment by MAFFT FFT-NS-1 (v7.455)
+
+
+2019-nCoV_HKU-S ------------------------------caaccaactttcgatctcttgtagatctgt
+icSARS-C7-MA    atattaggtttttacctacccaggaaaagccaaccaac-ctcgatctcttgtagatctgt
+                                              ******** .********************
+
+2019-nCoV_HKU-S tctctaaacg-aactttaaaatctgtgtggctgtcactcggctgcatgcttagtgcactc
+icSARS-C7-MA    tctctaatggtcgctttaaaatctgtgtagctgtcgctcggctgcatgcctagtgcacct
+                *******  *  .***************.******.*************.********..
+
+2019-nCoV_HKU-S acgcagtataattaataactaa--ttactgtcgttgacaggacacgagtaactcgtctat
+icSARS-C7-MA    acgcagtataaacaataataaattttactgtcgttgacaagaaacgagtaactcgtccct
+                *********** .*****. **  ***************.** **************. *
+
+2019-nCoV_HKU-S cttctgcaggctgcttacggtttcgtccgtgttgcagccgatcatcagcacatctaggtt
+icSARS-C7-MA    cttctgcagactgcttacggtttcgtccgtgttgcagtcgatcatcagcatacctaggtt
+                *********.***************************.************.*.*******
+
+2019-nCoV_HKU-S tcgtccgggtgtgaccgaaaggtaagatggagagccttgtccctggtttcaacgagaaaa
+icSARS-C7-MA    tcgtccgggtgtgaccgaaaggtaagatggagagccttgttcttggtgtcaacgagaaaa
+                ****************************************.*.**** ************
+
+2019-nCoV_HKU-S cacacgtccaactcagtttgcctgttttacaggttcgcgacgtgctcgtacgtggctttg
+icSARS-C7-MA    cacacgtccaactcagtttgcctgtccttcaggttagagacgtgctagtgcgtggcttcg
+                *************************..* ****** * ******** **.********.*
+
+2019-nCoV_HKU-S gagactccgtggaggaggtcttatcagaggcacgtcaacatcttaaagatggcacttgtg
+icSARS-C7-MA    gggactctgtggaagaggccctatcggaggcacgtgaacacctcaaaaatggcacttgtg
+                *.*****.*****.****.*.****.********* ****.**.***.************
+
+2019-nCoV_HKU-S gcttagtagaagttgaaaaaggcgttttgcctcaacttgaacagccctatgtgttcatca
+icSARS-C7-MA    gtctagtagagctggaaaaaggcgtactgccccagcttgaacagccctatgtgttcatta
+                *..*******. * *********** .****.**.***********************.*
+
+2019-nCoV_HKU-S aacgttcggatgctcgaactgcacctcatggtcatgttatggttgagctggtagcagaac
+icSARS-C7-MA    aacgttctgatgccttaagcaccaatcacggccacaaggtcgttgagctggttgcagaaa
+                ******* *****.. ** ..*   ***.**.**..  .* *********** ****** 
+
+2019-nCoV_HKU-S tcgaaggcattcagtacggtcgtagtggtgagacacttggtgtccttgtccctcatgtgg
+icSARS-C7-MA    tggacggcattcagtacggtcgtagcggtataacactgggagtactcgtgccacatgtgg
+                * ** ********************.***. .***** ** ** **.** ** *******
+
+2019-nCoV_HKU-S gcgaaataccagtggcttaccgcaaggttcttcttcgtaagaacggtaataaaggagctg
+icSARS-C7-MA    gcgaaaccccaattgcataccgcaatgttcttcttcgtaagaacggtaataagggagccg
+                ******. ***.* ** ******** **************************.*****.*
+
+2019-nCoV_HKU-S gtggccatagttacggcgccgatctaaagtcatttgacttaggcgacgagcttggcactg
+icSARS-C7-MA    gtggtcatagctatggcatcgatctaaagtcttatgacttaggtgacgagcttggcactg
+                ****.*****.**.***..************ * *********.****************
+
+2019-nCoV_HKU-S atccttatgaagattttcaagaaaactggaacactaaacatagcagtggtgttacccgtg
+icSARS-C7-MA    atcccattgaagattatgaacaaaactggaacactaagcatggcagtggtgcactccgtg
+                ****.  ******** * ** ****************.***.*********.  .*****
+
+2019-nCoV_HKU-S aactcatgcgtgagcttaacggaggggcatacactcgctatgtcgataacaacttctgtg
+icSARS-C7-MA    aactcactcgtgagctcaatggaggtgcagtcactcgctatgtcgacaacaatttctgtg
+                ******. ********.**.***** ***  ***************.*****.*******
+
+2019-nCoV_HKU-S gccctgatggctaccctcttgagtgcattaaagaccttctagcacgtgctggtaaagctt
+icSARS-C7-MA    gcccagatgggtaccctcttgattgcatcaaagattttctcgcacgcgcgggcaagtcaa
+                **** ***** *********** *****.*****..**** *****.** **.**. *  
+
+2019-nCoV_HKU-S catgcactttgtccgaacaactggactttattgacactaagaggggtgtatactgctgcc
+icSARS-C7-MA    tgtgcactctttccgaacaacttgattacatcgagtcgaagagaggtgtctactgctgcc
+                ..******.* *********** **.* .**.**  * *****.***** **********
+
+2019-nCoV_HKU-S gtgaacatgagcatgaaattgcttggtacacggaacgttctgaaaagagctatgaattgc
+icSARS-C7-MA    gtgaccatgagcatgaaattgcctggttcactgagcgctctgataagagctacgagcacc
+                **** *****************.**** *** **.**.***** ********.**..  *
+
+2019-nCoV_HKU-S agacaccttttgaaattaaattggcaaagaaatttgacaccttcaatggggaatgtccaa
+icSARS-C7-MA    agacacccttcgaaattaagagtgccaagaaatttgacactttcaaaggggaatgcccaa
+                *******.**.********.   ** **************.***** ********.****
+
+2019-nCoV_HKU-S attttgtatttcccttaaattccataatcaagactattcaaccaagggttgaaaagaaaa
+icSARS-C7-MA    agtttgtgtttcctcttaactcaaaagtcaaagtcattcaaccacgtgttgaaaagaaaa
+                * *****.*****..* **.** * *.****....********* * *************
+
+2019-nCoV_HKU-S agcttgatggctttatgggtagaattcgatctgtctatccagttgcgtcaccaaatgaat
+icSARS-C7-MA    agactgagggtttcatggggcgtatacgctctgtgtaccctgttgcatctccacaggagt
+                ** .*** **.**.*****  * ** ** ***** **.** *****.** *** * **.*
+
+2019-nCoV_HKU-S gcaaccaaatgtgcctttcaactctcatgaagtgtgatcattgtggtgaaacttcatggc
+icSARS-C7-MA    gtaacaatatgcacttgtctaccttgatgaaatgtaatcattgcgatgaagtttcatggc
+                *.*** * ***..*.* ** **..* *****.***.*******.*.****..********
+
+2019-nCoV_HKU-S agacgggcgattttgttaaagccacttgcgaattttgtggcactgagaatttgactaaag
+icSARS-C7-MA    agacgtgcgactttctgaaagccacttgtgaacattgtggcactgaaaatttagttattg
+                ***** ****.*** * ***********.***. ************.*****...**  *
+
+2019-nCoV_HKU-S aaggtgccactacttgtggttacttaccccaaaatgctgttgttaaaatttattgtccag
+icSARS-C7-MA    aaggacctactacatgtgggtacctacctactaatgctgtagtgaaaatgccatgtcctg
+                ****  *.***** ***** ***.****.   ******** ** ***** .  ***** *
+
+2019-nCoV_HKU-S catgtcacaattcagaagtaggacctgagcatagtcttgccgaataccataatgaatctg
+icSARS-C7-MA    cctgtcaagacccagagattggacctgagcatagtgttgcagattatcacaaccactcaa
+                * ***** .*..****..* *************** **** ** **.**.**. * ** .
+
+2019-nCoV_HKU-S gcttgaaaaccattcttcgtaagggtggtcgcactattgcctttggaggctgtgtgttct
+icSARS-C7-MA    acattgaaactcgactccgcaagggaggtaggactagatgttttggaggctgtgtgtttg
+                .* * .****.   **.**.***** *** * ****    .*****************. 
+
+2019-nCoV_HKU-S cttatgttggttgccataacaagtgtgcctattgggttccacgtgctagcgctaacatag
+icSARS-C7-MA    cctatgttggctgctataataagcgtgcctactgggttcctcgtgctagtgctgatattg
+                *.********.***.****.***.*******.******** ********.***.*.** *
+
+2019-nCoV_HKU-S gttgtaaccatacaggtgttgttggagaaggttccgaaggtcttaatgacaaccttcttg
+icSARS-C7-MA    gctcaggccatactggcattactggtgacaatgtggagaccttgaatgaggatctccttg
+                *.*  ..****** **..**..*** ** ..* . **.. ..* ***** .*.**.****
+
+2019-nCoV_HKU-S aaatactccaaaaagagaaagtcaacatcaatattgttggtgactttaaacttaatgaag
+icSARS-C7-MA    agatactgagtcgtgaacgtgttaacattaacattgttggcgattttcatttgaatgaag
+                *.*****  .  . **. . **.*****.**.********.**.*** * .* *******
+
+2019-nCoV_HKU-S agatcgccattattttggcatctttttctgcttccacaagtgcttttgtggaaactgtga
+icSARS-C7-MA    aggttgccatcattttggcatctttctctgcttctacaagtgcctttattgacactataa
+                **.*.*****.**************.********.********.***.* ** ***.*.*
+
+2019-nCoV_HKU-S aaggtttggattataaagcattcaaacaaattgttgaatcctgtggtaattttaaagtta
+icSARS-C7-MA    agagtcttgattacaagtctttcaaaaccattgttgagtcctgcggtaactataaagtta
+                *..**.* *****.**. * ******   ********.*****.*****.* ********
+
+2019-nCoV_HKU-S caaaaggaaaagctaaaaaaggtgcctggaatattggtgaacagaaatcaatactgagtc
+icSARS-C7-MA    ccaagggaaagcccgtaaaaggtgcttggaacattggacaacagagatcagttttaacac
+                * **.*****. *.. *********.*****.*****  ******.****.* .*.*  *
+
+2019-nCoV_HKU-S ctctttatgcatttgcatcagaggctgctcgtgttgtacgatcaattttctcccgcactc
+icSARS-C7-MA    cactgtgtggttttccctcacaggctgctggtgttatcagatcaatttttgcgcgcacac
+                * ** *.**  *** * *** ******** *****.*  **********. * ***** *
+
+2019-nCoV_HKU-S ttgaaactgctcaaaattctgtgcgtgttttacagaaggccgctataacaatactagatg
+icSARS-C7-MA    ttgatgcagcaaaccactcaattcctgatttgcaaagagcagctgtcaccatacttgatg
+                **** .* **  *  *.** .* * ** ***.**.*..** ***.* ** ***** ****
+
+2019-nCoV_HKU-S gaatttcacagtattcactgagactcattgatgctatgatgttcacatctgatttggcta
+icSARS-C7-MA    gtatttctgaacagtcattacgtcttgtcgacgccatggtttatacttcagacctgctca
+                * *****  *..* ***.*. * **..*.**.**.***.* * .** ** **..** ..*
+
+2019-nCoV_HKU-S ctaacaatctagttgtaatggcctacattacaggtggtgttgttcagttgacttcgcagt
+icSARS-C7-MA    ccaacagtgtcattattatggcatatgtaactggtggtcttgtacaacagacttctcagt
+                *.****.* * .**.* ***** **..* ** ****** **** **.. ****** ****
+
+2019-nCoV_HKU-S ggctaactaacatctttggcactgtttatgaaaaactcaaacccgtccttgattggcttg
+icSARS-C7-MA    ggttgtctaatcttttgggcactactgttgaaaaactcaggcctatctttgaatggattg
+                **.*. ****. *.** ******..*  ***********..**..**.**** *** ***
+
+2019-nCoV_HKU-S aagagaagtttaaggaaggtgtagagtttcttagagacggttgggaaattgttaaattta
+icSARS-C7-MA    aggcgaaacttagtgcaggagttgaatttctcaaggatgcttgggagattctcaaatttc
+                *.* ***..***. * *** ** **.*****.*..**.* ******.*** *.****** 
+
+2019-nCoV_HKU-S tctcaacctgtgcttgtgaaattgtcggtggacaaattgtcacctgtgcaaaggaaatta
+icSARS-C7-MA    tcattacaggtgtttttgacatcgtcaagggtcaaatacaggttgcttcagataacatca
+                ** . **  ***.** *** **.***.. ** *****    ...  * **.* .* **.*
+
+2019-nCoV_HKU-S aggagagtgttcagacattctttaagcttgtaaataaatttttggctttgtgtgctgact
+icSARS-C7-MA    aggattgtgtaaaatgcttcattgatgttgttaacaaggcactcgaaatgtgcattgatc
+                ****  ****  *.   *** **.*  **** **.**. . .* *   ****...***..
+
+2019-nCoV_HKU-S ctatcattattggtggagctaaacttaaagccttgaatttaggtgaaacatttgtcacgc
+icSARS-C7-MA    aagtcactatcgctggcgcaaagttgcgatcactcaacttaggtgaagtcttcatcgctc
+                  .***.***.* *** ** **..*  .* * .* **.*********.. **..**.* *
+
+2019-nCoV_HKU-S actcaaagggattgtacagaaagtgtgttaaatccagagaagaaactggcctactcatgc
+icSARS-C7-MA    aaagcaagggactttaccgtcagtgtatacgtggcaaggagcagctgcaactactcatgc
+                *    ******.* *** *  *****.*  .   **..**. *. .  . **********
+
+2019-nCoV_HKU-S ctctaaaagccccaaaagaaattatcttcttagagggagaaacacttcccacagaagtgt
+icSARS-C7-MA    ctcttaaggcaccaaaagaagtaacctttcttgaaggtgattcacatgacacagtactta
+                **** **.** *********.* *.***..* **.** **  *** *  ***** * *  
+
+2019-nCoV_HKU-S taacagaggaagttgtcttgaaaactggtgatttacaaccattagaacaacctactagtg
+icSARS-C7-MA    cctctgaggaggttgttctcaagaacggtgaactcgaagcactcgagacgcccgttgata
+                .  * *****.*****..* **.* .***** .*  ** **.* **.  .**...*..*.
+
+2019-nCoV_HKU-S aagctgttgaagctccattggttggtacaccagtttgtattaacgggcttatgttgctcg
+icSARS-C7-MA    gcttcacaaatggagctatcgttggcacaccagtctgtgtaaatggcctcatgctcttag
+                .  .... .* *   *  * *****.********.***.* **.** **.***.* .* *
+
+2019-nCoV_HKU-S aaatcaaagacacagaaaagtactgtgcccttgcacctaatatgatggtaacaaacaata
+icSARS-C7-MA    agattaaggacaaagaacaatactgcgcattgtctcctggtttactggctacaaacaatg
+                *.**.**.**** **** *.*****.** .*  * ***..* *. ***. *********.
+
+2019-nCoV_HKU-S ccttcacactcaaaggcggtgcaccaacaaag---gttacttttggtgatgacactgtga
+icSARS-C7-MA    tctttcgcttaaaagggggtgcaccaattaaaggtgtaacctttggagaagatactgttt
+                .***.   .* ***** **********. **.   ** **.***** ** **.*****  
+
+2019-nCoV_HKU-S tagaagtgcaaggttacaagagtgtgaatatcacttttgaacttgatgaaaggattgata
+icSARS-C7-MA    gggaagttcaaggttacaagaatgtgagaatcacatttgagcttgatgaacgtgttgaca
+                 .***** *************.*****. ***** *****.********* * .****.*
+
+2019-nCoV_HKU-S aagtacttaatgagaagtgctctgcctatacagttgaactcggtacagaagtaaatgagt
+icSARS-C7-MA    aagtgcttaatgaaaagtgctctgtctacactgttgaatccggtaccgaagttactgagt
+                ****.********.**********.***.** ******..****** ***** * *****
+
+2019-nCoV_HKU-S tcgcctgtgttgtggcagatgctgtcataaaaactttgcaaccagtatctgaattactta
+icSARS-C7-MA    ttgcatgtgttgtagcagaggctgttgtgaagactttacaaccagtttctgatctcctta
+                *.** ********.***** *****..*.**.*****.******** ***** .* ****
+
+2019-nCoV_HKU-S caccactgggcattgatttagatgagtggagtatggctacatactacttatttgatgagt
+icSARS-C7-MA    ccaacatgggtattgatcttgatgagtggagtgtagctacattctacttatttgatgatg
+                *     ****.******.* ************.*.******* ***************  
+
+2019-nCoV_HKU-S ctggtgagtttaaattggcttcacatatgtattgttctttctaccctccagatgaggatg
+icSARS-C7-MA    ctggtgaagaaaacttttcatcacgtatgtattgttccttttaccctccagatgaggaag
+                *******.   ** **  * ****.************.**.***************** *
+
+2019-nCoV_HKU-S aagaagaaggt---gattgtgaagaagaagagtttgagccatcaactcaatatgagtatg
+icSARS-C7-MA    aagaggacgatgcagagtgtgaggaagaagaaattgatgaaacctgtgaacatgagtacg
+                ****.** *.*   ** *****.********. ****   * *   * **.*******.*
+
+2019-nCoV_HKU-S gtactgaagatgattaccaaggtaaacctttggaatttggtgccacttctgctgctcttc
+icSARS-C7-MA    gtacagaggatgattatcaaggtctccctctggaatttggtgcctcagctgaaacagttc
+                **** **.********.******   ***.************** *  ***  .*  ***
+
+2019-nCoV_HKU-S aacctgaagaagagcaagaagaagattggttagatgatgatagtcaacaaactgttggtc
+icSARS-C7-MA    gagttgaggaagaagaagaggaagactggctggatgatactact----------------
+                .* .***.*****. ****.*****.***.*.******. ** *                
+
+2019-nCoV_HKU-S aacaagacggcagtgaggacaatcagacaactactattcaaacaattgttgaggttcaac
+icSARS-C7-MA    ----------------gagcaatcagaga-------------------------------
+                                *..******** *                               
+
+2019-nCoV_HKU-S ctcaattagagatggaacttacaccagttgttcagactattgaagtgaatagttttagtg
+icSARS-C7-MA    ttgagccagaaccagaacctacacctgaagaac---------cagttaatcagtttactg
+                .* *...***. ..****.****** *  *  *          *** *** . **** **
+
+2019-nCoV_HKU-S gttatttaaaacttactgacaatgtatacattaaaaatgcagacattgtggaagaagcta
+icSARS-C7-MA    gttatttaaaacttactgacaatgttgccattaaatgtgttgacatcgttaaggaggcac
+                *************************   ******* .**. *****.** .*.**.**  
+
+2019-nCoV_HKU-S aaaaggtaaaaccaacagtggttgttaatgcagccaatgtttaccttaaacatggaggag
+icSARS-C7-MA    aaagtgctaatcctatggtgattgtaaatgctgctaacatacacctgaaacatggtggtg
+                ***. *. ** ** *..***.**** ***** **.**..* .**** ******** ** *
+
+2019-nCoV_HKU-S gtgttgcaggagccttaaataaggctactaacaatgccatgcaagttgaatctgatgatt
+icSARS-C7-MA    gtgtagcaggtgcactcaacaaggcaaccaatggtgccatgcaaaaggagagtgatgatt
+                **** ***** ** .* **.***** **.**...**********.  **.  ********
+
+2019-nCoV_HKU-S acatagctactaatggaccacttaaagtgggtggtagttgtgttttaagcggacacaatc
+icSARS-C7-MA    acattaagctaaatggccctcttacagtaggagggtcttgtttgctttctggacataatc
+                **** .   . ***** ** **** ***.** **   **** * .*   .*****.****
+
+2019-nCoV_HKU-S ttgctaaacactgtcttcatgttgtcggcccaaatgttaacaaaggtgaagacattcaac
+icSARS-C7-MA    ttgctaagaagtgtctgcatgttgttggacctaacctaaatgcaggtgaggacatccagc
+                *******. * ***** ********.** ** **. * **.. ******.*****.**.*
+
+2019-nCoV_HKU-S ttcttaagagtgcttatgaaaattttaatcagcacgaagttctacttgcaccattattat
+icSARS-C7-MA    ttcttaaggcagcatatgaaaatttcaattcacaggacatcttacttgcaccattgttgt
+                ********.  ** ***********.***. .** ** .*..*************.**.*
+
+2019-nCoV_HKU-S cagctggtatttttggtgctgaccctatacattctttaagagtttgtgtagatactgttc
+icSARS-C7-MA    cagcaggcatatttggtgctaaaccacttcagtctttacaagtgtgcgtgcagacggttc
+                **** **.** *********.* **  * ** ****** .*** **.**. * ** ****
+
+2019-nCoV_HKU-S gcacaaatgtctacttagctgtctttgataaaaatctctatgacaaacttgtttcaagct
+icSARS-C7-MA    gtacacaggtttatattgcagtcaatgacaaagctctttatgagcaggttgtcatggatt
+                *.*** * **.**. * ** ***  ***.***. ***.*****  *. ****. .....*
+
+2019-nCoV_HKU-S ttttggaaa---tgaagagtgaaaagcaag---ttgaacaaaagatcgctgagattccta
+icSARS-C7-MA    atcttgataacctgaagcctagagtggaagcacctaaacaagag------gagccaccaa
+                 *.* ** *   *****  *..*. * ***   .*.*****.**      *** . ** *
+
+2019-nCoV_HKU-S aagaggaagttaagccatttataactgaaagtaaaccttcagttgaacagagaaaacaag
+icSARS-C7-MA    acacagaagat------tccaaaactgaggagaaatct---gtcgtacagaagcctgtcg
+                * . .**** *      *..* ******... ***.**   **.* *****..      *
+
+2019-nCoV_HKU-S atgataag---aaaatcaaagcttgtgttgaagaagttacaacaactctggaagaaacta
+icSARS-C7-MA    atgtgaagccaaaaattaaggcctgcattgatgaggttaccacaacactggaagaaacta
+                ***  ***   *****.**.**.**..**** **.***** ***** *************
+
+2019-nCoV_HKU-S agttcctcacagaaaacttgttactttatattgacattaatggcaatcttcatccagatt
+icSARS-C7-MA    agtttcttaccaataagttactcttgtttgctgatatcaatggtaagctttaccatgatt
+                ****.**.** .* ** **..* .* * *..***.**.*****.** ***.*.*  ****
+
+2019-nCoV_HKU-S ctgccactcttgttagtgacattgacatcactttcttaaagaaagatgctccatatatag
+icSARS-C7-MA    ctcagaacatgcttagaggtgaagatatgtctttccttgagaaggatgcaccttacatgg
+                **   * . *  **** *...  **.**  *****.* .****.***** ** **.**.*
+
+2019-nCoV_HKU-S tgggtgatgttgttcaagagggtgttttaactgctgtggttatacctactaaaaaggctg
+icSARS-C7-MA    taggtgatgttatcactagtggtgatatcacttgtgttgtaataccctccaaaaaggctg
+                *.*********.*.   .. **** * * ***  *** ** *****. *.**********
+
+2019-nCoV_HKU-S gtggcactactgaaatgctagcgaaagctttgagaaaagtgccaacagacaattatataa
+icSARS-C7-MA    gtggcactactgagatgctctcaagagctttgaagaaagtgccagttgatgagtatataa
+                *************.*****  *.*.********..*********.. **..* *******
+
+2019-nCoV_HKU-S ccacttacccgggtcagggtttaaatggttacactgtagaggaggcaaagacagtgctta
+icSARS-C7-MA    ccacgtaccctggacaaggatgtgctggttatacacttgaggaagctaagactgctctta
+                **** ***** ** **.** *  . ******.**  * *****.** ***** *. ****
+
+2019-nCoV_HKU-S aaaagtgtaaaagtgccttttacattctaccatctattatctctaatgagaagcaagaaa
+icSARS-C7-MA    agaaatgcaaatctgcattttatgtactaccttcagaagcacctaatgctaaggaagaga
+                *.**.**.***  *** *****..* ***** ** .  .. .******  *** ****.*
+
+2019-nCoV_HKU-S ttcttggaactgtttcttggaatttgcgagaaatgcttgcacatgcagaagaaacacgca
+icSARS-C7-MA    ttctaggaactgtatcctggaatttgagagaaatgcttgctcatgctgaagagacaagaa
+                **** ******** **.********* ************* ***** *****.*** * *
+
+2019-nCoV_HKU-S aattaatgcctgtctgtgtggaaactaaagccatagtttcaactatacagcgtaaatata
+icSARS-C7-MA    aattaatgcctatatgcatggatgttagagccataatggcaaccatccaacgtaagtata
+                ***********.* **..**** ..**.*******.*  ****.** **.*****.****
+
+2019-nCoV_HKU-S agggtattaaaatacaagagggtgtggttgattatggtgctagattttacttttacacca
+icSARS-C7-MA    aaggaattaaaattcaagagggcatcgttgactatggtgtccgattcttcttttatacta
+                *.** ******** ********..* *****.*******.. ****.* ******.**.*
+
+2019-nCoV_HKU-S gtaaaacaactgtagcgtcacttatcaacacacttaacgatctaaatgaaactcttgtta
+icSARS-C7-MA    gtaaagagcctgtagcttctattattacgaagctgaactctctaaatgagccgcttgtca
+                *****. . ******* **  ****.*  * .** ***  *********. * *****.*
+
+2019-nCoV_HKU-S caatgccacttggctatgtaacacatggcttaaatttggaagaagctgctcggtatatga
+icSARS-C7-MA    caatgccaattggttatgtgacacatggttttaatcttgaagaggctgcgcgctgtatgc
+                ******** ****.*****.********.** ***.* *****.***** ** *.**** 
+
+2019-nCoV_HKU-S gatctctcaaagtgccagctacagtttctgtttcttcacctgatgctgttacagcgtata
+icSARS-C7-MA    gttctcttaaagctcctgccgtagtgtcagtatcatcaccagatgctgttactacatata
+                * *****.****. ** **...*** ** ** ** ***** *********** .*.****
+
+2019-nCoV_HKU-S atggttatcttacttcttcttctaaaacacctgaagaacattttattgaaaccatctcac
+icSARS-C7-MA    atggatacctcacttcgtcatcaaagacatctgaggagcactttgtagaaacagtttctt
+                **** **.**.***** ** ** **.***.****.**.**.***.* ***** .*.** .
+
+2019-nCoV_HKU-S ttgctggttcctataaagattggtcctattctggacaatctacacaactaggtatagaat
+icSARS-C7-MA    tggctggctcttacagagattggtcctattcaggacagcgtacagagttaggtgttgaat
+                * *****.**.**.*.*************** *****.. **** *..*****.* ****
+
+2019-nCoV_HKU-S ttcttaagagaggtgataaaagtgtatattacact---agtaatcctaccacattccacc
+icSARS-C7-MA    ttcttaagcgtggtgacaaaattgtgtaccacactctggagagccccgtcgagtttcatc
+                ******** * *****.**** ***.**..*****   .. *..**...*. .**.**.*
+
+2019-nCoV_HKU-S tagatggtgaagttatcacctttgacaatcttaagacacttctttctttgagagaagtga
+icSARS-C7-MA    ttgacggtgaggttctttcacttgacaaactaaagagtctcttatccctgcgggaggtta
+                * **.*****.*** *. * .******* ** ****  **..* **..** *.**.** *
+
+2019-nCoV_HKU-S ggactattaaggtgtttacaacagtagacaacattaacctccacacgcaagttgtggaca
+icSARS-C7-MA    agactataaaagtgttcacaactgtggacaacactaatctccacacacagcttgtggata
+                .****** **.*****.***** **.*******.***.********.**. *******.*
+
+2019-nCoV_HKU-S tgtcaatgacatatggacaacagtttggtccaacttatttggatggagctgatgttacta
+icSARS-C7-MA    tgtctatgacatatggacagcagtttggtccaacatacttggatggtgctgatgttacaa
+                **** **************.************** **.******** *********** *
+
+2019-nCoV_HKU-S aaataaaacctcataattcacatgaaggtaaaacattttatgttttacctaatgatgaca
+icSARS-C7-MA    aaattaaacctcatgtaaatcatgagggtaagactttctttgtactacctagtgatgaca
+                **** *********.     *****.*****.** **.* *** .******.********
+
+2019-nCoV_HKU-S ctctacgtgttgaggcttttgagtactaccacacaactgatcctagttttctgggtaggt
+icSARS-C7-MA    cactacgtagtgaagctttcgagtactaccatactcttgatgagagttttcttggtaggt
+                * ******. ***.*****.***********.**  .****   ******** *******
+
+2019-nCoV_HKU-S acatgtcagcattaaatcacactaaaaagtggaaatacccacaagttaatggtttaactt
+icSARS-C7-MA    acatgtctgctttaaaccacacaaagaaatggaaatttcctcaagttggtggtttaactt
+                ******* ** *****.***** **.**.******* .** ******..***********
+
+2019-nCoV_HKU-S ctattaaatgggcagataacaactgttatcttgccactgcattgttaacactccaacaaa
+icSARS-C7-MA    caattaaatgggctgataacaattgttatttgtctagtgttttattagcacttcaacagc
+                * *********** ********.******.*  *.* **. **.***.****.*****. 
+
+2019-nCoV_HKU-S tagagttgaagtttaatccacctgctctacaagatgcttattacagagcaagggctggtg
+icSARS-C7-MA    ttgaagtcaaattcaatgcaccagcacttcaagaggcttattatagagcccgtgctggtg
+                * **. * **.**.*** **** ** ** ***** ********.*****  * *******
+
+2019-nCoV_HKU-S aagctgctaacttttgtgcacttatcttagcctactgtaataagacagtaggtgagttag
+icSARS-C7-MA    atgctgctaacttttgtgcactcatactcgcttacagtaataaaactgttggcgagcttg
+                * ********************.** .* **.*** *******.** ** **.***.* *
+
+2019-nCoV_HKU-S gtgatgttagagaaacaatgagttacttgtttcaacatgccaatttagattcttgcaaaa
+icSARS-C7-MA    gtgatgtcagagaaactatgacccatcttctacagcatgctaatttggaatctgcaaagc
+                *******.******** **** ..*..* .* **.*****.*****.** ***   **. 
+
+2019-nCoV_HKU-S gagtcttgaacgtggtgtgtaaaacttgtggacaacagcagacaacccttaagggtgtag
+icSARS-C7-MA    gagttcttaatgtggtgtgtaaacattgtggtcagaaaactactaccttaacgggtgtag
+                ****..* **.************  ****** **. *.   ** ***.* * ********
+
+2019-nCoV_HKU-S aagctgttatgtacatgggcacactttcttatgaacaatttaagaaaggtgttcagatac
+icSARS-C7-MA    aagctgtgatgtatatgggtactctatcttatgataatcttaagacaggtgtttccattc
+                ******* *****.*****.** ** ********  * .****** *******.  ** *
+
+2019-nCoV_HKU-S cttgtacgtgtggtaaacaagctacaaaatatctagtacaacaggagtcaccttttgtta
+icSARS-C7-MA    catgtgtgtgtggtcgtgatgctacacaatatctagtacaacaagagtcttcttttgtta
+                * ***..******* .  * ****** ****************.***** .*********
+
+2019-nCoV_HKU-S tgatgtcagcaccacctgctcagtatgaacttaagcatggtacatttacttgtgctagtg
+icSARS-C7-MA    tgatgtctgcaccacctgctgagtataaattacagcaaggtacattcttatgtgcgaatg
+                ******* ************ *****.**.*  **** ********. . ***** *.**
+
+2019-nCoV_HKU-S agtacactggtaattaccagtgtggtcactataaacatataacttctaaagaaactttgt
+icSARS-C7-MA    agtacactggtaactatcagtgtggtcattacactcatataactgctaaggagaccctct
+                *************.**.***********.**.*  ********* ****.**.**..* *
+
+2019-nCoV_HKU-S attgcatagacggtgctttacttacaaagtcctcagaatacaaaggtcctattacggatg
+icSARS-C7-MA    atcgtattgacggagctcaccttacaaagatgtcagagtacaaaggaccagtgactgatg
+                **.*.** ***** ***.  ********* . *****.******** ** .* ** ****
+
+2019-nCoV_HKU-S ttttctacaaagaaaacagttacacaacaaccataaaaccagttacttataaattggatg
+icSARS-C7-MA    ttttctacaaggaaacatcttacactacaaccatcaagcctgtgtcgtataaactcgatg
+                **********.****    ****** ******** **.** **  * ******.* ****
+
+2019-nCoV_HKU-S gtgttgtttgtacagaaattgaccctaagttggacaattattataagaaagacaattctt
+icSARS-C7-MA    gagttacttacacagagattgaaccaaaattggatgggtattataaaaaggataatgctt
+                * ***..**..*****.***** ** **.*****... ********.**.**.*** ***
+
+2019-nCoV_HKU-S atttcacagagcaaccaattgatcttgtaccaaaccaaccatatccaaacgcaagcttcg
+icSARS-C7-MA    actatacagagcagcctatagaccttgtaccaactcaaccattaccaaatgcgagttttg
+                *.* .********.** ** **.********** .*******  *****.**.**.**.*
+
+2019-nCoV_HKU-S ataattttaagtttgtatgtgataatatcaaatttgctgatgatttaaaccagttaactg
+icSARS-C7-MA    ataatttcaaactcacatgttctaacacaaaatttgctgatgatttaaatcaaatgacag
+                *******.**..*...****  ***.*. ********************.**. *.** *
+
+2019-nCoV_HKU-S gttataagaaacctgcttcaagagagcttaaagttacatttttccctgacttaaatggtg
+icSARS-C7-MA    gcttcacaaagccagcttcacgagagctatctgtcacattcttcccagacttgaatggcg
+                *.* .* .**.** ****** *******    **.*****.***** *****.*****.*
+
+2019-nCoV_HKU-S atgtggtggctattgattataaacactacacaccctcttttaagaaaggagctaaattgt
+icSARS-C7-MA    atgtagtggctattgactatagacactattcagcgagtttcaagaaaggtgctaaattac
+                ****.***********.****.******. ** *   ***.******** ********..
+
+2019-nCoV_HKU-S tacataaacctattgtttggcatgttaacaatgcaactaataaagccacgtataaaccaa
+icSARS-C7-MA    tgcataagccaattgtttggcacattaaccaggctacaaccaagacaacgttcaaaccaa
+                *.*****.** ***********..***** * ** ** * .**..* **** .*******
+
+2019-nCoV_HKU-S atacctggtgtatacgttgtctttggagcacaaaaccagttgaaacatcaaattcgtttg
+icSARS-C7-MA    acacttggtgtttacgttgtctttggagtacaaagccagtagatacttcaaattcatttg
+                *.**.****** ****************.*****.***** ** ** ********.****
+
+2019-nCoV_HKU-S atgtactgaagtcagaggacgcgcagggaatggataatcttgcctgcgaagatctaaaac
+icSARS-C7-MA    aagttctggcagtagaagacacacaaggaatggacaatcttgcttgtgaaagtcaacaac
+                * ** ***. . .***.***.*.**.********.********.**.***..** * ***
+
+2019-nCoV_HKU-S cagtctctgaagaagtagtggaaaatcctaccatacagaaagacgttcttgagtgtaatg
+icSARS-C7-MA    ccacctctgaagaagtagtggaaaatcctaccatacagaaggaagtcatagagtgtgacg
+                * ..************************************.** **. * ******.*.*
+
+2019-nCoV_HKU-S tgaaaactaccgaagttgtaggagacattatacttaaaccagcaaataatagtttaaaaa
+icSARS-C7-MA    tgaaaactaccgaagttgtaggcaatgtcatacttaaaccatcagatgaaggtgttaaag
+                ********************** .*..*.************ **.**.* .** * ***.
+
+2019-nCoV_HKU-S ttacagaagaggttggccacacagatctaatggctgcttatgtagacaattctagtctta
+icSARS-C7-MA    taacacaagagttaggtcatgaggatcttatggctgcttatgtggaaaacacaagcatta
+                * *** ***** * **.**.. .***** **************.** **. * **. ***
+
+2019-nCoV_HKU-S ctattaagaaacctaatgaattatctagagtattaggtttgaaaacccttgctactcatg
+icSARS-C7-MA    ccattaagaaacctaatgagctttcactagccttaggtttaaaaacaattgccactcatg
+                *.*****************..* **   **. ********.*****  ****.*******
+
+2019-nCoV_HKU-S gtttagctgctgttaatagtgtcccttgggatactatagctaattatgctaagccttttc
+icSARS-C7-MA    gtattgctgcaattaatagtgttccttggagtaaaattttggcttatgtcaaaccattct
+                ** * ***** .**********.******..**  **  . . *****..**.** **..
+
+2019-nCoV_HKU-S ttaacaaagttgttagtacaactactaacatagttacacggtgtttaaaccgtgtttgta
+icSARS-C7-MA    taggacaagcagcaattacaacatcaaattgcgctaagagattagcacaacgtgtgttta
+                * ..  ***. *. * ******  * **.   *.** . *.*   .* * ***** * **
+
+2019-nCoV_HKU-S ctaattatatgccttatttctttactttattgctacaattgtgtacttttactagaagta
+icSARS-C7-MA    acaattatatgccttatgtgtttacattattgttccaattgtgtacttttactaaaagta
+                 .*************** * ***** ******.* *******************.*****
+
+2019-nCoV_HKU-S caaattctagaattaaagcatctatgccgactactatagcaaagaatactgttaagagtg
+icSARS-C7-MA    ccaattctagaattagagcttcactacctacaactattgctaaaaatagtgttaagagtg
+                * *************.*** **  *.** ** ***** ** **.**** ***********
+
+2019-nCoV_HKU-S tcggtaaattttgtctagaggcttcatttaattatttgaagtcacctaatttttctaaac
+icSARS-C7-MA    ttgctaaattatgtttggatgccggcattaattatgtgaagtcacccaaattttctaaat
+                *.* ****** ***.*.** **.    ******** **********.** *********.
+
+2019-nCoV_HKU-S tgataaatattataatttggtttttactattaagtgtttgcctaggttctttaatctact
+icSARS-C7-MA    tgttcacaatcgctatgtggctattgttgttaagtatttgcttaggttctctaatctgtg
+                ** * *  **... ** ***.* **..*.******.*****.********.******.. 
+
+2019-nCoV_HKU-S caaccgctgctttaggtgttttaatgtctaatttaggcatgccttcttactgtactggtt
+icSARS-C7-MA    taactgctgcttttggtgtactcttatctaattttggtgctccttcttattgtaatggcg
+                .***.******** ***** .*  *.******** **... ********.**** ***. 
+
+2019-nCoV_HKU-S acagagaaggctatttgaactctactaatgtcactattgcaacctactgtactggttcta
+icSARS-C7-MA    ttagagaattgtatcttaattcgtctaacgttactactatggatttctgtgaaggttctt
+                 .******   ***.* **.**  ****.**.****.*.... .* ****.  ****** 
+
+2019-nCoV_HKU-S taccttgtagtgtttgtcttagtggtttagattctttagacacctatccttctttagaaa
+icSARS-C7-MA    ttccttgcagcatttgtttaagtggattagactcccttgattcttatccagctcttgaaa
+                * *****.**..*****.* ***** *****.**..* **. *.*****  **.* ****
+
+2019-nCoV_HKU-S ctatacaaattaccatttcatcttttaaatgggatttaactgcttttggcttagttgcag
+icSARS-C7-MA    ccattcaggtgacgatttcatcgtacaagctagacttgacaattttaggtctggccgctg
+                *.** **..* ** ******** * .**.. .**.**.** ..*** **..*.*..** *
+
+2019-nCoV_HKU-S agtggtttttggcatatattcttttcactaggtttttctatgtacttggattggctgcaa
+icSARS-C7-MA    agtgggttttggcatatatgttgttcacaaaattcttttatttattaggtctttcagcta
+                ***** ************* .* ***** *..**.**.*** **.* ** .*  * ** *
+
+2019-nCoV_HKU-S tcatgcaattgtttttcagctattttgcagtacattttattagtaattcttggcttatgt
+icSARS-C7-MA    taatgcaggtgttctttggctattttgctagtcatttcatcagcaattcttggctcatgt
+                * *****. ****.**..********** .  *****.**.**.***********.****
+
+2019-nCoV_HKU-S ggttaataattaatcttgtacaaatggccccgatttcagctatggttagaatgtacatct
+icSARS-C7-MA    ggtttatcattagtattgtacaaatggcacccgtttctgcaatggttaggatgtacatct
+                **** ** ****.* ************* ** .**** ** ********.**********
+
+2019-nCoV_HKU-S tctttgcatcattttattatgtatggaaaagttatgtgcatgttgtagacggttgtaatt
+icSARS-C7-MA    tctttgcttctttctactacatatggaagagctatgttcatatcatggatggttgcacct
+                ******* ** **.**.**..*******.**.***** ***.*..*.**.*****.* .*
+
+2019-nCoV_HKU-S catcaacttgtatgatgtgttacaaacgtaatagagcaacaagagtcgaatgtacaacta
+icSARS-C7-MA    cttcgacttgcatgatgtgctataagcgcaatcgtgccacacgcgttgagtgtacaacta
+                * **.*****.********.**.**.**.*** * ** *** * **.**.**********
+
+2019-nCoV_HKU-S ttgttaatggtgttagaaggtccttttatgtctatgctaatggaggtaaaggcttttgca
+icSARS-C7-MA    ttgttaatggcatgaagagatctttctatgtctatgcaaatggaggccgtggcttctgca
+                **********..* *..**.**.**.*********** ********. . *****.****
+
+2019-nCoV_HKU-S aactacacaattggaattgtgttaattgtgatacattctgtgctggtagtacatttatta
+icSARS-C7-MA    agactcacaattggaattgtctcaattgtgacacattttgcactggtagtacattcatta
+                *. . *************** *.********.*****.**..*************.****
+
+2019-nCoV_HKU-S gtgatgaagttgcgagagacttgtcactacagtttaaaagaccaataaatcctactgacc
+icSARS-C7-MA    gtgatgaagttgctcgtgatttgtcactccagtttaaaagaccaatcaaccctactgacc
+                *************  * **.******** ***************** **.**********
+
+2019-nCoV_HKU-S agtcttcttacatcgttgatagtgttacagtgaagaatggttccatccatctttactttg
+icSARS-C7-MA    agtcatcgtatattgttgatagtgttgctgtgaaaaatggcgcgcttcacctctactttg
+                **** ** **.**.************.* *****.*****. *  *.**.**.*******
+
+2019-nCoV_HKU-S ataaagctggtcaaaagacttatgaaagacattctctctctcattttgttaacttagaca
+icSARS-C7-MA    acaaggctggtcaaaagacctatgagagacatccgctctcccattttgtcaatttagaca
+                *.**.**************.*****.******.* *****.********.**.*******
+
+2019-nCoV_HKU-S acctgagagctaataacactaaaggttcattgcctattaatgttatagtttttgatggta
+icSARS-C7-MA    atttgagagctaacaacactaaaggttcactgcctattaatgtcatagtttttgatggca
+                *..**********.***************.*************.**************.*
+
+2019-nCoV_HKU-S aatcaaaatgtgaagaatcatctgcaaaatcagcgtctgtttactacagtcagcttatgt
+icSARS-C7-MA    agtccaaatgcgacgagtctgcttctaagtctgcttctgtgtactacagtcagctgatgt
+                *.** *****.** **.**  ** * **.** ** ***** ************** ****
+
+2019-nCoV_HKU-S gtcaacctatactgttactagatcaggcattagtgtctgatgttggtgatagtgcggaag
+icSARS-C7-MA    gccaacctattctgttgcttgaccaagttcttgtatcagacgttggagatagtactgaag
+                *.******** *****.** **.**.*. .* **.** **.***** ******.* ****
+
+2019-nCoV_HKU-S ttgcagttaaaatgtttgatgcttacgttaatacgttttcatcaacttttaacgtaccaa
+icSARS-C7-MA    tttccgttaagatgtttgatgcttatgtcgacaccttttcagcaacttttagtgttccta
+                ** * *****.**************.**..*.** ****** *********..** ** *
+
+2019-nCoV_HKU-S tggaaaaactcaaaacactagttgcaactgcagaagctgaacttgcaaagaatgtgtcct
+icSARS-C7-MA    tggaaaaacttaaggcacttgttgctacagctcacagcgagttagcaaagggtgtagctt
+                **********.**..**** ***** ** **  * . .**..* ******..***. *.*
+
+2019-nCoV_HKU-S tagacaatgtcttatctacttttatttcagcagctcggcaagggtttgttgattcagatg
+icSARS-C7-MA    tagatggtgtcctttctacattcgtgtcagctgcccgacaaggtgttgttgataccgatg
+                ****...****.* ***** **..* ***** **.**.*****  ******** * ****
+
+2019-nCoV_HKU-S tagaaactaaagatgttgttgaatgtcttaaattgtcacatcaatctgacatagaagtta
+icSARS-C7-MA    ttgacacaaaggatgttattgaatgtctcaaactttcacatcactctgacttagaagtga
+                * ** ** **.******.**********.***.* ******** ****** ******* *
+
+2019-nCoV_HKU-S ctggcgatagttgtaataactatatgctcacctataacaaagttgaaaacatgacacccc
+icSARS-C7-MA    caggtgacagttgtaacaatttcatgctcacctataataaggttgaaaacatgacgccca
+                * **.**.********.**.* .**************.**.**************.*** 
+
+2019-nCoV_HKU-S gtgaccttggtgcttgtattgactgtagtgcgcgtcatattaatgcgcaggtagcaaaaa
+icSARS-C7-MA    gagatcttggcgcatgtattgactgtaatgcaaggcatatcaatgcccaagtagcaaaaa
+                * **.*****.** *************.***. * *****.***** **.**********
+
+2019-nCoV_HKU-S gtcacaacattgctttgatatggaacgttaaagatttcatgtcattgtctgaacaactac
+icSARS-C7-MA    gtcacaatgtttcactcatctggaatgtaaaagactacatgtctttatctgaacagctgc
+                *******..** * .* ** *****.** *****.* ****** **.********.**.*
+
+2019-nCoV_HKU-S gaaaacaaatacgtagtgctgctaaaaagaataacttaccttttaagttgacatgtgcaa
+icSARS-C7-MA    gtaaacaaattcgtagtgctgccaagaagaacaacataccttttagactaacttgtgcta
+                * ******** ***********.**.*****.*** *********...*.** ***** *
+
+2019-nCoV_HKU-S ctactagacaagttgttaatgttgtaacaacaaagatagcacttaagggtggtaaaattg
+icSARS-C7-MA    caactagacaggttgtcaatgtcataactactaaaatctcactcaagggtggtaagattg
+                * ********.*****.*****..**** ** **.**  ****.***********.****
+
+2019-nCoV_HKU-S ttaataattggttgaagcagttaattaaagttacacttgtgttcctttttgttgctgcta
+icSARS-C7-MA    ttagtacttgttttaaacttatgcttaaggccacattattgtgcgttcttgctgcattgg
+                ***.** *** ** **.*   *. ****.*..***.*  *** * **.***.***  . .
+
+2019-nCoV_HKU-S ttttctatttaataacacctgttcatgtcatgtctaaacatactgacttttcaagtgaaa
+icSARS-C7-MA    tttgttatatcgttatgccagtacatacattgtcaatccatgatggttacacaaatgaaa
+                *** .*** * .* *..** ** ***..  **** *  ***. **..* . ***.*****
+
+2019-nCoV_HKU-S tcataggatacaaggctattgatggtggtgtcactcgtgacatagcatctacagatactt
+icSARS-C7-MA    tcattggttacaaagccattcaggatggtgtcactcgtgacatcatttctactgatgatt
+                **** ** *****.**.*** * *.****************** .. ***** ***. **
+
+2019-nCoV_HKU-S gttttgctaacaaacatgctgattttgacacatggtttagtcagcgtggtggtagttata
+icSARS-C7-MA    gttttgcaaataaacatgctggttttgacgcatggtttagccagcgtggcggttcataca
+                ******* **.**********.*******.**********.********.***   **.*
+
+2019-nCoV_HKU-S ctaatgacaaagcttgcccattgattgctgcagtcataacaagagaagtgggttttgtcg
+icSARS-C7-MA    aaaatgacaaaagctgccctgtagtagctgctatcattacaagagagattggtttcatag
+                  *********. .*****  *..* ***** .**** ********..* *****..* *
+
+2019-nCoV_HKU-S tgcctggtttgcctggcacgatattacgcacaactaatggtgactttttgcatttcttac
+icSARS-C7-MA    tgcctggcttaccgggtactgtgctgagagcaatcaatggtgacttcttgcattttctac
+                *******.**.** **.** .*..*. * .***..***********.********..***
+
+2019-nCoV_HKU-S ctagagtttttagtgcagttggtaacatctgttacacaccatcaaaacttatagagtaca
+icSARS-C7-MA    ctcgtgtttttagtgctgttggcaacatttgctacacaccttccaaactcattgagtata
+                ** * *********** *****.*****.**.******** ** *****.** *****.*
+
+2019-nCoV_HKU-S ctgactttgcaacatcagcttgtgttttggctgctgaatgtacaatttttaaagatgctt
+icSARS-C7-MA    gtgattttgctacctctgcttgcgttcttgctgctgagtgtacaatttttaaggatgcta
+                 ***.***** ** ** *****.***.* ********.**************.****** 
+
+2019-nCoV_HKU-S ctggtaagccagtaccatattgttatgataccaatgtactagaaggttctgttgcttatg
+icSARS-C7-MA    tgggcaaacctgtgccatattgttatgacactaatttgctagagggttctatttcttata
+                . **.**.** **.**************.**.*** *.*****.******.** *****.
+
+2019-nCoV_HKU-S aaagtttacgccctgacacacgttatgtgctcatggatggctctattattcaatttccta
+icSARS-C7-MA    gtgagcttcgtccagacactcgttatgtgcttatggatggttccatcatacagtttccta
+                . .. .* **.** ***** ***********.********.**.**.** **.*******
+
+2019-nCoV_HKU-S acacctaccttgaaggttctgttagagtggtaacaacttttgattctgagtactgtaggc
+icSARS-C7-MA    acacttacctggagggttctgttagagtagtaacaacttttgatgctgagtactgtagac
+                ****.***** **.**************.*************** *************.*
+
+2019-nCoV_HKU-S acggcacttgtgaaagatcagaagctggtgtttgtgtatctactagtggtagatgggtac
+icSARS-C7-MA    atggtacatgcgaaaggtcagaagtaggtatttgcctatctaccagtggtagatgggttc
+                *.**.** **.*****.*******. ***.****. *******.************** *
+
+2019-nCoV_HKU-S ttaacaatgattattacagatctttaccaggagttttctgtggtgtagatgctgtaaatt
+icSARS-C7-MA    ttaataatgagcattacagagctctatcaggagttttctgtggtgttgatgcgatgaatc
+                ****.***** .******** **.**.******************* ***** .*.***.
+
+2019-nCoV_HKU-S tacttactaatatgtttacaccactaattcaacctattggtgctttggacatatcagcat
+icSARS-C7-MA    tcatagctaacatctttactcctcttgtgcaacctgtgggtgctttagatgtgtctgctt
+                *  * .****.** ***** ** ** .* ******.* ********.**..*.** ** *
+
+2019-nCoV_HKU-S ctatagtagctggtggtattgtagctatcgtagtaacatgccttgcctactattttatga
+icSARS-C7-MA    cagtagtggctggtggtattattgccatattggtgacttgtgctgcctactactttatga
+                * .****.************.* **.**  *.**.** **. .*********.*******
+
+2019-nCoV_HKU-S ggtttagaagagcttttggtgaatacagtcatgtagttgcctttaatactttactattcc
+icSARS-C7-MA    aattcagacgtgtttttggtgagtacaaccatgttgttgctgctaatgcacttttgtttt
+                ..**.*** * *.*********.****..***** *****. .****.* .* .*.**..
+
+2019-nCoV_HKU-S ttatgtcattcactgtactctgtttaacaccagtttactcattcttacctggtgtttatt
+icSARS-C7-MA    tgatgtctttcactatactctgtctggtaccagcttacagctttctgccgggagtctact
+                * ***** ******.********.*...*****.****   **..*.** ** **.**.*
+
+2019-nCoV_HKU-S ctgttatttacttgtacttgacattttatcttactaatgatgtttcttttttagcacata
+icSARS-C7-MA    cagtcttttacttgtacttgacattctatttcaccaatgatgtttcattcttggctcacc
+                * **. *******************.***.*.**.*********** **.**.** **. 
+
+2019-nCoV_HKU-S ttcagtggatggttatgttcacacctttagtacctttctggataacaattgcttatatca
+icSARS-C7-MA    ttcaatggtttgccatgttttctcctattgtgcctttttggataacagcaatctatgtat
+                ****.*** * *..*****. * *** * **.*****.*********.. ...***.*  
+
+2019-nCoV_HKU-S tttgtatttccacaaagcatttctattggttctttagtaattacctaaagagacgtgtag
+icSARS-C7-MA    tctgtatttctctgaagcactgccattggttctttaacaactatcttaggaaaagagtca
+                *.********. ..*****.* *.************..**.**.** *.**.* * ** .
+
+2019-nCoV_HKU-S tctttaatggtgtttcctttagtacttttgaagaagctgcgctgtgcacctttttgttaa
+icSARS-C7-MA    tgtttaatggagttacatttagtaccttcgaggaggctgctttgtgtacctttttgctca
+                * ******** *** * ********.**.**.**.***** .****.*********.* *
+
+2019-nCoV_HKU-S ataaagaaatgtatctaaagttgcgtagtgatgtgctattacctcttacgcaatataata
+icSARS-C7-MA    acaaggaaatgtacctaaaattgcgtagcgagacactgttgccacttacacagtataaca
+                *.**.********.*****.********.** ...**.**.** *****.**.*****.*
+
+2019-nCoV_HKU-S gatacttagctctttataataagtacaagtattttagtggagcaatggatacaactagct
+icSARS-C7-MA    ggtatcttgctctatataacaagtacaagtatttcagtggagccttagatactaccagct
+                *.**..* ***** *****.**************.********  *.***** **.****
+
+2019-nCoV_HKU-S acagagaagctgcttgttgtcatctcgcaaaggctctcaatgacttcagtaactcaggtt
+icSARS-C7-MA    atcgtgaagcagcttgctgccacttagcaaaggctctaaatgactttagcaactcaggtg
+                *. * ***** *****.**.**..* *********** ********.**.********* 
+
+2019-nCoV_HKU-S ctgatgttctttaccaaccaccacaaacctctatcacctcagctgttttgcagagtggtt
+icSARS-C7-MA    ctgatgttctctaccaaccaccacagacatcaatcacttctgctgttctgcagagtggtt
+                **********.**************.** ** *****.** ******.************
+
+2019-nCoV_HKU-S ttagaaaaatggcattcccatctggtaaagttgagggttgtatggtacaagtaacttgtg
+icSARS-C7-MA    ttaggaaaatggcattcccgtcaggcaaagttgaagggtgcatggtacaagtaacctgtg
+                ****.**************.** **.********.** **.**************.****
+
+2019-nCoV_HKU-S gtacaactacacttaacggtctttggcttgatgacgtagtttactgtccaagacatgtga
+icSARS-C7-MA    gaactacaactcttaatggattgtggttggatgacacagtatactgtccaagacatgtca
+                * ** ** ** *****.** .* ***.* ******..*** ***************** *
+
+2019-nCoV_HKU-S tctgcacctctgaagacatgcttaaccctaattatgaagatttactcattcgtaagtcta
+icSARS-C7-MA    tttgcacagcagaagacatgcttaatcctaactatgaagatctgctcattcgcaaatcca
+                *.*****  * **************.*****.*********.*.********.**.**.*
+
+2019-nCoV_HKU-S atcataatttcttggtacaggctggtaatgttcaactcagggttattggacattctatgc
+icSARS-C7-MA    accatagctttcttgttcaggctggcaatgttcaacttcgtgttattggccattctatgc
+                *.****..**..* ** ********.***********. * ******** **********
+
+2019-nCoV_HKU-S aaaattgtgtacttaagcttaaggttgatacagccaatcctaagacacctaagtataagt
+icSARS-C7-MA    aaaattgtctgcttaggcttaaagttgatacttctaaccctaagacacccaagtataaat
+                ******** *.****.******.********  *.**.***********.********.*
+
+2019-nCoV_HKU-S ttgttcgcattcaaccaggacagactttttcagtgttagcttgttacaatggttcaccat
+icSARS-C7-MA    ttgtccgtatccaacctggtcaaacattttcagttctagcatgctacaatggttcaccat
+                ****.**.**.***** ** **.** ******** .**** **.****************
+
+2019-nCoV_HKU-S ctggtgtttaccaatgtgctatgaggcccaatttcactattaagggttcattccttaatg
+icSARS-C7-MA    ctggtgtttatcagtgtgccatgagacctaattataccattaaaggttctttccttaatg
+                **********.**.*****.*****.**.**** .**.*****.***** **********
+
+2019-nCoV_HKU-S gttcatgtggtagtgttggttttaacatagattatgactgtgtctctttttgttacatgc
+icSARS-C7-MA    gatcatgtggtagtgttggttttaacattgattatgattgcgtgtctttctgctatatgc
+                * ************************** ********.**.** *****.**.**.****
+
+2019-nCoV_HKU-S accatatggaattaccaactggagttcatgctggcacagacttagaaggtaacttttatg
+icSARS-C7-MA    atcatatggagcttccaacaggagtacacgctggtactgacttagaaggtaaattctatg
+                *.********..* ***** ***** **.*****.** ************** **.****
+
+2019-nCoV_HKU-S gaccttttgttgacaggcaaacagcacaagcagctggtacggacacaactattacagtta
+icSARS-C7-MA    gtccatttgttgacagacaaactgcacaggctgcaggtacagacacaaccataacattaa
+                * ** ***********.***** *****.** ** *****.********.** *** * *
+
+2019-nCoV_HKU-S atgttttagcttggttgtacgctgctgttataaatggagacaggtggtttctcaatcgat
+icSARS-C7-MA    atgttttggcatggctgtatgctgctgttatcaatggtgataggtggtttcttaatagat
+                *******.** ***.****.*********** ***** **.***********.*** ***
+
+2019-nCoV_HKU-S ttaccacaactcttaatgactttaaccttgtggctatgaagtacaattatgaacctctaa
+icSARS-C7-MA    tcaccactactttgaatgactttaaccttgtggcaatgaagtacaactatgaacctttga
+                *.***** ***.* ******************** ***********.*********.*.*
+
+2019-nCoV_HKU-S cacaagaccatgttgacatactaggacctctttctgctcaaactggaattgccgttttag
+icSARS-C7-MA    cacaagatcatgttgacatattgggacctctttctgctcaaacaggaattgccgtcttag
+                *******.************.*.******************** ***********.****
+
+2019-nCoV_HKU-S atatgtgtgcttcattaaaagaattactgcaaaatggtatgaatggacgtaccatattgg
+icSARS-C7-MA    atatgtgtgctgctttgaaagcgctgctgcagaatggtatgaatggtcgtactatccttg
+                *********** * **.**** ..*.*****.************** *****.** .* *
+
+2019-nCoV_HKU-S gtagtgctttattagaagatgaatttacaccttttgatgttgttagacaatgctcaggtg
+icSARS-C7-MA    gtagcactattttagaagatgagtttacaccatttgatgttgttagacaatgctctggtg
+                ****..** * ***********.******** *********************** ****
+
+2019-nCoV_HKU-S ttactttccaaagtgcagtgaaaagaacaatcaagggtacacaccactggttgttactca
+icSARS-C7-MA    ttaccttccaaggtaagttcaagaaaattgttaagggcactcatcattggatgcttttaa
+                ****.******.**. . * **.*.**. .*.*****.** **.**.*** **.* .* *
+
+2019-nCoV_HKU-S caattttgacttcacttttagttttagtccagagtactcaatggtctttgttcttttttt
+icSARS-C7-MA    ctttcttgacatcactattgattcttgttcaaagtacacagtggtcactgtttttctttg
+                *  *.***** ***** **..**.* **.**.***** **.***** .****.**.*** 
+
+2019-nCoV_HKU-S tgtatgaaaatgcctttttaccttttgctatgggtattattgctatgtctgcttttgcaa
+icSARS-C7-MA    tttacgagaatgctttcttgccatttactcttggtattatggcaattgctgcatgtgcta
+                * **.**.*****.**.**.** ***.** * ******** ** **  **** * *** *
+
+2019-nCoV_HKU-S tgatgtttgtcaaacataagcatgcatttctctgtttgtttttgttaccttctcttgcca
+icSARS-C7-MA    tgctgcttgttaagcataagcacgcattcttgtgcttgtttctgttaccttctcttgcaa
+                ** **.****.**.********.*****..* **.******.**************** *
+
+2019-nCoV_HKU-S ctgtagcttattttaatatggtctatatgcctgctagttgggtgatgcgtattatgacat
+icSARS-C7-MA    cagttgcttactttaatatggtctacatgcctgctagctgggtgatgcgtatcatgacat
+                * ** *****.**************.***********.**************.*******
+
+2019-nCoV_HKU-S ggttggatatggttgatactagtttgtctggttttaagctaaaagactgtgttatgtatg
+icSARS-C7-MA    ggcttgaattggctgacactagcttgtctggttataggcttaaggattgtgttatgtatg
+                **.* **  ***.***.*****.********** **.*** **.**.*************
+
+2019-nCoV_HKU-S catcagctgtagtgttactaatccttatgacagcaagaactgtgtatgatgatggtgcta
+icSARS-C7-MA    cttcagctttagttttgcttattctcatgacagctcgcactgtttatgatgatgctgcta
+                * ****** **** **.** **.**.********  * ***** ********** *****
+
+2019-nCoV_HKU-S ggagagtgtggacacttatgaatgtcttgacactcgtttataaagtttattatggtaatg
+icSARS-C7-MA    gacgtgtttggacactgatgaatgtcattacacttgtttacaaagtctactatggtaatg
+                *. * ** ******** ********* * *****.*****.*****.**.**********
+
+2019-nCoV_HKU-S ctttagatcaagccatttccatgtgggctcttataatctctgttacttctaactactcag
+icSARS-C7-MA    ctttagatcaagctatttccatgtgggccttagttatttctgtaacctctaactattctg
+                *************.**************..* .* **.***** **.********.** *
+
+2019-nCoV_HKU-S gtgtagttacaactgtcatgtttttggccagaggtattgtttttatgtgtgttgagtatt
+icSARS-C7-MA    gtgtcgttacgactatcatgtttttagctagagctatagtgtttgtgtgtgttgagtatt
+                **** *****.***.**********.**.**** *** ** ***.***************
+
+2019-nCoV_HKU-S gccctattttcttcataactggtaatacacttcagtgtataatgctagtttattgtttct
+icSARS-C7-MA    acccattgttatttattactggcaacaccttacagtgtatcatgcttgtttattgtttct
+                .***  * ** **.** *****.**.** .* ******** ***** *************
+
+2019-nCoV_HKU-S taggctatttttgtacttgttactttggcctcttttgtttactcaaccgctactttagac
+icSARS-C7-MA    taggctattgttgctgctgctactttggccttttctgtttactcaaccgttacttcaggc
+                ********* ***.  .**.***********.**.**************.*****.**.*
+
+2019-nCoV_HKU-S tgactcttggtgtttatgattacttagtttctacacaggagtttagatatatgaattcac
+icSARS-C7-MA    ttactcttggtgtttatgactacttggtctctacacaagaatttaggtatatgaactccc
+                * *****************.*****.**.********.**.*****.********.** *
+
+2019-nCoV_HKU-S agggactactcccacccaagaatagcatagatgccttcaaactcaacattaaattgttgg
+icSARS-C7-MA    aggggcttttgcctcctaagagtagtattgatgctttcaagcttaacattaagttgttgg
+                ****.** .* ** **.****.***.** *****.*****.**.********.*******
+
+2019-nCoV_HKU-S gtgttggtggcaaaccttgtatcaaagtagccactgtacagtctaaaatgtcagatgtaa
+icSARS-C7-MA    gtattggaggtaaaccatgtatcaaggttgctactgtacagtctaaaatgtctgacgtaa
+                **.**** **.***** ********.** **.******************** **.****
+
+2019-nCoV_HKU-S agtgcacatcagtagtcttactctcagttttgcaacaactcagagtagaatcatcatcta
+icSARS-C7-MA    agtgcacatctgtggtactgctctcggttcttcaacaacttagagtagagtcatcttcta
+                ********** **.** .*.*****.***.* ********.********.***** ****
+
+2019-nCoV_HKU-S aattgtgggctcaatgtgtccagttacacaatgacattctcttagctaaagatactactg
+icSARS-C7-MA    aattgtgggcacaatgtgtacaactccacaatgatattcttcttgcaaaagacacaactg
+                ********** ******** **..* ********.*****..* ** *****.** ****
+
+2019-nCoV_HKU-S aagcctttgaaaaaatggtttcactactttctgttttgctttccatgcagggtgctgtag
+icSARS-C7-MA    aagctttcgagaagatggtttctcttttgtctgttttgctatccatgcagggtgctgtag
+                ****.**.**.**.******** ** .* *********** *******************
+
+2019-nCoV_HKU-S acataaacaagctttgtgaagaaatgctggacaacagggcaaccttacaagctatagcct
+icSARS-C7-MA    acattaataggttgtgcgaggaaatgctcgataaccgtgctactcttcaggctattgctt
+                **** **.*.*.* **.**.******** **.*** * ** **..* **.***** **.*
+
+2019-nCoV_HKU-S cagagtttagttcccttccatcatatgcagcttttgctactgctcaagaagcttatgagc
+icSARS-C7-MA    cagaatttagttctttaccatcatatgccgcttatgccactgcccaagaggcctatgagc
+                ****.********..* *********** **** ***.*****.*****.**.*******
+
+2019-nCoV_HKU-S aggctgttgctaatggtgattctgaagttgttcttaaaaagttgaagaagtctttgaatg
+icSARS-C7-MA    aggctgtagctaatggtgattctgaagtcgttctcaaaaagttaaagaaatctttgaatg
+                ******* ********************.*****.********.*****.**********
+
+2019-nCoV_HKU-S tggctaaatctgaatttgaccgtgatgcagccatgcaacgtaagttggaaaagatggctg
+icSARS-C7-MA    tggctaaatctgagtttgaccgtgatgctgccatgcaacgcaagttggaaaagatggcag
+                *************.************** ***********.***************** *
+
+2019-nCoV_HKU-S atcaagctatgacccaaatgtataaacaggctagatctgaggacaagagggcaaaagtta
+icSARS-C7-MA    atcaggctatgacccaaatgtacaaacaggcaagatctgaggacaagagggcaaaagtaa
+                ****.*****************.******** ************************** *
+
+2019-nCoV_HKU-S ctagtgctatgcagacaatgcttttcactatgcttagaaagttggataatgatgcactca
+icSARS-C7-MA    ctagtgctatgcaaacaatgctcttcactatgcttaggaagcttgataatgatgcactta
+                *************.********.**************.***.* **************.*
+
+2019-nCoV_HKU-S acaacattatcaacaatgcaagagatggttgtgttcccttgaacataatacctcttacaa
+icSARS-C7-MA    acaacattatcaacaatgcgcgtgatggttgtgttccactcaacatcataccattgacta
+                *******************. * ************** .* ***** ***** .* ** *
+
+2019-nCoV_HKU-S cagcagccaaactaatggttgtcataccagactataacacatataaaaatacgtgtgatg
+icSARS-C7-MA    cagcagccaaactcatggttgttgtccctgattatggtacctacaagaacacttgtgatg
+                ************* ********..* ** **.***...** **.**.**.** *******
+
+2019-nCoV_HKU-S gtacaacatttacttatgcatcagcattgtgggaaatccaacaggttgtagatgcagata
+icSARS-C7-MA    gtaacacctttacatatgcatctgcactctgggaaatccagcaagttgttgatgcggata
+                ***  ** ***** ******** ***.* ***********.**.***** *****.****
+
+2019-nCoV_HKU-S gtaaaattgttcaacttagtgaaattagtatggacaattcacctaatttagcatggcctc
+icSARS-C7-MA    gcaagattgttcaacttagtgaaattaacatggacaattcaccaaatttggcttggcctc
+                *.**.**********************..************** *****.** *******
+
+2019-nCoV_HKU-S ttattgtaacagctttaagggccaattctgctgtcaaattacagaataatgagcttagtc
+icSARS-C7-MA    ttattgttacagctctaagagccaactcagctgttaaactacagaataatgaactgagtc
+                ******* ******.****.*****.** *****.***.*************.** ****
+
+2019-nCoV_HKU-S ctgttgcactacgacagatgtcttgtgctgccggtactacacaaactgcttgcactgatg
+icSARS-C7-MA    cagtagcactacgacagatgtcctgtgcggctggtaccacacaaacagcttgtactgatg
+                * ** *****************.***** **.*****.******** *****.*******
+
+2019-nCoV_HKU-S acaatgcgttagcttactacaacacaacaaagggaggtaggtttgtacttgcactgttat
+icSARS-C7-MA    acaatgcacttgcctactataacaattcgaagggaggtaggtttgtgctggcattactat
+                *******..* **.*****.****   *.*****************.** ***.*..***
+
+2019-nCoV_HKU-S ccgatttacaggatttgaaatgggctagattccctaagagtgatggaactggtactatct
+icSARS-C7-MA    cagaccaccaagatctcaaatgggctagattccctaagagtgatggtacaggtacaattt
+                * **..  **.***.* ***************************** ** ***** **.*
+
+2019-nCoV_HKU-S atacagaactggaaccaccttgtaggtttgttacagacacacctaaaggtcctaaagtga
+icSARS-C7-MA    acgcagaactggaaccaccttgtaggtttgttacagacacaccaaaagggcctaaagtga
+                *..**************************************** ***** **********
+
+2019-nCoV_HKU-S agtatttatactttattaaaggattaaacaacctaaatagaggtatggtacttggtagtt
+icSARS-C7-MA    aatacttgtacttcatcaaaggcttaaacaacctaaatagaggtatggtgctgggcagtt
+                *.**.**.*****.**.***** **************************.** **.****
+
+2019-nCoV_HKU-S tagctgccacagtacgtctacaagctggtaatgcaacagaagtgcctgccaattcaactg
+icSARS-C7-MA    tagctgctacagtacgtcttcaggctggaaatgctacagaagtacctgccaattcaactg
+                *******.*********** **.***** ***** ********.****************
+
+2019-nCoV_HKU-S tattatctttctgtgcttttgctgtagatgctgctaaagcttacaaagattatctagcta
+icSARS-C7-MA    tgctttccttctgtgcttttgcagtagaccctgctaaagcatataaggattacctagcaa
+                *..* **.************** *****. ********** **.**.*****.***** *
+
+2019-nCoV_HKU-S gtgggggacaaccaatcactaattgtgttaagatgttgtgtacacacactggtactggtc
+icSARS-C7-MA    gtggaggacaaccaatcaccaactgtgtgaagatgttgtgtacacacactggtacaggac
+                ****.**************.**.***** ************************** ** *
+
+2019-nCoV_HKU-S aggcaataacagttacaccggaagccaatatggatcaagaatcctttggtggtgcatcgt
+icSARS-C7-MA    aggcaattactgtaacaccagaagctaacatggaccaagagtcctttggtggtgcttcat
+                ******* ** ** *****.*****.**.*****.*****.************** **.*
+
+2019-nCoV_HKU-S gttgtctgtactgccgttgccacatagatcatccaaatcctaaaggattttgtgacttaa
+icSARS-C7-MA    gttgtctgtattgtagatgccacattgaccatccaaatcctaaaggattctgtgacttga
+                **********.**. * ******** **.********************.********.*
+
+2019-nCoV_HKU-S aaggtaagtatgtacaaatacctacaacttgtgctaatgaccctgtgggttttacactta
+icSARS-C7-MA    aaggtaagtacgtccaaatacctaccacttgtgctaatgacccagtgggttttacactta
+                **********.** *********** ***************** ****************
+
+2019-nCoV_HKU-S aaaacacagtctgtaccgtctgcggtatgtggaaaggttatggctgtagttgtgatcaac
+icSARS-C7-MA    gaaacacagtctgtaccgtctgcggaatgtggaaaggttatggctgtagttgtgaccaac
+                .************************ *****************************.****
+
+2019-nCoV_HKU-S tccgcgaacccatgcttcagtcagctgatgcacaatcgtttttaaacgggtttgcggtgt
+icSARS-C7-MA    tccgcgaacccttgatgcagtctgcggatgcatcaacgtttttaaacgggtttgcggtgt
+                *********** ** * ***** ** ******. * ************************
+
+2019-nCoV_HKU-S aagtgcagcccgtcttacaccgtgcggcacaggcactagtactgatgtcgtatacagggc
+icSARS-C7-MA    aagtgcagcccgtcttacaccgtgcggcacaggcactagtactgatgtcgtctacagggc
+                *************************************************** ********
+
+2019-nCoV_HKU-S ttttgacatctacaatgataaagtagctggttttgctaaattcctaaaaactaattgttg
+icSARS-C7-MA    ttttgatatttacaacgaaaaagttgctggttttgcaaagttcctaaaaactaattgctg
+                ******.**.*****.** ***** *********** **.*****************.**
+
+2019-nCoV_HKU-S tcgcttccaagaaaaggacgaagatgacaatttaattgattcttactttgtagttaagag
+icSARS-C7-MA    tcgcttccaggagaaggatgaggaaggcaatttattagactcttactttgtagttaagag
+                *********.**.*****.**.** *.******* * **.********************
+
+2019-nCoV_HKU-S acacactttctctaactaccaacatgaagaaacaatttataatttacttaaggattgtcc
+icSARS-C7-MA    gcatactatgtctaactaccaacatgaagagactatttataacttggttaaagattgtcc
+                .**.*** * ********************.** ********.**. ****.********
+
+2019-nCoV_HKU-S agctgttgctaaacatgacttctttaagtttagaatagacggtgacatggtaccacatat
+icSARS-C7-MA    agcggttgctgtccatgactttttcaagtttagagtagatggtgacatggtaccacatat
+                *** ******.  ********.**.*********.****.********************
+
+2019-nCoV_HKU-S atcacgtcaacgtcttactaaatacacaatggcagacctcgtctatgctttaaggcattt
+icSARS-C7-MA    atcacgtcagcgtctaactaaatacacaatggctgatttagtctatgctctacgtcattt
+                *********.***** ***************** **..* *********.** * *****
+
+2019-nCoV_HKU-S tgatgaaggtaattgtgacacattaaaagaaatacttgtcacatacaattgttgtgatga
+icSARS-C7-MA    tgatgagggtaattgtgatacattaaaagaaatactcgtcacatacaattgctgtgatga
+                ******.***********.*****************.**************.********
+
+2019-nCoV_HKU-S tgattatttcaataaaaaggactggtatgattttgtagaaaacccagatatattacgcgt
+icSARS-C7-MA    tgattatttcaataagaaggattggtatgacttcgtagagaatcctgacatcttacgcgt
+                ***************.*****.********.**.*****.**.** **.** ********
+
+2019-nCoV_HKU-S atacgccaacttaggtgaacgtgtacgccaagctttgttaaaaacagtacaattctgtga
+icSARS-C7-MA    atatgctaacttaggtgagcgtgtacgccaatcattattaaagactgtacaattctgcga
+                ***.**.***********.************ * **.*****.** ***********.**
+
+2019-nCoV_HKU-S tgccatgcgaaatgctggtattgttggtgtactgacattagataatcaagatctcaatgg
+icSARS-C7-MA    tgctatgcgtgatgcaggcattgtaggcgtactgacattagataatcaggatcttaatgg
+                ***.***** .**** **.***** **.********************.*****.*****
+
+2019-nCoV_HKU-S taactggtatgatttcggtgatttcatacaaaccacgccaggtagtggagttcctgttgt
+icSARS-C7-MA    gaactggtacgatttcggtgatttcgtacaagtagcaccaggctgcggagttcctattgt
+                 ********.***************.*****.. .*.*****. *.*********.****
+
+2019-nCoV_HKU-S agattcttattattcattgttaatgcctatattaaccttgaccagggctttaactgcaga
+icSARS-C7-MA    ggattcatattactcattgctgatgcccatcctcactttgactagggcattggctgctga
+                .***** *****.******.*.*****.** .* **.*****.***** **..**** **
+
+2019-nCoV_HKU-S gtcacatgttgacactgacttaacaaagccttacattaagtgggatttgttaaaatatga
+icSARS-C7-MA    gtcccatatggatgctgatctcgcaaaaccacttattaagtgggatttgctgaaatatga
+                *** ***.* **..****..* .****.** . .***************.*.********
+
+2019-nCoV_HKU-S cttcacggaagagaggttaaaactctttgaccgttattttaaatattgggatcagacata
+icSARS-C7-MA    ttttacggaagagagactttgtctcttcgaccgttattttaaatattgggaccagacata
+                .**.***********..*  . *****.***********************.********
+
+2019-nCoV_HKU-S ccacccaaattgtgttaactgtttggatgacagatgcattctgcattgtgcaaactttaa
+icSARS-C7-MA    ccatcccaattgtattaactgtttggatgataggtgtatccttcattgtgcaaactttaa
+                ***.** ******.****************.**.**.**.** *****************
+
+2019-nCoV_HKU-S tgttttattctctacagtgttcccacctacaagttttggaccactagtgagaaaaatatt
+icSARS-C7-MA    tgtgttattttctactgtgtttccacctacaagttttggaccactagtaagaaaaatatt
+                *** *****.***** *****.**************************.***********
+
+2019-nCoV_HKU-S tgttgatggtgttccatttgtagtttcaactggataccacttcagagagctaggtgttgt
+icSARS-C7-MA    tgtagatggtgttccttttgttgtttcaactggataccattttcgtgagttaggagtcgt
+                *** *********** ***** *****************.**. * ***.**** **.**
+
+2019-nCoV_HKU-S acataatcaggatgtaaacttacatagctctagacttagttttaaggaattacttgtgta
+icSARS-C7-MA    acataatcaggatgtaaacttacatagctcgcgtctcagtttcaaggaacttttagtgta
+                ******************************  * **.*****.******.* .* *****
+
+2019-nCoV_HKU-S tgctgctgaccctgctatgcacgctgcttctggtaatctattactagataaacgcactac
+icSARS-C7-MA    tgctgctgatccagctatgcatgcagcttctggcaatttattgctagataaacgcactac
+                *********.** ********.** ********.***.****.*****************
+
+2019-nCoV_HKU-S gtgcttttcagtagctgcacttactaacaatgttgcttttcaaactgtcaaacccggtaa
+icSARS-C7-MA    atgcttttcagtagctgcactaacaaacaatgttgcttttcaaactgtcaaacccggtaa
+                .******************** ** ***********************************
+
+2019-nCoV_HKU-S ttttaacaaagacttctatgactttgctgtgtctaagggtttctttaaggaaggaagttc
+icSARS-C7-MA    ttttaataaagacttttatgactttgctgtgtctaaaggtttctttaaggaaggaagttc
+                ******.********.********************.***********************
+
+2019-nCoV_HKU-S tgttgaattaaaacacttcttctttgctcaggatggtaatgctgctatcagcgattatga
+icSARS-C7-MA    tgttgaactaaaacacttcttctttgctcaggatggcaacgctgctatcagtgattatga
+                *******.****************************.**.***********.********
+
+2019-nCoV_HKU-S ctactatcgttataatctaccaacaatgtgtgatatcagacaactactatttgtagttga
+icSARS-C7-MA    ctattatcgttataatctgccaacaatgtgtgatatcagacaactcctattcgtagttga
+                ***.**************.************************** *****.********
+
+2019-nCoV_HKU-S agttgttgataagtactttgattgttacgatggtggctgtattaatgctaaccaagtcat
+icSARS-C7-MA    agttgttgataaatactttgattgttacgatggtggctgtattaatgccaaccaagtaat
+                ************.***********************************.******** **
+
+2019-nCoV_HKU-S cgtcaacaacctagacaaatcagctggttttccatttaataaatggggtaaggctagact
+icSARS-C7-MA    cgttaacaatctggataaatcagctggtttcccatttaataaatggggtaaggctagact
+                ***.*****.**.**.**************.*****************************
+
+2019-nCoV_HKU-S ttattatgattcaatgagttatgaggatcaagatgcacttttcgcatatacaaaacgtaa
+icSARS-C7-MA    ttattatgactcaatgagttatgaggatcaagatgcacttttcgcgtatactaagcgtaa
+                *********.***********************************.***** **.*****
+
+2019-nCoV_HKU-S tgtcatccctactataactcaaatgaatcttaagtatgccattagtgcaaagaatagagc
+icSARS-C7-MA    tgtcatccctactataactcaaatgaatcttaagtatgccattagtgcaaagaatagagc
+                ************************************************************
+
+2019-nCoV_HKU-S tcgcaccgtagctggtgtctctatctgtagtactatgaccaatagacagtttcatcaaaa
+icSARS-C7-MA    tcgcaccgtagctggtgtctctatctgtagtactatgacaaatagacagtttcatcagaa
+                *************************************** *****************.**
+
+2019-nCoV_HKU-S attattgaaatcaatagccgccactagaggagctactgtagtaattggaacaagcaaatt
+icSARS-C7-MA    attattgaagtcaatagccgccactagaggagctactgtggtaattggaacaagcaagtt
+                *********.*****************************.*****************.**
+
+2019-nCoV_HKU-S ctatggtggttggcacaacatgttaaaaactgtttatagtgatgtagaaaaccctcacct
+icSARS-C7-MA    ttacggtggctggcataatatgttaaaaactgtttacagtgatgtagaaactccacacct
+                .**.*****.*****.**.*****************.************* .** *****
+
+2019-nCoV_HKU-S tatgggttgggattatcctaaatgtgatagagccatgcctaacatgcttagaattatggc
+icSARS-C7-MA    tatgggttgggattatccaaaatgtgacagagccatgcctaacatgcttaggataatggc
+                ****************** ********.***********************.** *****
+
+2019-nCoV_HKU-S ctcacttgttcttgctcgcaaacatacaacgtgttgtagcttgtcacaccgtttctatag
+icSARS-C7-MA    ctctcttgttcttgctcgcaaacataacacttgctgtaacttatcacaccgtttctacag
+                *** **********************  ** **.****.***.**************.**
+
+2019-nCoV_HKU-S attagctaatgagtgtgctcaagtattgagtgaaatggtcatgtgtggcggttcactata
+icSARS-C7-MA    gttagctaacgagtgtgcgcaagtattaagtgagatggtcatgtgtggcggctcactata
+                .********.******** ********.*****.*****************.********
+
+2019-nCoV_HKU-S tgttaaaccaggtggaacctcatcaggagatgccacaactgcttatgctaatagtgtttt
+icSARS-C7-MA    tgttaaaccaggtggaacatcatccggtgatgctacaactgcttatgctaatagtgtctt
+                ****************** ***** ** *****.***********************.**
+
+2019-nCoV_HKU-S taacatttgtcaagctgtcacggccaatgttaatgcacttttatctactgatggtaacaa
+icSARS-C7-MA    taacatttgtcaagctgttacagccaatgtaaatgcacttctttcaactgatggtaataa
+                ******************.**.******** *********.* ** ***********.**
+
+2019-nCoV_HKU-S aattgccgataagtatgtccgcaatttacaacacagactttatgagtgtctctatagaaa
+icSARS-C7-MA    gatagctgacaagtatgtccgcaatctacaacacaggctctatgagtgtctctatagaaa
+                .** **.**.***************.**********.**.********************
+
+2019-nCoV_HKU-S tagagatgttgacacagactttgtgaatgagttttacgcatatttgcgtaaacatttctc
+icSARS-C7-MA    tagggatgttgatcatgaattcgtggatgagttttacgcttacctgcgtaaacatttctc
+                ***.********.   ** **.***.************* **..****************
+
+2019-nCoV_HKU-S aatgatgatactctctgacgatgctgttgtgtgtttcaatagcacttatgcatctcaagg
+icSARS-C7-MA    catgatgattctttctgatgatgccgttgtgtgctataacagtaactatgcggctcaagg
+                 ******** **.*****.*****.********.* .**.**.* .*****. *******
+
+2019-nCoV_HKU-S tctagtggctagcataaagaactttaagtcagttctttattatcaaaacaatgtttttat
+icSARS-C7-MA    tttagtagctagcattaagaactttaaggcagttctttattatcaaaataatgtgttcat
+                *.****.******** ************ *******************.***** **.**
+
+2019-nCoV_HKU-S gtctgaagcaaaatgttggactgagactgaccttactaaaggacctcatgaattttgctc
+icSARS-C7-MA    gtctgaggcaaaatgttggactgagactgaccttactaaaggacctcacgaattttgctc
+                ******.*****************************************.***********
+
+2019-nCoV_HKU-S tcaacatacaatgctagttaaacagggtgatgattatgtgtaccttccttacccagatcc
+icSARS-C7-MA    acagcatacaatgctagttaaacaaggagatgattacgtgtacctgccttacccagatcc
+                 **.********************.** ********.******** **************
+
+2019-nCoV_HKU-S atcaagaatcctaggggccggctgttttgtagatgatatcgtaaaaacagatggtacact
+icSARS-C7-MA    atcaagaatattaggcgcaggctgttttgtcgatgatattgtcaaaacagatggtacact
+                ********* .**** ** *********** ********.** *****************
+
+2019-nCoV_HKU-S tatgattgaacggttcgtgtctttagctatagatgcttacccacttactaaacatcctaa
+icSARS-C7-MA    tatgattgaaaggttcgtgtcactggctattgatgcttacccacttacaaaacatcctaa
+                ********** ********** .*.***** ***************** ***********
+
+2019-nCoV_HKU-S tcaggagtatgctgatgtctttcatttgtacttacaatacataagaaagctacatgatga
+icSARS-C7-MA    tcaggagtatgctgatgtctttcacttgtatttacaatacattagaaagttacatgatga
+                ************************.*****.*********** ******.**********
+
+2019-nCoV_HKU-S gttaacaggacacatgttagacatgtattctgttatgcttactaatgataacacttcaag
+icSARS-C7-MA    gcttactggccacatgttggacatgtattccgtaatgctaactaatgataacacctcacg
+                *.* ** ** ********.***********.** ***** **************.*** *
+
+2019-nCoV_HKU-S gtattgggaacctgagttttatgaggctatgtacacaccgcatacagtcttacaggctgt
+icSARS-C7-MA    gtactgggaacctgagttttatgaggctatgtacacaccacatacagtcttgcaggctgt
+                ***.***********************************.***********.********
+
+2019-nCoV_HKU-S tggggcttgtgttctttgcaattcacagacttcattaagatgtggtgcttgcatacgtag
+icSARS-C7-MA    aggtgtttgtgtattgtgcaattcacagacttcacttcgttgcggtgcctgtattaggag
+                 ** *.****** .* ******************.*  * **.*****.**.**  * **
+
+2019-nCoV_HKU-S accattcttatgttgtaaatgctgttacgaccatgtcatatcaacatcacataaattagt
+icSARS-C7-MA    accattcctatgttgcaagtgctgctatgaccatgtcatttcaacatcacacaaattagt
+                *******.*******.**.*****.**.*********** ***********.********
+
+2019-nCoV_HKU-S cttgtctgttaatccgtatgtttgcaatgctccaggttgtgatgtcacagatgtgactca
+icSARS-C7-MA    gttgtctgttaatccctatgtttgcaatgccccaggttgtgatgtcactgatgtgacaca
+                 ************** **************.***************** ******** **
+
+2019-nCoV_HKU-S actttacttaggaggtatgagctattattgtaaatcacataaaccacccattagttttcc
+icSARS-C7-MA    actgtatctaggaggtatgagctattattgcaagtcacataagcctcccattagttttcc
+                *** **..**********************.**.********.** **************
+
+2019-nCoV_HKU-S attgtgtgctaatggacaagtttttggtttatataaaaatacatgtgttggtagcgataa
+icSARS-C7-MA    attatgtgctaatggtcaggtttttggtttatacaaaaacacatgtgtaggcagtgacaa
+                ***.*********** **.**************.*****.******** **.**.**.**
+
+2019-nCoV_HKU-S tgttactgactttaatgcaattgcaacatgtgactggacaaatgctggtgattacatttt
+icSARS-C7-MA    tgtcactgacttcaatgcgatagcaacatgtgattggactaatgctggcgattacatact
+                ***.********.*****.** ***********.***** ********.******** .*
+
+2019-nCoV_HKU-S agctaacacctgtactgaaagactcaagctttttgcagcagaaacgctcaaagctactga
+icSARS-C7-MA    tgccaacacttgtactgagagactcaagcttttcgcagcagaaacgctcaaagccactga
+                 **.*****.********.**************.********************.*****
+
+2019-nCoV_HKU-S ggagacatttaaactgtcttatggtattgctactgtacgtgaagtgctgtctgacagaga
+icSARS-C7-MA    ggaaacatttaagctgtcatatggtattgctactgtacgcgaagtactctctgacagaga
+                ***.********.***** ********************.*****.** ***********
+
+2019-nCoV_HKU-S attacatctttcatgggaagttggtaaacctagaccaccacttaaccgaaattatgtctt
+icSARS-C7-MA    attgcatctttcatgggaggttggaaaacctagaccaccattgaacagaaactatgtctt
+                ***.**************.***** ***************.* *** ****.********
+
+2019-nCoV_HKU-S tactggttatcgtgtaactaaaaacagtaaagtacaaataggagagtacacctttgaaaa
+icSARS-C7-MA    tactggttaccgtgtaactaaaaatagtaaagtacagattggagagtacacctttgaaaa
+                *********.**************.***********.** ********************
+
+2019-nCoV_HKU-S aggtgactatggtgatgctgttgtttaccgaggtacaacaacttacaaattaaatgttgg
+icSARS-C7-MA    aggtgactatggtgatgctgttgtgtacagaggtactacgacatacaagttgaatgttgg
+                ************************ *** ******* **.** *****.**.********
+
+2019-nCoV_HKU-S tgattattttgtgctgacatcacatacagtaatgccattaagtgcacctacactagtgcc
+icSARS-C7-MA    tgattactttgtgttgacatctcacactgtaatgccacttagtgcacctactctagtgcc
+                ******.******.******* **.** *********.* *********** ********
+
+2019-nCoV_HKU-S acaagagcactatgttagaattactggcttatacccaacactcaatatctcagatgagtt
+icSARS-C7-MA    acaagagcactatgtgagaattactggcttgtacccaacactcaacatctcagatgagtt
+                *************** **************.**************.**************
+
+2019-nCoV_HKU-S ttctagcaatgttgcaaattatcaaaaggttggtatgcaaaagtattctacactccaggg
+icSARS-C7-MA    ttctagcaatgttgcaaattatcaaaaggtcggcatgcaaaagtactctacactccaagg
+                ******************************.**.***********.***********.**
+
+2019-nCoV_HKU-S accacctggtactggtaagagtcattttgctattggcctagctctctactacccttctgc
+icSARS-C7-MA    accacctggtactggtaagagtcattttgccatcggacttgctctctattacccatctgc
+                ******************************.**.** ** ********.***** *****
+
+2019-nCoV_HKU-S tcgcatagtgtatacagcttgctctcatgccgctgttgatgcactatgtgagaaggcatt
+icSARS-C7-MA    tcgcatagtgtatacggcatgctctcatgcagctgttgatgccctatgtgaaaaggcatt
+                ***************.** *********** *********** ********.********
+
+2019-nCoV_HKU-S aaaatatttgcctatagataaatgtagtagaattatacctgcacgtgctcgtgtagagtg
+icSARS-C7-MA    aaaatatttgcccatagataaatgtagtagaatcatacctgcgcgtgcgcgcgtagagtg
+                ************.********************.********.***** **.********
+
+2019-nCoV_HKU-S ttttgataaattcaaagtgaattcaacattagaacagtatgtcttttgtactgtaaatgc
+icSARS-C7-MA    ttttgataaattcaaagtgaattcaacactagaacagtatgttttctgcactgtaaatgc
+                ****************************.*************.**.**.***********
+
+2019-nCoV_HKU-S attgcctgagacgacagcagatatagttgtctttgatgaaatttcaatggccacaaatta
+icSARS-C7-MA    attgccagaaacaactgctgacattgtagtctttgatgaaatctctatggctactaatta
+                ****** **.**.** ** **.** ** **************.** *****.** *****
+
+2019-nCoV_HKU-S tgatttgagtgttgtcaatgccagattacgtgctaagcactatgtgtacattggcgaccc
+icSARS-C7-MA    tgacttgagtgttgtcaatgctagacttcgtgcaaaacactacgtctatattggcgatcc
+                ***.*****************.***.* ***** **.*****.** **.********.**
+
+2019-nCoV_HKU-S tgctcaattacctgcaccacgcacattgctaactaagggcacactagaaccagaatattt
+icSARS-C7-MA    tgctcaattaccagccccccgcacattgctgactaaaggcacactagaaccagaatattt
+                ************ ** ** ***********.*****.***********************
+
+2019-nCoV_HKU-S caattcagtgtgtagacttatgaaaactataggtccagacatgttcctcggaacttgtcg
+icSARS-C7-MA    taattcagtgtgcagacttatgaaaacaataggtccagacatgttccttggaacttgtcg
+                .***********.************** ********************.***********
+
+2019-nCoV_HKU-S gcgttgtcctgctgaaattgttgacactgtgagtgctttggtttatgataataagcttaa
+icSARS-C7-MA    ccgttgtcctgctgaaattgttgacactgtgagtgctttagtttatgacaataagctaaa
+                 **************************************.********.******** **
+
+2019-nCoV_HKU-S agcacataaagacaaatcagctcaatgctttaaaatgttttataagggtgttatcacgca
+icSARS-C7-MA    agcacacaaggataagtcagctcaatgcttcaaaatgttctacaaaggtgttattacaca
+                ******.**.**.**.**************.********.**.**.********.**.**
+
+2019-nCoV_HKU-S tgatgtttcatctgcaattaacaggccacaaataggcgtggtaagagaattccttacacg
+icSARS-C7-MA    tgatgtttcatctgcaatcaacagacctcaaataggcgttgtaagagaatttcttacacg
+                ******************.*****.** *********** ***********.********
+
+2019-nCoV_HKU-S taaccctgcttggagaaaagctgtctttatttcaccttataattcacagaatgctgtagc
+icSARS-C7-MA    caatcctgcttggagaaaagctgtttttatctcaccttataattcacagaacgctgtagc
+                .**.********************.*****.********************.********
+
+2019-nCoV_HKU-S ctcaaagattttgggactaccaactcaaactgttgattcatcacagggctcagaatatga
+icSARS-C7-MA    ttcaaaaatcttaggattgcctacgcagactgttgattcatcacagggttctgaatatga
+                .*****.**.**.***.*.** ** **.********************.** ********
+
+2019-nCoV_HKU-S ctatgtcatattcactcaaaccactgaaacagctcactcttgtaatgtaaacagatttaa
+icSARS-C7-MA    ctatgtcatattcacacaaactactgaaacagcacactcttgtaatgtcaaccgcttcaa
+                *************** *****.*********** ************** *** * **.**
+
+2019-nCoV_HKU-S tgttgctattaccagagcaaaagtaggcatactttgcataatgtctgatagagaccttta
+icSARS-C7-MA    tgtggctatcacaagggcaaaaattggcattttgtgcataatgtctgatagagatcttta
+                *** *****.** **.******.* ***** .* ********************.*****
+
+2019-nCoV_HKU-S tgacaagttgcaatttacaagtcttgaaattccacgtaggaatgtggcaactttacaagc
+icSARS-C7-MA    tgacaaactgcaatttacaagtctagaaataccacgtcgcaatgtggctacattacaagc
+                ******..**************** ***** ****** * ******** ** ********
+
+2019-nCoV_HKU-S tgaaaatgtaacaggactctttaaagattgtagtaaggtaatcactgggttacatcctac
+icSARS-C7-MA    agaaaatgtaactggactttttaaggactgtagtaagatcattactggtcttcatcctac
+                 *********** *****.*****.**.*********.* **.***** .* ********
+
+2019-nCoV_HKU-S acaggcacctacacacctcagtgttgacactaaattcaaaactgaaggtttatgtgttga
+icSARS-C7-MA    acaggcacctacacacctcagcgttgatataaagttcaagactgaaggattatgtgttga
+                *********************.*****.*. **.*****.******** ***********
+
+2019-nCoV_HKU-S catacctggcatacctaaggacatgacctatagaagactcatctctatgatgggttttaa
+icSARS-C7-MA    cataccaggcataccaaaggacatgacctaccgtagactcatctctatgatgggtttcaa
+                ****** ******** **************. * ***********************.**
+
+2019-nCoV_HKU-S aatgaattatcaagttaatggttaccctaacatgtttatcacccgcgaagaagctataag
+icSARS-C7-MA    aatgaattaccaagtcaatggttaccctaatatgtttatcacccgcgaagaagctattcg
+                *********.*****.**************.**************************  *
+
+2019-nCoV_HKU-S acatgtacgtgcatggattggcttcgatgtcgaggggtgtcatgctactagagaagctgt
+icSARS-C7-MA    tcacgttcgtgcgtggattggctttgatgtagagggctgtcatgcaactagagatgctgt
+                 **.** *****.***********.***** ***** ******** ******** *****
+
+2019-nCoV_HKU-S tggtaccaatttacctttacagctaggtttttctacaggtgttaacctagttgctgtacc
+icSARS-C7-MA    gggtactaacctacctctccagctaggattttctacaggtgttaacttagtagctgtacc
+                 *****.**..*****.* ******** ******************.**** ********
+
+2019-nCoV_HKU-S tacaggttatgttgatacacctaataatacagatttttccagagttagtgctaaaccacc
+icSARS-C7-MA    gactggttatgttgacactgaaaataacacagaattcaccagagttaatgcaaaacctcc
+                 ** ***********.**    *****.***** **. *********.*** ***** **
+
+2019-nCoV_HKU-S gcctggagatcaatttaaacacctcataccacttatgtacaaaggacttccttggaatgt
+icSARS-C7-MA    accaggtgaccagtttaaacatcttataccactcatgtataaaggcttgccctggaatgt
+                .** ** **.**.********.**.********.*****.***** .* **.********
+
+2019-nCoV_HKU-S agtgcgtataaagattgtacaaatgttaagtgacacacttaaaaatctctctgacagagt
+icSARS-C7-MA    agtgcgtattaagatagtacaaatgctcagtgatacactgaaaggattgtcagacagagt
+                ********* ***** *********.* *****.***** ***.. .* ** ********
+
+2019-nCoV_HKU-S cgtatttgtcttatgggcacatggctttgagttgacatctatgaagtattttgtgaaaat
+icSARS-C7-MA    cgtgttcgtcctttgggcgcatggctttgagcttacatcaatgaagtactttgtcaagat
+                ***.**.***.* *****.************.* ***** ********.***** **.**
+
+2019-nCoV_HKU-S aggacctgagcgcacctgttgtctatgtgatagacgtgccacatgcttttccactgcttc
+icSARS-C7-MA    tggacctgaaagaacgtgttgtctgtgtgacaaacgtgcaacttgcttttctacttcatc
+                 ********. * ** ********.*****.*.****** ** ********.*** * **
+
+2019-nCoV_HKU-S agacacttatgcctgttggcatcattctattggatttgattacgtctataatccgtttat
+icSARS-C7-MA    agatacttatgcctgctggaatcattctgtgggttttgactatgtctataacccatttat
+                ***.***********.*** ********.* ** *****.**.********.**.*****
+
+2019-nCoV_HKU-S gattgatgttcaacaatggggttttacaggtaacctacaaagcaaccatgatctgtattg
+icSARS-C7-MA    gattgatgttcagcagtggggctttacgggtaaccttcagagtaaccatgaccaacattg
+                ************.**.*****.*****.******** **.**.********.* ..****
+
+2019-nCoV_HKU-S tcaagtccatggtaatgcacatgtagctagttgtgatgcaatcatgactaggtgtctagc
+icSARS-C7-MA    ccaggtacatggaaatgcacatgtggctagttgtgatgctatcatgactagatgtttagc
+                .**.** ***** ***********.************** ***********.***.****
+
+2019-nCoV_HKU-S tgtccacgagtgctttgttaagcgtgttgactggactattgaatatcctataattggtga
+icSARS-C7-MA    agtccatgagtgctttgttaagcgcgttgattggtctgttgaataccctattataggaga
+                 *****.*****************.*****.*** **.*******.***** ** ** **
+
+2019-nCoV_HKU-S tgaactgaagattaatgcggcttgtagaaaggttcaacacatggttgttaaagctgcatt
+icSARS-C7-MA    tgaactgagggttaattctgcttgcagaaaagtacaacacatggttgtgaagtctgccct
+                ********.*.***** * *****.*****.** ************** **. **** .*
+
+2019-nCoV_HKU-S attagcagacaaattcccagttcttcacgacattggtaaccctaaagctattaagtgtgt
+icSARS-C7-MA    cctggctgataagtttccagttcttcatgacattggaaatccaaaggctatcaagtgtgt
+                 .*.** **.**.**.***********.******** **.** **.*****.********
+
+2019-nCoV_HKU-S acctcaagctgatgtagaatggaagttctatgatgcacagccttgtagtgacaaagctta
+icSARS-C7-MA    gcctcaggctgaagtagaatggaagttctacgatgctcagccatgtagtgacaaagctta
+                .*****.***** *****************.***** ***** *****************
+
+2019-nCoV_HKU-S taaaatagaagaattattctattcttatgccacacattctgacaaattcacagatggtgt
+icSARS-C7-MA    caaaatagaggagctcttctattcttatgctacacatcacgataaattcactgatggtgt
+                .********.**..* **************.******. .**.******** ********
+
+2019-nCoV_HKU-S atgcctattttggaattgcaatgtcgatagatatcctgctaattccattgtttgtagatt
+icSARS-C7-MA    ttgtttgttttggaattgtaacgttgatcgttacccagccaatgcaattgtgtgtaggtt
+                 **..*.***********.**.**.*** * **.** **.*** * ***** *****.**
+
+2019-nCoV_HKU-S tgacactagagtgctatctaaccttaacttgcctggttgtgatggtggcagtttgtatgt
+icSARS-C7-MA    tgacacaagagtcttgtcaaacttgaacttaccaggctgtgatggtggtagtttgtatgt
+                ****** ***** .*.** ***.* *****.** **.***********.***********
+
+2019-nCoV_HKU-S aaataaacatgcattccacacaccagcttttgataaaagtgcttttgttaatttaaaaca
+icSARS-C7-MA    gaataagcatgcattccacactccagctttcgataaaagtgcatttactaatttaaagca
+                .*****.************** ********.*********** ***..*********.**
+
+2019-nCoV_HKU-S attaccatttttctattactctgacagtccatgtgagtctcatggaaaacaagtagtgtc
+icSARS-C7-MA    attgcctttcttttactattctgatagtccttgtgagtctcatggcaaacaagtagtgtc
+                ***.** **.**.**.**.*****.***** ************** **************
+
+2019-nCoV_HKU-S agatatagattatgtaccactaaagtctgctacgtgtataacacgttgcaatttaggtgg
+icSARS-C7-MA    ggatattgattatgttccactcaaatctgctacgtgtattacacgatgcaatttaggtgg
+                .***** ******** ***** **.************** ***** **************
+
+2019-nCoV_HKU-S tgctgtctgtagacatcatgctaatgagtacagattgtatctcgatgcttataacatgat
+icSARS-C7-MA    tgctgtttgcagacaccatgcaaatgagtaccgacagtacttggatgcatataatatgat
+                ******.**.*****.***** ********* **. ***..* ***** *****.*****
+
+2019-nCoV_HKU-S gatctcagctggctttagcttgtgggtttacaaacaatttgatacttataacctctggaa
+icSARS-C7-MA    gatttctgctggatttagcctatggatttacaaacaatttgatacttataacctgtggaa
+                ***.** ***** ******.*.***.**************************** *****
+
+2019-nCoV_HKU-S cacttttacaagacttcagagtttagaaaatgtggcttttaatgttgtaaataagggaca
+icSARS-C7-MA    tacatttaccaggttacagagtttagaaaatgtggcttataatgttgttaataaaggaca
+                .** ***** **..* ********************** ********* *****.*****
+
+2019-nCoV_HKU-S ctttgatggacaacagggtgaagtaccagtttctatcattaataacactgtttacacaaa
+icSARS-C7-MA    ctttgatggacacgccggcgaagcacctgtttccatcattaataatgctgtttacacaaa
+                ************    **.****.*** *****.***********..*************
+
+2019-nCoV_HKU-S agttgatggtgttgatgtagaattgtttgaaaataaaacaacattacctgttaatgtagc
+icSARS-C7-MA    ggtagatggtattgatgtggagatctttgaaaataagacaacacttcctgttaatgttgc
+                .** ******.*******.**. * ***********.******.* *********** **
+
+2019-nCoV_HKU-S atttgagctttgggctaagcgcaacattaaaccagtaccagaggtgaaaatactcaataa
+icSARS-C7-MA    atttgagctttgggctaagcgtaacattaaaccagtgccagagattaagatactcaataa
+                *********************.**************.******.* **.***********
+
+2019-nCoV_HKU-S tttgggtgtggacattgctgctaatactgtgatctgggactacaaaagagatgctccagc
+icSARS-C7-MA    tttgggtgttgatatcgctgctaatactgtaatctgggactacaaaagagaagccccagc
+                ********* **.**.**************.******************** **.*****
+
+2019-nCoV_HKU-S acatatatctactattggtgtttgttctatgactgacatagccaagaaaccaactgaaac
+icSARS-C7-MA    acatgtatctacaataggtgtctgcacaatgactgacattgccaagaaacctactgagag
+                ****.******* ** *****.**. * *********** *********** *****.* 
+
+2019-nCoV_HKU-S gatttgtgcaccactcactgtcttttttgatggtagagttgatggtcaagtagacttatt
+icSARS-C7-MA    tgcttgttcttcacttactgtcttgtttgatggtagagtggaaggacaggtagacctttt
+                 ..**** * .****.******** ************** ** ** **.******.* **
+
+2019-nCoV_HKU-S tagaaatgcccgtaatggtgttcttattacagaaggtagtgttaaaggtttacaaccatc
+icSARS-C7-MA    tagaaacgcccgtaatggtgttttaataacagaaggttcagtcaaaggtctaacaccttc
+                ******.***************.* ** *********   **.******.**  *** **
+
+2019-nCoV_HKU-S tgtaggtcccaaacaagctagtcttaatggagtcacattaattggagaagccgtaaaaac
+icSARS-C7-MA    aaagggaccagcacaagctagcgtcaatggagtcacattaattggagaatcagtaaaaac
+                 . .** ** . *********. *.************************ * ********
+
+2019-nCoV_HKU-S acagttcaattattataagaaagttgatggtgttgtccaacaattacctgaaacttactt
+icSARS-C7-MA    acagtttaactactttaagaaagtagacggcattattcaacagttgcctgaaacctactt
+                ******.**.**.* ********* **.**..**.*.*****.**.********.*****
+
+2019-nCoV_HKU-S tactcagagtagaaatttacaagaatttaaacccaggagtcaaatggaaattgatttctt
+icSARS-C7-MA    tactcagagcagagacttagaggattttaagcccagatcacaaatggaaactgactttct
+                *********.***.*.*** *.** *****.*****.   **********.***.**..*
+
+2019-nCoV_HKU-S agaattagctatggatgaattcattgaacggtataaattagaaggctatgccttcgaaca
+icSARS-C7-MA    cgagctcgctatggatgaattcatacagcgatataagctcgagggctatgccttcgaaca
+                 **..* *****************  *.**.*****..* **.*****************
+
+2019-nCoV_HKU-S tatcgtttatggagattttagtcatagtcagttaggtggtttacatctactgattggact
+icSARS-C7-MA    catcgtttatggagatttcagtcatggacaacttggcggtcttcatttaatgataggctt
+                .*****************.******.* **..* **.***.* ***.** **** ** .*
+
+2019-nCoV_HKU-S agctaaacgttttaaggaatcaccttttgaattagaagattttattcctatggacagtac
+icSARS-C7-MA    agccaagcgctcacaagattcaccacttaaattagaggattttatccctatggacagcac
+                ***.**.**.*.  *.** ***** .**.*******.********.***********.**
+
+2019-nCoV_HKU-S agttaaaaactatttcataacagatgcgcaaacaggttcatctaagtgtgtgtgttctgt
+icSARS-C7-MA    agtgaaaaattacttcataacagatgcgcaaacaggttcatcaaaatgtgtgtgttctgt
+                *** *****.**.***************************** **.**************
+
+2019-nCoV_HKU-S tattgatttattacttgatgattttgttgaaataataaaatcccaagatttatctgtagt
+icSARS-C7-MA    gattgatcttttacttgatgactttgtcgagataataaagtcacaagatttgtcagtgat
+                 ******.* ***********.*****.**.********.** ********.** **..*
+
+2019-nCoV_HKU-S ttctaaggttgtcaaagtgactattgactatacagaaatttcatttatgctttggtgtaa
+icSARS-C7-MA    ttcaaaagtggtcaaggttacaattgactatgctgaaatttcattcatgctttggtgtaa
+                *** **.** *****.** ** *********.* ***********.**************
+
+2019-nCoV_HKU-S agatggccatgtagaaacattttacccaaaattacaatctagtcaagcgtggcaaccggg
+icSARS-C7-MA    ggatggacatgttgaaaccttctacccaaaactacaagcaagtcaagcgtggcaaccagg
+                .***** ***** ***** **.*********.***** * *****************.**
+
+2019-nCoV_HKU-S tgttgctatgcctaatctttacaaaatgcaaagaatgctattagaaaagtgtgaccttca
+icSARS-C7-MA    tgttgcgatgcctaacttgtacaagatgcaaagaatgcttcttgaaaagtgtgaccttca
+                ****** ********..* *****.************** .* *****************
+
+2019-nCoV_HKU-S aaattatggtgatagtgcaacattacctaaaggcataatgatgaatgtcgcaaaatatac
+icSARS-C7-MA    gaattatggtgaaaatgctgttataccaaaaggaataatgatgaatgtcgcaaagtatac
+                .*********** *.*** ..  **** ***** ********************.*****
+
+2019-nCoV_HKU-S tcaactgtgtcaatatttaaacacattaacattagctgtaccctataatatgagagttat
+icSARS-C7-MA    tcaactgtgtcaatacttaaatacacttactttagctgtaccctacaacatgagagttat
+                ***************.*****.***.* ** **************.**.***********
+
+2019-nCoV_HKU-S acattttggtgctggttctgataaaggagttgcaccaggtacagctgttttaagacagtg
+icSARS-C7-MA    tcactttggtgctggctctgataaaggagttgcaccaggtacagctgtgctcagacaatg
+                 **.***********.******************************** .* *****.**
+
+2019-nCoV_HKU-S gttgcctacgggtacgctgcttgtcgattcagatcttaatgactttgtctctgatgcaga
+icSARS-C7-MA    gttgccaactggcacactacttgtcgattcagatcttaatgacttcgtctccgacgcaga
+                ****** ** **.**.**.**************************.*****.**.*****
+
+2019-nCoV_HKU-S ttcaactttgattggtgattgtgcaactgtacatacagctaataaatgggatctcattat
+icSARS-C7-MA    ttctactttaattggagactgtgcaacagtacatacggctaataaatgggaccttattat
+                *** *****.***** **.******** ********.**************.**.*****
+
+2019-nCoV_HKU-S tagtgatatgtacgaccctaagactaaaaatgttacaaaagaaaatgactctaaagaggg
+icSARS-C7-MA    tagcgatatgtatgaccctaggaccaaacatgtgacaaaagagaatgactctaaagaagg
+                ***.********.*******.***.*** **** ********.**************.**
+
+2019-nCoV_HKU-S ttttttcacttacatttgtgggtttatacaacaaaagctagctcttggaggttccgtggc
+icSARS-C7-MA    gtttttcacttatctgtgtggatttataaagcaaaaactagccctgggtggttctatagc
+                 ***********. * *****.****** *.*****.*****.** ** *****..*.**
+
+2019-nCoV_HKU-S tataaagataacagaacattcttggaatgctgatctttataagctcatgggacacttcgc
+icSARS-C7-MA    tgtaaagataacagagcattcttggaatgctgacctttacaagcttatgggccatttctc
+                *.*************.*****************.*****.*****.***** **.*** *
+
+2019-nCoV_HKU-S atggtggacagcctttgttactaatgtgaatgcgtcatcatctgaagcatttttaattgg
+icSARS-C7-MA    atggtggacagcttttgttacaaatgtaaatgcatcatcatcggaagcatttttaattgg
+                ************.******** *****.*****.******** *****************
+
+2019-nCoV_HKU-S atgtaattatcttggcaaaccacgcgaacaaatagatggttatgtcatgcatgcaaatta
+icSARS-C7-MA    ggctaactatcttggcaagccgaaggaacaaattgatggctataccatgcatgctaacta
+                .  ***.***********.**. . ******** *****.***..********* **.**
+
+2019-nCoV_HKU-S catattttggaggaatacaaatccaattcagttgtcttcctattctttatttgacatgag
+icSARS-C7-MA    cattttctggaggaacacaaatcctatccagttgtcttcctattcactctttgacatgag
+                *** **.********.******** **.***************** .* ***********
+
+2019-nCoV_HKU-S taaatttccccttaaattaaggggtactgctgttatgtctttaaaagaaggtcaaatcaa
+icSARS-C7-MA    caaatttcctcttaaattaagaggaactgctgtaatgtctcttaaggagaatcaaatcaa
+                .********.***********.** ******** ******.* **.**...*********
+
+2019-nCoV_HKU-S tgatatgattttatctcttcttagtaaaggtagacttataattagagaaaacaacagagt
+icSARS-C7-MA    tgatatgatttattctcttctggaaaaaggtaggcttatcattagagaaaacaacagagt
+                ***********  ******** .. ********.***** ********************
+
+2019-nCoV_HKU-S tgttatttctagtgatgttcttgttaacaactaaacgaacaatgtttgtttttct----t
+icSARS-C7-MA    tgtggtttcaagtgatattcttgttaacaactaatggtcgcatgtttattttcttattat
+                *** .**** ******.*****************  *    ******.****..*    *
+
+2019-nCoV_HKU-S gttttattgccactagt--------ctctagtcagtgtgttaatcttacaa-----ccag
+icSARS-C7-MA    ttcttactctcactagtggtagtgaccttgaccggtgcaccacttttgatgatgttcaag
+                 *.***.* .*******        *..*...*.***....* *.**.  .     * **
+
+2019-nCoV_HKU-S aactcaattaccccctgcatacactaattctttcacacgtggtgtttattaccctgacaa
+icSARS-C7-MA    ctcctaattacactcaacatac-----ttcatctatgaggggggtttactatcctgatga
+                  *..****** *.* .*****     *** *..*.. * ** *****.**.*****..*
+
+2019-nCoV_HKU-S agttttcagatcctcagttttacattcaactcaggacttgttcttacctttcttttccaa
+icSARS-C7-MA    aatttttagatcagacactctttatttaactcaggatttatttcttccattttattctaa
+                *.****.*****    ..*.* .***.*********.**.**..* ** **.* ***.**
+
+2019-nCoV_HKU-S tgttacttggttccatgctatacatgtctctgggaccaatggtactaagaggtttgataa
+icSARS-C7-MA    tgttacagggtttcatactat---------------------taatcatacgtttggcaa
+                ******  ****.***.****                     ** * * * *****..**
+
+2019-nCoV_HKU-S ccctgtcctaccatttaatgatggtgtttattttgcttccactgagaagtctaacataat
+icSARS-C7-MA    ccctgtcataccttttaaggatggtatttattttgctgccacagagaaatcaaatgttgt
+                ******* **** ***** ******.*********** **** *****.** **..* .*
+
+2019-nCoV_HKU-S aagaggctggatttttggtactactttagattcgaagacccagtccctacttattgttaa
+icSARS-C7-MA    ccgtggttgggtttttggttctaccatgaacaacaagtcacagtcggtgattattattaa
+                  * **.***.******** ****. *..*.   *** * *****  *. *****.****
+
+2019-nCoV_HKU-S taacgctactaatgttgttattaaagtctgtgaatttcaattttgtaatgatccattttt
+icSARS-C7-MA    caattctactaatgttgttatacgagcatgtaactttgaattgtgtgacaaccctttctt
+                .**. ****************  .**. ***.* *** **** ***.*..*.** **.**
+
+2019-nCoV_HKU-S gggtgtttattaccacaaaaacaacaaaagttggatggaaagtgagttcagagtttattc
+icSARS-C7-MA    tgctgtttctaaaccca--------------tgggtacacagacacatactatgatattc
+                 * ***** * * * **              ***.*. * **  *  *   *   *****
+
+2019-nCoV_HKU-S --tagtgcgaataattgcacttttgaatatgtctctcagccttttcttatggaccttgaa
+icSARS-C7-MA    gataatgcatttaattgcactttcgagtacatatctgatgccttttcgcttgatgtttca
+                  **.***.  ************.**.**..* *** *  *.***..  * **. **  *
+
+2019-nCoV_HKU-S ggaaaacagggtaatttcaaaaatcttagggaatttgtgtttaagaatattgatggttat
+icSARS-C7-MA    gaaaagtcaggtaattttaaacacttacgagagtttgtgtttaaaaataaagatgggttt
+                *.***.. .********.*** *..*  *.**.***********.****  ***** * *
+
+2019-nCoV_HKU-S tttaaaatatattctaagcacacgcctattaatttagtgcgtgatctccctcagggtttt
+icSARS-C7-MA    ctctatgtttataagggctatcaacctatagatgtagttcgtgatctaccttctggtttt
+                .*. * .* ***   .. .*.  .***** .** **** ******** ***.  ******
+
+2019-nCoV_HKU-S tcggctttagaaccattggtagatttgccaataggtattaacatcactaggtttcaaact
+icSARS-C7-MA    aacactttgaaacctatttttaagttgcctcttggtattaacattacaaattttagagcc
+                   .****..****  *  * .* *****  * ***********.** *. *** .*.*.
+
+2019-nCoV_HKU-S ttacttgctttacatagaagttatttgactcctggtgattcttcttcaggttggacagct
+icSARS-C7-MA    attcttac---------agccttttcacctgctcaagac---------atttggggcacg
+                 * ***.*         *. .* **.. ** ** . **.         . ****.  .* 
+
+2019-nCoV_HKU-S ggtgctgcagcttattatgtgggttatcttcaacctaggacttttctattaaaatataat
+icSARS-C7-MA    tcagctgcagcctattttgttggctatttaaagccaactacatttatgctcaagtatgat
+                   ********.**** *** **.***.*  *.** *  ** *** *..* **.***.**
+
+2019-nCoV_HKU-S gaaaatggaaccattacagatgctgtagactgtgcacttgaccctctctcagaaacaaag
+icSARS-C7-MA    gaaaatggtacaatcacagatgctgttgattgttctcaaaatccacttgctgaactcaaa
+                ******** ** **.*********** **.*** * *  .*.** **. * *** . **.
+
+2019-nCoV_HKU-S tgtacgttgaaatccttcactgtagaaaaaggaatctatcaaacttctaactttagagtc
+icSARS-C7-MA    tgctctgttaagagctttgagattgacaaaggaatttaccagacctctaatttcagggtt
+                **. *  * **.  ***..  .* ** ********.**.**.**.*****.**.**.**.
+
+2019-nCoV_HKU-S caaccaacagaatctattgttagatttcctaatattacaaacttgtgcccttttggtgaa
+icSARS-C7-MA    gttccctcaggagatgttgtgagattccctaatattacaaacttgtgtccttttggagag
+                   **  ***.*  *.**** *****.********************.******** **.
+
+2019-nCoV_HKU-S gtttttaacgccaccagatttgcatctgtttatgcttggaacaggaagagaatcagcaac
+icSARS-C7-MA    gtttttaatgctactaaattcccttctgtctatgcatgggagagaaaaaaaatttctaat
+                ********.**.**.*.***. * *****.***** ***.* **.**.*.***.  .**.
+
+2019-nCoV_HKU-S tgtgttgctgattattctgtcctatataattccgcatcattttccacttttaagtgttat
+icSARS-C7-MA    tgtgttgctgattactctgtgctctacaactcaacatttttttcaacctttaagtgctat
+                **************.***** ** **.**.** .***. ***** **.********.***
+
+2019-nCoV_HKU-S ggagtgtctcctactaaattaaatgatctctgctttactaatgtctatgcagattcattt
+icSARS-C7-MA    ggcgtttctgccactaagttgaatgatctttgcttctccaatgtctatgcagattctttt
+                ** ** *** *.*****.**.********.*****. *.***************** ***
+
+2019-nCoV_HKU-S gtaattagaggtgatgaagtcagacaaatcgctccagggcaaactggaaagattgctgat
+icSARS-C7-MA    gtagtcaagggagatgatgtaagacaaatagcgccaggacaaactggtgttattgctgat
+                ***.*.*..** ***** ** ******** ** *****.******** .  *********
+
+2019-nCoV_HKU-S tataattataaattaccagatgattttacaggctgcgttatagcttggaattctaacaat
+icSARS-C7-MA    tataattataaattgccagatgatttcatgggttgtgtccttgcttggaatactaggaac
+                **************.***********.*..**.**.**. * ********* ***. **.
+
+2019-nCoV_HKU-S cttgattctaaggttggtggtaattataattacctgtatagattgtttaggaagtctaat
+icSARS-C7-MA    attgatgctacttcaactggtaatcataattataaatataggtatcttagacatggcaag
+                 ***** ***   . . *******.*******.  .*****.*  .****. *   .** 
+
+2019-nCoV_HKU-S ctcaaaccttttgagagagatatttcaactgaaatctatcaggccggtagcacaccttgt
+icSARS-C7-MA    cttaggccctttgagagagacatatctaatgtgcctttctcccctgatggcaaaccttgc
+                **.*..**.***********.** ** * ** . ..* ..   *.*.*.*** ******.
+
+2019-nCoV_HKU-S aatggtgttgaaggttttaattgttactttcctttacaatcatatggtttccaacccact
+icSARS-C7-MA    accccacct---gctcttaattgttattggccattaaatgattatggtttttacaccact
+                * .    .*   * *.**********.*  ** *** *    ********..*  *****
+
+2019-nCoV_HKU-S aatggtgttggttaccaaccatacagagtagtagtactttcttttgaacttctacatgca
+icSARS-C7-MA    actggcattggctaccaaccttacagagttgtagtactttcttttgaacttttaaatgca
+                * ***..****.******** ******** *********************.** *****
+
+2019-nCoV_HKU-S ccagcaactgtttgtggacctaaaaagtctactaatttggttaaaaacaaatgtgtcaat
+icSARS-C7-MA    ccggccacggtttgtggaccaaaattatccactgaccttattaagaaccagtgtgtcaat
+                **.** ** *********** ***  .**.***.*..* .****.*** *.*********
+
+2019-nCoV_HKU-S ttcaacttcaatggtttaacaggcacaggtgttcttactgagtctaacaaaaagtttctg
+icSARS-C7-MA    tttaattttaatggactcactggtactggtgtgttaactccttcttcaaagagatttcaa
+                **.**.**.***** .* ** **.** ***** .* ***   ***   **.*..**** .
+
+2019-nCoV_HKU-S cctttccaacaatttggcagagacattgctgacactactgatgctgtccgtgatccacag
+icSARS-C7-MA    ccatttcaacaatttggccgtgatgtttctgatttcactgattccgttcgagatcctaaa
+                ** **.************ * **..** ****. ..****** *.**.** *****  *.
+
+2019-nCoV_HKU-S acacttgagattcttgacattacaccatgttcttttggtggtgtcagtgttataacacca
+icSARS-C7-MA    acatctgaaatattagacatttcaccttgctcttttgggggtgtaagtgtaattacacct
+                ***..***.** .* ****** **** **.******** ***** ***** ** ***** 
+
+2019-nCoV_HKU-S ggaacaaatacttctaaccaggttgctgttctttatcaggatgttaactgcacagaagtc
+icSARS-C7-MA    ggaacaaatgcttcatctgaagttgctgttctatatcaagatgttaactgcactgatgtt
+                *********.****   . *.*********** *****.************** ** **.
+
+2019-nCoV_HKU-S cctgttgctattcatgcagatcaacttactcctacttggcgtgtttattctacaggttct
+icSARS-C7-MA    tctacagcaattcatgcagatcaactcacaccagcttggcgcatatattctactggaaac
+                .**.. ** *****************.** ** .*******..* ******** **   .
+
+2019-nCoV_HKU-S aatgtttttcaaacacgtgcaggctgtttaataggggctgaacatgtcaacaactcatat
+icSARS-C7-MA    aatgtattccagactcaagcaggctgtcttataggagctgagcatgtcgacacttcttat
+                ***** **.**.** *. *********.* *****.*****.******.*** .** ***
+
+2019-nCoV_HKU-S gagtgtgacatacccattggtgcaggtatatgcgctagttatcagactcagactaattct
+icSARS-C7-MA    gagtgcgacattcctattggagctggcatttgtgctagttaccatac-------agtttc
+                *****.***** **.***** ** **.** **.********.** **       *.**..
+
+2019-nCoV_HKU-S cctcggcgggcacgtagtgtagctagtcaatccatcattgcctacactatgtcacttggt
+icSARS-C7-MA    ttt-----attacgtagtactagccaaaaatctattgtggcttatactatgtctttaggt
+                ..*     . .*******.. . . .  ****.**..* **.**.******** .* ***
+
+2019-nCoV_HKU-S gcagaaaattcagttgcttactctaataactctattgccatacccacaaattttactatt
+icSARS-C7-MA    gctgatagttcaattgcttactctaataacaccattgctatacctactaacttttcaatt
+                ** ** *.****.***************** *.*****.*****.** **.*** * ***
+
+2019-nCoV_HKU-S agtgttaccacagaaattctaccagtgtctatgaccaagacatcagtagattgtacaatg
+icSARS-C7-MA    agcattactacagaagtaatgcctgtttctatggctaaaacctccgtagattgtaatatg
+                **..****.******.*  *.** ** ******.*.**.** ** **********  ***
+
+2019-nCoV_HKU-S tacatttgtggtgattcaactgaatgcagcaatcttttgttgcaatatggcagtttttgt
+icSARS-C7-MA    tacatctgcggagattctactgaatgtgctaatttgcttctccaatatggtagcttttgc
+                *****.**.** ***** ********.. .***.* .* .* ********.**.*****.
+
+2019-nCoV_HKU-S acacaattaaaccgtgctttaactggaatagctgttgaacaagacaaaaacacccaagaa
+icSARS-C7-MA    acacaactaaatcgtgcactctcaggtattgctgctgaacaggatcgcaacacacgtgaa
+                ******.****.***** .*  * ** ** ****.******.**. . ***** *. ***
+
+2019-nCoV_HKU-S gtttttgcacaagtcaaacaaatttacaaaacaccaccaattaaagattttggtggtttt
+icSARS-C7-MA    gtgttcgctcaagtcaaacaaatgtacaaaaccccaactttgaaatattttggtggtttt
+                ** **.** ************** ******** *** *  * *** **************
+
+2019-nCoV_HKU-S aatttttcacaaatattaccagatccatcaaaaccaagcaagaggtcatttattgaagat
+icSARS-C7-MA    aatttttcacaaatattacctgaccctctaaagccaactaagaggtcttttattgaggac
+                ******************** **.** ..***.**** .******** ********.**.
+
+2019-nCoV_HKU-S ctacttttcaacaaagtgacacttgcagatgctggcttcatcaaacaatatggtgattgc
+icSARS-C7-MA    ttgctctttaataaggtgacactcgctgatgctggcttcatgaagcaatatggcgaatgc
+                .*.**.**.**.**.********.** ************** **.********.** ***
+
+2019-nCoV_HKU-S cttggtgatattgctgctagagacctcatttgtgcacaaaagtttaacggccttactgtt
+icSARS-C7-MA    ctaggtgatattaatgctagagatctcatttgtgcgcagaagttcaatggacttacagtg
+                ** *********. *********.***********.**.*****.**.** ***** ** 
+
+2019-nCoV_HKU-S ttgccacctttgctcacagatgaaatgattgctcaatacacttctgcactgttagcgggt
+icSARS-C7-MA    ttgccacctctgctcactgatgatatgattgctgcctacacggctgctctagttagtggt
+                *********.******* ***** *********   *****  **** **. * .  ***
+
+2019-nCoV_HKU-S acaatcacttctggttggacctttggtgcaggtgctgcattacaaataccatttgctatg
+icSARS-C7-MA    actgccactgctggatggacatttggtgctggcgctgctcttcaaataccttttgctatg
+                ** ..**** **** ***** ******** **.***** .* ******** *********
+
+2019-nCoV_HKU-S caaatggcttataggtttaatggtattggagttacacagaatgttctctatgagaaccaa
+icSARS-C7-MA    caaatggcatataggttcaatggcattggagttacccaaaatgttctctatgagaaccaa
+                ******** ********.*****.*********** **.*********************
+
+2019-nCoV_HKU-S aaattgattgccaaccaatttaatagtgctattggcaaaattcaagactcactttcttcc
+icSARS-C7-MA    aaacaaatcgccaaccaatttaacaaggcgattagtcaaattcaagaatcacttacaaca
+                ***. .**.**************.*. ** ***.*. ********** ****** *  * 
+
+2019-nCoV_HKU-S acagcaagtgcacttggaaaacttcaagatgtggtcaaccaaaatgcacaagctttaaac
+icSARS-C7-MA    acatcaactgcattgggcaagctgcaagacgttgttaaccagaatgctcaagcattaaac
+                *** *** ****.* ** **.** *****.** **.*****.***** ***** ******
+
+2019-nCoV_HKU-S acgcttgttaaacaacttagctccaattttggtgcaatttcaagtgttttaaatgatatc
+icSARS-C7-MA    acacttgttaaacaacttagctctaattttggtgcaatttcaagtgtgctaaatgatatc
+                **.********************.*********************** .***********
+
+2019-nCoV_HKU-S ctttcacgtcttgacaaagttgaggctgaagtgcaaattgataggttgatcacaggcaga
+icSARS-C7-MA    ctttcgcgacttgataaagtcgaggcggaggtacaaattgacaggttaattacaggcaga
+                *****.** *****.*****.***** **.**.********.*****.**.*********
+
+2019-nCoV_HKU-S cttcaaagtttgcagacatatgtgactcaacaattaattagagctgcagaaatcagagct
+icSARS-C7-MA    cttcaaagccttcaaacctatgtaacacaacaactaatcagggctgctgaaatcagggct
+                ********..* **.** *****.** ******.****.**.***** ********.***
+
+2019-nCoV_HKU-S tctgctaatcttgctgctactaaaatgtcagagtgtgtacttggacaatcaaaaagagtt
+icSARS-C7-MA    tctgctaatcttgctgctactaaaatgtctgagtgtgttcttggacaatcaaaaagagtt
+                ***************************** ******** *********************
+
+2019-nCoV_HKU-S gatttttgtggaaagggctatcatcttatgtccttccctcagtcagcacctcatggtgta
+icSARS-C7-MA    gacttttgtggaaagggctaccaccttatgtccttcccacaagcagccccgcatggtgtt
+                **.*****************.**.************** **. **** ** ******** 
+
+2019-nCoV_HKU-S gtcttcttgcatgtgacttatgtccctgcacaagaaaagaacttcacaactgctcctgcc
+icSARS-C7-MA    gtcttcctacatgtcacgtatgtgccatcccaggagaggaacttcaccacagcgccagca
+                ******.*.***** ** ***** **  * **.**.*.********* ** ** ** ** 
+
+2019-nCoV_HKU-S atttgtcatgatggaaaagcacactttcctcgtgaaggtgtctttgtttcaaatggcaca
+icSARS-C7-MA    atttgtcatgaaggcaaagcatacttccctcgtgaaggtgtttttgtgtttaatggcact
+                *********** ** ******.****.**************.***** *. ******** 
+
+2019-nCoV_HKU-S cactggtttgtaacacaaaggaatttttatgaaccacaaatcattactacagacaacaca
+icSARS-C7-MA    tcttggtttattacacagaggaacttcttttctccacaaataattactacagacaataca
+                . .******.* *****.*****.**.* *   ******** **************.***
+
+2019-nCoV_HKU-S tttgtgtctggtaactgtgatgttgtaataggaattgtcaacaacacagtttatgatcct
+icSARS-C7-MA    tttgtctcaggaaattgtgatgtcgttattggcatcattaacaacacagtttatgatcct
+                ***** ** ** **.********.** ** ** **..*.*********************
+
+2019-nCoV_HKU-S ttgcaacctgaattagactcattcaaggaggagttagataaatattttaagaatcataca
+icSARS-C7-MA    ctgcaacctgagctcgactcattcaaagaagagctggacaagtacttcaaaaatcataca
+                .**********..* ***********.**.***.*.**.**.**.**.**.*********
+
+2019-nCoV_HKU-S tcaccagatgttgatttaggtgacatctctggcattaatgcttcagttgtaaacattcaa
+icSARS-C7-MA    tcaccagatgttgatcttggcgacatttcaggcattaacgcttctgtcgtcaacattcaa
+                ***************.* **.*****.** ********.***** **.** *********
+
+2019-nCoV_HKU-S aaagaaattgaccgcctcaatgaggttgccaagaatttaaatgaatctctcatcgatctc
+icSARS-C7-MA    aaagaaattgaccgcctcaatgaggtcgctaaaaatttaaatgaatcactcattgacctt
+                **************************.**.**.************** *****.**.**.
+
+2019-nCoV_HKU-S caagaacttggaaagtatgagcagtatataaaatggccatggtacatttggctaggtttt
+icSARS-C7-MA    caagaattgggaaaatatgagcaatatattaaatggccttggtatgtttggctcggcttc
+                ******.* *****.********.***** ******** *****..******* **.**.
+
+2019-nCoV_HKU-S atagctggcttgattgccatagtaatggtgacaattatgctttgctgtatgaccagttgc
+icSARS-C7-MA    attgctggactaattgccatcgtcatggttacaatcttgctttgttgcatgactagttgt
+                ** ***** .*.******** ** ***** *****. *******.**.*****.*****.
+
+2019-nCoV_HKU-S tgtagttgtctcaagggctgttgttcttgtggatcctgctgcaaatttgatgaagacgac
+icSARS-C7-MA    tgcagttgcctcaagggtgcatgctcttgtggttcttgctgcaagtttgatgaggatgac
+                **.*****.********.   **.******** **.********.********.**.***
+
+2019-nCoV_HKU-S tctgagccagtgctcaaaggagtcaaattacattacacataaacg-aacttatggatttg
+icSARS-C7-MA    tctgagccagttctcaagggtgtcaaattacattacacataatggtcgcttatggatttg
+                *********** *****.** *********************  *  .************
+
+2019-nCoV_HKU-S tttatgagaatcttcacaattggaactgtaactttgaagcaaggtgaaatcaaggatgct
+icSARS-C7-MA    tttatgagattttttactcttggatcaattactgcacagccagtaaaaattgacaatgct
+                ********* *.**.**  ***** * .* *** .. *** **  .****..* .*****
+
+2019-nCoV_HKU-S actccttcagattttgttcgcgctactgcaacgataccgatacaagcctcactccctttc
+icSARS-C7-MA    tctcctgcaagtactgttcatgctacagcaacgataccgctacaagcctcactccctttc
+                 ***** **..* .*****..***** ************ ********************
+
+2019-nCoV_HKU-S ggatggcttattgttggcgttgcacttcttgctgtttttcagagcgcttccaaaatcata
+icSARS-C7-MA    ggatggcttgttattggcgttgcatttcttgctgtttttcagagcgctaccaaaataatt
+                *********.**.***********.*********************** ******* ** 
+
+2019-nCoV_HKU-S accctcaaaaagagatggcaactagcactctccaagggtgttcactttgtttgcaacttg
+icSARS-C7-MA    gcgctcaataaaagatggcagctagccctttataagggcttccagttcatttgcaattta
+                .* ***** **.********.***** **.* .*****. *.** **..*******.**.
+
+2019-nCoV_HKU-S ctgttgttgtttgtaacagtttactcacaccttttgctcgttgctgctggccttgaagcc
+icSARS-C7-MA    ctgctgctatttgttaccatctattcacatcttttgcttgtcgctgcaggtatggaggcg
+                ***.**.*.***** ** .*.**.*****.********.**.***** **. * **.** 
+
+2019-nCoV_HKU-S ccttttctctatctttatgctttagtctacttcttgcagagtataaactttgtaagaata
+icSARS-C7-MA    caatttttgtacctctatgccttgatatattttctacaatgcatcaacgcatgtagaatt
+                *  ***.* **.**.*****.**..* **.**..*.**. *.** *** .    ***** 
+
+2019-nCoV_HKU-S ataatgaggctttggctttgctggaaatgccgttccaaaaacccattactttatgatgcc
+icSARS-C7-MA    attatgagatgttggctttgttggaagtgcaaatccaagaacccattactttatgatgcc
+                ** *****.. *********.*****.*** . *****.*********************
+
+2019-nCoV_HKU-S aactattttctttgctggcatactaattgttacgactattgtataccttacaatagtgta
+icSARS-C7-MA    aactactttgtttgctggcacacacataactatgactactgtataccatataacagtgtc
+                *****.*** **********.**  ** ..**.*****.******** **.**.***** 
+
+2019-nCoV_HKU-S acttcttcaattgtcattacttcaggtgatggcacaacaagtcctatttctgaacatgac
+icSARS-C7-MA    acagatacaattgtcgttactgaaggtgacggcatttcaacaccaaaactcaaagaagac
+                **   * ********.*****  ******.****.  ***  ** *  ....** * ***
+
+2019-nCoV_HKU-S taccagattggtggttatactgaaaaatgggaatctggagtaaaagactgtgttgtatta
+icSARS-C7-MA    taccaaattggtggttattctgaggataggcactcaggtgttaaagactatgtcgttgta
+                *****.************ ****..*  ** * ** ** ** *******.***.**  **
+
+2019-nCoV_HKU-S cacagttacttcacttcagactattaccagctgtactcaactcaattgagtacagacact
+icSARS-C7-MA    catggctatttcaccgaagtttactaccagcttgagtctacacaaattactacagacact
+                **..*.**.*****.  ** .**.********  * ** ** *** * * **********
+
+2019-nCoV_HKU-S ggtgttgaacatgttaccttcttcatctacaataaaattgttgatgagcctgaagaacat
+icSARS-C7-MA    ggtattgaaaatgctacattcttcatctttaacaagcttgttaaagaccc---accgaat
+                ***.***** ***.*** ********** .**.**. *****.* ** **   *  . **
+
+2019-nCoV_HKU-S gtccaaattcacacaatcgacggttcatccggagttgttaatccagtaatggaaccaatt
+icSARS-C7-MA    gtgcaaatacacacaatcgacggctcttcaggagttgctaatccagcaatggatccaatt
+                ** ***** **************.** ** *******.********.****** ******
+
+2019-nCoV_HKU-S tatgatgaaccgacgacgactactagcgtgcctttgtaagcacaagctgatgagtacgaa
+icSARS-C7-MA    tatgatgagccgacgacgactactagcgtgcctttgtaagcacaagaaagtgagtacgaa
+                ********.*************************************  ..**********
+
+2019-nCoV_HKU-S ------------------------------------------------------------
+icSARS-C7-MA    cttgtgtactcattcgtttcgtaagaaacaggtacgttaattaagtagcatggtaagcac
+                                                                            
+
+2019-nCoV_HKU-S ------------------cttatgtactcattcgtttcggaagagacaggtacgttaata
+icSARS-C7-MA    aagaaagtgagttggtcgcttatgtactcattcgtttcggaagaaacaggtacgttaata
+                                  **************************.***************
+
+2019-nCoV_HKU-S gttaatagcgtacttctttttcttgctttcgtggtattcttgctagttacactagccatc
+icSARS-C7-MA    gttaatagcgtacttctttttcttgctttcgtggtattcttgctagtcacactagccatc
+                ***********************************************.************
+
+2019-nCoV_HKU-S cttactgcgcttcgattgtgtgcgtactgctgcaatattgttaacgtgagtcttgtaaaa
+icSARS-C7-MA    cttactgcgcttcgattgtgtgcgtactgctgcaatattgttaacgtgagtttagtaaaa
+                ***************************************************.* ******
+
+2019-nCoV_HKU-S ccttctttttacgtttactctcgtgttaaaaatctgaattcttct---agagttcctgat
+icSARS-C7-MA    ccaacggtttacgtctactcgcgtgttaaaaatctgaactcttctgaaggagttcctgat
+                **  *  *******.***** *****************.******   .***********
+
+2019-nCoV_HKU-S cttctggtctaaacg-aactaaatattatattagtttttctgtttggaactttaatttta
+icSARS-C7-MA    cttctggtctaatggtcgctaactatta---ttattattctgtttggaactttaacattg
+                ************  *  .**** *****   * .** ******************. **.
+
+2019-nCoV_HKU-S gccatggcagattccaacggtactattaccgttgaagagcttaaaaagctccttgaacaa
+icSARS-C7-MA    cttatcatggcagacaacggtacgatcaccgttgagaagcttaaacaactcctggaacaa
+                 ..** ...*    ********* **.********..******** *.***** ******
+
+2019-nCoV_HKU-S tggaacctagtaataggtttcctattccttacatggatttgtcttctacaatttgcctat
+icSARS-C7-MA    tggaacctagtaataggtttcctattcctagcctggattatgttactacaatttgcctat
+                ***************************** .* ******   .* ***************
+
+2019-nCoV_HKU-S gccaacaggaataggtttttgtatataattaagttaattttcctctggctgttatggcca
+icSARS-C7-MA    tcgaaccggaacaggtttttgtacataataaagcttgttttcctctggctcttgtggcca
+                 * *** ****.***********.***** ***.* .************* **.******
+
+2019-nCoV_HKU-S gtaactttagcttgttttgtgcttgctgctgtttacagaataaattggatcaccggtgga
+icSARS-C7-MA    gtaacacttgcttgttttgtgcttgctgctgtctacagaattaattgggtgactggcggg
+                ***** .* ***********************.******** ******.* **.**.**.
+
+2019-nCoV_HKU-S attgctatcgcaatggcttgtcttgtaggcttgatgtggctcagctacttcattgcttct
+icSARS-C7-MA    attgcgattgcaatggcttgtattgtaggcttgatgtggcttagctacttcgttgcttcc
+                ***** **.************ *******************.*********.*******.
+
+2019-nCoV_HKU-S ttcagactgtttgcgcgtacgcgttccatgtggtcattcaatccagaaactaacattctt
+icSARS-C7-MA    ttcaggctgtttgctcgtacccgctcaatgtggtcattcaacccagaaacaaacattctt
+                *****.******** ***** **.** **************.******** *********
+
+2019-nCoV_HKU-S ctcaacgtgccactccatggcactattctgaccagaccgcttctagaaagtgaactcgta
+icSARS-C7-MA    ctcaatgtgcctctccgggggacaattgtgaccagaccgctcatggaaagtgaacttgtc
+                *****.***** ****. ** ** *** *************. *.***********.** 
+
+2019-nCoV_HKU-S atcggagctgtgatccttcgtggacatcttcgtattgctggacaccatctaggacgctgt
+icSARS-C7-MA    attggtgctgtgatcattcgtggtcacttgcgaatggccggacacccgcttgggcgctgt
+                **.** ********* ******* **..* ** ** **.*******  ** **.******
+
+2019-nCoV_HKU-S gacatcaaggacctgcctaaagaaatcactgttgctacatcacgaacgctttcttattac
+icSARS-C7-MA    gacattaaggacctgccaaaagagatcactgtggctacatcccggatgctttcttattac
+                *****.*********** *****.******** ******** **.*.*************
+
+2019-nCoV_HKU-S aaattgggagcttcgcagcgtgtagcaggtgactcaggttttgctgcatacagtcgctac
+icSARS-C7-MA    aaattaggagcgtcgcagcgtgtaggcactgattcaggttttgctgcatacaaccgctac
+                *****.***** *************  . ***.*******************..******
+
+2019-nCoV_HKU-S aggattggcaactataaattaaacacagaccattccagtagcagtgacaatattgctttg
+icSARS-C7-MA    cgtattggaaactataaattaaatacagaccacgccggtagcaacgacaatattgctttg
+                 * ***** **************.********. **.******..***************
+
+2019-nCoV_HKU-S cttgtacagtaa------------------gtgacaaca--------gatgtttcatctc
+icSARS-C7-MA    ctagtacagtaaaccggtaatgagatcactgtggctacatctggtcgcatgtttcatctt
+                ** *********                  ***.* ***         ***********.
+
+2019-nCoV_HKU-S gttgactttcaggttactatagcagagatattactaattattatgaggacttttaaagtt
+icSARS-C7-MA    gttgacttccaggttacaatagcagagatattgattatcattatgaggactttcaggatt
+                ********.******** **************. * **.**************.*...**
+
+2019-nCoV_HKU-S tccatttggaatcttgattacatcataaacctcataattaaaaatttatctaagtcacta
+icSARS-C7-MA    gctatttggaatcttgacgttataataagttcaatagtgagacaattatttaagcctcta
+                 *.**************.  .** ****.... ***.* *.* * ****.****.* ***
+
+2019-nCoV_HKU-S actgagaataaatattctcaattagatgaagagcaaccaatggagattgattaaacgaa-
+icSARS-C7-MA    actaagaagaattattcggagttagatgatgaagaacctatggagttagattatccataa
+                ***.**** ** *****  *.******** **. **** ****** * *****  *. * 
+
+2019-nCoV_HKU-S -------catgaaaattattcttttcttggcactgataacactcgctacttgtgagcttt
+icSARS-C7-MA    atggtcgcatgaaaattattctcttcctgacattgattgtatttacatcttgcgagctat
+                       ***************.***.**.**.**** ..*.*..*  ****.***** *
+
+2019-nCoV_HKU-S atcactaccaagagtgtgttagaggtacaacagtacttttaaaagaaccttgctcttctg
+icSARS-C7-MA    atcactatcaggagtgtgttagaggtacgactgtactactaaaagaaccttgcccatcag
+                *******.**.*****************.** ***** .**************.* ** *
+
+2019-nCoV_HKU-S gaacatacgagggcaattcaccatttcatcctctagctgataacaaatttgcactgactt
+icSARS-C7-MA    gaacatacgagggcaattcaccatttcaccctcttgctgacaataaatttgcactaactt
+                ****************************.***** *****.**.***********.****
+
+2019-nCoV_HKU-S gctttagcactcaatttgcttttgcttgtcctgacggcgtaaaacacgtctatcagttac
+icSARS-C7-MA    gcactagcacacactttgcttttgcttgtgctgacggtactcgacatacctatcagctgc
+                ** .****** ** *************** *******...  .***...*******.*.*
+
+2019-nCoV_HKU-S gtgccagatcagtttcacctaaactgttcatcagacaagaggaagtt---caagaacttt
+icSARS-C7-MA    gtgcaagatcagtttcaccaaaacttttcatcagacaagaggaggttcaacaagagctct
+                **** ************** ***** *****************.***   *****.**.*
+
+2019-nCoV_HKU-S actctccaatttttcttattgttgcggcaatagtgtttataacactttgcttcacactca
+icSARS-C7-MA    actcgccactttttctcattgttgctgctctagtatttttaatactttgcttcaccatta
+                **** *** *******.******** **  ****.*** ***.************  *.*
+
+2019-nCoV_HKU-S aaagaaagacagaatgattgaactttcattaattgacttctatttgtgctttttagcctt
+icSARS-C7-MA    agagaaagacagaatgaatgagctcactttaattgacttctatttgtgctttttagcctt
+                *.*************** ***.**. * ********************************
+
+2019-nCoV_HKU-S tctgctattccttgttttaattatgcttattatcttttggttctcacttgaactgcaaga
+icSARS-C7-MA    tctgctattccttgttttaataatgcttattatattttggttttcactcgaaatccagga
+                ********************* *********** ********.*****.*** * **.**
+
+2019-nCoV_HKU-S tcataatgaaacttgt--cacgcctaaacga--acatgaaatttcttgttttcttaggaa
+icSARS-C7-MA    tctagaagaaccttgtaccaaagtctaatggtcgcatgaaacttctcattgttttg----
+                **  .* *** *****  ** . .. **.*.  .*******.****..** *.**.    
+
+2019-nCoV_HKU-S tcatcacaactgtagctgcatttcaccaag-------------aatgtagtttacagtca
+icSARS-C7-MA    -------------acttgtatttctctatgcagttgcatatgcactgtagtacagcgctg
+                             * .**.***** *.* *             * ****** .*  *...
+
+2019-nCoV_HKU-S tgtactcaacatcaaccatatgtagttgatgacccgtgtcctattcacttctattctaaa
+icSARS-C7-MA    tgcatctaata--aacctcatgtgcttgaagatccttg----------------------
+                **.*...**.*  **** .****. **** **.** **                      
+
+2019-nCoV_HKU-S tggtatattagagtaggagctagaaaatcagcaccttt---------------------a
+icSARS-C7-MA    taaggtacaacactaggggtaatacttatagcactgcttggctttgtgctctaggaaagg
+                *.. .**. * * ****.*. * *    .*****. .*                     .
+
+2019-nCoV_HKU-S attgaattgtgcgtggatgaggc----tggttctaaatcacccattcagta-catcgata
+icSARS-C7-MA    ttttaccttttcatagatggcacactatggttcaaacatgcacacctaatgttactatca
+                 ** * .* * *.*.****. .*    ****** **  ..* **...*.*. .*... .*
+
+2019-nCoV_HKU-S tcggtaattatacagtttcctgttcaccttttacaattaattgccaggaac---------
+icSARS-C7-MA    actgtcaagatccagctggtggtgcgc---ttatagctaggtgttggtaccttcatgaag
+                 * ** *  ** ***.*  . ** *.*   ***.*..**. **...* * *         
+
+2019-nCoV_HKU-S ----ctaaattgggtagtcttgtagtgcgttgttcgttct----atgaagactttttaga
+icSARS-C7-MA    gtcaccaaactgctgcatttagagatgtgttagtcgtactcaacaagaggac--------
+                    *.***.**    .*.* * ..**.***. **** **    * **.***        
+
+2019-nCoV_HKU-S gtatcatgacgttcgtgttgttttagatttcatctaaacgaacaaactaaaatgtctgat
+icSARS-C7-MA    aaattaagacgtacttgttgttttaaataatggtc------gcaaattaaaatgtctgat
+                . **.* ***** * **********.**  .. ..      .****.*************
+
+2019-nCoV_HKU-S aatggacccca---aaatcagcgaaatgcaccccgcattacgtttggtggaccctcagat
+icSARS-C7-MA    aatggaccccaatcaaaccaacgtagtgccccccgcattacatttggtggacccacagat
+                ***********   ***.**.** *.*** ***********.************ *****
+
+2019-nCoV_HKU-S tcaactggcagtaaccagaatggagaacgcagtggggcgcgatcaaaacaacgtcggccc
+icSARS-C7-MA    tcaactgacaataaccagaatggaggacgcaatggggcaaggccaaaacagcgccgaccc
+                *******.**.**************.*****.******. *..*******.**.**.***
+
+2019-nCoV_HKU-S caaggtttacccaataatactgcgtcttggttcaccgctctcactcaacatggcaaggaa
+icSARS-C7-MA    caaggtttacccaataatactgcgtcttggttcacagctctcactcagcatggcaaggag
+                *********************************** ***********.***********.
+
+2019-nCoV_HKU-S gaccttaaattccctcgaggacaaggcgttccaattaacaccaatagcagtccagatgac
+icSARS-C7-MA    gaacttagattccctcgaggccagggcgttccaatcaacaccaatagtggtccagatgac
+                ** ****.************ **.***********.***********..***********
+
+2019-nCoV_HKU-S caaattggctactaccgaagagctaccagacgaattcgtggtggtgacggtaaaatgaaa
+icSARS-C7-MA    caaattggctactaccgaagagctacccgacgagttcgtggtggtgacggcaaaatgaaa
+                *************************** *****.****************.*********
+
+2019-nCoV_HKU-S gatctcagtccaagatggtatttctactacctaggaactgggccagaagctggacttccc
+icSARS-C7-MA    gagctcagccccagatggtacttctattacctaggaactggcccagaagcttcacttccc
+                ** *****.** ********.*****.************** *********  *******
+
+2019-nCoV_HKU-S tatggtgctaacaaagacggcatcatatgggttgcaactgagggagccttgaatacacca
+icSARS-C7-MA    tacggcgctaacaaagaaggcatcgtatgggttgcaactgagggagccttgaatacaccc
+                **.**.*********** ******.********************************** 
+
+2019-nCoV_HKU-S aaagatcacattggcacccgcaatcctgctaacaatgctgcaatcgtgctacaacttcct
+icSARS-C7-MA    aaagaccacattggcacccgcaatcctaataacaatgctgccaccgtgctacaacttcct
+                *****.*********************. ************ *.****************
+
+2019-nCoV_HKU-S caaggaacaacattgccaaaaggcttctacgcagaagggagcagaggcggcagtcaagcc
+icSARS-C7-MA    caaggaacaacattgccaaaaggcttctacgcagagggaagcagaggcggcagtcaagcc
+                ***********************************.**.*********************
+
+2019-nCoV_HKU-S tcttctcgttcctcatcacgtagtcgcaacagttcaagaaattcaactccaggcagcagt
+icSARS-C7-MA    tcttctcgctcctcatcacgtagtcgcggtaattcaagaaattcaactcctggcagcagt
+                ********.******************...*.****************** *********
+
+2019-nCoV_HKU-S aggggaacttctcctgctagaatggctggcaatggcggtgatgctgctcttgctttgctg
+icSARS-C7-MA    aggggaaattctcctgctcgaatggctagcggaggtggtgaaactgccctcgcgctattg
+                ******* ********** ********.**.. **.***** .****.**.** .*..**
+
+2019-nCoV_HKU-S ctgcttgacagattgaaccagcttgagagcaaaatgtctggtaaaggccaacaacaacaa
+icSARS-C7-MA    ctgctagacagattgaaccagcttgagagcaaagtttctggtaaaggccaacaacaacaa
+                ***** ***************************.* ************************
+
+2019-nCoV_HKU-S ggccaaactgtcactaagaaatctgctgctgaggcttctaagaagcctcggcaaaaacgt
+icSARS-C7-MA    ggccaaactgtcactaagaaatctgctgctgaggcatctaaaaagcctcgccaaaaacgt
+                *********************************** *****.******** *********
+
+2019-nCoV_HKU-S actgccactaaagcatacaatgtaacacaagcttttggcagacgtggtccagaacaaacc
+icSARS-C7-MA    actgccacaaaacagtacaacgtcactcaagcatttgggagacgtggtccagaacaaacc
+                ******** ***  .*****.** ** ***** ***** *********************
+
+2019-nCoV_HKU-S caaggaaattttggggaccaggaactaatcagacaaggaactgattacaaacattggccg
+icSARS-C7-MA    caaggaaatttcggggaccaagacctaatcagacaaggaactgattacaaacattggccg
+                ***********.********.** ************************************
+
+2019-nCoV_HKU-S caaattgcacaatttgcccccagcgcttcagcgttcttcggaatgtcgcgcattggcatg
+icSARS-C7-MA    caaattgcacaatttgctccaagtgcctctgcattctttggaatgtcacgcattggcatg
+                *****************.** **.**.** **.*****.********.************
+
+2019-nCoV_HKU-S gaagtcacaccttcgggaacgtggttgacctacacaggtgccatcaaattggatgacaaa
+icSARS-C7-MA    gaagtcacaccttcgggaacatggctgacttatcatggagccattaaattggatgacaaa
+                ********************.***.****.**.   ** *****.***************
+
+2019-nCoV_HKU-S gatccaaatttcaaagatcaagtcattttgctgaataagcatattgacgcatacaaaaca
+icSARS-C7-MA    gatccacaattcaaagacaacgtcatactgctgaacaagcacattgacgcatacaaaaca
+                ****** * ********. * ***** .*******.*****.******************
+
+2019-nCoV_HKU-S ttcccaccaacagagcctaaaaaggacaaaaagaagaaggctgatgaaactcaagcctta
+icSARS-C7-MA    ttcccaccaacagagcctaaaaaggacaaaaagaaaaagactgatgaagctcagcctttg
+                ***********************************.***.********.****. *.**.
+
+2019-nCoV_HKU-S ccgcagagacagaagaaacagcaaactgtgactcttcttcctgctgcagatttggatgat
+icSARS-C7-MA    ccgcagagacaaaagaagcagcccactgtgactcttcttcctgcggctgacatggatgat
+                ***********.*****.****  ******************** ** **. ********
+
+2019-nCoV_HKU-S ttctccaaacaattgcaacaatccatgagcag------tgctgactcaactcaggcctaa
+icSARS-C7-MA    ttctccagacaacttcaaaattccatgagtggagcttctgctgattcaactcaggcataa
+                *******.****.* *** * ********..*      ******.*********** ***
+
+2019-nCoV_HKU-S --actcatgcagaccacacaaggcagatgggctatataaacgttttcgcttttccgttta
+icSARS-C7-MA    acactcatgatgaccacacaaggcagatgggctatgtaaacgttttcgcaattccgttta
+                  *******  ************************.*************  *********
+
+2019-nCoV_HKU-S cgatatatagtctactcttgtgcagaatgaattctcgtaactacatagcacaagtagatg
+icSARS-C7-MA    cgatacatagtctactcttgtgcagaatgaattctcgtaactaaacagcacaagtaggtt
+                *****.************************************* *.***********.* 
+
+2019-nCoV_HKU-S tagttaactttaatctcacatagcaatctttaatcagtgtgtaacattagggaggacttg
+icSARS-C7-MA    tagttaactttaatctcacatagcaatctttaatcaatgtgtaacattagggaggacttg
+                ************************************.***********************
+
+2019-nCoV_HKU-S aaagagccaccacattttcaccgaggccacgcggagtacgatcgagtgtacagtgaacaa
+icSARS-C7-MA    aaagagccaccacattttcatcgaggccacgcggagtacgatcgagggtacagtgaataa
+                ********************.************************* **********.**
+
+2019-nCoV_HKU-S tgctagggagagctgcctatatggaagagccctaatgtgtaaaattaattttagtagtgc
+icSARS-C7-MA    tgctagggagagctgcctatatggaagagccctaatgtgtaaaattaattttagtagtgc
+                ************************************************************
+
+2019-nCoV_HKU-S tatccccatgtgattttaatagcttcttaggagaatgac
+icSARS-C7-MA    tatccccatgtgattttaatagcttcttaggagaatgac
+                ***************************************
