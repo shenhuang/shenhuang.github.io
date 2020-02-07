@@ -30,10 +30,10 @@
 
 			.subheadline 					{
 						z-index				:	25;
+						background-color	:	white;
 						position			:	absolute;
-						width				:	100%;
 						top					:	34px;
-						left				:	0px;
+						right				:	0px;
 						border-color		:	#46B356;
 			}			
 
@@ -57,12 +57,10 @@
 			}
 
 			.right						{
-						float				:	right;
 						background-color	:	#588CF5;
 			}
 
 			.right:hover				{
-						float				:	right;
 						background-color	:	#EB7575;
 			}
 
@@ -134,6 +132,8 @@
 		</div>
 
 		<div class = "subheadline">
+
+			<div>
 				<div class   = "button right"
 					 type    = "button" 
 					 onclick = "
@@ -143,7 +143,9 @@
 				>
 					Firework
 				</div>
+			</div>
 
+			<div>
 				<div class   = "button right"
 					 type    = "button" 
 					 onclick = "
@@ -153,7 +155,9 @@
 				>
 					Bubble
 				</div>
+			</div>
 
+			<div>
 				<div class   = "button right"
 					 type    = "button" 
 					 onclick = "
@@ -163,7 +167,9 @@
 				>
 					Heart
 				</div>
+			</div>
 
+			<div>
 				<div class   = "button right"
 					 type    = "button" 
 					 onclick = "
@@ -173,7 +179,9 @@
 				>
 					Lantern
 				</div>
+			</div>
 
+			<div>
 				<div class   = "button right"
 					 type    = "button" 
 					 onclick = "
@@ -183,6 +191,7 @@
 				>
 					Hats
 				</div>
+			</div>
 
 		</div>
 
@@ -204,6 +213,7 @@
 		</div>
 
 		<script>
+
 			function setDescriptionText(text) {
 				document.getElementById('descriptionText').innerHTML = text;
 			}
