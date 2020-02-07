@@ -68,11 +68,12 @@
 						transform			:	translate(-50%, -50%);
 			}
 
-			menu 						{
-						background-color	: 	#06400E;
+			.headline 						{
+						z-index				:	25;
+						background-color	:	#46B356;
 						position			:	absolute;
 						width				:	100%;
-						top					:	-16px;
+						top					:	0px;
 						left				:	0px;
 						border-top			:	2px solid;
 						border-bottom		:	2px solid;
@@ -82,7 +83,6 @@
 			.button						{
 						float				:	left;
 						position			:	relative;
-						left				:	-40px;
 						background-color	:	#46B356;
 						width				:	80px;
 						height				:	30px;
@@ -99,43 +99,64 @@
 						background-color	:	#5FD972;
 			}
 
+			.home						{
+						float				:	right;
+						position			:	relative;
+						width				:	30px;
+						height				:	30px;
+			}
+
+			.icon						{
+						max-width			:	100%;
+						max-height			:	100%;
+			}
+
 		</style>
 
 	</head>
 
 	<body
-		link = "#045904"
+		link  = "#045904"
 		vlink = "#304030"
 		alink = "#51A651"
 	>
 
-		<menu>
+		<div class = "headline">
 
 			<a href = "https://medium.com/@shenhuang_21425">
-				<div class = "button menu">			
+				<div class = "button">			
 					Articles
 				</div>
 			</a>
 
 			<a href = "https://0x2a.pb.online/">			
-				<div class = "button menu">
+				<div class = "button">
 					Projects
 				</div>
 			</a>
 
-			<a href = "resume.html">
-				<div class = "button menu">			
-					Resume
+			<a href = "demos.html">
+				<div class = "button">			
+					Demos
 				</div>
 			</a>
 
 			<a href = "https://www.linkedin.com/in/shen-h-03593618">
-				<div class = "button menu">			
+				<div class = "button">			
 					Linkedin
 				</div>
 			</a>
 
-		</menu>
+			<a href = "index.html">
+				<div class = "home">			
+					<img
+						class = "icon"
+						src   = "home-icon.png"
+					>
+				</div>
+			</a>
+
+		</div>
 
 		<center>
 
@@ -151,9 +172,9 @@
 				>
 					<p>
 						Welcome to my little space. Here are my resume: 
-						<a href= "Resume_Shen Huang_2020-01-15.pdf" download>PDF</a>
+						<a href= "./resume/Resume_Shen Huang_2020-01-15.pdf" download>PDF</a>
 						| 
-						<a href= "resume.html">WEB</a>
+						<a href= "./resume/resume.html">WEB</a>
 					</p>
 
 					<p>

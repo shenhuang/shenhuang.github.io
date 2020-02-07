@@ -1,0 +1,206 @@
+<!--Copyright to Shen Huang, you can reach me out at shenhuang@live.ca-->
+
+<!DOCTYPE html>
+
+<meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+
+<html>
+
+	<head>
+
+		<title>Welcome To Shen's Little Space</title>
+
+		<style>
+
+			body						{
+						background-color	:	#000F04;
+			}
+
+			.headline						{
+						z-index				:	25;
+						background-color	:	#46B356;
+						position			:	absolute;
+						width				:	100%;
+						top					:	0px;
+						left				:	0px;
+						border-top			:	2px solid;
+						border-bottom		:	2px solid;
+						border-color		:	#46B356;
+			}
+
+			.subheadline 					{
+						z-index				:	25;
+						position			:	absolute;
+						width				:	100%;
+						top					:	34px;
+						left				:	0px;
+						border-color		:	#46B356;
+			}			
+
+			.button						{
+						float				:	left;
+						position			:	relative;
+						background-color	:	#46B356;
+						width				:	80px;
+						height				:	30px;
+						line-height			:	30px;
+						vertical-align		:	middle;
+						text-align			:	center;
+						color				:	white;
+						font-size			:	15px;
+						font-family			:	Verdana, Geneva, sans-serif;
+						cursor				:	pointer;
+			}
+
+			.button:hover				{
+						background-color	:	#5FD972;
+			}
+
+			.right						{
+						float				:	right;
+						background-color	:	#588CF5;
+			}
+
+			.right:hover				{
+						float				:	right;
+						background-color	:	#EB7575;
+			}
+
+			.home						{
+						float				:	right;
+						position			:	relative;
+						width				:	30px;
+						height				:	30px;
+			}
+
+			.icon						{
+						max-width			:	100%;
+						max-height			:	100%;
+			}
+
+			.displaypanel				{
+						position			:	relative;
+						top					:	36px;
+						color				:	#D1E0FF;
+						font-family			:	verdana;
+						font-size			:	16px;
+			}
+
+		</style>
+
+	</head>
+
+	<body
+		link  = "#045904"
+		vlink = "#304030"
+		alink = "#51A651"
+	>
+
+		<div class = "headline">
+
+			<a href = "https://medium.com/@shenhuang_21425">
+				<div class = "button">			
+					Articles
+				</div>
+			</a>
+
+			<a href = "https://0x2a.pb.online/">			
+				<div class = "button">
+					Projects
+				</div>
+			</a>
+
+			<a href = "demos.html">
+				<div class = "button">			
+					Demos
+				</div>
+			</a>
+
+			<a href = "https://www.linkedin.com/in/shen-h-03593618">
+				<div class = "button">			
+					Linkedin
+				</div>
+			</a>
+
+			<a href = "index.html">
+				<div class = "home">			
+					<img
+						class = "icon"
+						src   = "home-icon.png"
+					>
+				</div>
+			</a>
+
+		</div>
+
+		<div class = "subheadline">
+				<div class   = "button right"
+					 type    = "button" 
+					 onclick = "
+					 			setDisplayFrameURL('fireworkdemo.html');
+					 			setDescriptionText('Click to launch fireworks...');
+					 		   "
+				>
+					Firework
+				</div>
+
+				<div class   = "button right"
+					 type    = "button" 
+					 onclick = "
+					 			setDisplayFrameURL('bubbledemo.html');
+					 			setDescriptionText('Click to generate bubbles...');
+					 		   "
+				>
+					Bubble
+				</div>
+
+				<div class   = "button right"
+					 type    = "button" 
+					 onclick = "
+					 			setDisplayFrameURL('heartdemo.html');
+					 			setDescriptionText('Click to pop out hearts...');
+					 		   "
+				>
+					Heart
+				</div>
+				<div class   = "button right"
+					 type    = "button" 
+					 onclick = "
+					 			setDisplayFrameURL('lanterndemo.html');
+					 			setDescriptionText('Lanterns will arrange according to inputs...');
+					 		   "
+				>
+					Lantern
+				</div>
+		</div>
+
+		<div class = displaypanel>
+
+			<iframe
+				id          = "displayFrame"
+				src         = "fireworkdemo.html"
+				frameBorder = "0"
+				width       = "100%"
+				height      = "500px"
+			>		
+			</iframe>
+
+			<label id = "descriptionText"> 
+				Click to launch fireworks...
+			</label> 
+
+		</div>
+
+		<script>
+			function setDescriptionText(text) {
+				document.getElementById('descriptionText').innerHTML = text;
+			}
+
+			function setDisplayFrameURL(url){
+				document.getElementById('displayFrame').src = url;
+			}
+
+		</script>
+
+	</body>
+</html>
