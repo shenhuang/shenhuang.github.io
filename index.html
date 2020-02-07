@@ -12,11 +12,10 @@
 
 		<style>
 
-			body	{
+			body						{
 						background-color	:	#000f04;
 			}
-
-			top	{
+			top							{
 						background-color	:	#000f04;
 						margin				:	0;
 						position			:	absolute;
@@ -27,7 +26,7 @@
 						transform			:	translate(-50%, -50%);
 			}
 
-			center	{
+			center						{
 						background-color	:	#000f04;
 						margin				:	0;
 						position			:	absolute;
@@ -38,7 +37,18 @@
 						transform			:	translate(-50%, -50%);
 			}
 
-			bottom	{
+			bottom						{
+						background-color	:	#000f04;
+						margin				:	0;
+						position			:	absolute;
+						width				:	100%;
+						top					:	90%;
+						left				:	50%;
+						-ms-transform		:	translate(-50%, -50%);
+						transform			:	translate(-50%, -50%);
+			}
+
+			left						{
 						background-color	:	#000f04;
 						margin				:	0;
 						position			:	absolute;
@@ -49,18 +59,7 @@
 						transform			:	translate(-50%, -50%);
 			}
 
-			left	{
-						background-color	:	#000f04;
-						margin				:	0;
-						position			:	absolute;
-						width				:	90%;
-						top					:	90%;
-						left				:	50%;
-						-ms-transform		:	translate(-50%, -50%);
-						transform			:	translate(-50%, -50%);
-			}
-
-			right	{
+			right						{
 						background-color	:	#000f04;
 						margin				:	0;
 						position			:	absolute;
@@ -70,45 +69,65 @@
 						-ms-transform		:	translate(-50%, -50%);
 						transform			:	translate(-50%, -50%);
 			}
-
-			.button	{
-						position			:	relative;
-						display				:	inline-block;
-						margin				:	50;
-			}
-
-			.button			.img-top	{
-						display				:	none;
+			menu 						{
+						background-color	: 	#06400E;
 						position			:	absolute;
-						top					:	0;
-						left				:	0;
-						z-index				:	99;
+						width				:	100%;
+						top					:	10px;
+						left				:	0px;
 			}
 
-			.button:hover	.img-top	{
-						display				:	inline;
+			.button						{
+						float				:	left;
+						margin				:	5px 5px;
+						border-radius		:	5px;
+						background-color	:	#46B356;
+						width				:	80px;
+						height				:	30px;
+						line-height			:	30px;
+						vertical-align		:	middle;
+						text-align			:	center;
+						color				:	white;
+						font-size			:	15px;
+						font-family			:	Verdana, Geneva, sans-serif;
+						cursor				:	pointer;
 			}
-
+			.button:hover				{
+						background-color	:	#5FD972;
+			}
 		</style>
 
 	</head>
 
 	<body>
 
-		<top>
-			
-			<a href = "https://shenhuang.github.io/">
-				<div class = "button">
-					<img 	src		=	"title.png"
-							alt		=	"Title"
-							style	=	"
-											width	:	150%;
-										"
-					>
+		<menu>
+
+			<a href = "https://medium.com/@shenhuang_21425">
+				<div class = "button menu">			
+					Articles
 				</div>
 			</a>
 
-		</top>
+			<a href = "https://0x2a.pb.online/">			
+				<div class = "button menu">
+					Projects
+				</div>
+			</a>
+
+			<a href = "resume.html">
+				<div class = "button menu">			
+					Resume
+				</div>
+			</a>
+
+			<a href = "https://www.linkedin.com/in/shen-h-03593618">
+				<div class = "button menu">			
+					Linkedin
+				</div>
+			</a>
+
+		</menu>
 
 		<center>
 
@@ -122,66 +141,41 @@
 									font-family	:	verdana;
 								"
 				>
-					Welcome to my little space. You will find my past work under "Projects" and articles under "Inspirations". You can find more about me in my resume
-					<a href= "Resume_Shen Huang_2020-01-15.pdf" download>PDF</a>
-					| 
-					<a href= "resume.html">WEB</a>
-					and my 
-					<a href= "https://www.linkedin.com/in/shen-h-03593618/">Linkedin Profile</a>
-					which I share stuff on. If you want to reach out, you can always email me at 
-					<a href= "mailto:shenhuang@live.ca">shenhuang@live.ca</a>
-					I will be posting articles on my math proofs once they are out of the confidential period, stay tuned! Once I got more time and money I will also revamp the website.<a onmousedown = "cookieMunch()">😀</a> Have fun coding!<a onmousedown = "unicornShoot()">🦄</a>
+					<p>
+						Welcome to my little space. Here are my resume: 
+						<a href= "Resume_Shen Huang_2020-01-15.pdf" download>PDF</a>
+						| 
+						<a href= "resume.html">WEB</a>
+					</p>
+
+					<p>
+						<a onmousedown = "cookieMunch()">😀</a> Emojis have stories! <a onmousedown = "unicornShoot()">🦄</a>
+					</p>
+
+					<p>
+						Development console has pretty cool stuff too!!!
+					</p>
+
 				</font>
 			</p>
 
 		</center>
 
 		<bottom>
-
-			<left>
-
-				<a href = "https://0x2a.pb.online/">			
-					<div class = "button">
-						<img 	src		=	"projects.png"
-								alt		=	"Projects"
-								style 	=	"
-												width	:	40%;
-											"
-						>
-						<img 	src		=	"projects_hover.png"
-								class	=	"img-top"
-								alt		=	"Projects Hover"
-								style	=	"
-												width	:	40%;
-											"
-						>
-					</div>
-				</a>
-
-			</left>
-
-			<right>
-				
-				<a href = "https://medium.com/@shenhuang_21425">
-					<div class = "button">			
-						<img 	src		=	"inspirations.png"
-								alt		=	"Inspirations"
-								style	=	"
-												width	:	40%;
-											"
-						>
-						<img 	src		=	"inspirations_hover.png"
-								class	=	"img-top"
-								alt		=	"Inspirations Hover"
-								style	=	"
-												width	:	40%;
-											"
-						>
-					</div>
-				</a>
-
-			</right>
-		
+			<p 	align = "right"
+				style 	=	"
+								width	:	90%;
+							"
+			>
+				<font 	color = #004325
+						style = "
+									font-family	:	verdana;
+								"
+				>
+					Email me at:
+					<a href= "mailto:shenhuang@live.ca">shenhuang@live.ca</a>
+				</font>
+			</p>
 		</bottom>
 
 		<script>
