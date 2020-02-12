@@ -16,18 +16,8 @@
 						background-color	:	#000F04;
 			}
 
-			.buttonimg {
-				max-width: 200px;
-			}
-
-			top							{
-						margin				:	0;
-						position			:	absolute;
-						width				:	70%;
-						top					:	25%;
-						left				:	50%;
-						-ms-transform		:	translate(-50%, -50%);
-						transform			:	translate(-50%, -50%);
+			.buttonimg					{
+						max-width			:	200px;
 			}
 
 			center						{
@@ -36,38 +26,6 @@
 						width				:	100%;
 						top					:	60%;
 						left				:	50%;
-						-ms-transform		:	translate(-50%, -50%);
-						transform			:	translate(-50%, -50%);
-			}
-
-			bottom						{
-						margin				:	0;
-						position			:	absolute;
-						width				:	100%;
-						top					:	90%;
-						left				:	50%;
-						-ms-transform		:	translate(-50%, -50%);
-						transform			:	translate(-50%, -50%);
-			}
-
-			left						{
-						background-color	:	#000f04;
-						margin				:	0;
-						position			:	absolute;
-						width				:	90%;
-						top					:	90%;
-						left				:	50%;
-						-ms-transform		:	translate(-50%, -50%);
-						transform			:	translate(-50%, -50%);
-			}
-
-			right						{
-						background-color	:	#000f04;
-						margin				:	0;
-						position			:	absolute;
-						width				:	90%;
-						top					:	90%;
-						left				:	110%;
 						-ms-transform		:	translate(-50%, -50%);
 						transform			:	translate(-50%, -50%);
 			}
@@ -82,7 +40,16 @@
 						border-top			:	2px solid;
 						border-bottom		:	2px solid;
 						border-color		:	#46B356;
-			}		
+			}
+
+			.subheadline 					{
+						z-index				:	25;
+						background-color	:	white;
+						position			:	absolute;
+						top					:	34px;
+						right				:	0px;
+						border-color		:	#46B356;
+			}
 
 			.button						{
 						float				:	left;
@@ -106,6 +73,7 @@
 
 			.right						{
 						background-color	:	#588CF5;
+						width				:	180px;
 						font-weight			:	normal;
 			}
 
@@ -146,31 +114,25 @@
 		<div class = "headline">
 
 			<a href = "articles.html">
-				<div class = "button">			
+				<div class = "button">
 					Articles
 				</div>
 			</a>
 
-			<a href = "https://0x2a.pb.online/">			
+			<a href = "demos.html">
+				<div class = "button">
+					Demos
+				</div>
+			</a>
+
+			<a href = "https://0x2a.pb.online/">
 				<div class = "button">
 					Projects
 				</div>
 			</a>
 
-			<a href = "demos.html">
-				<div class = "button">			
-					Demos
-				</div>
-			</a>
-
-			<a href = "https://www.linkedin.com/in/shen-h-03593618">
-				<div class = "button">			
-					Linkedin
-				</div>
-			</a>
-
 			<a href = "index.html">
-				<div class = "home">			
+				<div class = "home">
 					<img
 						class = "icon"
 						src   = "home-icon.png"
@@ -180,47 +142,87 @@
 
 		</div>
 
-		<center>
+		<div class = "subheadline">
 
-			<font 	color = #004325
-			style = "
-						font-family	:	verdana;
-					"
-			>
+			<div>
+				<div class   = "button right"
+					 type    = "button" 
+					 onclick = "
+					 			setDisplayFrameURL('./articles/articles_ai.html');
+					 			setDescriptionText('Artificial Intelligence, Machine Learning, Data Science...');
+					 		   "
+				>
+					Artificial Intelligence
+				</div>
+			</div>
 
-				I write on FreeCodeCamp & Medium:
+			<div>
+				<div class   = "button right"
+					 type    = "button" 
+					 onclick = "
+					 			setDisplayFrameURL('articles_oa.html');
+					 			setDescriptionText('Make office work do themselves...');
+					 		   "
+				>
+					Office Automation
+				</div>
+			</div>
 
-				<br/>
-				<br/>
+			<div>
+				<div class   = "button right"
+					 type    = "button" 
+					 onclick = "
+					 			setDisplayFrameURL('articles_wd.html');
+					 			setDescriptionText('Develop web applications...');
+					 		   "
+				>
+					WebApp Development
+				</div>
+			</div>
 
-				<a href = "https://www.freecodecamp.org/news/author/shen/">
-					<img class = "buttonimg" src = "freecodecamp.png">
-				</a>
-
-				<br/>
-
-				<a href = "https://medium.com/@shenhuang_21425">
-					<img class = "buttonimg" src = "medium.jpeg">
-				</a>
-
-				<br/>
-				<br/>
-
-				I generally post about Web Development and Data Science.
-
-				<br/>
-				
-				Let me know what you would like to read.
-
-			</font>
-
-		</center>
+			<div>
+				<div class   = "button right"
+					 type    = "button" 
+					 onclick = "
+					 			setDisplayFrameURL('articles_ca.html');
+					 			setDescriptionText('Hackers & Painters...');
+					 		   "
+				>
+					Creative Arts
+				</div>
+			</div>
 
 		</div>
 
-		<script>
+		<div class = displaypanel>
 
-		</script>
+			<iframe
+				id          = "displayFrame"
+				src         = "./articles/articles_main.html"
+				frameBorder = "0"
+				width       = "100%"
+				height      = "500px"
+			>		
+			</iframe>
+
+			<label id = "descriptionText"> 
+				I write on FreeCodeCamp & Medium
+			</label> 
+
+		</div>
 
 	</body>
+
+	<script>
+
+		function setDescriptionText(text) {
+			document.getElementById('descriptionText').innerHTML = text;
+		}
+
+		function setDisplayFrameURL(url){
+			document.getElementById('displayFrame').src = url;
+		}
+
+	</script>
+
 </html>
