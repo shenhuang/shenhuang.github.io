@@ -23,7 +23,6 @@
 						max-width			:	100%;
 			}
 			.article					{
-						width				:	600px;
 						background			:	#0c3d22;
 						border-radius		:	10px;
 						border				:	3px;
@@ -31,6 +30,17 @@
 						border-color		:	#ccffe3;
 						margin				:	20px;
 						padding				:	5px;
+			}
+
+			@media screen and (max-width: 600px)	{
+				.article				{
+					width				:	80%;
+				}
+			}
+			@media screen and (min-width: 600px)	{
+				.article				{
+					width				:	600px;
+				}
 			}
 
 			.title						{
