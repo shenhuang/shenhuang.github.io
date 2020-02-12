@@ -16,6 +16,62 @@
 						background-color	:	#000F04;
 			}
 
+			.buttonimg {
+				max-width: 200px;
+			}
+
+			top							{
+						margin				:	0;
+						position			:	absolute;
+						width				:	70%;
+						top					:	25%;
+						left				:	50%;
+						-ms-transform		:	translate(-50%, -50%);
+						transform			:	translate(-50%, -50%);
+			}
+
+			center						{
+						margin				:	0;
+						position			:	absolute;
+						width				:	100%;
+						top					:	60%;
+						left				:	50%;
+						-ms-transform		:	translate(-50%, -50%);
+						transform			:	translate(-50%, -50%);
+			}
+
+			bottom						{
+						margin				:	0;
+						position			:	absolute;
+						width				:	100%;
+						top					:	90%;
+						left				:	50%;
+						-ms-transform		:	translate(-50%, -50%);
+						transform			:	translate(-50%, -50%);
+			}
+
+			left						{
+						background-color	:	#000f04;
+						margin				:	0;
+						position			:	absolute;
+						width				:	90%;
+						top					:	90%;
+						left				:	50%;
+						-ms-transform		:	translate(-50%, -50%);
+						transform			:	translate(-50%, -50%);
+			}
+
+			right						{
+						background-color	:	#000f04;
+						margin				:	0;
+						position			:	absolute;
+						width				:	90%;
+						top					:	90%;
+						left				:	110%;
+						-ms-transform		:	translate(-50%, -50%);
+						transform			:	translate(-50%, -50%);
+			}
+
 			.headline						{
 						z-index				:	25;
 						background-color	:	#46B356;
@@ -26,16 +82,7 @@
 						border-top			:	2px solid;
 						border-bottom		:	2px solid;
 						border-color		:	#46B356;
-			}
-
-			.subheadline 					{
-						z-index				:	25;
-						background-color	:	white;
-						position			:	absolute;
-						top					:	34px;
-						right				:	0px;
-						border-color		:	#46B356;
-			}			
+			}		
 
 			.button						{
 						float				:	left;
@@ -133,96 +180,45 @@
 
 		</div>
 
-		<div class = "subheadline">
+		<center>
 
-			<div>
-				<div class   = "button right"
-					 type    = "button" 
-					 onclick = "
-					 			setDisplayFrameURL('fireworkdemo.html');
-					 			setDescriptionText('Click to launch fireworks...');
-					 		   "
-				>
-					Firework
-				</div>
-			</div>
+			<font 	color = #004325
+			style = "
+						font-family	:	verdana;
+					"
+			>
 
-			<div>
-				<div class   = "button right"
-					 type    = "button" 
-					 onclick = "
-					 			setDisplayFrameURL('bubbledemo.html');
-					 			setDescriptionText('Drag to generate bubbles...');
-					 		   "
-				>
-					Bubble
-				</div>
-			</div>
+				I write on FreeCodeCamp & Medium:
 
-			<div>
-				<div class   = "button right"
-					 type    = "button" 
-					 onclick = "
-					 			setDisplayFrameURL('heartdemo.html');
-					 			setDescriptionText('Hold to pop out hearts...');
-					 		   "
-				>
-					Heart
-				</div>
-			</div>
+				<br/>
+				<br/>
 
-			<div>
-				<div class   = "button right"
-					 type    = "button" 
-					 onclick = "
-					 			setDisplayFrameURL('lanterndemo.html');
-					 			setDescriptionText('Lanterns will arrange according to inputs...');
-					 		   "
-				>
-					Lantern
-				</div>
-			</div>
+				<a href = "https://www.freecodecamp.org/news/author/shen/">
+					<img class = "buttonimg" src = "freecodecamp.png">
+				</a>
 
-			<div>
-				<div class   = "button right"
-					 type    = "button" 
-					 onclick = "
-					 			setDisplayFrameURL('./tracking.js-master/TEAM MEMBERS _ Teamwebsite.html');
-					 			setDescriptionText('Hats are automatically placed onto the profile pictures...');
-					 		   "
-				>
-					Hats
-				</div>
-			</div>
+				<br/>
 
-		</div>
+				<a href = "https://medium.com/@shenhuang_21425">
+					<img class = "buttonimg" src = "medium.jpeg">
+				</a>
 
-		<div class = displaypanel>
+				<br/>
+				<br/>
 
-			<iframe
-				id          = "displayFrame"
-				src         = "fireworkdemo.html"
-				frameBorder = "0"
-				width       = "100%"
-				height      = "500px"
-			>		
-			</iframe>
+				I generally post about Web Development and Data Science.
 
-			<label id = "descriptionText"> 
-				Click to launch fireworks...
-			</label> 
+				<br/>
+				
+				Let me know what you would like to read.
+
+			</font>
+
+		</center>
 
 		</div>
 
 		<script>
-
-			function setDescriptionText(text) {
-				document.getElementById('descriptionText').innerHTML = text;
-			}
-
-			function setDisplayFrameURL(url){
-				document.getElementById('displayFrame').src = url;
-			}
 
 		</script>
 
