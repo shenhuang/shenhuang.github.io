@@ -829,8 +829,12 @@
 						}
 						else if(bonus.bonusType == "SUPER")
 						{
-							unicorn.powerTimeout = Math.max(unicorn.powerTimeout, unicorn.powerBonusTime * 7);
-							unicorn.speedTimeout = Math.max(unicorn.speedTimeout, unicorn.speedBonusTime * 7);
+							if(unicorn.powerTimeout < unicorn.powerBonusTime * 6)
+								unicorn.powerTimeout = unicorn.powerBonusTime * 6;
+							unicorn.powerTimeout += unicorn.powerBonusTime;
+							if(unicorn.speedTimeout < unicorn.speedBonusTime * 6)
+								unicorn.speedTimeout = unicorn.speedBonusTime * 6;
+							unicorn.speedTimeout += unicorn.speedBonusTime;
 							cake_pickup.currentTime = 0;
 							cake_pickup.play();
 						}
