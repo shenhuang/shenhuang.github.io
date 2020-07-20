@@ -234,6 +234,9 @@
 		unicorn.lives = 3;
 		unicorn.invulnerabilityTimeDefault = 3000;
 		unicorn.invulnerabilityTime = 0;
+		unicorn.magneticTimeDefault = 10000;
+		unicorn.magneticTime = 0;
+		unicorn.magneticPower = 0.005;
 		unicorn.rainbowInterval = 30;
 		unicorn.nextRainbow = 0;
 		unicorn.starInterval = 150;
@@ -558,6 +561,10 @@
 			{
 				bonus.textContent = "💎";
 			}
+			else if(bonus.bonusType == "MAGNET")
+			{
+				bonus.textContent = "🧲";
+			}
 			bonus.setAttribute('class', 'bonus');
 			document.body.appendChild(bonus);
 			bonus.time = starIniT;
@@ -705,6 +712,8 @@
 				if(unicorn.invulnerabilityTime <= 0)
 					unicorn.setAttribute('class', 'unicorn');
 			}
+			if(unicorn.magneticTime > 0)
+				unicorn.magneticTime -= deltaTime;
 			for(i in rainbows)
 			{
 				var rainbow = rainbows[i];
@@ -778,7 +787,7 @@
 					bonuses.splice(i, 1);
 				}
 			}
-			checkCollisions();
+			checkCollisions(deltaTime);
 		}
 
 		/* COLLISION DETECTION */
@@ -792,8 +801,9 @@
 		const starDist = 800;
 		const starCollisionOffsetX = 0;
 		const starCollisionOffsetY = 0;
+		const magnetDist = 50000;
 
-		function checkCollisions()
+		function checkCollisions(deltaTime)
 		{
 			for(i in bonuses)
 			{
@@ -807,46 +817,56 @@
 				{
 					var xDiff = bonus.position.x - unicorn.position.x + bonusCollisionOffsetX;
 					var yDiff = bonus.position.y - unicorn.position.y + bonusCollisionOffsetY;
-					if(xDiff * xDiff + yDiff * yDiff < bonusDist)
+					var sDiff = xDiff * xDiff + yDiff * yDiff;
+					if(sDiff < bonusDist)
 					{
-						if(bonus.bonusType == "LIFE")
+						switch(bonus.bonusType)
 						{
-							moreLives();
-							life_pickup.currentTime = 0;
-							life_pickup.play();
-						}
-						else if(bonus.bonusType == "SPEED")
-						{
-							unicorn.speedTimeout += unicorn.speedBonusTime;
-							candy_pickup.currentTime = 0;
-							candy_pickup.play();
-						}
-						else if(bonus.bonusType == "POWER")
-						{
-							unicorn.powerTimeout += unicorn.powerBonusTime;
-							cookie_pickup.currentTime = 0;
-							cookie_pickup.play();
-						}
-						else if(bonus.bonusType == "SUPER")
-						{
-							if(unicorn.powerTimeout < unicorn.powerBonusTime * 6)
-								unicorn.powerTimeout = unicorn.powerBonusTime * 6;
-							unicorn.powerTimeout += unicorn.powerBonusTime;
-							if(unicorn.speedTimeout < unicorn.speedBonusTime * 6)
-								unicorn.speedTimeout = unicorn.speedBonusTime * 6;
-							unicorn.speedTimeout += unicorn.speedBonusTime;
-							cake_pickup.currentTime = 0;
-							cake_pickup.play();
-						}
-						else if(bonus.bonusType == "GEM")
-						{
-							moreScore(25);
-							gem_pickup.currentTime = 0;
-							gem_pickup.play();
+							case "LIFE":
+								moreLives();
+								life_pickup.currentTime = 0;
+								life_pickup.play();
+								break;
+							case "SPEED":
+								unicorn.speedTimeout += unicorn.speedBonusTime;
+								candy_pickup.currentTime = 0;
+								candy_pickup.play();
+								break;
+							case "POWER":
+								unicorn.powerTimeout += unicorn.powerBonusTime;
+								cookie_pickup.currentTime = 0;
+								cookie_pickup.play();
+								break;
+							case "SUPER":
+								if(unicorn.powerTimeout < unicorn.powerBonusTime * 6)
+									unicorn.powerTimeout = unicorn.powerBonusTime * 6;
+								unicorn.powerTimeout += unicorn.powerBonusTime;
+								if(unicorn.speedTimeout < unicorn.speedBonusTime * 6)
+									unicorn.speedTimeout = unicorn.speedBonusTime * 6;
+								unicorn.speedTimeout += unicorn.speedBonusTime;
+								cake_pickup.currentTime = 0;
+								cake_pickup.play();
+								break;
+							case "GEM":
+								moreScore(25);
+								gem_pickup.currentTime = 0;
+								gem_pickup.play();
+								break;
+							case "MAGNET":
+								unicorn.magneticTime = unicorn.magneticTimeDefault;
+								cookie_pickup.currentTime = 0;
+								cookie_pickup.play();
+								break;
 						}
 						var k = bonuses.indexOf(bonus);
 						bonus.parentNode.removeChild(bonus);
 						bonuses.splice(k, 1);
+					}
+					else if(unicorn.magneticTime > 0 && sDiff < magnetDist)
+					{
+						var angle = Math.atan2(yDiff, xDiff);
+						bonus.velocity.x -= Math.cos(angle) * unicorn.magneticPower * deltaTime;
+						bonus.velocity.y += Math.sin(angle) * unicorn.magneticPower * deltaTime;
 					}
 				}
 			}
@@ -915,6 +935,8 @@
 				generateBonus(x, y, Math.random() * 360, "GEM");
 			if(Math.random() < 0.025 / bonusBias)
 				generateBonus(x, y, Math.random() * 360, "LIFE");
+			if(Math.random() < 0.5 / bonusBias)
+				generateBonus(x, y, Math.random() * 360, "MAGNET");
 		}
 
 		var bg = setInterval(generateBugs, 1000);
