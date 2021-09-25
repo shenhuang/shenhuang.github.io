@@ -1,0 +1,87 @@
+.board {
+	position			:	fixed;
+	z-index				:	999;
+	background			:	#e0edff;
+	border-radius		:	10px 10px 10px 10px;
+	border				:	5px;
+	border-style		:	solid;
+	border-color		:	gray;
+	line-height			:	30px;
+	padding-inline		: 	10px;
+	text-align			:	center;
+	color				:	black;
+	font-family			:	Arial;
+	font-weight			:	bold;
+	margin				:	10px;
+}
+.dialog {
+	background			:	#e0edff;
+	border-radius		:	10px 10px 10px 10px;
+	border				:	5px;
+	border-style		:	solid;
+	border-color		:	gray;
+	line-height			:	30px;
+	padding-inline		: 	10px;
+	white-space			:	pre-wrap;
+	text-align			:	center;
+	color				:	black;
+	font-family			:	Arial;
+	font-weight			:	bold;
+	margin				:	10px;
+}
+.dialogTitle {
+	text-align			:	center;
+	color				:	black;
+	font-weight			:	bold;
+	font-size			:	18px;
+}
+.dialogContent {
+	text-align			:	left;
+	color				:	black;
+	font-size			:	10px;
+
+}
+.button {
+	background			:	#e0edff;
+	display				:	inline-block;
+	border-radius		:	10px 10px 10px 10px;
+	border				:	5px;
+	border-style		:	solid;
+	border-color		:	gray;
+	line-height			:	30px;
+	padding-inline		: 	10px;
+	text-align			:	center;
+	color				:	black;
+	font-family			:	Arial;
+	font-weight			:	bold;
+	margin				:	10px;
+}
+.barDeselect {
+	background			:	#3d495b;
+	border-radius		:	10px 10px 10px 10px;
+	border				:	5px;
+	border-style		:	solid;
+	border-color		:	gray;
+	line-height			:	30px;
+	padding-inline		: 	10px;
+	text-align			:	center;
+	color				:	white;
+	font-size			:	12px;
+	font-family			:	Arial;
+	font-weight			:	bold;
+	margin				:	10px;
+}
+.barSelect {
+	background			:	#6e7e96;
+	border-radius		:	10px 10px 10px 10px;
+	border				:	5px;
+	border-style		:	solid;
+	border-color		:	gray;
+	line-height			:	30px;
+	padding-inline		: 	10px;
+	text-align			:	center;
+	color				:	white;
+	font-family			:	Arial;
+	font-weight			:	bold;
+	margin				:	10px;
+}
