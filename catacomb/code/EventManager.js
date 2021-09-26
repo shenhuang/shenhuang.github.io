@@ -223,12 +223,14 @@ function ProcessPoisonStatus(event)
     if(event["中毒时间"] != null && event["中毒效果"] != null)
     {
         let bias = GetPoisonTraitBias(CharacterTraits)
-        if(Math.random() < bias.chance)
+        console.log(bias.chance)
+        if(Math.random() > bias.chance)
             return
         let poison = {
             duration    : Math.floor(event["中毒时间"] * bias.weaken),
             strength    : event["中毒效果"],
         }
+        console.log(poison)
         CharacterStatus.POISON.push(poison)
     }
 }
