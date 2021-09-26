@@ -1,115 +1,137 @@
-var characterStats = []
-var characterBoard = []
+const FOOD_LOSS_PER_TURN = 1
+const HUNGER_HP_LOSS = 5
+
+var CharacterTraits = []
+var CharacterStatus = []
+var CharacterStats = []
+var CharacterBoard = []
 
 function CharacterInit()
 {
-    characterStats = InitCharacterStats()
-    characterBoard = LoadCharacterBoard()
+    CharacterStatus = InitCharacterStatus()
+    CharacterStats = InitCharacterStats()
+    CharacterBoard = LoadCharacterBoard()
+    ApplyTraitSelection()
     ApplyTraitStats()
 }
 
-function InitCharacterStats()
+function InitCharacterStatus()
 {
-    characterStats.ALIVE = true
-    characterStats.HPMAX = 100
-    characterStats.HP = 100
-    characterStats.MONEY = 100
-    characterStats.FOOD = 100
-    characterStats.POWER = 100
-    characterStats.LUCK = 100
-    return characterStats
+    CharacterStatus = []
+    CharacterStatus.ALIVE = true
+    CharacterStatus.POISON = []
+    return CharacterStatus
+}
+
+function InitCharacterStats()
+{   
+    CharacterStats.HPMAX = 100
+    CharacterStats.HP = 100
+    CharacterStats.MONEY = 100
+    CharacterStats.FOOD = 100
+    CharacterStats.POWER = 100
+    CharacterStats.LUCK = 100
+    return CharacterStats
+
 }
 
 function GetCharacterHPString()
 {
-    s = `体力：${characterStats.HP} / ${characterStats.HPMAX}\n`
+    s = `体力：${CharacterStats.HP} / ${CharacterStats.HPMAX}\n`
     return s
 }
 
 function GetCharacterMONEYString()
 {
-    s = `金钱：${characterStats.MONEY}\n`
+    s = `金钱：${CharacterStats.MONEY}\n`
     return s
 }
 
 function GetCharacterFOODString()
 {
-    s = `食物：${characterStats.FOOD}\n`
+    s = `食物：${CharacterStats.FOOD}\n`
     return s
 }
 
 function UpdateHPMAX(delta)
 {
-    characterStats.HPMAX = characterStats.HPMAX + delta
-    characterStats.HP = characterStats.HP + delta
-    if(characterStats.HPMAX < 1)
+    CharacterStats.HPMAX = CharacterStats.HPMAX + delta
+    CharacterStats.HP = CharacterStats.HP + delta
+    if(CharacterStats.HPMAX < 1)
     {
-        characterStats.HPMAX = 1
+        CharacterStats.HPMAX = 1
     }
-    if(characterStats.HP < 1)
+    if(CharacterStats.HP < 1)
     {
-        characterStats.HP = 1
+        CharacterStats.HP = 1
     }
-    characterBoard.characterHPText.textContent = GetCharacterHPString()
+    CharacterBoard.CharacterHPText.textContent = GetCharacterHPString()
 }
 
 function UpdateHP(delta)
 {
-    characterStats.HP = characterStats.HP + delta
-    if(characterStats.HP < 1)
+    CharacterStats.HP = CharacterStats.HP + delta
+    if(CharacterStats.HP < 1)
     {
         CharacterDead()
     }
-    if(characterStats.HP > characterStats.HPMAX)
+    if(CharacterStats.HP > CharacterStats.HPMAX)
     {
-        characterStats.HP = characterStats.HPMAX
+        CharacterStats.HP = CharacterStats.HPMAX
     }
-    characterBoard.characterHPText.textContent = GetCharacterHPString()
+    CharacterBoard.CharacterHPText.textContent = GetCharacterHPString()
 }
 
 function UpdateMONEY(delta)
 {
-    characterStats.MONEY = characterStats.MONEY + delta
-    if(characterStats.MONEY < 0)
+    CharacterStats.MONEY = CharacterStats.MONEY + delta
+    if(CharacterStats.MONEY < 0)
     {
-        characterStats.MONEY = 0
+        CharacterStats.MONEY = 0
     }
-    characterBoard.characterMONEYText.textContent = GetCharacterMONEYString()
+    CharacterBoard.CharacterMONEYText.textContent = GetCharacterMONEYString()
 }
 
 function UpdateFOOD(delta)
 {
-    characterStats.FOOD = characterStats.FOOD + delta
-    if(characterStats.FOOD < 0)
+    CharacterStats.FOOD = CharacterStats.FOOD + delta
+    if(CharacterStats.FOOD < 0)
     {
-        characterStats.FOOD = 0
+        CharacterStats.FOOD = 0
     }
-    characterBoard.characterFOODText.textContent = GetCharacterFOODString()   
+    CharacterBoard.CharacterFOODText.textContent = GetCharacterFOODString()   
 }
 
 function UpdatePOWER(delta)
 {
-    characterStats.POWER = characterStats.POWER + delta
-    if(characterStats.POWER < 0)
+    CharacterStats.POWER = CharacterStats.POWER + delta
+    if(CharacterStats.POWER < 0)
     {
-        characterStats.POWER = 0
+        CharacterStats.POWER = 0
     }
 }
 
 function UpdateLUCK(delta)
 {
-    characterStats.LUCK = characterStats.LUCK + delta
-    if(characterStats.LUCK < 0)
+    CharacterStats.LUCK = CharacterStats.LUCK + delta
+    if(CharacterStats.LUCK < 0)
     {
-        characterStats.LUCK = 0
+        CharacterStats.LUCK = 0
+    }
+}
+
+function ApplyTraitSelection()
+{
+    for(traitObject of SelectedTraits)
+    {
+        CharacterTraits.push(traitObject.content)
     }
 }
 
 function ApplyTraitStats()
 {
-    for(traitObject of SelectedTraits)
+    for(trait of CharacterTraits)
     {
-        trait = traitObject.content
         if(trait["体质"] != null)
         {
             UpdateHPMAX(trait["体质"])
@@ -135,11 +157,51 @@ function ApplyTraitStats()
 
 function ProcessCharacter()
 {
-    console.log("TODO: PROCESS CHARACTER")
+    ProcessCharacterPoison()
+    ProcessCharacterHunger()
+}
+
+function ProcessCharacterPoison()
+{
+    let totalDamage = 0
+    let leftOver = []
+    for(i in CharacterStatus.POISON)
+    {
+        let poison = CharacterStatus.POISON[i]
+        if(poison.duration > 0)
+        {
+            poison.duration--
+            totalDamage += poison.strength
+            leftOver.push(poison)
+        }
+    }
+    CharacterStatus.POISON.push(leftOver)
+    if(totalDamage > 0)
+    {
+        alert(`你因为中毒流失了${totalDamage}点体力!`)
+        UpdateHP(-totalDamage)
+    }
+}
+
+function ProcessCharacterHunger()
+{
+    if(CharacterStats.FOOD >= FOOD_LOSS_PER_TURN)
+    {
+        UpdateFOOD(FOOD_LOSS_PER_TURN)
+    }
+    else
+    {
+        let totalDamage = (FOOD_LOSS_PER_TURN - CharacterStats.FOOD) * HUNGER_HP_LOSS
+        alert(`你因为饥饿流失了${totalDamage}点体力!`)
+        UpdateHP(-totalDamage)
+        CharacterStats.FOOD = 0
+    }
 }
 
 function CharacterDead()
 {
-    alert('你💀了!')
-    characterStats.ALIVE = false
+    setTimeout(() => {
+        alert('你💀了!')
+    }, 1)
+    CharacterStatus.ALIVE = false
 }

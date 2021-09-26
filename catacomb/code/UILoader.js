@@ -67,17 +67,17 @@ function NewButton(text, action)
 function LoadCharacterBoard()
 {
 	let board = LoadBoard()
-	let characterHPText = NewText(GetCharacterHPString(), "left")
-	board.appendChild(characterHPText)
-	let characterFOODText = NewText(GetCharacterFOODString(), "left")
-	board.appendChild(characterFOODText)
-	let characterMONEYText = NewText(GetCharacterMONEYString(), "left")
-	board.appendChild(characterMONEYText)
+	let CharacterHPText = NewText(GetCharacterHPString(), "left")
+	board.appendChild(CharacterHPText)
+	let CharacterFOODText = NewText(GetCharacterFOODString(), "left")
+	board.appendChild(CharacterFOODText)
+	let CharacterMONEYText = NewText(GetCharacterMONEYString(), "left")
+	board.appendChild(CharacterMONEYText)
 	let boardObject = {
 		board				: board,
-		characterHPText		: characterHPText,
-		characterFOODText	: characterFOODText,
-		characterMONEYText	: characterMONEYText,
+		CharacterHPText		: CharacterHPText,
+		CharacterFOODText	: CharacterFOODText,
+		CharacterMONEYText	: CharacterMONEYText,
 	}
 	return boardObject
 }
@@ -101,7 +101,7 @@ function LoadEventDialog(title, content, choices = [])
 {
 	let eventDialogObject = NewEventDialog(title, content, choices)
 	document.body.appendChild(eventDialogObject)
-	window.scrollTo(0, document.body.scrollHeight)
+	ScrollToBottom()
 	return eventDialogObject
 }
 
@@ -130,4 +130,45 @@ function NewEventDialogContent(text)
 	textObject.textContent = text
 	textObject.setAttribute('class', 'dialogContent')
 	return textObject
+}
+
+function NewEventDialogChoice(text, action)
+{
+	let choiceObject = document.createElement("DIV")
+	choiceObject.textContent = text
+	choiceObject.setAttribute('class', 'choice')
+	choiceObject.action = action
+	choiceObject.addEventListener('click', choiceObject.action)
+	return choiceObject
+}
+
+function NewEventTraitDialogChoice(eText, tText, action)
+{
+	let choiceObject = document.createElement("DIV")
+	let eventText = document.createElement("DIV")
+	eventText.textContent = eText
+	eventText.setAttribute('class', 'choiceTraitEText')
+	choiceObject.appendChild(eventText)
+	let traitText = document.createElement("DIV")
+	traitText.textContent = `(${tText})`
+	traitText.setAttribute('class', 'choiceTraitTText')
+	choiceObject.appendChild(traitText)
+	choiceObject.setAttribute('class', 'choice')
+	choiceObject.action = action
+	choiceObject.addEventListener('click', choiceObject.action)
+	return choiceObject
+}
+
+function DisableEventDialogChoice(choiceObject, showSelected)
+{
+	choiceObject.removeEventListener('click', choiceObject.action)
+	if(showSelected)
+	{
+		choiceObject.setAttribute('class', 'choiceSelected')
+	}
+}
+
+function ScrollToBottom()
+{
+	window.scrollTo(0, document.body.scrollHeight)
 }

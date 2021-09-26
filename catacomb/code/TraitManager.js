@@ -27,6 +27,24 @@ var traitAttributes = [
 	"运气",
 ]
 
+const SPECIAL_TRAITS_POISON = {
+	//常吃地沟油 中毒概率-10% 中毒时间-25%
+	"常吃地沟油" : {
+		chance	: 0.9,
+		weaken	: 0.75,
+	},
+	//抗毒体质 中毒概率-50% 中毒时间-50%
+	"抗毒体质" : {
+		chance	: 0.5,
+		weaken	: 0.5,
+	},
+	//百毒不侵 不会中毒
+	"百毒不侵" : {
+		chance	: 0,
+		weaken	: 0,
+	},
+}
+
 function LoadTraits()
 {
 	let traitObjects = []
@@ -52,7 +70,7 @@ function GetShowTraits()
 {
 	let traitRairtyOdds = GetTraitRairtyOdds(traitRairtyWeights)
 	let thresh = GetTraitRairtyThresh(traitRairtyOdds)
-	let traitsByRairty = GetTraitsByRairty()
+	let showTraitsByRairty = GetShowTraitsByRairty()
 	let showTraits = []
 	for(i = 0; i < MAX_GEN_TRAIT; i++)
 	{
@@ -65,7 +83,11 @@ function GetShowTraits()
 				rairty = r
 			}
 		}
-		showTraits.push(GetRandomTrait(traitsByRairty[rairty]))
+		let randomTrait = GetRandomTrait(showTraitsByRairty[rairty])
+		if(randomTrait != null)
+		{
+			showTraits.push(randomTrait)
+		}
 	}
 	return showTraits
 }
@@ -97,25 +119,25 @@ function GetTraitRairtyThresh(odds)
 	return thresh
 }
 
-function GetTraitsByRairty()
+function GetShowTraitsByRairty()
 {
-	let tbr = {}
+	let stbr = {}
 	for(i in TRAITS)
 	{
 		let trait = TRAITS[i]
-		if(trait["稀有度"] != null)
+		if(trait["可预选"] == 1 && trait["稀有度"] != null)
 		{
-			if(tbr[trait["稀有度"]] == null)
-				tbr[trait["稀有度"]] = []
-			tbr[trait["稀有度"]].push(trait)
+			if(stbr[trait["稀有度"]] == null)
+				stbr[trait["稀有度"]] = []
+			stbr[trait["稀有度"]].push(trait)
 		}
 	}
-	return tbr
+	return stbr
 }
 
 function GetRandomTrait(traitList)
 {
-	let index = Math.floor(Math.random() * TRAITS.length)
+	let index = Math.floor(Math.random() * traitList.length)
 	return traitList.splice(index, 1)[0]
 }
 

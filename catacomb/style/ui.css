@@ -2,7 +2,7 @@
 	position			:	fixed;
 	z-index				:	999;
 	background			:	#e0edff;
-	border-radius		:	10px 10px 10px 10px;
+	border-radius		:	10px;
 	border				:	5px;
 	border-style		:	solid;
 	border-color		:	gray;
@@ -16,7 +16,7 @@
 }
 .dialog {
 	background			:	#e0edff;
-	border-radius		:	10px 10px 10px 10px;
+	border-radius		:	10px;
 	border				:	5px;
 	border-style		:	solid;
 	border-color		:	gray;
@@ -33,18 +33,65 @@
 	text-align			:	center;
 	color				:	black;
 	font-weight			:	bold;
-	font-size			:	18px;
+	font-size			:	16px;
+	margin				:	20px;
 }
 .dialogContent {
 	text-align			:	left;
 	color				:	black;
-	font-size			:	10px;
-
+	line-height			:	15px;
+	font-size			:	8px;
+	margin				:	10px;
+}
+.choice {
+	background			:	#e0edff;
+	display				:	block;
+	border-radius		:	10px;
+	border				:	3px;
+	border-style		:	solid;
+	border-color		:	gray;
+	line-height			:	20px;
+	padding-inline		: 	10px;
+	text-align			:	left;
+	color				:	black;
+	font-family			:	Arial;
+	font-size			:	8px;
+	margin				:	5px;
+}
+.choiceSelected {
+	background			:	#e0edff;
+	display				:	block;
+	border-radius		:	10px;
+	border				:	3px;
+	border-style		:	solid;
+	border-color		:	rgb(65, 65, 65);
+	line-height			:	20px;
+	padding-inline		: 	10px;
+	text-align			:	left;
+	color				:	black;
+	font-family			:	Arial;
+	font-size			:	8px;
+	margin				:	5px;
+}
+.choiceTraitEText {
+	display				:	inline-block;
+	text-align			:	left;
+	color				:	black;
+	font-family			:	Arial;
+	font-size			:	8px;
+}
+.choiceTraitTText {
+	display				:	inline-block;
+	text-align			:	left;
+	color				:	#2969b3;
+	font-family			:	Arial;
+	font-size			:	8px;
+	margin-left			:	5px;
 }
 .button {
 	background			:	#e0edff;
 	display				:	inline-block;
-	border-radius		:	10px 10px 10px 10px;
+	border-radius		:	10px;
 	border				:	5px;
 	border-style		:	solid;
 	border-color		:	gray;
@@ -58,7 +105,7 @@
 }
 .barDeselect {
 	background			:	#3d495b;
-	border-radius		:	10px 10px 10px 10px;
+	border-radius		:	10px;
 	border				:	5px;
 	border-style		:	solid;
 	border-color		:	gray;
@@ -66,14 +113,14 @@
 	padding-inline		: 	10px;
 	text-align			:	center;
 	color				:	white;
-	font-size			:	12px;
+	font-size			:	10px;
 	font-family			:	Arial;
 	font-weight			:	bold;
 	margin				:	10px;
 }
 .barSelect {
 	background			:	#6e7e96;
-	border-radius		:	10px 10px 10px 10px;
+	border-radius		:	10px;
 	border				:	5px;
 	border-style		:	solid;
 	border-color		:	gray;
@@ -81,6 +128,7 @@
 	padding-inline		: 	10px;
 	text-align			:	center;
 	color				:	white;
+	font-size			:	11px;
 	font-family			:	Arial;
 	font-weight			:	bold;
 	margin				:	10px;
