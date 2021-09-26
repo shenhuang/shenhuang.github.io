@@ -1,6 +1,32 @@
+var IS_TOUCH_DEVICE = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
+
 function ClearPage()
 {
 	document.body.innerHTML = ""
+}
+
+function RegisterScreenTouch(f, o = false)
+{
+	if(IS_TOUCH_DEVICE)
+	{
+		window.addEventListener('touchstart', f, {once : o})
+	}
+	else
+	{
+		window.addEventListener('click', f, {once : o})
+	}
+}
+
+function UnregisterScreenTouch(obj, f)
+{
+	if(IS_TOUCH_DEVICE)
+	{
+		obj.removeEventListener('touch', f)
+	}
+	else
+	{
+		obj.removeEventListener('click', f)
+	}
 }
 
 function LoadText(text, align = "center")
@@ -161,7 +187,7 @@ function NewEventTraitDialogChoice(eText, tText, action)
 
 function DisableEventDialogChoice(choiceObject, showSelected)
 {
-	choiceObject.removeEventListener('click', choiceObject.action)
+	UnregisterScreenTouch(choiceObject, choiceObject.action)
 	if(showSelected)
 	{
 		choiceObject.setAttribute('class', 'choiceSelected')

@@ -5,7 +5,7 @@ var EVENT_PENDING = false
 
 function EventInit()
 {
-    window.addEventListener('click', () => {
+    RegisterScreenTouch(() => {
         if(!EVENT_PENDING)
             NextEvent()
     })
@@ -90,12 +90,11 @@ function ProcessDualResult(event)
 {
     EVENT_PENDING = true
     let result = GetEventResult(event)
-    
-    window.addEventListener('click', () => {
+    RegisterScreenTouch(() => {
         setTimeout(() => {
             ProcessEvent(result)
         }, 1)
-    }, {once : true})
+    }, true)
     
 }
 

@@ -2,7 +2,7 @@ function ProcessBattle(enemyPower)
 {
     EVENT_PENDING = true
     BATTLE_PENDING = true
-    window.addEventListener('click', () => {
+    RegisterScreenTouch(() => {
             let HPLoss = enemyPower - CharacterStats.POWER
             if(HPLoss < 0)
             {
@@ -15,5 +15,5 @@ function ProcessBattle(enemyPower)
             }
             ScrollToBottom()
             EVENT_PENDING = false
-    }, {once : true})
+    }, true)
 }
