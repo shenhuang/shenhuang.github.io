@@ -321,6 +321,8 @@ function ValidEvent(event)
 
 function ValidSubEvent(event)
 {
+    if(event["弃用"] != null)
+        return false
     if(event["最小层数"] > level)
         return false
     if(event["最大层数"] < level)
