@@ -200,38 +200,67 @@ function LoadChoiceEvents(events, eventsTrait)
 function ProcessStatsChange(event)
 {
     let StatsChangeString = ""
+    /*
     if(event["体力上限"] != null)
     {
-        UpdateHPMAX(event["体力上限"])
-        StatsChangeString += `体力上限${event["体力上限"] > 0 ? '+' : ''}${event["体力上限"]}\n`
+        let change = GetStatChange(event["体力上限"])
+        UpdateHPMAX(change)
+        StatsChangeString += `体力上限${change > 0 ? '+' : ''}${change}\n`
     }
     if(event["体力"] != null)
     {
-        UpdateHP(event["体力"])
-        StatsChangeString += `体力${event["体力"] > 0 ? '+' : ''}${event["体力"]}\n`
+        let change = GetStatChange(event["体力"])
+        UpdateHP(change)
+        StatsChangeString += `体力${change > 0 ? '+' : ''}${change}\n`
     }
     if(event["金钱"] != null)
     {
-        UpdateMONEY(event["金钱"])
-        StatsChangeString += `金钱${event["金钱"] > 0 ? '+' : ''}${event["金钱"]}\n`
+        let change = GetStatChange(event["体力上限"])
+        UpdateMONEY(change)
+        StatsChangeString += `金钱${change > 0 ? '+' : ''}${change}\n`
     }
     if(event["食物"] != null)
     {
-        UpdateFOOD(event["食物"])
-        StatsChangeString += `食物${event["食物"] > 0 ? '+' : ''}${event["食物"]}\n`
+        let change = GetStatChange(event["体力上限"])
+        UpdateFOOD(change)
+        StatsChangeString += `食物${change > 0 ? '+' : ''}${change}\n`
     }
     if(event["战斗力"] != null)
     {
-        UpdatePOWER(event["战斗力"])
-        StatsChangeString += `战斗力${event["战斗力"] > 0 ? '+' : ''}${event["战斗力"]}\n`
+        let change = GetStatChange(event["战斗力"])
+        UpdatePOWER(change)
+        StatsChangeString += `战斗力${change > 0 ? '+' : ''}${change}\n`
     }
     if(event["运气"] != null)
     {
-        UpdateLUCK(event["运气"])
-        StatsChangeString += `运气${event["运气"] > 0 ? '+' : ''}${event["运气"]}\n`
+        let change = GetStatChange(event["运气"])
+        UpdateLUCK(change)
+        StatsChangeString += `运气${change > 0 ? '+' : ''}${change}\n`
+    }*/
+    for(n in CharacterStatsUpdateTable)
+    {
+        if(event[n] != null)
+        {
+            let c = GetStatChange(event[n])
+            let f = CharacterStatsUpdateTable[n]  
+            console.log(f)     
+            f(c)
+            StatsChangeString += `${n}${c > 0 ? '+' : ''}${c}\n`
+        }
+
     }
     if(StatsChangeString != "")
         setTimeout(() => {LoadFloatMessage(StatsChangeString)}, 200)
+}
+
+function GetStatChange(changeData)
+{
+    if(typeof(changeData) == 'number')
+        return changeData
+    let changeRange = changeData.split(',').map(Number)
+    let change = Math.round(changeRange[0] + Math.random() * (changeRange[1] - changeRange[0]))
+    console.log(change)
+    return change
 }
 
 function ProcessStatusChange(event)

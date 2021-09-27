@@ -6,6 +6,15 @@ var CharacterStatus = []
 var CharacterStats = []
 var CharacterBoard = []
 
+var CharacterStatsUpdateTable = {
+    ["体力上限"] : UpdateHPMAX,
+    ["体力"] : UpdateHP,
+    ["金钱"] : UpdateMONEY,
+    ["食物"] : UpdateFOOD,
+    ["战斗力"] : UpdatePOWER,
+    ["运气"] : UpdateLUCK,
+}
+
 function CharacterInit()
 {
     CharacterStatus = InitCharacterStatus()
