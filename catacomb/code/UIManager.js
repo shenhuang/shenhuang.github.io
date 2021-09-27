@@ -188,7 +188,7 @@ function NewEventDialogChoice(text, action)
 	choiceObject.textContent = text
 	choiceObject.setAttribute('class', 'choice')
 	choiceObject.action = action
-	choiceObject.addEventListener('click', choiceObject.action)
+	RegisterObjectTouch(choiceObject, choiceObject.action)
 	return choiceObject
 }
 
@@ -205,7 +205,7 @@ function NewEventTraitDialogChoice(eText, tText, action)
 	choiceObject.appendChild(traitText)
 	choiceObject.setAttribute('class', 'choice')
 	choiceObject.action = action
-	RegisterObjectTouch(choiceObject, choiceObject.action, true)
+	RegisterObjectTouch(choiceObject, choiceObject.action)
 	return choiceObject
 }
 
