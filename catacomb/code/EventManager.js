@@ -134,7 +134,6 @@ function GetChoiceEvents(event)
 function GetChoiceEventsTrait(event)
 {
     let choiceEventsTrait = []
-    console.log(event)
     if(event["天赋选项"] == null)
         return choiceEventsTrait
     let choiceConfigs = event["天赋选项"].split(',').map((data) => {
@@ -150,8 +149,6 @@ function GetChoiceEventsTrait(event)
         let choiceConfig = choiceConfigs[i]
         let e = EVENTS[choiceConfig.eid]
         let t = TRAITS[choiceConfig.tid]
-        console.log(e)
-        console.log(t)
         let choiceEventTrait = 
         {
             event   : e,
@@ -263,7 +260,6 @@ function ProcessPoisonStatus(event)
     if(event["中毒时间"] != null && event["中毒效果"] != null)
     {
         let bias = GetPoisonTraitBias(CharacterTraits)
-        console.log(bias.chance)
         if(Math.random() > bias.chance)
             return
         let poison = {
