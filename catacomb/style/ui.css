@@ -1,10 +1,26 @@
 .board {
 	position			:	fixed;
-	z-index				:	999;
+	z-index				:	100;
 	background			:	rgb(61, 61, 61);
 	border-radius		:	10px;
 	line-height			:	30px;
 	padding				: 	15px;
+	text-align			:	center;
+	color				:	white;
+	font-family			:	Arial;
+	font-weight			:	bold;
+	margin				:	20px;
+}
+.floatMessage {
+	position			:	fixed;
+	left				:	50%;
+	transform			:	translate(-60%, 0%);
+	z-index				:	101;
+	background			:	gray;
+	border-radius		:	10px;
+	line-height			:	30px;
+	padding				: 	15px;
+	white-space			:	pre-wrap;
 	text-align			:	center;
 	color				:	white;
 	font-family			:	Arial;

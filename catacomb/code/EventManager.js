@@ -198,18 +198,39 @@ function LoadChoiceEvents(events, eventsTrait)
 
 function ProcessStatsChange(event)
 {
+    let StatsChangeString = ""
     if(event["体力上限"] != null)
+    {
         UpdateHPMAX(event["体力上限"])
+        StatsChangeString += `体力上限${event["体力上限"] > 0 ? '+' : ''}${event["体力上限"]}\n`
+    }
     if(event["体力"] != null)
+    {
         UpdateHP(event["体力"])
+        StatsChangeString += `体力${event["体力"] > 0 ? '+' : ''}${event["体力"]}\n`
+    }
     if(event["金钱"] != null)
+    {
         UpdateMONEY(event["金钱"])
+        StatsChangeString += `金钱${event["金钱"] > 0 ? '+' : ''}${event["金钱"]}\n`
+    }
     if(event["食物"] != null)
+    {
         UpdateFOOD(event["食物"])
+        StatsChangeString += `食物${event["食物"] > 0 ? '+' : ''}${event["食物"]}\n`
+    }
     if(event["战斗力"] != null)
+    {
         UpdatePOWER(event["战斗力"])
+        StatsChangeString += `战斗力${event["战斗力"] > 0 ? '+' : ''}${event["战斗力"]}\n`
+    }
     if(event["运气"] != null)
-        UpdateLUCK(event["运气"])    
+    {
+        UpdateLUCK(event["运气"])
+        StatsChangeString += `运气${event["运气"] > 0 ? '+' : ''}${event["运气"]}\n`
+    }
+    if(StatsChangeString != "")
+        setTimeout(() => {LoadFloatMessage(StatsChangeString)}, 200)
 }
 
 function ProcessStatusChange(event)
