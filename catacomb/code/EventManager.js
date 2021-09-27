@@ -243,7 +243,6 @@ function ProcessStatsChange(event)
         {
             let c = GetStatChange(event[n])
             let f = CharacterStatsUpdateTable[n]  
-            console.log(f)     
             f(c)
             StatsChangeString += `${n}${c > 0 ? '+' : ''}${c}\n`
         }
@@ -259,7 +258,6 @@ function GetStatChange(changeData)
         return changeData
     let changeRange = changeData.split(',').map(Number)
     let change = Math.round(changeRange[0] + Math.random() * (changeRange[1] - changeRange[0]))
-    console.log(change)
     return change
 }
 
