@@ -2,7 +2,7 @@ const REFRESH_RATE = 100
 
 const FLOAT_MESSAGE_DURATION = 1000
 const FLOAT_MESSAGE_DURATION_FADE = 500
-const FLOAT_MESSAGE_HEIGHT = 200
+const FLOAT_MESSAGE_HEIGHT = screen.height - 200
 const FLOAT_MESSAGE_ASCEND_SPEED = 1
 
 var IS_TOUCH_DEVICE = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
