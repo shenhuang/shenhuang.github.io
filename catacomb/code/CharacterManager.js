@@ -187,7 +187,7 @@ function ProcessCharacterHunger()
 {
     if(CharacterStats.FOOD >= FOOD_LOSS_PER_TURN)
     {
-        UpdateFOOD(FOOD_LOSS_PER_TURN)
+        UpdateFOOD(-FOOD_LOSS_PER_TURN)
     }
     else
     {
