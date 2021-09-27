@@ -58,8 +58,6 @@ function ProcessEvent(event)
         console.error("NULL EVENT ENCOUNTERED!!!")
         return
     }
-    ProcessStatsChange(event)
-    ProcessStatusChange(event)
     if(event["依赖"] != null)
     {
         ProcessDependency(event)
@@ -68,6 +66,9 @@ function ProcessEvent(event)
     {
         ProcessBattle(event["敌人战力"])
     }
+    ProcessStatsChange(event)
+    ProcessStatusChange(event)
+    ProcessTraitsChange(event)
     if(event["好结果"] != null || event["坏结果"] != null)
     {
         ProcessDualResult(event)
@@ -133,6 +134,7 @@ function GetChoiceEvents(event)
 function GetChoiceEventsTrait(event)
 {
     let choiceEventsTrait = []
+    console.log(event)
     if(event["天赋选项"] == null)
         return choiceEventsTrait
     let choiceConfigs = event["天赋选项"].split(',').map((data) => {
@@ -148,6 +150,8 @@ function GetChoiceEventsTrait(event)
         let choiceConfig = choiceConfigs[i]
         let e = EVENTS[choiceConfig.eid]
         let t = TRAITS[choiceConfig.tid]
+        console.log(e)
+        console.log(t)
         let choiceEventTrait = 
         {
             event   : e,
@@ -238,6 +242,22 @@ function ProcessStatusChange(event)
     ProcessPoisonStatus(event)
 }
 
+function ProcessTraitsChange(event)
+{
+    if(event["获得天赋"] != null)
+    {
+        let trait = TRAITS[event["获得天赋"]]
+        if(!CharacterTraits.includes(trait))
+        {
+            CurrentEventDialog.appendChild(NewEventDialogContent("你获得了新的天赋："))
+            CurrentEventDialog.appendChild(NewTraitBar(trait))
+            ApplyTraitStats(trait)
+            CharacterTraits.push(trait)
+        }
+    }
+    ScrollToBottom()
+}
+
 function ProcessPoisonStatus(event)
 {
     if(event["中毒时间"] != null && event["中毒效果"] != null)
@@ -250,7 +270,6 @@ function ProcessPoisonStatus(event)
             duration    : Math.floor(event["中毒时间"] * bias.weaken),
             strength    : event["中毒效果"],
         }
-        console.log(poison)
         CharacterStatus.POISON.push(poison)
     }
 }
@@ -295,6 +314,10 @@ function ValidSubEvent(event)
         return false
     if(event["最大金钱"] < CharacterStats.MONEY)
         return false
+    if(event["最小食物"] > CharacterStats.FOOD)
+        return false
+    if(event["最大食物"] < CharacterStats.FOOD)
+        return false
     if(event["最小战力"] > CharacterStats.POWER)
         return false
     if(event["最大战力"] < CharacterStats.POWER)
@@ -302,6 +325,10 @@ function ValidSubEvent(event)
     if(event["最小运气"] > CharacterStats.LUCK)
         return false
     if(event["最大运气"] < CharacterStats.LUCK)
+        return false
+    if(CharacterTraits.includes(TRAITS[event["天赋免疫"]]))
+        return false
+    if(event["天赋触发"] != null && !CharacterTraits.includes(TRAITS[event["天赋触发"]]))
         return false
     return true
 }

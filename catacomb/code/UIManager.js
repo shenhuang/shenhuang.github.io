@@ -105,6 +105,22 @@ function NewBar(text, color)
 	return barObject
 }
 
+function LoadTraitBar(trait)
+{
+	let barObject = NewTraitBar(trait)
+	document.body.appendChild(barObject)
+	return barObject
+}
+
+function NewTraitBar(trait)
+{
+	let color = traitRairtyColors[trait["稀有度"]]
+	if(color == null || trait["名称"] == null)
+		return
+	let barObject = LoadBar(GetTraitText(trait), color)
+	return barObject
+}
+
 function LoadButton(text, action)
 {
 	let buttonObject = NewButton(text, action)
@@ -117,7 +133,7 @@ function NewButton(text, action)
 	let buttonObject = document.createElement("DIV")
 	buttonObject.textContent = text
 	buttonObject.setAttribute('class', 'button')
-	buttonObject.addEventListener('click', action)
+	RegisterObjectTouch(buttonObject, action)
 	return buttonObject
 }
 

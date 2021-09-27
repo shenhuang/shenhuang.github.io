@@ -143,15 +143,12 @@ function GetRandomTrait(traitList)
 
 function LoadTrait(trait)
 {
-	let color = traitRairtyColors[trait["稀有度"]]
-	if(color == null || trait["名称"] == null)
-		return
 	let traitObject = {
-		div		: LoadBar(GetTraitText(trait), color),
+		div		: LoadTraitBar(trait),
 		sel		: false,
 		content	: trait,
 	}
-	traitObject.div.addEventListener('click', function(event)
+	RegisterObjectTouch(traitObject.div, () =>
 	{
 		SelectTrait(traitObject, !trait.selected)
 	})
@@ -214,4 +211,28 @@ function SelectTrait(traitObject, select)
 			SelectedTraits.add(traitObject)	
 		}
 	}
+}
+
+function ApplyTraitStats(trait)
+{
+	if(trait["体质"] != null)
+	{
+		UpdateHPMAX(trait["体质"])
+	}
+	if(trait["金钱"] != null)
+	{
+		UpdateMONEY(trait["金钱"])
+	}
+	if(trait["食物"] != null)
+	{
+		UpdateFOOD(trait["食物"])
+	}
+	if(trait["战斗力"] != null)
+	{
+		UpdatePOWER(trait["战斗力"])
+	}
+	if(trait["运气"] != null)
+	{
+		UpdateLUCK(trait["运气"])
+	}    
 }

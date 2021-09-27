@@ -12,7 +12,7 @@ function CharacterInit()
     CharacterStats = InitCharacterStats()
     CharacterBoard = LoadCharacterBoard()
     ApplyTraitSelection()
-    ApplyTraitStats()
+    ApplySelectedTraitStats()
 }
 
 function InitCharacterStatus()
@@ -128,30 +128,11 @@ function ApplyTraitSelection()
     }
 }
 
-function ApplyTraitStats()
+function ApplySelectedTraitStats()
 {
     for(trait of CharacterTraits)
     {
-        if(trait["体质"] != null)
-        {
-            UpdateHPMAX(trait["体质"])
-        }
-        if(trait["金钱"] != null)
-        {
-            UpdateMONEY(trait["金钱"])
-        }
-        if(trait["食物"] != null)
-        {
-            UpdateFOOD(trait["食物"])
-        }
-        if(trait["战斗力"] != null)
-        {
-            UpdatePOWER(trait["战斗力"])
-        }
-        if(trait["运气"] != null)
-        {
-            UpdateLUCK(trait["运气"])
-        }
+        ApplyTraitStats(trait)
     }
 }
 
