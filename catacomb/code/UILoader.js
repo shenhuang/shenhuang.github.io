@@ -21,7 +21,7 @@ function UnregisterScreenTouch(obj, f)
 {
 	if(IS_TOUCH_DEVICE)
 	{
-		obj.removeEventListener('touch', f)
+		obj.removeEventListener('touchstart', f)
 	}
 	else
 	{
