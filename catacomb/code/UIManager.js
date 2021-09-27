@@ -17,7 +17,31 @@ function RegisterScreenTouch(f, o = false)
 	}
 }
 
-function UnregisterScreenTouch(obj, f)
+function UnregisterScreenTouch(f)
+{
+	if(IS_TOUCH_DEVICE)
+	{
+		window.removeEventListener('touchstart', f)
+	}
+	else
+	{
+		window.removeEventListener('click', f)
+	}
+}
+
+function RegisterObjectTouch(obj, f, o = false)
+{
+	if(IS_TOUCH_DEVICE)
+	{
+		obj.addEventListener('touchstart', f, {once : o})
+	}
+	else
+	{
+		obj.addEventListener('click', f, {once : o})
+	}
+}
+
+function UnregisterObjectTouch(obj, f)
 {
 	if(IS_TOUCH_DEVICE)
 	{
@@ -181,13 +205,13 @@ function NewEventTraitDialogChoice(eText, tText, action)
 	choiceObject.appendChild(traitText)
 	choiceObject.setAttribute('class', 'choice')
 	choiceObject.action = action
-	choiceObject.addEventListener('click', choiceObject.action)
+	RegisterObjectTouch(choiceObject, choiceObject.action, true)
 	return choiceObject
 }
 
 function DisableEventDialogChoice(choiceObject, showSelected)
 {
-	UnregisterScreenTouch(choiceObject, choiceObject.action)
+	UnregisterObjectTouch(choiceObject, choiceObject.action)
 	if(showSelected)
 	{
 		choiceObject.setAttribute('class', 'choiceSelected')

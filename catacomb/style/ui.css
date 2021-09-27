@@ -40,7 +40,7 @@
 	text-align			:	left;
 	color				:	black;
 	line-height			:	15px;
-	font-size			:	8px;
+	font-size			:	14px;
 	margin				:	10px;
 }
 .choice {
@@ -55,7 +55,7 @@
 	text-align			:	left;
 	color				:	black;
 	font-family			:	Arial;
-	font-size			:	8px;
+	font-size			:	14px;
 	margin				:	5px;
 }
 .choiceSelected {
@@ -70,7 +70,7 @@
 	text-align			:	left;
 	color				:	black;
 	font-family			:	Arial;
-	font-size			:	8px;
+	font-size			:	14px;
 	margin				:	5px;
 }
 .choiceTraitEText {
@@ -78,14 +78,14 @@
 	text-align			:	left;
 	color				:	black;
 	font-family			:	Arial;
-	font-size			:	8px;
+	font-size			:	14px;
 }
 .choiceTraitTText {
 	display				:	inline-block;
 	text-align			:	left;
 	color				:	#2969b3;
 	font-family			:	Arial;
-	font-size			:	8px;
+	font-size			:	12px;
 	margin-left			:	5px;
 }
 .button {
