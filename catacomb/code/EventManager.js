@@ -70,19 +70,17 @@ function ProcessEvent(event)
     {
         ProcessBattle(event["敌人战力"])
     }
-    ProcessStatsChange(event)
-    ProcessStatusChange(event)
-    ProcessTraitsChange(event)
     if(event["好结果"] != null || event["坏结果"] != null)
     {
         ProcessDualResult(event)
-        return
     }
-    if(event["选项"] != null)
+    else if(event["选项"] != null)
     {
         ProcessChoices(event)
-        return
     }
+    ProcessStatsChange(event)
+    ProcessStatusChange(event)
+    ProcessTraitsChange(event)
 }
 
 function ProcessDependency(event)

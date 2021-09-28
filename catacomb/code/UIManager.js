@@ -251,7 +251,8 @@ function LoadFloatMessage(text)
 	FMObject.style.top = `${FLOAT_MESSAGE_HEIGHT}px`
 	document.body.appendChild(FMObject)
 	setTimeout(() => {
-		document.body.removeChild(FMObject)
+		if(document.body.hasChildNodes(FMObject))
+			document.body.removeChild(FMObject)
 	}, FLOAT_MESSAGE_DURATION)
 	return FMObject
 }
