@@ -1,10 +1,11 @@
 const FOOD_LOSS_PER_TURN = 1
 const HUNGER_HP_LOSS = 5
+const PROCESS_DEATH_DELAY = 1000
 
-var CharacterTraits = []
-var CharacterStatus = []
-var CharacterStats = []
-var CharacterBoard = []
+var CharacterTraits
+var CharacterStatus
+var CharacterStats
+var CharacterBoard
 
 var CharacterStatsUpdateTable = {
     ["体力上限"] : UpdateHPMAX,
@@ -34,6 +35,7 @@ function InitCharacterStatus()
 
 function InitCharacterStats()
 {   
+    CharacterStats = []
     CharacterStats.HPMAX = 100
     CharacterStats.HP = 100
     CharacterStats.MONEY = 100
@@ -131,6 +133,7 @@ function UpdateLUCK(delta)
 
 function ApplyTraitSelection()
 {
+    CharacterTraits = []
     for(traitObject of SelectedTraits)
     {
         CharacterTraits.push(traitObject.content)
@@ -192,6 +195,9 @@ function CharacterDead()
 {
     setTimeout(() => {
         alert('你💀了!')
+        setTimeout(() => {
+            ProcessDeath()
+        }, PROCESS_DEATH_DELAY)
     }, 1)
     CharacterStatus.ALIVE = false
 }

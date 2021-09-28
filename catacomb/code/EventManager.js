@@ -341,10 +341,6 @@ function ValidSubEvent(event)
         return false
     if(event["最小食物"] > CharacterStats.FOOD)
         return false
-    console.log(event)
-    console.log(event["最大食物"])
-    console.log(CharacterStats.FOOD)
-    console.log(event["最大食物"] < CharacterStats.FOOD)
     if(event["最大食物"] < CharacterStats.FOOD)
         return false
     if(event["最小战力"] > CharacterStats.POWER)

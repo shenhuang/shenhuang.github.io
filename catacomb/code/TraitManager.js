@@ -1,7 +1,7 @@
 const MAX_SEL_TRAIT = 3
 const MAX_GEN_TRAIT = 10
 
-var SelectedTraits = new Set()
+var SelectedTraits
 
 var traitRairtyWeights = {
 	[1] : 100,
@@ -45,13 +45,23 @@ const SPECIAL_TRAITS_POISON = {
 	},
 }
 
+function InitTraits()
+{
+	SelectedTraits = new Set()
+}
+
 function LoadTraits()
 {
-	let traitObjects = []
 	let showTraits = GetShowTraits()
-	for(i in showTraits)
+	return LoadTraitList(showTraits)
+}
+
+function LoadTraitList(traitList)
+{
+	let traitObjects = []
+	for(i in traitList)
 	{
-		traitObjects.push(LoadTrait(showTraits[i]))
+		traitObjects.push(LoadTrait(traitList[i]))
 	}
 	return traitObjects
 }
