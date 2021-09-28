@@ -274,6 +274,7 @@ function ProcessCharacterRevive()
         setTimeout(() => {
             alert(`你买了复活甲，现在半血复活！`)
             UpdateHP(Math.ceil(CharacterStats.HPMAX / 2) - CharacterStats.HP)
+            CharacterHasFuhuojia = false
         }, 1)
         return true
     }
@@ -289,7 +290,7 @@ function ProcessCharacterRevive()
     return false
 }
 
-function ProcessLethalNegation()
+function ProcessLethalNegation(delta)
 {
     if(CharacterHasMingdao)
     {
@@ -297,6 +298,7 @@ function ProcessLethalNegation()
             alert(`你触发了名刀被动，免除此次致命伤害！`)
         }, 1)
         CharacterStats.HP = CharacterStats.HP - delta
+        CharacterHasMingdao = false
         return true
     }
     return false

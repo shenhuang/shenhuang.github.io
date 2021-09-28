@@ -309,6 +309,17 @@ function ApplyTraitStats(trait)
 	}    
 }
 
+function AcquireNewTrait(trait)
+{
+    if(!CharacterTraits.includes(trait))
+    {
+        CurrentEventDialog.appendChild(NewEventDialogContent("你获得了新的天赋："))
+        CurrentEventDialog.appendChild(NewTraitBar(trait))
+        ApplyNewTrait(trait)
+        CharacterTraits.push(trait)
+    }
+}
+
 function ApplyTraitSpecial(trait)
 {
     if(SPECIAL_TRAITS_REVIVE[trait["名称"]] != null)

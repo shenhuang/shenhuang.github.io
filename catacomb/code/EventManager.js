@@ -241,17 +241,6 @@ function ProcessTraitsChange(event)
     ScrollToBottom()
 }
 
-function AcquireNewTrait(trait)
-{
-    if(!CharacterTraits.includes(trait))
-    {
-        CurrentEventDialog.appendChild(NewEventDialogContent("你获得了新的天赋："))
-        CurrentEventDialog.appendChild(NewTraitBar(trait))
-        ApplyNewTrait(trait)
-        CharacterTraits.push(trait)
-    }
-}
-
 function ProcessPoisonStatus(event)
 {
     if(event["中毒时间"] != null && event["中毒效果"] != null)
