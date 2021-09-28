@@ -1,7 +1,6 @@
 const REFRESH_RATE = 100
 
-const FLOAT_MESSAGE_DURATION = 1000
-const FLOAT_MESSAGE_DURATION_FADE = 500
+const FLOAT_MESSAGE_DURATION = 1500
 const FLOAT_MESSAGE_HEIGHT = screen.height - 200
 const FLOAT_MESSAGE_ASCEND_SPEED = 1
 
@@ -249,20 +248,10 @@ function ScrollToBottom()
 function LoadFloatMessage(text)
 {
 	let FMObject = NewFloatMessage(text)
-	let timeStep = 0
-	let flipRate = REFRESH_RATE / FLOAT_MESSAGE_DURATION
 	FMObject.style.top = `${FLOAT_MESSAGE_HEIGHT}px`
 	document.body.appendChild(FMObject)
 	setTimeout(() => {
-		let interval = setInterval(() => {
-			FMObject.style.top = `${FLOAT_MESSAGE_HEIGHT - FLOAT_MESSAGE_ASCEND_SPEED * timeStep * timeStep}px`	
-			FMObject.style.opacity = 1 - timeStep * flipRate
-			timeStep++
-		}, 1000 / REFRESH_RATE)
-		setTimeout(() => {
-			document.body.removeChild(FMObject)
-			clearInterval(interval)
-		}, FLOAT_MESSAGE_DURATION_FADE)
+		document.body.removeChild(FMObject)
 	}, FLOAT_MESSAGE_DURATION)
 	return FMObject
 }

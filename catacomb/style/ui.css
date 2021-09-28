@@ -11,10 +11,27 @@
 	font-weight			:	bold;
 	margin				:	20px;
 }
+@keyframes floatUp {
+	0% {
+		transform		:	translate(-60%, 0%);
+		opacity			:	1.0;
+	}
+	50% {
+		transform		:	translate(-60%, 0%);
+		opacity			:	1.0;
+	}
+	75% {
+		transform		:	translate(-60%, -40%);
+		opacity			:	0.0;
+	}
+	100% {
+		transform		:	translate(-60%, 0%);
+		opacity			:	0.0;
+	}
+}
 .floatMessage {
 	position			:	fixed;
 	left				:	50%;
-	transform			:	translate(-60%, 0%);
 	z-index				:	101;
 	background			:	gray;
 	border-radius		:	10px;
@@ -26,6 +43,9 @@
 	font-family			:	Arial;
 	font-weight			:	bold;
 	margin				:	20px;
+	-webkit-transition	:	floatUp 2s linear;
+	transition			:	floatUp 2s linear;
+	animation			:	floatUp 2s linear;
 }
 .dialog {
 	background			:	#e0edff;

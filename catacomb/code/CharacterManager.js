@@ -43,7 +43,6 @@ function InitCharacterStats()
     CharacterStats.POWER = 100
     CharacterStats.LUCK = 100
     return CharacterStats
-
 }
 
 function GetCharacterHPString()
