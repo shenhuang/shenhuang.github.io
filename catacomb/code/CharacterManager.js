@@ -63,11 +63,11 @@ function GetCharacterFOODString()
     return s
 }
 
-function UpdateHPMAX(delta)
+function UpdateHPMAX(delta, flashScreen = true)
 {
     CharacterStats.HPMAX = CharacterStats.HPMAX + delta
     CharacterStats.HP = CharacterStats.HP + delta
-    if(delta < 0)
+    if(flashScreen && delta < 0)
         FlashScreen('red')
     if(CharacterStats.HPMAX < 1)
     {
@@ -80,10 +80,10 @@ function UpdateHPMAX(delta)
     CharacterBoard.CharacterHPText.textContent = GetCharacterHPString()
 }
 
-function UpdateHP(delta)
+function UpdateHP(delta, flashScreen = true)
 {
     CharacterStats.HP = CharacterStats.HP + delta
-    if(delta < 0)
+    if(flashScreen && delta < 0)
         FlashScreen('red')
     if(CharacterStats.HP < 1)
     {

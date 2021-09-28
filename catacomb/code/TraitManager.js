@@ -227,7 +227,7 @@ function ApplyTraitStats(trait)
 {
 	if(trait["体质"] != null)
 	{
-		UpdateHPMAX(trait["体质"])
+		UpdateHPMAX(trait["体质"], false)
 	}
 	if(trait["金钱"] != null)
 	{
