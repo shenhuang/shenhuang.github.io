@@ -1,10 +1,14 @@
-var level = -1
-var EventPool = []
+var level
+var EventPool
 var CurrentEventDialog
-var EVENT_PENDING = false
+var EVENT_PENDING
 
 function EventInit()
 {
+    level = -1
+    EventPool = []
+    CurrentEventDialog = null
+    EVENT_PENDING = false
     RegisterScreenTouch(() => {
         if(!EVENT_PENDING)
             NextEvent()
