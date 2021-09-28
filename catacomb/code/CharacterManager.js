@@ -6,6 +6,7 @@ var CharacterTraits
 var CharacterStatus
 var CharacterStats
 var CharacterBoard
+var CharacterLife
 
 var CharacterStatsUpdateTable = {
     ["体力上限"] : UpdateHPMAX,
@@ -30,6 +31,7 @@ function InitCharacterStatus()
     CharacterStatus = []
     CharacterStatus.ALIVE = true
     CharacterStatus.POISON = []
+    CharacterLife = 0
     return CharacterStatus
 }
 
@@ -147,7 +149,7 @@ function ApplySelectedTraitStats()
 {
     for(trait of CharacterTraits)
     {
-        ApplyTraitStats(trait)
+        ApplyNewTrait(trait)
     }
 }
 
@@ -196,11 +198,22 @@ function ProcessCharacterHunger()
 
 function CharacterDead()
 {
-    setTimeout(() => {
-        alert('你💀了!')
+    if(CharacterLife <= 0)
+    {
         setTimeout(() => {
-            ProcessDeath()
-        }, PROCESS_DEATH_DELAY)
-    }, 1)
-    CharacterStatus.ALIVE = false
+            alert(`你💀了!`)
+            setTimeout(() => {
+                ProcessDeath()
+            }, PROCESS_DEATH_DELAY)
+        }, 1)
+        CharacterStatus.ALIVE = false
+    }
+    else
+    {
+        setTimeout(() => {
+            CharacterLife--
+            alert(`你失去了一条命，还剩${CharacterLife + 1}条命！`)
+            UpdateHP(CharacterStats.HPMAX - CharacterStats.HP)
+        }, 1)       
+    }
 }

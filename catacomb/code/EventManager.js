@@ -236,15 +236,20 @@ function ProcessTraitsChange(event)
     if(event["获得天赋"] != null)
     {
         let trait = TRAITS[event["获得天赋"]]
-        if(!CharacterTraits.includes(trait))
-        {
-            CurrentEventDialog.appendChild(NewEventDialogContent("你获得了新的天赋："))
-            CurrentEventDialog.appendChild(NewTraitBar(trait))
-            ApplyTraitStats(trait)
-            CharacterTraits.push(trait)
-        }
+        AcquireNewTrait(trait)
     }
     ScrollToBottom()
+}
+
+function AcquireNewTrait(trait)
+{
+    if(!CharacterTraits.includes(trait))
+    {
+        CurrentEventDialog.appendChild(NewEventDialogContent("你获得了新的天赋："))
+        CurrentEventDialog.appendChild(NewTraitBar(trait))
+        ApplyNewTrait(trait)
+        CharacterTraits.push(trait)
+    }
 }
 
 function ProcessPoisonStatus(event)
@@ -354,7 +359,6 @@ function ValidSubEvent(event)
             if(!CharacterTraits.includes(TRAITS[event["天赋触发"]]))
                 return false
         }
-        return false
     }
     return true
 }

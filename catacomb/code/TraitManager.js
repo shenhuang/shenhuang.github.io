@@ -45,6 +45,15 @@ const SPECIAL_TRAITS_POISON = {
 	},
 }
 
+const SPECIAL_TRAITS_REVIVE = {
+	"绿色蘑菇" : {
+		revive	: 1,
+	},
+	"九命猫" : {
+		revive	: 8,
+	},
+}
+
 function InitTraits()
 {
 	SelectedTraits = new Set()
@@ -223,6 +232,12 @@ function SelectTrait(traitObject, select)
 	}
 }
 
+function ApplyNewTrait(trait)
+{
+	ApplyTraitStats(trait)
+	ApplyTraitSpecial(trait)
+}
+
 function ApplyTraitStats(trait)
 {
 	if(trait["体质"] != null)
@@ -245,4 +260,12 @@ function ApplyTraitStats(trait)
 	{
 		UpdateLUCK(trait["运气"])
 	}    
+}
+
+function ApplyTraitSpecial(trait)
+{
+    if(SPECIAL_TRAITS_REVIVE[trait["名称"]] != null)
+    {
+        CharacterLife += SPECIAL_TRAITS_REVIVE[trait["名称"]].revive
+    }
 }
