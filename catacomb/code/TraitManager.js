@@ -46,6 +46,9 @@ const SPECIAL_TRAITS_POISON = {
 }
 
 const SPECIAL_TRAITS_REVIVE = {
+	"月光饭盒" : {
+		revive	: 1,
+	},
 	"绿色蘑菇" : {
 		revive	: 1,
 	},
