@@ -203,7 +203,9 @@ function ProcessCharacterDebt()
     UpdateMONEY(interest)
     if(CharacterStats.MONEY < -CHARACTER_MAX_DEBT)
     {
-        alert(`你的负债超过${CHARACTER_MAX_DEBT}，讨债公司前来强制让你卖血还债！`)
+        setTimeout(() => {
+            alert(`你的负债超过${CHARACTER_MAX_DEBT}，讨债公司前来强制让你卖血还债！`)
+        }, 1)
         UpdateHP(Math.ceil(CharacterStats.MONEY / 100))
         UpdateMONEY(Math.floor(-CharacterStats.MONEY / 10))
     }
@@ -226,7 +228,9 @@ function ProcessCharacterPoison()
     CharacterStatus.POISON.push(leftOver)
     if(totalDamage > 0)
     {
-        alert(`你因为中毒流失了${totalDamage}点体力!`)
+        setTimeout(() => {
+            alert(`你因为中毒流失了${totalDamage}点体力!`)
+        }, 1)
         UpdateHP(-totalDamage)
     }
 }
@@ -240,7 +244,9 @@ function ProcessCharacterHunger()
     else
     {
         let totalDamage = (FOOD_LOSS_PER_TURN - CharacterStats.FOOD) * HUNGER_HP_LOSS
-        alert(`你因为饥饿流失了${totalDamage}点体力!`)
+        setTimeout(() => {
+            alert(`你因为饥饿流失了${totalDamage}点体力!`)
+        }, 1)
         UpdateHP(-totalDamage)
         CharacterStats.FOOD = 0
     }
