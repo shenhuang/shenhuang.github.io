@@ -49,6 +49,9 @@ const SPECIAL_TRAITS_REVIVE = {
 	"绿色蘑菇" : {
 		revive	: 1,
 	},
+	"游戏币" : {
+		revive	: 1,
+	},
 	"九命猫" : {
 		revive	: 8,
 	},
