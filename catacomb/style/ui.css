@@ -84,6 +84,44 @@
 	font-weight			:	bold;
 	margin				:	10px;
 }
+@keyframes Lava {
+	0% {
+		color			:	rgb(129, 9, 0);
+		border-color	:	rgb(129, 9, 0);
+	}
+	60% {
+		color			:	rgb(129, 9, 0);
+		border-color	:	rgb(129, 9, 0);
+	}
+	70% {
+		color			:	rgb(41, 31, 31);
+		border-color	:	rgb(41, 31, 31);
+	}
+	90% {
+		color			:	rgb(48, 24, 24);
+		border-color	:	rgb(48, 24, 24);
+	}
+	100% {
+		color			:	rgb(129, 9, 0);
+		border-color	:	rgb(129, 9, 0);
+	}
+}
+.dialogLava {
+	background			:	#313131;
+	border-radius		:	10px;
+	border				:	5px;
+	border-style		:	solid;
+	line-height			:	30px;
+	padding-inline		: 	10px;
+	white-space			:	pre-wrap;
+	text-align			:	center;
+	font-family			:	Arial;
+	font-weight			:	bold;
+	margin				:	10px;
+	-webkit-transition	:	Lava 20s linear infinite;
+	transition			:	Lava 20s linear infinite;
+	animation			:	Lava 20s linear infinite;
+}
 .dialogTitle {
 	text-align			:	center;
 	color				:	black;

@@ -67,6 +67,9 @@ const SPECIAL_TRAITS_REGENERATE = {
 	"自愈体质" : {
 		regen	: 2,
 	},
+	"爸者重装" : {
+		regen	: 5,
+	},
 	"金刚狼" : {
 		regen	: 10,
 	},
@@ -81,7 +84,22 @@ const SPECIAL_TRAITS_FOODLOSS = {
 	},
 }
 
+const SPECIAL_TRAITS_MONEYGAIN = {
+	"老头" : {
+		gain	: 1,
+	},
+	"学渣宝石" : {
+		gain	: 5,
+	},
+	"包租婆" : {
+		gain	: 10,
+	},
+}
+
 const SPECIAL_TRAIT_DEBT = "超前消费"
+
+const SPECIAL_TRAIT_FUHUOJIA = "咸鱼的庇护"
+const SPECIAL_TRAIT_MINGDAO = "名刀 - 思妹"
 
 function InitTraits()
 {
@@ -300,5 +318,13 @@ function ApplyTraitSpecial(trait)
 	if(SPECIAL_TRAIT_DEBT == trait["名称"])
 	{
 		CharacterIsDebtTaker = true
+	}
+	if(SPECIAL_TRAIT_FUHUOJIA == trait["名称"])
+	{
+		CharacterHasFuhuojia = true
+	}
+	if(SPECIAL_TRAIT_MINGDAO == trait["名称"])
+	{
+		CharacterHasMingdao = true
 	}
 }

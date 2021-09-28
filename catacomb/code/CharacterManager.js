@@ -9,8 +9,11 @@ var CharacterTraits
 var CharacterStatus
 var CharacterStats
 var CharacterBoard
+
 var CharacterLife
 var CharacterIsDebtTaker
+var CharacterHasFuhuojia
+var CharacterHasMingdao
 
 var CharacterStatsUpdateTable = {
     ["体力上限"] : UpdateHPMAX,
@@ -37,6 +40,8 @@ function InitCharacterStatus()
     CharacterStatus.POISON = []
     CharacterLife = 0
     CharacterIsDebtTaker = false
+    CharacterHasFuhuojia = false
+    CharacterHasMingdao = false
     return CharacterStatus
 }
 
@@ -94,7 +99,11 @@ function UpdateHP(delta, flashScreen = true)
         FlashScreen('red')
     if(CharacterStats.HP < 1)
     {
-        CharacterDead()
+        let sucess = ProcessLethalNegation(delta)
+        if(!sucess)
+        {
+            CharacterDead()
+        }
     }
     if(CharacterStats.HP > CharacterStats.HPMAX)
     {
@@ -177,6 +186,10 @@ function ProcessCharacterTraits()
         {
             UpdateFOOD(-SPECIAL_TRAITS_FOODLOSS[t["名称"]].loss)
         }
+        if(SPECIAL_TRAITS_MONEYGAIN[t["名称"]] != null)
+        {
+            UpdateMONEY(SPECIAL_TRAITS_MONEYGAIN[t["名称"]].gain)
+        }
         if(CharacterIsDebtTaker && CharacterStats.MONEY < 0)
         {
             ProcessCharacterDebt()
@@ -235,7 +248,8 @@ function ProcessCharacterHunger()
 
 function CharacterDead()
 {
-    if(CharacterLife <= 0)
+    let revived = ProcessCharacterRevive()
+    if(!revived)
     {
         setTimeout(() => {
             alert(`你💀了!`)
@@ -245,12 +259,39 @@ function CharacterDead()
         }, 1)
         CharacterStatus.ALIVE = false
     }
-    else
+}
+
+function ProcessCharacterRevive()
+{
+    if(CharacterHasFuhuojia)
+    {
+        setTimeout(() => {
+            alert(`你买了复活甲，现在半血复活！`)
+            UpdateHP(Math.ceil(CharacterStats.HPMAX / 2) - CharacterStats.HP)
+        }, 1)
+        return true
+    }
+    if(CharacterLife > 0)
     {
         setTimeout(() => {
             CharacterLife--
             alert(`你失去了一条命，还剩${CharacterLife + 1}条命！`)
             UpdateHP(CharacterStats.HPMAX - CharacterStats.HP)
-        }, 1)       
+        }, 1)
+        return true
     }
+    return false
+}
+
+function ProcessLethalNegation()
+{
+    if(CharacterHasMingdao)
+    {
+        setTimeout(() => {
+            alert(`你触发了名刀被动，免除此次致命伤害！`)
+        }, 1)
+        CharacterStats.HP = CharacterStats.HP - delta
+        return true
+    }
+    return false
 }
