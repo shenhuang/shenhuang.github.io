@@ -202,43 +202,6 @@ function LoadChoiceEvents(events, eventsTrait)
 function ProcessStatsChange(event)
 {
     let StatsChangeString = ""
-    /*
-    if(event["体力上限"] != null)
-    {
-        let change = GetStatChange(event["体力上限"])
-        UpdateHPMAX(change)
-        StatsChangeString += `体力上限${change > 0 ? '+' : ''}${change}\n`
-    }
-    if(event["体力"] != null)
-    {
-        let change = GetStatChange(event["体力"])
-        UpdateHP(change)
-        StatsChangeString += `体力${change > 0 ? '+' : ''}${change}\n`
-    }
-    if(event["金钱"] != null)
-    {
-        let change = GetStatChange(event["体力上限"])
-        UpdateMONEY(change)
-        StatsChangeString += `金钱${change > 0 ? '+' : ''}${change}\n`
-    }
-    if(event["食物"] != null)
-    {
-        let change = GetStatChange(event["体力上限"])
-        UpdateFOOD(change)
-        StatsChangeString += `食物${change > 0 ? '+' : ''}${change}\n`
-    }
-    if(event["战斗力"] != null)
-    {
-        let change = GetStatChange(event["战斗力"])
-        UpdatePOWER(change)
-        StatsChangeString += `战斗力${change > 0 ? '+' : ''}${change}\n`
-    }
-    if(event["运气"] != null)
-    {
-        let change = GetStatChange(event["运气"])
-        UpdateLUCK(change)
-        StatsChangeString += `运气${change > 0 ? '+' : ''}${change}\n`
-    }*/
     for(n in CharacterStatsUpdateTable)
     {
         if(event[n] != null)

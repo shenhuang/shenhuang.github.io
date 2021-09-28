@@ -4,6 +4,8 @@ const FLOAT_MESSAGE_DURATION = 1500
 const FLOAT_MESSAGE_HEIGHT = screen.height / 2
 const FLOAT_MESSAGE_ASCEND_SPEED = 1
 
+const FLASH_SCREEN_DURATION = 500
+
 var IS_TOUCH_DEVICE = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
 
 function ClearPage()
@@ -243,6 +245,18 @@ function DisableEventDialogChoice(choiceObject, showSelected)
 function ScrollToBottom()
 {
 	window.scrollTo(0, document.body.scrollHeight)
+}
+
+function FlashScreen(color)
+{
+	let flashScreen = document.createElement("DIV")
+	flashScreen.setAttribute('class', 'flashScreen')
+	flashScreen.style.backgroundColor = color
+	document.body.appendChild(flashScreen)
+	setTimeout(() => {
+		if(document.body.hasChildNodes(flashScreen))
+			document.body.removeChild(flashScreen)
+	}, FLASH_SCREEN_DURATION)
 }
 
 function LoadFloatMessage(text)

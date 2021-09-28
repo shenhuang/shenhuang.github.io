@@ -67,6 +67,8 @@ function UpdateHPMAX(delta)
 {
     CharacterStats.HPMAX = CharacterStats.HPMAX + delta
     CharacterStats.HP = CharacterStats.HP + delta
+    if(delta < 0)
+        FlashScreen('red')
     if(CharacterStats.HPMAX < 1)
     {
         CharacterStats.HPMAX = 1
@@ -81,6 +83,8 @@ function UpdateHPMAX(delta)
 function UpdateHP(delta)
 {
     CharacterStats.HP = CharacterStats.HP + delta
+    if(delta < 0)
+        FlashScreen('red')
     if(CharacterStats.HP < 1)
     {
         CharacterDead()
