@@ -60,6 +60,29 @@ const SPECIAL_TRAITS_REVIVE = {
 	},
 }
 
+const SPECIAL_TRAITS_REGENERATE = {
+	"活力充沛" : {
+		regen	: 1,
+	},
+	"自愈体质" : {
+		regen	: 2,
+	},
+	"金刚狼" : {
+		regen	: 10,
+	},
+}
+
+const SPECIAL_TRAITS_FOODLOSS = {
+	"金刚狼" : {
+		loss	: 1,
+	},
+	"大胃王" : {
+		loss	: 1,
+	},
+}
+
+const SPECIAL_TRAIT_DEBT = "超前消费"
+
 function InitTraits()
 {
 	SelectedTraits = new Set()
@@ -274,4 +297,8 @@ function ApplyTraitSpecial(trait)
     {
         CharacterLife += SPECIAL_TRAITS_REVIVE[trait["名称"]].revive
     }
+	if(SPECIAL_TRAIT_DEBT == trait["名称"])
+	{
+		CharacterIsDebtTaker = true
+	}
 }

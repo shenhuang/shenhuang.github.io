@@ -2,11 +2,15 @@ const FOOD_LOSS_PER_TURN = 1
 const HUNGER_HP_LOSS = 5
 const PROCESS_DEATH_DELAY = 1000
 
+const DEBT_INTEREST_RATE = 1.03
+const CHARACTER_MAX_DEBT = 3000
+
 var CharacterTraits
 var CharacterStatus
 var CharacterStats
 var CharacterBoard
 var CharacterLife
+var CharacterIsDebtTaker
 
 var CharacterStatsUpdateTable = {
     ["体力上限"] : UpdateHPMAX,
@@ -32,6 +36,7 @@ function InitCharacterStatus()
     CharacterStatus.ALIVE = true
     CharacterStatus.POISON = []
     CharacterLife = 0
+    CharacterIsDebtTaker = false
     return CharacterStatus
 }
 
@@ -101,7 +106,7 @@ function UpdateHP(delta, flashScreen = true)
 function UpdateMONEY(delta)
 {
     CharacterStats.MONEY = CharacterStats.MONEY + delta
-    if(CharacterStats.MONEY < 0)
+    if(CharacterStats.MONEY < 0 && !CharacterIsDebtTaker)
     {
         CharacterStats.MONEY = 0
     }
@@ -155,8 +160,40 @@ function ApplySelectedTraitStats()
 
 function ProcessCharacter()
 {
+    ProcessCharacterTraits()
     ProcessCharacterPoison()
     ProcessCharacterHunger()
+}
+
+function ProcessCharacterTraits()
+{
+    for(t of CharacterTraits)
+    {
+        if(CharacterStats.HP < CharacterStats.HPMAX && SPECIAL_TRAITS_REGENERATE[t["名称"]] != null)
+        {
+            UpdateHP(SPECIAL_TRAITS_REGENERATE[t["名称"]].regen)
+        }
+        if(CharacterStats.FOOD > 0 && SPECIAL_TRAITS_FOODLOSS[t["名称"]] != null)
+        {
+            UpdateFOOD(-SPECIAL_TRAITS_FOODLOSS[t["名称"]].loss)
+        }
+        if(CharacterIsDebtTaker && CharacterStats.MONEY < 0)
+        {
+            ProcessCharacterDebt()
+        }
+    }
+}
+
+function ProcessCharacterDebt()
+{
+    let interest = Math.ceil(CharacterStats.MONEY * DEBT_INTEREST_RATE - CharacterStats.MONEY)
+    UpdateMONEY(interest)
+    if(CharacterStats.MONEY < -CHARACTER_MAX_DEBT)
+    {
+        alert(`你的负债超过${CHARACTER_MAX_DEBT}，讨债公司前来强制让你卖血还债！`)
+        UpdateHP(Math.ceil(CharacterStats.MONEY / 100))
+        UpdateMONEY(Math.floor(-CharacterStats.MONEY / 10))
+    }
 }
 
 function ProcessCharacterPoison()
