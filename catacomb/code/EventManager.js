@@ -316,9 +316,45 @@ function ValidSubEvent(event)
         return false
     if(event["最大运气"] < CharacterStats.LUCK)
         return false
-    if(CharacterTraits.includes(TRAITS[event["天赋免疫"]]))
+    if(event["天赋免疫"] != null)
+    {
+        let traitData = event["天赋免疫"]
+        if(typeof(traitData) != 'number')
+        {
+            traitData = traitData.split(',').map(Number)
+            for(i in traitData)
+            {
+                if(CharacterTraits.includes(TRAITS[traitData[i]]))
+                    return false
+            }
+        }
+        else
+        {
+            if(CharacterTraits.includes(TRAITS[traitData]))
+                return false
+        }
+    }
+    if(event["天赋触发"] != null)
+    {
+        let traitData = event["天赋触发"]
+        if(typeof(traitData) != 'number')
+        {
+            traitData = traitData.split(',').map(Number)
+            let includeAny = false
+            for(i in traitData)
+            {
+                if(CharacterTraits.includes(TRAITS[traitData[i]]))
+                    includeAny = true
+            }
+            if(!includeAny)
+                return false
+        }
+        else
+        {
+            if(!CharacterTraits.includes(TRAITS[event["天赋触发"]]))
+                return false
+        }
         return false
-    if(event["天赋触发"] != null && !CharacterTraits.includes(TRAITS[event["天赋触发"]]))
-        return false
+    }
     return true
 }
