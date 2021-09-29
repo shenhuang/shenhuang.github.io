@@ -75,6 +75,18 @@ function GetCharacterFOODString()
     return s
 }
 
+function GetCharacterPOWERString()
+{
+    //s = `战斗力：${CharacterStats.FOOD}\n`
+    //return s
+}
+
+function GetCharacterLUCKString()
+{
+    //s = `运气：${CharacterStats.FOOD}\n`
+    //return s
+}
+
 function UpdateHPMAX(delta, flashScreen = true)
 {
     CharacterStats.HPMAX = CharacterStats.HPMAX + delta
@@ -139,6 +151,7 @@ function UpdatePOWER(delta)
     {
         CharacterStats.POWER = 0
     }
+    CharacterBoard.CharacterPOWERText.textContent = GetCharacterPOWERString()
 }
 
 function UpdateLUCK(delta)
@@ -148,6 +161,7 @@ function UpdateLUCK(delta)
     {
         CharacterStats.LUCK = 0
     }
+    CharacterBoard.CharacterLUCKText.textContent = GetCharacterLUCKString()
 }
 
 function ApplyTraitSelection()

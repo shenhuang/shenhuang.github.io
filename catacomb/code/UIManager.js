@@ -150,11 +150,17 @@ function LoadCharacterBoard()
 	board.appendChild(CharacterFOODText)
 	let CharacterMONEYText = NewText(GetCharacterMONEYString(), "left")
 	board.appendChild(CharacterMONEYText)
+	let CharacterPOWERText = NewText(GetCharacterPOWERString(), "left")
+	board.appendChild(CharacterPOWERText)
+	let CharacterLUCKText = NewText(GetCharacterLUCKString(), "left")
+	board.appendChild(CharacterLUCKText)
 	let boardObject = {
 		board				: board,
 		CharacterHPText		: CharacterHPText,
 		CharacterFOODText	: CharacterFOODText,
 		CharacterMONEYText	: CharacterMONEYText,
+		CharacterPOWERText	: CharacterPOWERText,
+		CharacterLUCKText	: CharacterLUCKText,
 	}
 	return boardObject
 }
