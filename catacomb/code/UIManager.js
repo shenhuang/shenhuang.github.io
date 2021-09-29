@@ -166,26 +166,26 @@ function LoadDialog(text)
 	return dialogObject
 }
 
-function NewDialog(text)
+function NewDialog(text, style = 'dialog' + GetStyleSuffix())
 {
 	let dialogObject = document.createElement("DIV")
 	dialogObject.textContent = text
-	dialogObject.setAttribute('class', 'dialog')
+	dialogObject.setAttribute('class', style)
 	return dialogObject
 }
 
-function LoadEventDialog(title, content, choices = [])
+function LoadEventDialog(title, content)
 {
-	let eventDialogObject = NewEventDialog(title, content, choices)
+	let eventDialogObject = NewEventDialog(title, content)
 	document.body.appendChild(eventDialogObject)
 	ScrollToBottom()
 	return eventDialogObject
 }
 
-function NewEventDialog(title, content, choices = [])
+function NewEventDialog(title, content, style = 'dialog' + GetStyleSuffix())
 {
 	let eventDialogObject = document.createElement("DIV")
-	eventDialogObject.setAttribute('class', 'dialog')
+	eventDialogObject.setAttribute('class', style)
 	let textTitle = NewEventDialogTitle(title)
 	let textContent = NewEventDialogContent(content)
 	eventDialogObject.appendChild(textTitle)
@@ -193,38 +193,38 @@ function NewEventDialog(title, content, choices = [])
 	return eventDialogObject
 }
 
-function NewEventDialogTitle(text)
+function NewEventDialogTitle(text, style = 'dialogTitle' + GetStyleSuffix())
 {
 	let textObject = document.createElement("DIV")
 	textObject.textContent = text
-	textObject.setAttribute('class', 'dialogTitle')
+	textObject.setAttribute('class', style)
 	return textObject
 }
 
-function NewEventDialogContent(text)
+function NewEventDialogContent(text, style = 'dialogContent' + GetStyleSuffix())
 {
 	let textObject = document.createElement("DIV")
 	textObject.textContent = text
-	textObject.setAttribute('class', 'dialogContent')
+	textObject.setAttribute('class', style)
 	return textObject
 }
 
-function NewEventDialogChoice(text, action)
+function NewEventDialogChoice(text, action, style = 'choice' + GetStyleSuffix())
 {
 	let choiceObject = document.createElement("DIV")
 	choiceObject.textContent = text
-	choiceObject.setAttribute('class', 'choice')
+	choiceObject.setAttribute('class', style)
 	choiceObject.action = action
 	RegisterObjectTouch(choiceObject, choiceObject.action)
 	return choiceObject
 }
 
-function NewEventTraitDialogChoice(eText, tText, action)
+function NewEventTraitDialogChoice(eText, tText, action, style = 'choiceTraitEText' + GetStyleSuffix())
 {
 	let choiceObject = document.createElement("DIV")
 	let eventText = document.createElement("DIV")
 	eventText.textContent = eText
-	eventText.setAttribute('class', 'choiceTraitEText')
+	eventText.setAttribute('class', style)
 	choiceObject.appendChild(eventText)
 	let traitText = document.createElement("DIV")
 	traitText.textContent = `(${tText})`
@@ -236,13 +236,20 @@ function NewEventTraitDialogChoice(eText, tText, action)
 	return choiceObject
 }
 
-function DisableEventDialogChoice(choiceObject, showSelected)
+function DisableEventDialogChoice(choiceObject, showSelected, style = 'choiceSelected' + GetStyleSuffix())
 {
 	UnregisterObjectTouch(choiceObject, choiceObject.action)
 	if(showSelected)
 	{
-		choiceObject.setAttribute('class', 'choiceSelected')
+		choiceObject.setAttribute('class', style)
 	}
+}
+
+function GetStyleSuffix()
+{
+	if(level >= 100)
+		return 'Lava'
+	return ''
 }
 
 function ScrollToBottom()
