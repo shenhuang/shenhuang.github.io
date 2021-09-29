@@ -3,16 +3,17 @@ var EventPool
 var CurrentEventDialog
 var EVENT_PENDING
 
-const TRAITS_GAIN_ON_LEVEL = {
-    [50]   : 147,
-    [100]  : 148,
-    [200]  : 149,
-    [255]  : 150,
+const LEVEL_REACH_EVENTS = {
+    [0]    : 361,
+    [50]   : 357,
+    [100]  : 358,
+    [200]  : 359,
+    [255]  : 360,
 }
 
 function EventInit()
 {
-    level = -1
+    level = 98
     EventPool = []
     CurrentEventDialog = null
     EVENT_PENDING = false
@@ -27,14 +28,11 @@ function NextEvent()
     if(!CharacterStatus.ALIVE)
         return
     level++
-    if(level == 0)
+    if(LEVEL_REACH_EVENTS[level] != null)
     {
-        LoadDialog("\n\n你\n开\n始\n了\n你\n的\n旅\n程\n\n\n")
+        CurrentEventDialog = LoadEvent(EVENTS[LEVEL_REACH_EVENTS[level]])
+        ProcessEvent(EVENTS[LEVEL_REACH_EVENTS[level]])
         return
-    }
-    if(TRAITS_GAIN_ON_LEVEL[level] != null)
-    {
-        AcquireNewTrait(TRAITS[TRAITS_GAIN_ON_LEVEL[level]])
     }
     UpdateEventPool()
     let e = GetNextEvent()
@@ -95,7 +93,7 @@ function ProcessEvent(event)
 }
 
 function ProcessDependency(event)
-{
+{  
     CurrentEventDialog.appendChild(NewEventDialogContent(event["描述"]))
     ScrollToBottom()
 }
