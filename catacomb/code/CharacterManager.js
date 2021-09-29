@@ -296,7 +296,7 @@ function ProcessCharacterRevive()
     if(CharacterHasFuhuojia)
     {
         setTimeout(() => {
-            alert(`你买了复活甲，现在半血复活！`)
+            alert(`你使用了复活甲，现在半血复活！`)
             UpdateHP(Math.ceil(CharacterStats.HPMAX / 2) - CharacterStats.HP)
             CharacterHasFuhuojia = false
         }, 1)
