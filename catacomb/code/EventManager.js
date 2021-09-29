@@ -13,7 +13,7 @@ const LEVEL_REACH_EVENTS = {
 
 function EventInit()
 {
-    level = 98
+    level = -1
     EventPool = []
     CurrentEventDialog = null
     EVENT_PENDING = false
