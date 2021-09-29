@@ -1,4 +1,4 @@
-//Autogen by dataconv.py on 2021-09-29 16:32:48.007527
+//Autogen by dataconv.py on 2021-09-29 16:33:17.190935
 var EVENTS = {
 	[2] : {
 		"描述" : "这一层什么也没有",
@@ -2363,5 +2363,6 @@ var EVENTS = {
 	},
 	[361] : {
 		"描述" : "\n\n\n\n\n你开始了你的旅程！",
+		"依赖" : "CALL",
 	},
 }
