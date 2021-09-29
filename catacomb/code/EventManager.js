@@ -12,7 +12,7 @@ const TRAITS_GAIN_ON_LEVEL = {
 
 function EventInit()
 {
-    level = 98
+    level = -1
     EventPool = []
     CurrentEventDialog = null
     EVENT_PENDING = false
