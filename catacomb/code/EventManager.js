@@ -254,6 +254,10 @@ function ProcessPoisonStatus(event)
         }
         CharacterStatus.POISON.push(poison)
     }
+    else if(event["中毒时间"] != null && event["中毒时间"] != 'CL')
+    {
+        ClearPoison()
+    }
 }
 
 function GetPoisonTraitBias(traits)

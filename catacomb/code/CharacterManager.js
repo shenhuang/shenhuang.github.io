@@ -37,7 +37,7 @@ function InitCharacterStatus()
 {
     CharacterStatus = []
     CharacterStatus.ALIVE = true
-    CharacterStatus.POISON = []
+    ClearPoison()
     CharacterLife = 0
     CharacterIsDebtTaker = false
     CharacterHasFuhuojia = false
@@ -213,6 +213,18 @@ function ProcessCharacterDebt()
 
 function ProcessCharacterPoison()
 {
+    let totalDamage = GetPoisonTotalDamage()
+    if(totalDamage > 0)
+    {
+        setTimeout(() => {
+            alert(`你因为中毒流失了${totalDamage}点体力!`)
+        }, 1)
+        UpdateHP(-totalDamage)
+    }
+}
+
+function GetPoisonTotalDamage()
+{
     let totalDamage = 0
     let leftOver = []
     for(i in CharacterStatus.POISON)
@@ -226,13 +238,11 @@ function ProcessCharacterPoison()
         }
     }
     CharacterStatus.POISON.push(leftOver)
-    if(totalDamage > 0)
-    {
-        setTimeout(() => {
-            alert(`你因为中毒流失了${totalDamage}点体力!`)
-        }, 1)
-        UpdateHP(-totalDamage)
-    }
+}
+
+function ClearPoison()
+{
+    CharacterStatus.POISON = []
 }
 
 function ProcessCharacterHunger()
