@@ -1,7 +1,6 @@
-var level
-var EventPool
-var CurrentEventDialog
-var EVENT_PENDING
+const REWARD_COWS_KILLED = 25
+
+const COW_REWARD_EVENT = 385
 
 const LEVEL_REACH_EVENTS = {
     [0]    : 361,
@@ -11,12 +10,20 @@ const LEVEL_REACH_EVENTS = {
     [255]  : 360,
 }
 
+var level
+var EventPool
+var CurrentEventDialog
+var EVENT_PENDING
+
+var CowsKilled
+
 function EventInit()
 {
     level = -1
     EventPool = []
     CurrentEventDialog = null
     EVENT_PENDING = false
+    CowsKilled = 0
     RegisterScreenTouch(() => {
         if(!EVENT_PENDING)
             NextEvent()
@@ -30,8 +37,7 @@ function NextEvent()
     level++
     if(LEVEL_REACH_EVENTS[level] != null)
     {
-        CurrentEventDialog = LoadEvent(EVENTS[LEVEL_REACH_EVENTS[level]])
-        ProcessEvent(EVENTS[LEVEL_REACH_EVENTS[level]])
+        ProcessLevelReach(level)
         return
     }
     UpdateEventPool()
@@ -39,6 +45,13 @@ function NextEvent()
     CurrentEventDialog = LoadEvent(e)
     ProcessEvent(e)
     ProcessCharacter()
+}
+
+function ProcessLevelReach(l)
+{
+    let e = EVENTS[LEVEL_REACH_EVENTS[l]]
+    CurrentEventDialog = LoadEvent(e)
+    ProcessEvent(e)
 }
 
 function UpdateEventPool()
@@ -74,6 +87,10 @@ function ProcessEvent(event)
     if(event["依赖"] != null)
     {
         ProcessDependency(event)
+    }
+    if(event["描述"] == "你战胜了奶牛！")
+    {
+        ProcessCowKill()
     }
     if(event["敌人战力"] != null)
     {
@@ -364,4 +381,19 @@ function ValidSubEvent(event)
         }
     }
     return true
+}
+
+function ProcessCowKill()
+{
+    CowsKilled++
+    if(CowsKilled >= REWARD_COWS_KILLED)
+    {
+        ProcessCowKillReward()
+    }
+}
+
+function ProcessCowKillReward()
+{
+    let e = EVENTS[COW_REWARD_EVENT]
+    ProcessEvent(e)
 }
