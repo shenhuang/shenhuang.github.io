@@ -67,11 +67,17 @@ const SPECIAL_TRAITS_REGENERATE = {
 	"自愈体质" : {
 		regen	: 2,
 	},
+	"仙丹（精）" : {
+		regen	: 5,
+	},
 	"爸者重装" : {
 		regen	: 5,
 	},
 	"金刚狼" : {
 		regen	: 10,
+	},
+	"路飞" : {
+		regen	: 2,
 	},
 }
 
@@ -80,7 +86,10 @@ const SPECIAL_TRAITS_FOODLOSS = {
 		loss	: 1,
 	},
 	"大胃王" : {
-		loss	: 1,
+		loss	: 2,
+	},
+	"路飞" : {
+		loss	: 2,
 	},
 }
 
@@ -93,6 +102,21 @@ const SPECIAL_TRAITS_MONEYGAIN = {
 	},
 	"包租婆" : {
 		gain	: 10,
+	},
+	"聚宝盆" : {
+		gain	: 15,
+	},
+}
+
+const SPECIAL_TRAITS_BATTLEDAMAGE = {
+	"金钟罩" : {
+		bias	: 0.5,
+	},
+	"抖M" : {
+		bias	: 1.25,
+	},
+	"林妹妹" : {
+		bias	: 1.5,
 	},
 }
 
