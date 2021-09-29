@@ -11,7 +11,7 @@ function ProcessBattle(enemyPower)
             }
             else
             {
-                CurrentEventDialog.appendChild(NewEventDialogContent(`你在战斗中受伤，损失了${HPLoss}点体力！`))
+                CurrentEventDialog.appendChild(NewEventDialogContent(`你在战斗中受到了${HPLoss}点伤害！`))
                 UpdateHP(-HPLoss)
             }
             ScrollToBottom()
@@ -52,6 +52,7 @@ function GetBattleDamageTraitBias(traits)
     let b = 1
     for(i in traits)
     {
+        let trait = [traits[i]]
         if(SPECIAL_TRAITS_BATTLEDAMAGE[trait["名称"]] != null)
         {
             b = b * SPECIAL_TRAITS_BATTLEDAMAGE[trait["名称"]].bias

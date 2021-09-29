@@ -3,9 +3,16 @@ var EventPool
 var CurrentEventDialog
 var EVENT_PENDING
 
+const TRAITS_GAIN_ON_LEVEL = {
+    [50]   : 147,
+    [100]  : 148,
+    [200]  : 149,
+    [255]  : 150,
+}
+
 function EventInit()
 {
-    level = -1
+    level = 98
     EventPool = []
     CurrentEventDialog = null
     EVENT_PENDING = false
@@ -24,6 +31,10 @@ function NextEvent()
     {
         LoadDialog("\n\n你\n开\n始\n了\n你\n的\n旅\n程\n\n\n")
         return
+    }
+    if(TRAITS_GAIN_ON_LEVEL[level] != null)
+    {
+        AcquireNewTrait(TRAITS[TRAITS_GAIN_ON_LEVEL[level]])
     }
     UpdateEventPool()
     let e = GetNextEvent()
@@ -266,6 +277,7 @@ function GetPoisonTraitBias(traits)
     let w = 1
     for(i in traits)
     {
+        let trait = traits[i]
         if(SPECIAL_TRAITS_POISON[trait["名称"]] != null)
         {
             c = c * SPECIAL_TRAITS_POISON[trait["名称"]].chance
