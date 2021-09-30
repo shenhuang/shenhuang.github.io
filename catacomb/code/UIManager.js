@@ -225,7 +225,7 @@ function NewEventDialogChoice(text, action, style = 'choice' + GetStyleSuffix())
 	return choiceObject
 }
 
-function NewEventTraitDialogChoice(eText, tText, action, style = 'choiceTraitEText' + GetStyleSuffix(), styleE = 'choiceTraitEText' + GetStyleSuffix())
+function NewEventTraitDialogChoice(eText, tText, action, style = 'choice' + GetStyleSuffix(), styleE = 'choiceTraitEText' + GetStyleSuffix())
 {
 	let choiceObject = document.createElement("DIV")
 	let eventText = document.createElement("DIV")
