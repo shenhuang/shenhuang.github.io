@@ -19,7 +19,7 @@ var CowsKilled
 
 function EventInit()
 {
-    level = 101
+    level = -1
     EventPool = []
     CurrentEventDialog = null
     EVENT_PENDING = false
