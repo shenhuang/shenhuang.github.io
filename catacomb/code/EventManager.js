@@ -240,7 +240,7 @@ function ProcessStatsChange(event)
 
     }
     if(StatsChangeString != "")
-        setTimeout(() => {LoadFloatMessage(StatsChangeString)}, 200)
+        setTimeout(() => {LoadFloatMessage(StatsChangeString)}, 1)
 }
 
 function GetStatChange(changeData)
