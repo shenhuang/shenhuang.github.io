@@ -1,5 +1,5 @@
 const FOOD_LOSS_PER_TURN = 1
-const HUNGER_HP_LOSS = 5
+const HUNGER_HP_LOSS_RATIO = 0.05
 const PROCESS_DEATH_DELAY = 1000
 
 const DEBT_INTEREST_RATE = 1.03
@@ -268,7 +268,7 @@ function ProcessCharacterHunger()
     }
     else
     {
-        let totalDamage = (FOOD_LOSS_PER_TURN - CharacterStats.FOOD) * HUNGER_HP_LOSS
+        let totalDamage = Math.round((FOOD_LOSS_PER_TURN - CharacterStats.FOOD) * (HUNGER_HP_LOSS_RATIO * CharacterStats.HPMAX))
         setTimeout(() => {
             alert(`你因为饥饿流失了${totalDamage}点体力!`)
         }, 1)

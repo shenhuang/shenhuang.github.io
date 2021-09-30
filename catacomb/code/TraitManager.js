@@ -58,6 +58,9 @@ const SPECIAL_TRAITS_REVIVE = {
 	"九命猫" : {
 		revive	: 8,
 	},
+	"饕餮宝珠" : {
+		loss	: 1,
+	},
 }
 
 const SPECIAL_TRAITS_REGENERATE = {
@@ -79,6 +82,9 @@ const SPECIAL_TRAITS_REGENERATE = {
 	"路飞" : {
 		regen	: 2,
 	},
+	"饕餮宝珠" : {
+		regen	: 10,
+	},
 }
 
 const SPECIAL_TRAITS_FOODLOSS = {
@@ -90,6 +96,9 @@ const SPECIAL_TRAITS_FOODLOSS = {
 	},
 	"路飞" : {
 		loss	: 2,
+	},
+	"饕餮宝珠" : {
+		loss	: 4,
 	},
 }
 
@@ -111,6 +120,9 @@ const SPECIAL_TRAITS_MONEYGAIN = {
 const SPECIAL_TRAITS_BATTLEDAMAGE = {
 	"金钟罩" : {
 		bias	: 0.5,
+	},
+	"饕餮宝珠" : {
+		loss	: 0.8,
 	},
 	"抖M" : {
 		bias	: 1.25,
