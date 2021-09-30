@@ -252,6 +252,7 @@ function GetPoisonTotalDamage()
         }
     }
     CharacterStatus.POISON.push(leftOver)
+    return totalDamage
 }
 
 function ClearPoison()

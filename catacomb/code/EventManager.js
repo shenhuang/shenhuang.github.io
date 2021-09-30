@@ -19,7 +19,7 @@ var CowsKilled
 
 function EventInit()
 {
-    level = -1
+    level = 101
     EventPool = []
     CurrentEventDialog = null
     EVENT_PENDING = false
@@ -280,7 +280,7 @@ function ProcessPoisonStatus(event)
         }
         CharacterStatus.POISON.push(poison)
     }
-    else if(event["中毒时间"] != null && event["中毒时间"] != 'CL')
+    else if(event["中毒时间"] != null && event["中毒时间"] == 'CL')
     {
         ClearPoison()
     }

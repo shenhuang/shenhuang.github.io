@@ -50,7 +50,7 @@
 		document.body.insertBefore(brd, document.getElementById("board"));
 
 		const duration = 3000;
-		const speed = 0.5;
+		const speed = 3;
 		const cursorXOffset = 0;
 		const cursorYOffset = -5;
 
@@ -122,7 +122,7 @@
 				{
 					heart.y -= speed;
 					heart.style.top = heart.y + "px";
-					heart.style.left = heart.x + heart.direction * heart.bound * Math.sin(heart.y * heart.scale / 30) / heart.y * 100 + "px";
+					heart.style.left = heart.x + heart.direction * heart.bound * Math.sin(heart.y * heart.scale / 30) / heart.y * 150 + "px";
 				}
 				else
 				{
