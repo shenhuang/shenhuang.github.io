@@ -1,4 +1,4 @@
-//Autogen by dataconv.py on 2021-09-30 22:03:23.400995
+//Autogen by dataconv.py on 2021-09-30 22:32:18.163885
 var EVENTS = {
 	[2] : {
 		"弃用" : 1.0,
