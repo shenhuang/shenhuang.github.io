@@ -98,7 +98,7 @@ const SPECIAL_TRAITS_FOODLOSS = {
 		loss	: 2,
 	},
 	"饕餮宝珠" : {
-		loss	: 4,
+		loss	: 2,
 	},
 }
 

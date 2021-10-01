@@ -2,6 +2,8 @@ const REWARD_COWS_KILLED = 25
 
 const COW_REWARD_EVENT = 385
 
+const MAX_LEVEL = 255
+
 const LEVEL_REACH_EVENTS = {
     [0]    : 361,
     [50]   : 357,
@@ -35,6 +37,10 @@ function NextEvent()
     if(!CharacterStatus.ALIVE)
         return
     level++
+    if(level >= MAX_LEVEL)
+    {
+        level = MAX_LEVEL
+    }
     if(LEVEL_REACH_EVENTS[level] != null)
     {
         ProcessLevelReach(level)
