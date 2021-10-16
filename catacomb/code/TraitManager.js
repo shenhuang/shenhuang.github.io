@@ -25,6 +25,9 @@ var traitAttributes = [
 	"食物",
 	"战斗力",
 	"运气",
+	"每层体力",
+	"每层金币",
+	"每层食物",
 ]
 
 const SPECIAL_TRAITS_POISON = {
@@ -45,84 +48,12 @@ const SPECIAL_TRAITS_POISON = {
 	},
 }
 
-const SPECIAL_TRAITS_REVIVE = {
-	"月光饭盒" : {
-		revive	: 1,
-	},
-	"绿色蘑菇" : {
-		revive	: 1,
-	},
-	"游戏币" : {
-		revive	: 1,
-	},
-	"九命猫" : {
-		revive	: 8,
-	},
-	"饕餮宝珠" : {
-		loss	: 1,
-	},
-}
-
-const SPECIAL_TRAITS_REGENERATE = {
-	"活力充沛" : {
-		regen	: 1,
-	},
-	"自愈体质" : {
-		regen	: 2,
-	},
-	"仙丹（精）" : {
-		regen	: 5,
-	},
-	"爸者重装" : {
-		regen	: 5,
-	},
-	"金刚狼" : {
-		regen	: 10,
-	},
-	"路飞" : {
-		regen	: 2,
-	},
-	"饕餮宝珠" : {
-		regen	: 10,
-	},
-}
-
-const SPECIAL_TRAITS_FOODLOSS = {
-	"金刚狼" : {
-		loss	: 1,
-	},
-	"大胃王" : {
-		loss	: 2,
-	},
-	"路飞" : {
-		loss	: 2,
-	},
-	"饕餮宝珠" : {
-		loss	: 2,
-	},
-}
-
-const SPECIAL_TRAITS_MONEYGAIN = {
-	"老头" : {
-		gain	: 1,
-	},
-	"学渣宝石" : {
-		gain	: 5,
-	},
-	"包租婆" : {
-		gain	: 10,
-	},
-	"聚宝盆" : {
-		gain	: 15,
-	},
-}
-
 const SPECIAL_TRAITS_BATTLEDAMAGE = {
 	"金钟罩" : {
 		bias	: 0.5,
 	},
 	"饕餮宝珠" : {
-		loss	: 0.8,
+		bias	: 0.8,
 	},
 	"抖M" : {
 		bias	: 1.25,
@@ -135,7 +66,7 @@ const SPECIAL_TRAITS_BATTLEDAMAGE = {
 const SPECIAL_TRAIT_DEBT = "超前消费"
 
 const SPECIAL_TRAIT_FUHUOJIA = "咸鱼的庇护"
-const SPECIAL_TRAIT_MINGDAO = "名刀 - 思妹"
+const SPECIAL_TRAIT_MINGDAO = "名刀 - 丝袜"
 
 function InitTraits()
 {
@@ -151,7 +82,7 @@ function LoadTraits()
 function LoadTraitList(traitList)
 {
 	let traitObjects = []
-	for(i in traitList)
+	for(let i in traitList)
 	{
 		traitObjects.push(LoadTrait(traitList[i]))
 	}
@@ -161,7 +92,7 @@ function LoadTraitList(traitList)
 function LoadAllTraits()
 {
 	let traitObjects = []
-	for(i in TRAITS)
+	for(let i in TRAITS)
 	{
 		traitObjects.push(LoadTrait(TRAITS[i]))
 	}
@@ -174,11 +105,11 @@ function GetShowTraits()
 	let thresh = GetTraitRairtyThresh(traitRairtyOdds)
 	let showTraitsByRairty = GetShowTraitsByRairty()
 	let showTraits = []
-	for(i = 0; i < MAX_GEN_TRAIT; i++)
+	for(let i = 0; i < MAX_GEN_TRAIT; i++)
 	{
 		let randn = Math.random()
 		let rairty = 0
-		for(r in thresh)
+		for(let r in thresh)
 		{
 			if(randn > thresh[r])
 			{
@@ -197,12 +128,12 @@ function GetShowTraits()
 function GetTraitRairtyOdds(weights)
 {
 	let d = 0
-	for(i in weights)
+	for(let i in weights)
 	{
 		d += weights[i]
 	}
 	let odds = []
-	for(i in weights)
+	for(let i in weights)
 	{
 		odds[i] = weights[i] / d
 	}
@@ -213,7 +144,7 @@ function GetTraitRairtyThresh(odds)
 {
 	thresh = []
 	s = 0
-	for(i in odds)
+	for(let i in odds)
 	{
 		thresh[i] = s
 		s += odds[i]
@@ -224,7 +155,7 @@ function GetTraitRairtyThresh(odds)
 function GetShowTraitsByRairty()
 {
 	let stbr = {}
-	for(i in TRAITS)
+	for(let i in TRAITS)
 	{
 		let trait = TRAITS[i]
 		if(trait["可预选"] == 1 && trait["稀有度"] != null)
@@ -278,7 +209,7 @@ function GetTraitDesc(trait)
 	}
 	else
 	{
-		for(i of traitAttributes)
+		for(let i of traitAttributes)
 		{
 			if(trait[i] != null)
 			{
@@ -358,9 +289,9 @@ function AcquireNewTrait(trait)
 
 function ApplyTraitSpecial(trait)
 {
-    if(SPECIAL_TRAITS_REVIVE[trait["名称"]] != null)
+    if(trait["额外生命"] != null)
     {
-        CharacterLife += SPECIAL_TRAITS_REVIVE[trait["名称"]].revive
+        CharacterLife += trait["额外生命"]
     }
 	if(SPECIAL_TRAIT_DEBT == trait["名称"])
 	{

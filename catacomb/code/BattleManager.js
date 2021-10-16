@@ -7,7 +7,7 @@ function ProcessBattle(enemyPower)
             let HPLoss = GetBattleHPLoss(enemyPowerValue)
             if(HPLoss <= 0)
             {
-                CurrentEventDialog.appendChild(NewEventDialogContent(`敌人根本不是你的对手，你毫发无损！`))
+                CurrentEventDialog.appendChild(NewEventDialogContent(`敌人根本不是对手，你毫发无损！`))
             }
             else
             {
@@ -25,7 +25,7 @@ function GetEnemyPowerValue(enemyPower)
     {
         powerCode = enemyPower.split('|')
         let enemyPowerValue = 0
-        for(c of powerCode)
+        for(let c of powerCode)
         {
             if(c.charAt(0) == '&')
             {
@@ -50,7 +50,7 @@ function GetBattleHPLoss(enemyPowerValue)
 function GetBattleDamageTraitBias(traits)
 {
     let b = 1
-    for(i in traits)
+    for(let i in traits)
     {
         let trait = [traits[i]]
         if(SPECIAL_TRAITS_BATTLEDAMAGE[trait["名称"]] != null)

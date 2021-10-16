@@ -1,6 +1,6 @@
 const REFRESH_RATE = 100
 
-const FLOAT_MESSAGE_DURATION = 1500
+const FLOAT_MESSAGE_DURATION = 3000
 const FLOAT_MESSAGE_HEIGHT = screen.height / 2
 const FLOAT_MESSAGE_ASCEND_SPEED = 1
 
@@ -9,6 +9,8 @@ const FLASH_SCREEN_DURATION = 500
 const DEBOUNCE_TIME = 100
 
 var IS_TOUCH_DEVICE = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
+
+var UI_LIGHT = false
 
 function ClearPage()
 {
@@ -62,6 +64,11 @@ function UnregisterObjectTouch(obj, f)
 	{
 		obj.removeEventListener('click', f)
 	}
+}
+
+function ChangeTitle(newTitle)
+{
+	document.title = newTitle
 }
 
 function LoadText(text, align = "center")
@@ -199,6 +206,32 @@ function NewEventDialog(title, content, style = 'dialog' + GetStyleSuffix())
 	return eventDialogObject
 }
 
+function LightEventDialog(eventDialogObject)
+{
+	UI_LIGHT = true
+	eventDialogObject.setAttribute('class', 'dialogLight')
+	for(let i = 0; i < eventDialogObject.children.length; i++)
+	{
+		let child = eventDialogObject.children[i]
+		if(child.className.includes('dialogTitle'))
+		{
+			child.setAttribute('class', 'dialogTitleLight')
+		}
+		if(child.className.includes('dialogContent'))
+		{
+			child.setAttribute('class', 'dialogContentLight')
+		}
+		if(child.className.includes('choice'))
+		{
+			child.setAttribute('class', 'choiceLight')
+		}
+		if(child.className.includes('choiceSelected'))
+		{
+			child.setAttribute('class', 'choiceSelectedLight')
+		}
+	}
+}
+
 function NewEventDialogTitle(text, style = 'dialogTitle' + GetStyleSuffix())
 {
 	let textObject = document.createElement("DIV")
@@ -253,6 +286,16 @@ function DisableEventDialogChoice(choiceObject, showSelected, style = 'choiceSel
 
 function GetStyleSuffix()
 {
+	if(UI_LIGHT)
+		return 'Light'
+	for(let i in LEVELCONFIG)
+	{
+		c = LEVELCONFIG[i]
+		if(level >= c["最小层数"])
+			return c["风格"]
+	}
+	if(level >= 200)
+		return 'Void'
 	if(level >= 100)
 		return 'Lava'
 	return ''
@@ -270,8 +313,14 @@ function FlashScreen(color)
 	flashScreen.style.backgroundColor = color
 	document.body.appendChild(flashScreen)
 	setTimeout(() => {
-		if(document.body.hasChildNodes(flashScreen))
+		try {
+			if(document.body.hasChildNodes(flashScreen))
 			document.body.removeChild(flashScreen)
+		}
+		catch(e)
+		{
+			
+		}
 	}, FLASH_SCREEN_DURATION)
 }
 
@@ -281,8 +330,14 @@ function LoadFloatMessage(text)
 	FMObject.style.top = `${FLOAT_MESSAGE_HEIGHT}px`
 	document.body.appendChild(FMObject)
 	setTimeout(() => {
-		if(document.body.hasChildNodes(FMObject))
+		try {
+			if(document.body.hasChildNodes(FMObject))
 			document.body.removeChild(FMObject)
+		}
+		catch(e)
+		{
+
+		}
 	}, FLOAT_MESSAGE_DURATION)
 	return FMObject
 }

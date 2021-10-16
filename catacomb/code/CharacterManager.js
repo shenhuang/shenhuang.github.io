@@ -121,7 +121,20 @@ function UpdateHP(delta, flashScreen = true)
     {
         CharacterStats.HP = CharacterStats.HPMAX
     }
+    UpdateHPTextColor(CharacterBoard.CharacterHPText)
     CharacterBoard.CharacterHPText.textContent = GetCharacterHPString()
+}
+
+function UpdateHPTextColor(text)
+{
+    if(CharacterStats.HP < CharacterStats.HPMAX / 5)
+    {
+        text.style.color = 'red'
+    }
+    else
+    {
+        text.style.color = 'white'
+    }
 }
 
 function UpdateMONEY(delta)
@@ -141,7 +154,20 @@ function UpdateFOOD(delta)
     {
         CharacterStats.FOOD = 0
     }
-    CharacterBoard.CharacterFOODText.textContent = GetCharacterFOODString()   
+    UpdateFoodTextColor(CharacterBoard.CharacterFOODText)
+    CharacterBoard.CharacterFOODText.textContent = GetCharacterFOODString()
+}
+
+function UpdateFoodTextColor(text)
+{
+    if(CharacterStats.FOOD <= 0)
+    {
+        text.style.color = 'red'
+    }
+    else
+    {
+        text.style.color = 'white'
+    }
 }
 
 function UpdatePOWER(delta)
@@ -190,25 +216,34 @@ function ProcessCharacter()
 
 function ProcessCharacterTraits()
 {
+    let DeltaHP = 0
+    let DeltaMONEY = 0
+    let DeltaFOOD = 0
     for(t of CharacterTraits)
     {
-        if(CharacterStats.HP < CharacterStats.HPMAX && SPECIAL_TRAITS_REGENERATE[t["名称"]] != null)
+        if(t["每层体力"] != null)
         {
-            UpdateHP(SPECIAL_TRAITS_REGENERATE[t["名称"]].regen)
+            DeltaHP += t["每层体力"]
         }
-        if(CharacterStats.FOOD > 0 && SPECIAL_TRAITS_FOODLOSS[t["名称"]] != null)
+        if(t["每层金币"] != null)
         {
-            UpdateFOOD(-SPECIAL_TRAITS_FOODLOSS[t["名称"]].loss)
+            DeltaMONEY += t["每层金币"]
         }
-        if(SPECIAL_TRAITS_MONEYGAIN[t["名称"]] != null)
+        if(CharacterStats.FOOD > 0 && t["每层食物"] != null)
         {
-            UpdateMONEY(SPECIAL_TRAITS_MONEYGAIN[t["名称"]].gain)
+            DeltaFOOD = t["每层食物"]
         }
         if(CharacterIsDebtTaker && CharacterStats.MONEY < 0)
         {
             ProcessCharacterDebt()
         }
     }
+    if(DeltaHP != 0)
+        UpdateHP(DeltaHP)
+    if(DeltaMONEY != 0)
+        UpdateMONEY(DeltaMONEY)
+    if(DeltaFOOD != 0)
+        UpdateFOOD(DeltaFOOD)
 }
 
 function ProcessCharacterDebt()
@@ -241,7 +276,7 @@ function GetPoisonTotalDamage()
 {
     let totalDamage = 0
     let leftOver = []
-    for(i in CharacterStatus.POISON)
+    for(let i in CharacterStatus.POISON)
     {
         let poison = CharacterStatus.POISON[i]
         if(poison.duration > 0)
@@ -290,6 +325,13 @@ function CharacterDead()
         }, 1)
         CharacterStatus.ALIVE = false
     }
+}
+
+function EnsureDeath()
+{
+    CharacterLife = 0
+    CharacterHasFuhuojia = false
+    CharacterHasMingdao = false
 }
 
 function ProcessCharacterRevive()
