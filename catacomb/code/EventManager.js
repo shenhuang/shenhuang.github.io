@@ -138,7 +138,6 @@ function ProcessSpecial(event)
 
 function ProcessLevelChange(event)
 {
-    console.log(event)
     if(event["层数"] != null)
     {
         level += event["层数"]
