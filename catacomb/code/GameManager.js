@@ -1,8 +1,35 @@
+var GameConfig
+
 function LoadGame()
 {
-    for(let i in GAMESTART)
+    ProcessConfigFiles()
+    InitTraits()
+    LoadTraits()
+    LoadButton(GameConfig["开始按钮"], () => {
+        StartGame()
+    })
+}
+
+function StartGame()
+{
+    ClearPage()
+    CharacterInit()
+    EventInit()
+    LoadTraitPanel()
+    EnableCheatBoard()
+}
+
+function ProcessConfigFiles()
+{
+    ProcessLoadConfig()
+    ProcessGameConfig()
+}
+
+function ProcessLoadConfig()
+{
+    for(let i in LOADCONFIG)
     {
-        let c = GAMESTART[i]
+        let c = LOADCONFIG[i]
         if(c["类别"] == '标题')
         {
             ChangeTitle(c["内容"])
@@ -12,14 +39,16 @@ function LoadGame()
             LoadText(c["内容"])
         }
     }
-    InitTraits()
-    LoadTraits()
-    LoadButton("开始冒险", () => {
-		ClearPage()
-        CharacterInit()
-        EventInit()
-        EnableCheatBoard()
-    })
+}
+
+function ProcessGameConfig()
+{
+    GameConfig = {}
+    for(let i in GAMECONFIG)
+    {
+        let config = GAMECONFIG[i]
+        GameConfig[config["属性"]] = config["值"]
+    }
 }
 
 function ProcessDeath()
