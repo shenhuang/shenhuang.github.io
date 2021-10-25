@@ -1,4 +1,4 @@
-//Autogen by dataconv.py on 2021-10-25 18:11:36.276969
+//Autogen by dataconv.py on 2021-10-25 18:14:13.819541
 var GAMECONFIG = {
 	[2] : {
 		"属性" : "开始按钮",
