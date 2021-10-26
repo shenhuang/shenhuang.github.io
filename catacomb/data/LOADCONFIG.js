@@ -1,4 +1,4 @@
-//Autogen by dataconv.py on 2021-10-26 18:22:05.111074
+//Autogen by dataconv.py on 2021-10-26 18:37:21.162399
 var LOADCONFIG = {
 	[2] : {
 		"类别" : "标题",
