@@ -197,6 +197,7 @@ function ApplyTraitSelection()
     {
         CharacterTraits.push(traitObject.content)
     }
+    CharacterTraits.push(TRAITS[67])
 }
 
 function ApplySelectedTraitStats()
