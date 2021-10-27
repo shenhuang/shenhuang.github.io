@@ -9,7 +9,6 @@ function LoadGame()
     let drawButton = LoadButton(GameConfig["抽卡按钮"], () => {
         document.body.removeChild(drawButton)
         let fakeText = LoadText('假装有延迟')
-        navigator.vibrate(200)
         CenterObject(fakeText)
         //优化这段代码赚取20万
         setTimeout(() => {
