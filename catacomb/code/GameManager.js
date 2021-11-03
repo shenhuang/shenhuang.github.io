@@ -36,6 +36,7 @@ function RemoveStartButton()
 
 function StartGame()
 {
+    TraitSelLimit = 0
     ClearPage()
     CharacterInit()
     EventInit()
